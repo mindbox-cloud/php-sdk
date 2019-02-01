@@ -1,0 +1,25 @@
+{
+    "name": "mindbox/sdk",
+    "description": "Mindbox SDK for PHP",
+    "keywords": ["mindbox", "sdk"],
+    "type": "library",
+    "require": {
+        "php": "^5.6|^7.0",
+        "psr/log": "^1.1",
+        "ext-json": "*",
+        "ext-simplexml": "*",
+        "ext-libxml": "*"
+    },
+    "require-dev": {
+        "ext-curl": "*",
+        "phpunit/phpunit": "^7",
+        "mikey179/vfsStream": "*",
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {"Mindbox\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Mindbox\\Tests\\": "tests/"}
+    }
+}
