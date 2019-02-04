@@ -172,6 +172,42 @@ class MindboxResponseTest extends TestCase
                     'isError' => false,
                 ],
             ],
+            [
+                [
+                    'headers' => [
+                        'Cache-Control'    => 'private',
+                        'Content-Type'     => 'application/json; charset=utf-8',
+                        'X-Request-ID'     => '8bf2cd5b-4446-41ea-be12-7186d8b6770c',
+                    ],
+                    'body'    => [
+                        'result' => [
+                            'errorId' => 123,
+                        ],
+                    ],
+                    'code'    => 200,
+                    'rawBody' => '<result><status>Error</status><customer><processingStatus>NotFound</processingStatus></customer><validationMessages><validationMessage>message</validationMessage></validationMessage></result>',
+                    'request' => $this->createMock(\Mindbox\MindboxRequest::class),
+                    'isError' => true,
+                ],
+            ],
+            [
+                [
+                    'headers' => [
+                        'Cache-Control'    => 'private',
+                        'Content-Type'     => 'application/json; charset=utf-8',
+                        'X-Request-ID'     => '8bf2cd5b-4446-41ea-be12-7186d8b6770c',
+                    ],
+                    'body'    => [
+                        'result' => [
+                            'errorMessage' => 123,
+                        ],
+                    ],
+                    'code'    => 200,
+                    'rawBody' => '<result><status>Error</status><customer><processingStatus>NotFound</processingStatus></customer><validationMessages><validationMessage>message</validationMessage></validationMessage></result>',
+                    'request' => $this->createMock(\Mindbox\MindboxRequest::class),
+                    'isError' => true,
+                ],
+            ],
         ];
     }
 

@@ -62,6 +62,7 @@ class MindboxResponse
 
     /**
      * Проверка статуса операции Mindbox.
+     * Возвращает true, если в ответе есть поля errorId или errorMessage.
      * Возвращает false, если статус ответа совпадает с MINDBOX_SUCCESS_STATUS или статус отсутствует в ответе.
      * При отличии статуса от MINDBOX_SUCCESS_STATUS возвращает true.
      *
@@ -72,6 +73,13 @@ class MindboxResponse
         $body = $this->getBody();
 
         if (empty($body)) {
+            return true;
+        }
+
+        $errorId = $this->getResult()->getField('errorId');
+        $errorMessage = $this->getResult()->getField('errorMessage');
+
+        if (!is_null($errorId) || !is_null($errorMessage)) {
             return true;
         }
 
