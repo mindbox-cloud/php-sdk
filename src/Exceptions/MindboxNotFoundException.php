@@ -7,7 +7,7 @@ namespace Mindbox\Exceptions;
  *
  * @package Mindbox\Exceptions
  */
-class MindboxNotFoundException extends MindboxClientException
+class MindboxNotFoundException extends MindboxClientErrorException
 {
 
 }

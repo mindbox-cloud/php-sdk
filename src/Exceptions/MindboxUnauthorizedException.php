@@ -7,7 +7,7 @@ namespace Mindbox\Exceptions;
  *
  * @package Mindbox\Exceptions
  */
-class MindboxUnauthorizedException extends MindboxClientException
+class MindboxUnauthorizedException extends MindboxClientErrorException
 {
 
 }

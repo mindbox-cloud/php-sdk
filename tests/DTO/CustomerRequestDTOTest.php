@@ -274,6 +274,7 @@ class CustomerRequestDTOTest extends CustomerIdentityRequestDTOTest
             'subscriptions'        => [['someField' => 'someValue'], ['someField2' => 'someValue2']],
             'customFields'         => ['someField' => 'someValue'],
             'authenticationTicket' => 'some_authenticationTicket',
+            'discountCard'         => ['someField' => 'someValue'],
         ];
         $this->dto = new CustomerRequestDTO($data);
     }
@@ -478,6 +479,23 @@ class CustomerRequestDTOTest extends CustomerIdentityRequestDTOTest
         $field = $this->dto->getAuthenticationTicket();
 
         $this->assertSame('new_authenticationTicket', $field);
+    }
+
+    public function testGetDiscountCard()
+    {
+        $field = $this->dto->getDiscountCard();
+
+        $this->assertInstanceOf(\Mindbox\DTO\DiscountCardIdentityRequestDTO::class, $field);
+        $this->assertSame(['someField' => 'someValue'], $field->getFieldsAsArray());
+    }
+
+    public function testSetDiscountCard()
+    {
+        $this->dto->setDiscountCard(['ids' => ['number' => 'some_number']]);
+        $field = $this->dto->getDiscountCard();
+
+        $this->assertInstanceOf(\Mindbox\DTO\DiscountCardIdentityRequestDTO::class, $field);
+        $this->assertSame('some_number', $field->getId('number'));
     }
 
     public function testGetFieldsAsArrayByCollection()

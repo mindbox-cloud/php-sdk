@@ -20,6 +20,7 @@ class CustomerRequestDTO extends CustomerIdentityRequestDTO
     protected static $DTOMap = [
         'area'          => AreaRequestDTO::class,
         'subscriptions' => SubscriptionRequestCollection::class,
+        'discountCard'  => DiscountCardIdentityRequestDTO::class,
     ];
 
     /**
@@ -148,5 +149,21 @@ class CustomerRequestDTO extends CustomerIdentityRequestDTO
     public function setSubscriptions($subscriptions)
     {
         $this->setField('subscriptions', $subscriptions);
+    }
+
+    /**
+     * @return DiscountCardIdentityRequestDTO
+     */
+    public function getDiscountCard()
+    {
+        return $this->getField('discountCard');
+    }
+
+    /**
+     * @param array|DiscountCardIdentityRequestDTO $discountCard
+     */
+    public function setDiscountCard($discountCard)
+    {
+        $this->setField('discountCard', $discountCard);
     }
 }
