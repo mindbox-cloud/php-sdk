@@ -37,6 +37,7 @@ class CustomerRequestV2DTOTest extends CustomerRequestDTOTest
             'customFields'         => ['someField' => 'someValue'],
             'authenticationTicket' => 'some_authenticationTicket',
             'isAuthorized'         => 'some_isAuthorized',
+            'discountCard'         => ['someField' => 'someValue'],
         ];
         $this->dto = new CustomerRequestV2DTO($data);
     }
