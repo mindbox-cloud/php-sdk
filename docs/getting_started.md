@@ -47,11 +47,11 @@ require_once __DIR__ . '/path/to/mindboxSDK/vendor/autoload.php';
 Обязательные параметры конфигурации SDK:
 * endpointId - уникальный идентификатор сайта/мобильного приложения/и т.п. Значение нужно уточнить у менеджера Mindbox.
 * secretKey - секретный ключ, соответствующий endpointId. Значение нужно уточнить у менеджера Mindbox.
-* domain - домен, на который будут отправляться запросы к v2.1 API Mindbox: https://{domain}/v2.1/orders/
+* domain - домен, на который будут отправляться запросы к v2.1 API Mindbox: https://{domain}/v2.1/orders/.
 
 Опциональные параметры:
 * timeout - таймаут соединения при выполнении HTTP запроса (в секундах). По умолчанию равен 5 секундам.
-* httpClient - назвавние клиента для отправки запроса ("curl", "stream")8. По умолчанию curl, если установлено расширение ext-curl, иначе stream.
+* httpClient - назвавние клиента для отправки запроса ("curl", "stream"). По умолчанию curl, если установлено расширение ext-curl, иначе stream.
 
 Дополнительно при инициализации Mindbox SDK необходимо передать в конструктор объект логгера, реализующий интерфейс \Psr\Log\LoggerInterface.
 
@@ -86,14 +86,14 @@ $mindbox = new \Mindbox\Mindbox([
 * \Mindbox\Loggers\MindboxFileLogger::ALERT - в лог запишутся ошибочные запросы и запросы, завершённые с кодом ответа 5XX (Mindbox недоступен).
 * \Mindbox\Loggers\MindboxFileLogger::INFO - в лог будут записываться все запросы, в том числе успешные.
 
-Вы можете передать в конструтор MindboxFileLogger как константу, так и её строковое представление (соответствует имени константыл).
+Вы можете передать в конструтор MindboxFileLogger как константу, так и её строковое представление (соответствует имени константы).
 
 ## Отправка запросов к Mindbox API
 
 ### Использование хелперов для стандартных операций
 
 Для стандартных операций Mindbox реализован набор хелперов, упрощающий осуществление запросов.
-Простой пример отправки стандартного запроса к Mindbox с использованием хелпера:
+Простой пример отправки запроса авторизации потребителя к Mindbox с использованием хелпера:
 
 ```php
 require_once __DIR__ . '{путь/до/автозагрузчика}';
@@ -115,7 +115,7 @@ try {
     $response = $mindbox->customer()
             ->authorize($customer, 'Website.AuthorizeCustomer')
             ->sendRequest();
-} catch (\Mindbox\Exceptions\HttpClient\MindboxHttpClientException $e) {
+} catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
     return;
 }
@@ -152,7 +152,7 @@ try {
     $response = $mindbox->getClientV3()
             ->prepareRequest('POST', 'Website.AuthorizeCustomer', $operation, '', [], false)
             ->sendRequest();
-} catch (\Mindbox\Exceptions\HttpClient\MindboxHttpClientException $e) {
+} catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
     return;
 }
