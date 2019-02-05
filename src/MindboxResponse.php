@@ -3,6 +3,7 @@
 namespace Mindbox;
 
 use Mindbox\DTO\ResultDTO;
+use Mindbox\DTO\ValidationMessageResponseCollection;
 
 /**
  * Класс, содержащий данные ответа от Mindbox API и методы для получения этих данных в удобном пользователю виде.
@@ -134,13 +135,11 @@ class MindboxResponse
     /**
      * Возвращает ошибки валидации в виде DTO, если такие присутствуют в ответе.
      *
-     * @return array|null
+     * @return ValidationMessageResponseCollection|null
      */
     public function getValidationErrors()
     {
-        $messages = $this->getResult()->getValidationMessages();
-
-        return $messages ? $messages->all() : null;
+        return $this->getResult()->getValidationMessages();
     }
 
     /**

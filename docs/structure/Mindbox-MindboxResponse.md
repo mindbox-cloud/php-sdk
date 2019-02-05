@@ -162,7 +162,7 @@ Methods
 
 ### getValidationErrors
 
-    array|null Mindbox\MindboxResponse::getValidationErrors()
+    \Mindbox\DTO\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
 
 Возвращает ошибки валидации в виде DTO, если такие присутствуют в ответе.
 

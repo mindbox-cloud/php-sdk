@@ -13,7 +13,7 @@ class DTOCollection extends DTO
     /**
      * @var string Name of collections`s fields for xml generation.
      */
-    protected static $collectionItemsName = '';
+    protected static $collectionItemsName = DTO::class;
 
     /**
      * DTOCollection constructor.

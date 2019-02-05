@@ -165,7 +165,7 @@ class DTO implements Countable, ArrayAccess, IteratorAggregate
      */
     private function unsetMetaInfo($value)
     {
-        if (is_array($value)) {
+        if (is_array($value) || is_subclass_of($value, DTO::class)) {
             unset($value[static::XML_ITEM_NAME_INDEX]);
             foreach ($value as &$item) {
                 $item = $this->unsetMetaInfo($item);
