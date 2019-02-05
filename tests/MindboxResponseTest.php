@@ -3,6 +3,7 @@
 namespace Mindbox\Tests;
 
 use Mindbox\DTO\ResultDTO;
+use Mindbox\DTO\ValidationMessageResponseCollection;
 use Mindbox\MindboxResponse;
 use PHPUnit\Framework\TestCase;
 
@@ -307,7 +308,12 @@ class MindboxResponseTest extends TestCase
 
         $validationMessages = isset($args['body']['validationMessages']) ? $args['body']['validationMessages'] : null;
 
-        $this->assertSame($validationMessages, $response->getValidationErrors());
+        if (isset($args['body']['validationMessages'])) {
+            $this->assertInstanceOf(ValidationMessageResponseCollection::class, $response->getValidationErrors());
+            $this->assertSame($validationMessages, $response->getValidationErrors()->all());
+        } else {
+            $this->assertSame(null, $response->getValidationErrors());
+        }
     }
 
     /**

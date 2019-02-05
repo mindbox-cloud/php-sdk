@@ -3,6 +3,7 @@
 namespace Mindbox\Tests\DTO;
 
 use Mindbox\DTO\DTO;
+use Mindbox\DTO\DTOCollection;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -288,6 +289,19 @@ class DTOTest extends TestCase
 
         $this->assertSame(null, $dto->getField('unknownField'));
         $this->assertSame('defaultValue', $dto->getField('unknownField', 'defaultValue'));
+    }
+
+    public function testGetFieldForDto()
+    {
+        $dto = $this->getDto([
+            'collection' => new DTOCollection([
+                ['item' => 'value'],
+                DTO::XML_ITEM_NAME_INDEX => 'someKey',
+            ]),
+        ]);
+
+        $this->assertInstanceOf(DTOCollection::class, $dto->getField('collection'));
+        $this->assertArrayNotHasKey(DTO::XML_ITEM_NAME_INDEX, $dto->getField('collection'));
     }
 
     /**
