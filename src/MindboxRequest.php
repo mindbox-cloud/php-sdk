@@ -142,9 +142,9 @@ class MindboxRequest
     {
         $res = $this->body;
         $res = preg_replace('|(<password>).+(</password>)|isU', "$1" . '*****' . "$2", $res);
-        $res = preg_replace('|("password":").+(")|isU', "$1" . '*****' . "$2", $res);
+        $res = preg_replace('|("password":").+(")|isU', "$1" . '*****' . "$2", (string)$res);
 
-        return $res;
+        return (string)$res;
     }
 
     /**

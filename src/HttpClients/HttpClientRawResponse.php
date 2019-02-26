@@ -77,7 +77,7 @@ class HttpClientRawResponse
         $headerCollection = explode("\n\n", trim($rawHeaders));
         // We just want the last response (at the end)
         $rawHeader        = array_pop($headerCollection);
-        $headerComponents = explode("\n", $rawHeader);
+        $headerComponents = explode("\n", (string)$rawHeader);
         foreach ($headerComponents as $line) {
             if (strpos($line, ': ') === false) {
                 $httpCode = $this->getHttpResponseCodeFromHeader($line);

@@ -124,6 +124,6 @@ class CurlHttpClient extends AbstractHttpClient
         $rawBody    = array_pop($parts);
         $rawHeaders = $parts;
 
-        return [$rawHeaders, trim($rawBody)];
+        return [$rawHeaders, trim((string)$rawBody)];
     }
 }
