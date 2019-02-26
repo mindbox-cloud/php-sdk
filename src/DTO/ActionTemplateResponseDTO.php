@@ -4,13 +4,16 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string systemName
- * @property string name
+ * Class ActionTemplateResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $systemName
+ * @property string $name
  **/
 class ActionTemplateResponseDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $name = 'actionTemplate';
 

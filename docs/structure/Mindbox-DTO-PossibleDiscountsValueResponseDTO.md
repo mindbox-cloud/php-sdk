@@ -54,20 +54,31 @@ Properties
 
 ### $items
 
-    protected array $items = array()
+    public \Mindbox\DTO\PossibleDiscountsValueItemResponseCollection $items
 
 
 
 
 
-* Visibility: **protected**
+* Visibility: **public**
 
 
-### 
+### $discount
 
-    public \Mindbox\DTO\PossibleDiscountsValueItemResponseCollection 
+    public \Mindbox\DTO\PossibleDiscountsValueDiscountResponseDTO $discount
 
-items
+
+
+
+
+* Visibility: **public**
+
+
+### $itemsCount
+
+    public string $itemsCount
+
+
 
 
 
@@ -251,7 +262,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -262,7 +273,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

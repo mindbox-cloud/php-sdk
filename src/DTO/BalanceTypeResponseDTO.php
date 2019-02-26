@@ -4,6 +4,9 @@
 namespace Mindbox\DTO;
 
 /**
+ * Class BalanceTypeResponseDTO
+ *
+ * @package Mindbox\DTO
  * @property string $name
  */
 class BalanceTypeResponseDTO extends BalanceTypeDTO

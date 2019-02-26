@@ -1,7 +1,7 @@
 Mindbox\DTO\CustomerSegmentationResponseDTO
 ===============
 
-Class DTO
+Class CustomerSegmentationResponseDTO
 
 
 
@@ -63,11 +63,22 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $segmentation
 
-    public \Mindbox\DTO\SegmentResponseDTO 
+    public \Mindbox\DTO\SegmentationResponseDTO $segmentation
 
-segment
+
+
+
+
+* Visibility: **public**
+
+
+### $segment
+
+    public \Mindbox\DTO\SegmentResponseDTO $segment
+
+
 
 
 
@@ -238,7 +249,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -249,7 +260,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

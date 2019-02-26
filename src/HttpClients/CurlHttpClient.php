@@ -54,7 +54,7 @@ class CurlHttpClient extends AbstractHttpClient
         $content = $this->curl->exec();
 
         if ($this->curl->errno()) {
-            throw new MindboxHttpClientException('Ошибка curl: ' . $this->curl->error());
+            throw new MindboxHttpClientException('Curl error: ' . $this->curl->error());
         }
 
         $this->curl->close();

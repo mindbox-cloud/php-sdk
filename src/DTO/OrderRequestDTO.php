@@ -4,18 +4,21 @@
 namespace Mindbox\DTO;
 
 /**
- * @property CustomerRequestV2DTO      customer
- * @property DiscountRequestCollection discounts
- * @property string                    deliveryCost
- * @property array                     customFields
- * @property LineRequestCollection     lines
- * @property PaymentRequestCollection  payments
+ * Class OrderRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property CustomerRequestV2DTO      $customer
+ * @property DiscountRequestCollection $discounts
+ * @property string                    $deliveryCost
+ * @property array                     $customFields
+ * @property LineRequestCollection     $lines
+ * @property PaymentRequestCollection  $payments
  **/
 class OrderRequestDTO extends OrderDTO
 {
     use IdentityRequestDTO, CustomFieldRequestDTO;
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'customer'  => CustomerRequestV2DTO::class,

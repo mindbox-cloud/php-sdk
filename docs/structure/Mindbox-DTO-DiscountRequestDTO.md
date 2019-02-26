@@ -1,7 +1,7 @@
 Mindbox\DTO\DiscountRequestDTO
 ===============
 
-Class DTO
+Class DiscountRequestDTO
 
 
 
@@ -63,11 +63,35 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $type
 
-    public string 
+    public string $type
 
-id
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\DiscountDTO](Mindbox-DTO-DiscountDTO.md)
+
+
+### $amount
+
+    public string $amount
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\DiscountDTO](Mindbox-DTO-DiscountDTO.md)
+
+
+### $id
+
+    public string $id
+
+
 
 
 
@@ -303,7 +327,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -314,7 +338,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

@@ -7,12 +7,12 @@ namespace Mindbox\DTO;
  * Class SmsConfirmationResponseDTO
  *
  * @package Mindbox\DTO
- * @property string processingStatus
+ * @property string $processingStatus
  */
 class SmsConfirmationResponseDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'smsConfirmation';
 

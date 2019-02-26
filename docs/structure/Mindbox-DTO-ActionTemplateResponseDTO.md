@@ -1,7 +1,7 @@
 Mindbox\DTO\ActionTemplateResponseDTO
 ===============
 
-Class DTO
+Class ActionTemplateResponseDTO
 
 
 
@@ -30,14 +30,13 @@ Properties
 
 ### $name
 
-    protected string $name = 'actionTemplate'
+    public string $name
 
 
 
 
 
-* Visibility: **protected**
-* This property is **static**.
+* Visibility: **public**
 
 
 ### $DTOMap
@@ -75,11 +74,11 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $systemName
 
-    public string 
+    public string $systemName
 
-name
+
 
 
 
@@ -250,7 +249,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -261,7 +260,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

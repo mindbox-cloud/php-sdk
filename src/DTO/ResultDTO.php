@@ -4,22 +4,25 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string                                 status
- * @property ValidationMessageResponseCollection    validationMessages
- * @property CustomerResponseDTO                    customer
- * @property SmsConfirmationResponseDTO             smsConfirmation
- * @property MergeCustomersResponseDTO              mergedCustomers
- * @property OrderResponseCollection                orders
- * @property CustomerActionResponseCollection       customerActions
- * @property CustomerSegmentationResponseCollection customerSegmentations
- * @property ProductListItemResponseCollection      productList
- * @property BalanceResponseCollection              balances
- * @property string                                 totalCount
+ * Class ResultDTO
+ *
+ * @package Mindbox\DTO
+ * @property string                                 $status
+ * @property ValidationMessageResponseCollection    $validationMessages
+ * @property CustomerResponseDTO                    $customer
+ * @property SmsConfirmationResponseDTO             $smsConfirmation
+ * @property MergeCustomersResponseDTO              $mergedCustomers
+ * @property OrderResponseCollection                $orders
+ * @property CustomerActionResponseCollection       $customerActions
+ * @property CustomerSegmentationResponseCollection $customerSegmentations
+ * @property ProductListItemResponseCollection      $productList
+ * @property BalanceResponseCollection              $balances
+ * @property string                                 $totalCount
  **/
 class ResultDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'validationMessages'    => ValidationMessageResponseCollection::class,
@@ -35,7 +38,7 @@ class ResultDTO extends DTO
     ];
 
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'result';
 

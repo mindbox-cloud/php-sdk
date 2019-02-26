@@ -4,20 +4,23 @@
 namespace Mindbox\DTO;
 
 /**
- * @property CustomerRequestDTO               customer
- * @property string                           authentificationCode
- * @property SmsConfirmationRequestDTO        smsConfirmation
- * @property MergeCustomersRequestDTO         mergeCustomers
- * @property PageRequestDTO                   page
- * @property ProductListItemRequestCollection productList
- * @property AddProductToListRequestDTO       addProductToList
- * @property RemoveProductFromListRequestDTO  removeProductFromList
- * @property SetProductCountInListRequestDTO  setProductCountInList
+ * Class OperationDTO
+ *
+ * @package Mindbox\DTO
+ * @property CustomerRequestDTO               $customer
+ * @property string                           $authentificationCode
+ * @property SmsConfirmationRequestDTO        $smsConfirmation
+ * @property MergeCustomersRequestDTO         $mergeCustomers
+ * @property PageRequestDTO                   $page
+ * @property ProductListItemRequestCollection $productList
+ * @property AddProductToListRequestDTO       $addProductToList
+ * @property RemoveProductFromListRequestDTO  $removeProductFromList
+ * @property SetProductCountInListRequestDTO  $setProductCountInList
  **/
 class OperationDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'customer'              => CustomerRequestDTO::class,
@@ -30,12 +33,12 @@ class OperationDTO extends DTO
     ];
 
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'operation';
 
     /**
-     * @return CustomerIdentityRequestDTO
+     * @return CustomerRequestDTO
      */
     public function getCustomer()
     {

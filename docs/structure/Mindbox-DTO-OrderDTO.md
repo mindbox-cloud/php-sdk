@@ -1,7 +1,7 @@
 Mindbox\DTO\OrderDTO
 ===============
 
-Class DTO
+Class OrderDTO
 
 
 
@@ -64,11 +64,33 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $ids
 
-    public string 
+    public array $ids
 
-area
+
+
+
+
+* Visibility: **public**
+
+
+### $pointOfContact
+
+    public string $pointOfContact
+
+
+
+
+
+* Visibility: **public**
+
+
+### $area
+
+    public string $area
+
+
 
 
 
@@ -107,7 +129,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\OrderDTO::getId($name)
+    string|null Mindbox\DTO\OrderDTO::getId(string $name)
 
 
 
@@ -117,13 +139,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\OrderDTO::getIds()
+    mixed Mindbox\DTO\OrderDTO::getIds()
 
 
 
@@ -268,7 +290,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -279,7 +301,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

@@ -4,12 +4,15 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string id
+ * Class DiscountCardTypeResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $id
  **/
 class DiscountCardTypeResponseDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'type';
 

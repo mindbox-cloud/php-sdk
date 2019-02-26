@@ -246,6 +246,7 @@ Methods
 
 
 * Visibility: **protected**
+* This method is **abstract**.
 
 
 #### Arguments
@@ -325,11 +326,12 @@ Methods
 
     array Mindbox\Clients\AbstractMindboxClient::prepareResponseBody(string $rawBody)
 
-Конвертация тела ответа из json в массив.
+Конвертация тела ответа в массив.
 
 
 
 * Visibility: **protected**
+* This method is **abstract**.
 
 
 #### Arguments

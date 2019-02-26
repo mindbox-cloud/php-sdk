@@ -4,15 +4,18 @@
 namespace Mindbox\DTO;
 
 /**
- * @property SkuRequestDTO             sku
- * @property GiftCardRequestDTO        giftCard
- * @property DiscountRequestCollection discounts
+ * Class LineRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property SkuRequestDTO             $sku
+ * @property GiftCardRequestDTO        $giftCard
+ * @property DiscountRequestCollection $discounts
  **/
 class LineRequestDTO extends LineDTO
 {
     use CustomFieldRequestDTO;
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'sku'       => SkuRequestDTO::class,

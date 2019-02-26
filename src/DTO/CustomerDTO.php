@@ -4,14 +4,17 @@
 namespace Mindbox\DTO;
 
 /**
- * @property array  ids
- * @property string email
- * @property string mobilePhone
- * @property string lastName
- * @property string firstName
- * @property string middleName
- * @property string birthDate
- * @property array  customFields
+ * Trait CustomerDTO
+ *
+ * @package Mindbox\DTO
+ * @property array  $ids
+ * @property string $email
+ * @property string $mobilePhone
+ * @property string $lastName
+ * @property string $firstName
+ * @property string $middleName
+ * @property string $birthDate
+ * @property array  $customFields
  **/
 trait CustomerDTO
 {

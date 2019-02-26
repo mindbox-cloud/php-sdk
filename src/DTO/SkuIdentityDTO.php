@@ -4,14 +4,17 @@
 namespace Mindbox\DTO;
 
 /**
- * @property array ids
+ * Class SkuIdentityDTO
+ *
+ * @package Mindbox\DTO
+ * @property array $ids
  **/
 abstract class SkuIdentityDTO extends DTO
 {
     use IdentityDTO;
 
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'sku';
 }

@@ -4,14 +4,17 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string type
- * @property string promoActionId
- * @property string value
+ * Class ContentItemResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $type
+ * @property string $promoActionId
+ * @property string $value
  **/
 class ContentItemResponseDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'contentItem';
 
@@ -32,7 +35,7 @@ class ContentItemResponseDTO extends DTO
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getValue()
     {

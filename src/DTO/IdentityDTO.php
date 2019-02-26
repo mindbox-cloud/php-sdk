@@ -11,7 +11,7 @@ namespace Mindbox\DTO;
 trait IdentityDTO
 {
     /**
-     * @param $name
+     * @param string $name
      *
      * @return string|null
      */
@@ -22,7 +22,7 @@ trait IdentityDTO
     }
 
     /**
-     * @return array
+     * @return mixed
      */
     public function getIds()
     {

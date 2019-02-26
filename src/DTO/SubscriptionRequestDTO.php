@@ -4,7 +4,10 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string valueByDefault
+ * Class SubscriptionRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $valueByDefault
  **/
 class SubscriptionRequestDTO extends SubscriptionDTO
 {

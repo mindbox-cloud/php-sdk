@@ -1,7 +1,7 @@
 Mindbox\DTO\MergeCustomersResponseDTO
 ===============
 
-Class DTO
+Class MergeCustomersResponseDTO
 
 
 
@@ -63,11 +63,22 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $customersToMerge
 
-    public \Mindbox\DTO\CustomerIdentityResponseDTO 
+    public \Mindbox\DTO\CustomerIdentityResponseCollection $customersToMerge
 
-resultingCustomer
+
+
+
+
+* Visibility: **public**
+
+
+### $resultingCustomer
+
+    public \Mindbox\DTO\CustomerIdentityResponseDTO $resultingCustomer
+
+
 
 
 
@@ -238,7 +249,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -249,7 +260,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

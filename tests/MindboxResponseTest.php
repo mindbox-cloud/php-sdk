@@ -216,7 +216,7 @@ class MindboxResponseTest extends TestCase
      * @dataProvider dataProvider
      * @covers       ::__construct
      *
-     * @param $args
+     * @param array $args
      */
     public function testResponseConstructor($args)
     {
@@ -235,7 +235,7 @@ class MindboxResponseTest extends TestCase
      * @dataProvider dataProvider
      * @covers       ::getHeaders
      *
-     * @param $args
+     * @param array $args
      */
     public function testGetHeaders($args)
     {
@@ -254,7 +254,7 @@ class MindboxResponseTest extends TestCase
      * @dataProvider dataProvider
      * @covers       ::getBody
      *
-     * @param $args
+     * @param array $args
      */
     public function testGetBody($args)
     {
@@ -273,7 +273,7 @@ class MindboxResponseTest extends TestCase
      * @dataProvider dataProvider
      * @covers       ::getMindboxStatus
      *
-     * @param $args
+     * @param array $args
      */
     public function testGetMindboxStatus($args)
     {
@@ -294,7 +294,7 @@ class MindboxResponseTest extends TestCase
      * @dataProvider dataProvider
      * @covers       ::getValidationErrors
      *
-     * @param $args
+     * @param array $args
      */
     public function testGetValidationErrors($args)
     {
@@ -320,7 +320,7 @@ class MindboxResponseTest extends TestCase
      * @dataProvider dataProvider
      * @covers       ::getHttpCode
      *
-     * @param $args
+     * @param array $args
      */
     public function testGetHttpCode($args)
     {
@@ -339,7 +339,7 @@ class MindboxResponseTest extends TestCase
      * @dataProvider dataProvider
      * @covers       ::isError
      *
-     * @param $args
+     * @param array $args
      */
     public function testIsError($args)
     {
@@ -358,7 +358,7 @@ class MindboxResponseTest extends TestCase
      * @dataProvider dataProvider
      * @covers       ::getRequest
      *
-     * @param $args
+     * @param array $args
      */
     public function testGetRequest($args)
     {
@@ -377,7 +377,7 @@ class MindboxResponseTest extends TestCase
      * @dataProvider dataProvider
      * @covers       ::getRawBody
      *
-     * @param $args
+     * @param array $args
      */
     public function testGetRawBody($args)
     {
@@ -396,7 +396,7 @@ class MindboxResponseTest extends TestCase
      * @dataProvider dataProvider
      * @covers       ::getResult
      *
-     * @param $args
+     * @param array $args
      */
     public function testGetResult($args)
     {

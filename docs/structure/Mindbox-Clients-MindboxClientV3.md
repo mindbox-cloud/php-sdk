@@ -231,6 +231,42 @@ Methods
 
 
 
+### prepareBody
+
+    string Mindbox\Clients\AbstractMindboxClient::prepareBody(\Mindbox\DTO\DTO|null $body)
+
+Конвертация тела запроса в формат, пригодный для HTTP клиента (json, xml).
+
+
+
+* Visibility: **protected**
+* This method is **abstract**.
+* This method is defined by [Mindbox\Clients\AbstractMindboxClient](Mindbox-Clients-AbstractMindboxClient.md)
+
+
+#### Arguments
+* $body **[Mindbox\DTO\DTO](Mindbox-DTO-DTO.md)|null** - &lt;p&gt;Тело запроса в виде DTO.&lt;/p&gt;
+
+
+
+### prepareResponseBody
+
+    array Mindbox\Clients\AbstractMindboxClient::prepareResponseBody(string $rawBody)
+
+Конвертация тела ответа в массив.
+
+
+
+* Visibility: **protected**
+* This method is **abstract**.
+* This method is defined by [Mindbox\Clients\AbstractMindboxClient](Mindbox-Clients-AbstractMindboxClient.md)
+
+
+#### Arguments
+* $rawBody **string** - &lt;p&gt;Сырое тело ответа.&lt;/p&gt;
+
+
+
 ### prepareRequest
 
     \Mindbox\Clients\AbstractMindboxClient Mindbox\Clients\AbstractMindboxClient::prepareRequest(string $method, string $operationName, \Mindbox\DTO\DTO|null $body, string $additionalUrl, array $queryParams, boolean $isSync, boolean $addDeviceUUID)
@@ -296,23 +332,6 @@ Methods
 * Visibility: **public**
 * This method is defined by [Mindbox\Clients\AbstractMindboxClient](Mindbox-Clients-AbstractMindboxClient.md)
 
-
-
-
-### prepareBody
-
-    string Mindbox\Clients\AbstractMindboxClient::prepareBody(\Mindbox\DTO\DTO|null $body)
-
-Конвертация тела запроса в формат, пригодный для HTTP клиента (json, xml).
-
-
-
-* Visibility: **protected**
-* This method is defined by [Mindbox\Clients\AbstractMindboxClient](Mindbox-Clients-AbstractMindboxClient.md)
-
-
-#### Arguments
-* $body **[Mindbox\DTO\DTO](Mindbox-DTO-DTO.md)|null** - &lt;p&gt;Тело запроса в виде DTO.&lt;/p&gt;
 
 
 
@@ -385,23 +404,6 @@ Methods
 * Visibility: **public**
 * This method is defined by [Mindbox\Clients\AbstractMindboxClient](Mindbox-Clients-AbstractMindboxClient.md)
 
-
-
-
-### prepareResponseBody
-
-    array Mindbox\Clients\AbstractMindboxClient::prepareResponseBody(string $rawBody)
-
-Конвертация тела ответа из json в массив.
-
-
-
-* Visibility: **protected**
-* This method is defined by [Mindbox\Clients\AbstractMindboxClient](Mindbox-Clients-AbstractMindboxClient.md)
-
-
-#### Arguments
-* $rawBody **string** - &lt;p&gt;Сырое тело ответа.&lt;/p&gt;
 
 
 

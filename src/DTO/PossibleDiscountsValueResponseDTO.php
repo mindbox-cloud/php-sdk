@@ -7,14 +7,14 @@ namespace Mindbox\DTO;
  * Class PossibleDiscountsValueResponseDTO
  *
  * @package Mindbox\DTO
- * @property PossibleDiscountsValueDiscountResponseDTO    discount
- * @property string                                       itemsCount
- * @property PossibleDiscountsValueItemResponseCollection items
+ * @property PossibleDiscountsValueDiscountResponseDTO    $discount
+ * @property string                                       $itemsCount
+ * @property PossibleDiscountsValueItemResponseCollection $items
  */
 class PossibleDiscountsValueResponseDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'discount' => PossibleDiscountsValueDiscountResponseDTO::class,
@@ -22,7 +22,7 @@ class PossibleDiscountsValueResponseDTO extends DTO
     ];
 
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'value';
 

@@ -4,14 +4,17 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string type
- * @property string amount
- * @property string id
+ * Class DiscountDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $type
+ * @property string $amount
+ * @property string $id
  **/
 abstract class DiscountDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'discount';
 

@@ -4,19 +4,22 @@
 namespace Mindbox\DTO;
 
 /**
- * @property ProductRequestDTO product
+ * Class RemoveProductFromListRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property ProductRequestDTO $product
  **/
 class RemoveProductFromListRequestDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'product' => ProductRequestDTO::class,
     ];
 
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'removeProductFromList';
 

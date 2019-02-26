@@ -1,7 +1,7 @@
 Mindbox\DTO\CustomerRequestV2DTO
 ===============
 
-Class MergeCustomersRequestDTO
+Class CustomerRequestV2DTO
 
 
 
@@ -63,15 +63,87 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $isAuthorized
 
-    public string 
+    public string $isAuthorized
 
-isAuthorized
+
 
 
 
 * Visibility: **public**
+
+
+### $fullName
+
+    public string $fullName
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\CustomerRequestDTO](Mindbox-DTO-CustomerRequestDTO.md)
+
+
+### $password
+
+    public string $password
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\CustomerRequestDTO](Mindbox-DTO-CustomerRequestDTO.md)
+
+
+### $area
+
+    public \Mindbox\DTO\AreaRequestDTO $area
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\CustomerRequestDTO](Mindbox-DTO-CustomerRequestDTO.md)
+
+
+### $subscriptions
+
+    public \Mindbox\DTO\SubscriptionRequestCollection $subscriptions
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\CustomerRequestDTO](Mindbox-DTO-CustomerRequestDTO.md)
+
+
+### $authenticationTicket
+
+    public string $authenticationTicket
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\CustomerRequestDTO](Mindbox-DTO-CustomerRequestDTO.md)
+
+
+### $ids
+
+    public array $ids
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\CustomerIdentityDTO](Mindbox-DTO-CustomerIdentityDTO.md)
 
 
 Methods
@@ -516,7 +588,7 @@ Methods
 
 ### setId
 
-    mixed Mindbox\DTO\CustomerIdentityRequestDTO::setId($name, $value)
+    mixed Mindbox\DTO\CustomerIdentityRequestDTO::setId(string $name, mixed $value)
 
 
 
@@ -527,7 +599,7 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 * $value **mixed**
 
 
@@ -551,7 +623,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\CustomerIdentityDTO::getId($name)
+    string|null Mindbox\DTO\CustomerIdentityDTO::getId(string $name)
 
 
 
@@ -562,13 +634,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\CustomerIdentityDTO::getIds()
+    mixed Mindbox\DTO\CustomerIdentityDTO::getIds()
 
 
 
@@ -714,7 +786,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -725,7 +797,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

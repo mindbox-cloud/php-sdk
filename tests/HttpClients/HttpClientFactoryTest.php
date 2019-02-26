@@ -69,8 +69,8 @@ class HttpClientFactoryTest extends TestCase
      * @dataProvider      incorrectTimeoutProvider
      * @expectedException \Mindbox\Exceptions\MindboxConfigException
      *
-     * @param $timeout
-     * @param $handlerName
+     * @param mixed $timeout
+     * @param mixed $handlerName
      */
     public function testCreateHttpClientThrowsException($timeout, $handlerName)
     {
@@ -80,7 +80,7 @@ class HttpClientFactoryTest extends TestCase
     /**
      * @dataProvider correctTimeoutProvider
      *
-     * @param $timeout
+     * @param mixed $timeout
      */
     public function testCreateStreamHttpClient($timeout)
     {
@@ -92,7 +92,7 @@ class HttpClientFactoryTest extends TestCase
     /**
      * @dataProvider correctTimeoutProvider
      *
-     * @param $timeout
+     * @param mixed $timeout
      */
     public function testCreateCurlHttpClient($timeout)
     {

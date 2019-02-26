@@ -1,7 +1,7 @@
 Mindbox\DTO\CustomerIdentityRequestDTO
 ===============
 
-Class MergeCustomersRequestDTO
+Class CustomerIdentityRequestDTO
 
 
 
@@ -63,11 +63,11 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $ids
 
-    public array 
+    public array $ids
 
-ids
+
 
 
 
@@ -81,7 +81,7 @@ Methods
 
 ### setId
 
-    mixed Mindbox\DTO\CustomerIdentityRequestDTO::setId($name, $value)
+    mixed Mindbox\DTO\CustomerIdentityRequestDTO::setId(string $name, mixed $value)
 
 
 
@@ -91,7 +91,7 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 * $value **mixed**
 
 
@@ -114,7 +114,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\CustomerIdentityDTO::getId($name)
+    string|null Mindbox\DTO\CustomerIdentityDTO::getId(string $name)
 
 
 
@@ -125,13 +125,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\CustomerIdentityDTO::getIds()
+    mixed Mindbox\DTO\CustomerIdentityDTO::getIds()
 
 
 
@@ -277,7 +277,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -288,7 +288,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

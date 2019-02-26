@@ -1,7 +1,7 @@
 Mindbox\DTO\CustomerActionResponseDTO
 ===============
 
-Class DTO
+Class CustomerActionResponseDTO
 
 
 
@@ -63,11 +63,77 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $ids
 
-    public \Mindbox\DTO\OrderResponseDTO 
+    public array $ids
 
-order
+
+
+
+
+* Visibility: **public**
+
+
+### $actionTemplate
+
+    public \Mindbox\DTO\ActionTemplateResponseDTO $actionTemplate
+
+
+
+
+
+* Visibility: **public**
+
+
+### $dateTimeUtc
+
+    public string $dateTimeUtc
+
+
+
+
+
+* Visibility: **public**
+
+
+### $pointOfContact
+
+    public \Mindbox\DTO\PointOfContactResponseDTO $pointOfContact
+
+
+
+
+
+* Visibility: **public**
+
+
+### $customer
+
+    public \Mindbox\DTO\CustomerResponseDTO $customer
+
+
+
+
+
+* Visibility: **public**
+
+
+### $customerBalanceChanges
+
+    public \Mindbox\DTO\CustomerBalanceChangeResponseCollection $customerBalanceChanges
+
+
+
+
+
+* Visibility: **public**
+
+
+### $order
+
+    public \Mindbox\DTO\OrderResponseDTO $order
+
+
 
 
 
@@ -158,7 +224,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\CustomerActionResponseDTO::getId($name)
+    string|null Mindbox\DTO\CustomerActionResponseDTO::getId(string $name)
 
 
 
@@ -168,13 +234,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\CustomerActionResponseDTO::getIds()
+    mixed Mindbox\DTO\CustomerActionResponseDTO::getIds()
 
 
 
@@ -319,7 +385,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -330,7 +396,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

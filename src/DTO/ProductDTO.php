@@ -4,15 +4,18 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string price
+ * Trait ProductDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $price
  * @property string $name
- * @property string description
- * @property string isAvailable
- * @property string oldPrice
- * @property string shelfLife
- * @property string url
- * @property string pictureUrl
- * @property array  customFields
+ * @property string $description
+ * @property string $isAvailable
+ * @property string $oldPrice
+ * @property string $shelfLife
+ * @property string $url
+ * @property string $pictureUrl
+ * @property array  $customFields
  **/
 trait ProductDTO
 {

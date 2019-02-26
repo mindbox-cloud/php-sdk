@@ -6,12 +6,13 @@ namespace Mindbox\DTO;
 /**
  * Class ProductListItemRequestDTO
  *
- * @property ProductRequestDTO product
+ * @package Mindbox\DTO
+ * @property ProductRequestDTO $product
  **/
 class ProductListItemRequestDTO extends ProductListItemDTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'product' => ProductRequestDTO::class,
@@ -26,7 +27,7 @@ class ProductListItemRequestDTO extends ProductListItemDTO
     }
 
     /**
-     * @param ProductRequestDTO $product
+     * @param ProductRequestDTO|array $product
      */
     public function setProduct($product)
     {

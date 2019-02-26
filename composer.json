@@ -11,10 +11,12 @@
         "ext-libxml": "*"
     },
     "require-dev": {
-        "ext-curl": "*",
         "phpunit/phpunit": "^7",
         "mikey179/vfsStream": "*",
         "squizlabs/php_codesniffer": "^3.4"
+    },
+    "suggest": {
+        "ext-curl": "*"
     },
     "autoload": {
         "psr-4": {"Mindbox\\": "src/"}

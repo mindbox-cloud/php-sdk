@@ -23,7 +23,7 @@ Methods
 
     string Mindbox\DTO\MindboxXMLSerializer::fromArrayToXML(string $name, array $data)
 
-Generate XML string from array.
+Генерация xml строки из массива данных.
 
 
 
@@ -41,7 +41,7 @@ Generate XML string from array.
 
     \SimpleXMLElement Mindbox\DTO\MindboxXMLSerializer::getXML(\SimpleXMLElement $xml, array $data)
 
-Recursively format array as XML.
+Рекурсивно конвертирует массив в xml.
 
 
 
@@ -59,7 +59,7 @@ Recursively format array as XML.
 
     string Mindbox\DTO\MindboxXMLSerializer::getKey(mixed $key, mixed $data)
 
-Return XML key for node.
+Возвращает ключ для элемента xml.
 
 
 
@@ -77,7 +77,7 @@ Return XML key for node.
 
     array Mindbox\DTO\MindboxXMLSerializer::fromXMLToArray(string $xmlString)
 
-Generate array from XML string.
+Генерирует массив из строки xml.
 
 
 
@@ -93,9 +93,9 @@ Generate array from XML string.
 
     array Mindbox\DTO\MindboxXMLSerializer::normalizeArray(array $data)
 
-Format array to "look like json". Necessary for correct generation of json and xml from an array.
+Приводит массив, сформированный из xml, к общему виду с аналогичным массивом, сформированным из json.
 
-
+Это необходимо для универсальной обработки массива вне зависимости от формата общения с Mindbox.
 
 * Visibility: **private**
 

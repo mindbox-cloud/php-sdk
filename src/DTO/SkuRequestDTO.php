@@ -4,6 +4,9 @@
 namespace Mindbox\DTO;
 
 /**
+ * Class SkuRequestDTO
+ *
+ * @package Mindbox\DTO
  **/
 class SkuRequestDTO extends SkuIdentityRequestDTO
 {

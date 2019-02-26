@@ -1,7 +1,7 @@
 Mindbox\DTO\PromoActionResponseDTO
 ===============
 
-Class DTO
+Class PromoActionResponseDTO
 
 
 
@@ -63,11 +63,11 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $ids
 
-    public array 
+    public array $ids
 
-ids
+
 
 
 
@@ -104,7 +104,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\PromoActionResponseDTO::getId($name)
+    string|null Mindbox\DTO\PromoActionResponseDTO::getId(string $name)
 
 
 
@@ -114,13 +114,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\PromoActionResponseDTO::getIds()
+    mixed Mindbox\DTO\PromoActionResponseDTO::getIds()
 
 
 
@@ -265,7 +265,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -276,7 +276,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

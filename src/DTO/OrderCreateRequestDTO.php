@@ -4,8 +4,11 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string createdDateTimeUtc
- * @property string preOrderDiscountedTotalPrice
+ * Class OrderCreateRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $createdDateTimeUtc
+ * @property string $preOrderDiscountedTotalPrice
  **/
 class OrderCreateRequestDTO extends OrderRequestDTO
 {

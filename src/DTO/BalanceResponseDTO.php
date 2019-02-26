@@ -4,14 +4,17 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string totalValue
- * @property string availableValue
- * @property string blockedValue
+ * Class BalanceResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $totalValue
+ * @property string $availableValue
+ * @property string $blockedValue
  **/
 class BalanceResponseDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'balance';
 

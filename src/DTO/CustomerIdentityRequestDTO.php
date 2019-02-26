@@ -4,7 +4,7 @@
 namespace Mindbox\DTO;
 
 /**
- * Class MergeCustomersRequestDTO
+ * Class CustomerIdentityRequestDTO
  *
  * @package Mindbox\DTO
  */

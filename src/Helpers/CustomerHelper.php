@@ -332,7 +332,7 @@ class CustomerHelper extends AbstractMindboxHelper
     public function subscribe(
         \Mindbox\DTO\CustomerRequestDTO $customer,
         $operationName,
-        $addDeviceUUID = true,
+        $addDeviceUUID = false,
         $isSync = true
     ) {
         $operation = $this->createOperation();

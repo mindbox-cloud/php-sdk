@@ -13,6 +13,27 @@ use PHPUnit\Framework\TestCase;
 class AbstractHttpClientTest extends TestCase
 {
     /**
+     * @var \PHPUnit\Framework\MockObject\MockObject|AbstractHttpClient $abstractHttpClientStub
+     */
+    protected $abstractHttpClientStub;
+
+    /**
+     * @var \PHPUnit\Framework\MockObject\MockObject|\Mindbox\MindboxRequest $requestStub
+     */
+    protected $requestStub;
+
+    /**
+     * @throws \ReflectionException
+     */
+    public function setUp()
+    {
+        $this->abstractHttpClientStub = $this->getMockForAbstractClass(AbstractHttpClient::class);
+        $this->requestStub = $this->getMockBuilder(\Mindbox\MindboxRequest::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
+
+    /**
      * @return array
      */
     public function httpMethodsDataProvider()
@@ -37,17 +58,15 @@ class AbstractHttpClientTest extends TestCase
     /**
      * @dataProvider httpMethodsDataProvider
      *
-     * @param $method
+     * @param string $method
      *
-     * @throws \ReflectionException
+     * @throws \Mindbox\Exceptions\MindboxHttpClientException
      */
     public function testSend($method)
     {
-        $abstractHttpClientStub = $this->getMockForAbstractClass(AbstractHttpClient::class);
+        $abstractHttpClientStub = $this->abstractHttpClientStub;
 
-        $requestStub = $this->getMockBuilder(\Mindbox\MindboxRequest::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        $requestStub = $this->requestStub;
 
         $requestStub->expects($this->once())
             ->method('getMethod')
@@ -64,17 +83,13 @@ class AbstractHttpClientTest extends TestCase
      * @dataProvider      incorrectHttpMethodsDataProvider
      * @expectedException \Mindbox\Exceptions\MindboxHttpClientException
      *
-     * @param $method
-     *
-     * @throws \ReflectionException
+     * @param string $method
      */
     public function testSendWillThrowExceptionOnIncorrectHttpMethod($method)
     {
-        $abstractHttpClientStub = $this->getMockForAbstractClass(AbstractHttpClient::class);
+        $abstractHttpClientStub = $this->abstractHttpClientStub;
 
-        $requestStub = $this->getMockBuilder(\Mindbox\MindboxRequest::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        $requestStub = $this->requestStub;
 
         $requestStub->expects($this->once())
             ->method('getMethod')

@@ -6,12 +6,13 @@ namespace Mindbox\DTO;
 /**
  * Class ProductListItemResponseDTO
  *
- * @property ProductResponseDTO product
+ * @package Mindbox\DTO
+ * @property ProductResponseDTO $product
  **/
 class ProductListItemResponseDTO extends ProductListItemDTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'product' => ProductResponseDTO::class,

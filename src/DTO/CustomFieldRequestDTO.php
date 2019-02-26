@@ -5,6 +5,7 @@ namespace Mindbox\DTO;
 
 /**
  * Trait CustomFieldRequestDTO
+ *
  * @package Mindbox\DTO
  */
 trait CustomFieldRequestDTO
@@ -23,7 +24,7 @@ trait CustomFieldRequestDTO
     }
 
     /**
-     * @param array
+     * @param array $fields
      */
     public function setCustomFields($fields)
     {

@@ -185,7 +185,7 @@ class Mindbox
      */
     public function customer()
     {
-        if (!$this->customer) {
+        if (!isset($this->customer)) {
             $this->customer = new CustomerHelper($this->client);
         }
 
@@ -199,7 +199,7 @@ class Mindbox
      */
     public function order()
     {
-        if (!$this->order) {
+        if (!isset($this->order)) {
             $this->order = new OrderHelper($this->clientV2);
         }
 
@@ -213,7 +213,7 @@ class Mindbox
      */
     public function productList()
     {
-        if (!$this->productList) {
+        if (!isset($this->productList)) {
             $this->productList = new ProductListHelper($this->client);
         }
 

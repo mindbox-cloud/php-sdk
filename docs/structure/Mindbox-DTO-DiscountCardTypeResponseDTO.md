@@ -1,7 +1,7 @@
 Mindbox\DTO\DiscountCardTypeResponseDTO
 ===============
 
-Class DTO
+Class DiscountCardTypeResponseDTO
 
 
 
@@ -63,11 +63,11 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $id
 
-    public string 
+    public string $id
 
-id
+
 
 
 
@@ -225,7 +225,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -236,7 +236,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

@@ -4,22 +4,25 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string                            discountedTotalPrice
- * @property AppliedDiscountResponseCollection appliedDiscounts
- * @property string                            totalAcquiredBalanceChange
- * @property string                            createdPointOfContact
- * @property PlaceholderResponseCollection     placeHolders
- * @property DiscountInfoResponseCollection    discountsInfo
- * @property PaymentInfoResponseCollection     paymentsInfo
- * @property string                            createdDateTimeUtc
- * @property CustomerResponseDTO               customer
- * @property LineResponseCollection            lines
- * @property PaymentResponseCollection         payments
+ * Class OrderResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string                            $discountedTotalPrice
+ * @property AppliedDiscountResponseCollection $appliedDiscounts
+ * @property string                            $totalAcquiredBalanceChange
+ * @property string                            $createdPointOfContact
+ * @property PlaceholderResponseCollection     $placeHolders
+ * @property DiscountInfoResponseCollection    $discountsInfo
+ * @property PaymentInfoResponseCollection     $paymentsInfo
+ * @property string                            $createdDateTimeUtc
+ * @property CustomerResponseDTO               $customer
+ * @property LineResponseCollection            $lines
+ * @property PaymentResponseCollection         $payments
  **/
 class OrderResponseDTO extends OrderDTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'appliedDiscounts' => AppliedDiscountResponseCollection::class,

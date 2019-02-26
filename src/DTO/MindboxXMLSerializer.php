@@ -13,7 +13,7 @@ use SimpleXMLElement;
 class MindboxXMLSerializer
 {
     /**
-     * Generate XML string from array.
+     * Генерация xml строки из массива данных.
      *
      * @param string $name
      * @param array  $data
@@ -22,13 +22,14 @@ class MindboxXMLSerializer
      */
     public static function fromArrayToXML($name, array $data)
     {
-        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><' . $name . '></' . $name . '>');
+        $xml    = new SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><' . $name . '></' . $name . '>');
+        $result = self::getXML($xml, $data)->asXML();
 
-        return self::getXML($xml, $data)->asXML();
+        return (string)$result;
     }
 
     /**
-     * Recursively format array as XML.
+     * Рекурсивно конвертирует массив в xml.
      *
      * @param SimpleXMLElement $xml
      * @param array            $data
@@ -54,7 +55,7 @@ class MindboxXMLSerializer
     }
 
     /**
-     * Return XML key for node.
+     * Возвращает ключ для элемента xml.
      *
      * @param mixed $key
      * @param mixed $data
@@ -75,7 +76,7 @@ class MindboxXMLSerializer
     }
 
     /**
-     * Generate array from XML string.
+     * Генерирует массив из строки xml.
      *
      * @param string $xmlString
      *
@@ -83,16 +84,22 @@ class MindboxXMLSerializer
      */
     public function fromXMLToArray($xmlString)
     {
+        libxml_use_internal_errors(true);
         $xml = simplexml_load_string($xmlString, "SimpleXMLElement", LIBXML_NOCDATA);
 
+        if ($xml === false) {
+            return [];
+        }
+
         $name  = $xml->getName();
-        $array = json_decode(json_encode($xml), true);
+        $array = json_decode((json_encode($xml) ?: ''), true);
 
         return [$name => $this->normalizeArray($array)];
     }
 
     /**
-     * Format array to "look like json". Necessary for correct generation of json and xml from an array.
+     * Приводит массив, сформированный из xml, к общему виду с аналогичным массивом, сформированным из json.
+     * Это необходимо для универсальной обработки массива вне зависимости от формата общения с Mindbox.
      *
      * @param array $data
      *

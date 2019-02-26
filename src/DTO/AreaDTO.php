@@ -4,15 +4,18 @@
 namespace Mindbox\DTO;
 
 /**
- * @property array  ids
- * @property string name
+ * Class AreaDTO
+ *
+ * @package Mindbox\DTO
+ * @property array  $ids
+ * @property string $name
  */
 abstract class AreaDTO extends DTO
 {
     use IdentityDTO;
 
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'area';
 

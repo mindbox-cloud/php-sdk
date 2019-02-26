@@ -4,13 +4,16 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string id
- * @property string getFromPool
+ * Class GiftCardDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $id
+ * @property string $getFromPool
  **/
 abstract class GiftCardDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'giftCard';
 

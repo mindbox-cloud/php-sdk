@@ -11,12 +11,12 @@ namespace Mindbox\DTO;
 class LineResponseCollection extends DTOCollection
 {
     /**
-     * @var string Map of collections`s fields.
+     * @var string Название элементов коллекции для корректной генерации xml.
      */
     protected static $collectionItemsName = LineResponseDTO::class;
 
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'lines';
 }

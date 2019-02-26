@@ -30,9 +30,7 @@ class OrderHelperTest extends AbstractMindboxHelperTest
     {
         $this->mindboxResponseStub = $this->createMock(\Mindbox\MindboxResponse::class);
 
-        $this->mindboxClientStub = $this->getMockBuilder(\Mindbox\Clients\AbstractMindboxClient::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        $this->mindboxClientStub = $this->getMindboxClientStub();
 
         $this->helper = new OrderHelper($this->mindboxClientStub);
     }
@@ -53,7 +51,7 @@ class OrderHelperTest extends AbstractMindboxHelperTest
     {
         $params        = [
             'countToReturn' => 1,
-            'mindbox'       => 12,
+            'mindbox'       => '12',
             'startingIndex' => 5,
         ];
         $operationName = 'Website.OperationName';

@@ -153,13 +153,13 @@ class DTO implements Countable, ArrayAccess, IteratorAggregate
      */
     public function toJson($options = 0)
     {
-        return json_encode($this->getFieldsAsArray(), $options);
+        return json_encode($this->getFieldsAsArray(), $options) ?: '';
     }
 
     /**
      * Рекурсивно убирает из переданного массив мета-информацию.
      *
-     * @param array $value Массив данных.
+     * @param mixed $value Массив данных.
      *
      * @return array
      */

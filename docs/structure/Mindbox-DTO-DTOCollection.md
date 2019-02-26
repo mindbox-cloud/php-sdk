@@ -30,7 +30,7 @@ Properties
 
 ### $collectionItemsName
 
-    protected string $collectionItemsName = ''
+    protected string $collectionItemsName = \Mindbox\DTO\DTO::class
 
 
 
@@ -100,7 +100,7 @@ Methods
 
     string Mindbox\DTO\DTOCollection::getCollectionMap()
 
-Getter for $collectionItemsName.
+Геттер для $collectionItemsName.
 
 
 
@@ -227,7 +227,7 @@ Getter for $collectionItemsName.
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -238,7 +238,7 @@ Getter for $collectionItemsName.
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

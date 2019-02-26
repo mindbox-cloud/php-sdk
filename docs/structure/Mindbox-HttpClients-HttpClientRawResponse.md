@@ -41,7 +41,7 @@ Properties
 
 ### $body
 
-    private array $body
+    private string $body
 
 
 

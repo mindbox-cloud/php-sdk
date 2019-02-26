@@ -21,7 +21,7 @@ Methods
 
 ### createMindboxClient
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Clients\MindboxClientFactory::createMindboxClient(string $apiVersion, string $endpointId, string $secretKey, string $domain, \Mindbox\HttpClients\IHttpClient $httpClient, \Psr\Log\LoggerInterface $logger)
+    \Mindbox\Clients\MindboxClientV3|\Mindbox\Clients\MindboxClientV2 Mindbox\Clients\MindboxClientFactory::createMindboxClient(string $apiVersion, string $endpointId, string $secretKey, string $domain, \Mindbox\HttpClients\IHttpClient $httpClient, \Psr\Log\LoggerInterface $logger)
 
 Конструктор MindboxClientFactory.
 

@@ -133,4 +133,28 @@ class MindboxClientV3 extends AbstractMindboxClient
     {
         return static::SECRET_KEY_NAME . '="' . $this->secretKey . '"';
     }
+
+    /**
+     * Конвертация тела запроса в формат, пригодный для HTTP клиента (json).
+     *
+     * @param \Mindbox\DTO\DTO|null $body Тело запроса в виде DTO.
+     *
+     * @return string
+     */
+    protected function prepareBody(\Mindbox\DTO\DTO $body = null)
+    {
+        return $body ? $body->toJson() : '';
+    }
+
+    /**
+     * Конвертация тела ответа из json в массив.
+     *
+     * @param string $rawBody Сырое тело ответа.
+     *
+     * @return array
+     */
+    protected function prepareResponseBody($rawBody)
+    {
+        return $rawBody ? json_decode($rawBody, true) : [];
+    }
 }

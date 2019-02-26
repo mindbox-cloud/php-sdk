@@ -1,7 +1,7 @@
 Mindbox\DTO\CustomerIdentityResponseDTO
 ===============
 
-Class MergeCustomersRequestDTO
+Class CustomerIdentityResponseDTO
 
 
 
@@ -63,15 +63,27 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $processingStatus
 
-    public string 
+    public string $processingStatus
 
-processingStatus
+
 
 
 
 * Visibility: **public**
+
+
+### $ids
+
+    public array $ids
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\CustomerIdentityDTO](Mindbox-DTO-CustomerIdentityDTO.md)
 
 
 Methods
@@ -93,7 +105,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\CustomerIdentityDTO::getId($name)
+    string|null Mindbox\DTO\CustomerIdentityDTO::getId(string $name)
 
 
 
@@ -104,13 +116,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\CustomerIdentityDTO::getIds()
+    mixed Mindbox\DTO\CustomerIdentityDTO::getIds()
 
 
 
@@ -256,7 +268,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -267,7 +279,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

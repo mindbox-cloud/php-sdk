@@ -4,20 +4,23 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string                        id
- * @property ContentItemResponseCollection content
+ * Class PlaceholderResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string                        $id
+ * @property ContentItemResponseCollection $content
  **/
 class PlaceholderResponseDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'content' => ContentItemResponseCollection::class,
     ];
 
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'placeHolder';
 
