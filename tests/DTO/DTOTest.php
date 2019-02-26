@@ -14,12 +14,12 @@ use PHPUnit\Framework\TestCase;
 class DTOTest extends TestCase
 {
     /**
-     * @var DTO
+     * @var string $dtoClassName
      */
     protected $dtoClassName = DTO::class;
 
     /**
-     * @param $items
+     * @param array $items
      *
      * @return DTO
      */
@@ -277,7 +277,7 @@ class DTOTest extends TestCase
     /**
      * @dataProvider getFieldsProvider
      *
-     * @param $items
+     * @param array $items
      */
     public function testGetField($items)
     {
@@ -307,8 +307,8 @@ class DTOTest extends TestCase
     /**
      * @dataProvider setFieldsProvider
      *
-     * @param $key
-     * @param $item
+     * @param string $key
+     * @param mixed  $item
      */
     public function testSetField($key, $item)
     {
@@ -322,7 +322,7 @@ class DTOTest extends TestCase
     /**
      * @dataProvider getFieldsProvider
      *
-     * @param $items
+     * @param array $items
      */
     public function testGetFieldNames($items)
     {
@@ -336,7 +336,7 @@ class DTOTest extends TestCase
     /**
      * @dataProvider getFieldsProvider
      *
-     * @param $items
+     * @param array $items
      */
     public function testAll($items)
     {
@@ -349,8 +349,8 @@ class DTOTest extends TestCase
     /**
      * @dataProvider asJsonFieldsProvider
      *
-     * @param $items
-     * @param $asJson
+     * @param array  $items
+     * @param string $asJson
      */
     public function testToJson($items, $asJson)
     {
@@ -362,8 +362,8 @@ class DTOTest extends TestCase
     /**
      * @dataProvider asArrayFieldsProvider
      *
-     * @param $items
-     * @param $asArray
+     * @param array $items
+     * @param array $asArray
      */
     public function testGetFieldsAsArray($items, $asArray)
     {
@@ -375,8 +375,8 @@ class DTOTest extends TestCase
     /**
      * @dataProvider asXmlFieldsProvider
      *
-     * @param $items
-     * @param $asXml
+     * @param array  $items
+     * @param string $asXml
      */
     public function testToXML($items, $asXml)
     {
@@ -388,7 +388,7 @@ class DTOTest extends TestCase
     /**
      * @dataProvider getFieldsProvider
      *
-     * @param $items
+     * @param array $items
      */
     public function testCount($items)
     {

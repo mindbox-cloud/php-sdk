@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 class AbstractMindboxHelperTest extends TestCase
 {
     /**
-     * @var AbstractMindboxHelper $helper
+     * @var AbstractMindboxHelper|\PHPUnit\Framework\MockObject\MockObject $helper
      */
     protected $helper;
 
@@ -24,13 +24,21 @@ class AbstractMindboxHelperTest extends TestCase
 
     public function setUp()
     {
-        $this->mindboxClientStub = $this->getMockBuilder(\Mindbox\Clients\AbstractMindboxClient::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        $this->mindboxClientStub = $this->getMindboxClientStub();
 
         $this->helper = $this->getMockBuilder(AbstractMindboxHelper::class)
             ->setConstructorArgs([$this->mindboxClientStub])
             ->setMethodsExcept(['getLastResponse', 'sendRequest', 'getRequest'])
+            ->getMock();
+    }
+
+    /**
+     * @return \Mindbox\Clients\AbstractMindboxClient|\PHPUnit\Framework\MockObject\MockObject
+     */
+    protected function getMindboxClientStub()
+    {
+        return $this->getMockBuilder(\Mindbox\Clients\AbstractMindboxClient::class)
+            ->disableOriginalConstructor()
             ->getMock();
     }
 

@@ -78,7 +78,7 @@ class MindboxTest extends TestCase
      * @expectedException \Mindbox\Exceptions\MindboxConfigException
      * @covers ::__construct
      *
-     * @param $config
+     * @param array $config
      */
     public function testConstructWithIncorrectConfigWillThrowsException($config)
     {

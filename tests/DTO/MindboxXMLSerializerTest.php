@@ -33,9 +33,6 @@ class MindboxXMLSerializerTest extends TestCase
             [
                 '<?xml version="1.0" encoding="utf-8"?><order><lines><line><quantity>3</quantity><discounts><discount><type>promoCode</type><id>00000CS69A</id><amount>243</amount></discount><discount><type>balance</type><amount>1398</amount><balanceType><ids><systemName>Base</systemName></ids></balanceType></discount></discounts></line></lines></order>',
             ],
-            /*[
-                '<?xml version="1.0" encoding="utf-8"?><order><lines><line><sku><skuId>315</skuId><basePricePerItem>1000</basePricePerItem></sku><quantity>3</quantity></line><line><sku><skuId>163</skuId><basePricePerItem>1000</basePricePerItem></sku><quantity>3</quantity></line><someMultipleField><someField>firstValue</someField></someMultipleField><someMultipleField><someField>firstValue</someField></someMultipleField></lines></order>',
-            ],*/
         ];
     }
 
@@ -83,7 +80,7 @@ class MindboxXMLSerializerTest extends TestCase
     /**
      * @dataProvider xmlDataProvider
      *
-     * @param $initialXml
+     * @param string $initialXml
      */
     public function testFromArrayToXML($initialXml)
     {
@@ -98,7 +95,7 @@ class MindboxXMLSerializerTest extends TestCase
     /**
      * @dataProvider arrayDataProvider
      *
-     * @param $initialArray
+     * @param array $initialArray
      */
     public function testFromXMLToArray($initialArray)
     {
@@ -107,5 +104,13 @@ class MindboxXMLSerializerTest extends TestCase
         $array      = $serializer->fromXMLToArray($xml);
 
         $this->assertSame($initialArray, $array);
+    }
+
+    public function testFromArrayToXMLWithIncorrectXml()
+    {
+        $serializer = new MindboxXMLSerializer();
+        $array      = $serializer->fromXMLToArray('this is not xml');
+
+        $this->assertSame([], $array);
     }
 }

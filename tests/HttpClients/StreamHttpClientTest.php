@@ -146,7 +146,7 @@ class StreamHttpClientTest extends TestCase
      * @dataProvider timeoutDataProvider
      * @covers ::__construct
      *
-     * @param $timeout
+     * @param mixed $timeout
      */
     public function testStreamHttpClientConstructor($timeout)
     {

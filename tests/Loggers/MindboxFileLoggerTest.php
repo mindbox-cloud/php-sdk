@@ -80,7 +80,7 @@ class MindboxFileLoggerTest extends TestCase
     /**
      * @dataProvider acceptableLogLevelsDataProvider
      *
-     * @param $logLevel
+     * @param mixed $logLevel
      */
     public function testLoggerConstructor($logLevel)
     {
@@ -128,7 +128,7 @@ class MindboxFileLoggerTest extends TestCase
      * @dataProvider incorrectLogLevelsDataProvider
      * @expectedException \Mindbox\Exceptions\MindboxConfigException
      *
-     * @param $logLevel
+     * @param mixed $logLevel
      */
     public function testHandlerConstructorThrowsExceptionWhenLogLevelIncorrect($logLevel)
     {

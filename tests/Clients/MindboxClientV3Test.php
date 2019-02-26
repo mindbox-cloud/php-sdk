@@ -89,9 +89,9 @@ class MindboxClientV3Test extends AbstractMindboxClientTest
     }
 
     /**
-     * @param $secret
-     * @param $httpClient
-     * @param $loggerClient
+     * @param mixed $secret
+     * @param mixed $httpClient
+     * @param mixed $loggerClient
      *
      * @return MindboxClientV3|\PHPUnit\Framework\MockObject\MockObject
      */

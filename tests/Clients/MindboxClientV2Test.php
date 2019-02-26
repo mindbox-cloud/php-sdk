@@ -58,7 +58,7 @@ class MindboxClientV2Test extends AbstractMindboxClientTest
     }
 
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Mindbox\DTO\DTO
      */
     protected function getDTOStub()
     {
@@ -74,9 +74,9 @@ class MindboxClientV2Test extends AbstractMindboxClientTest
     }
 
     /**
-     * @param $secret
-     * @param $httpClient
-     * @param $loggerClient
+     * @param mixed $secret
+     * @param mixed $httpClient
+     * @param mixed $loggerClient
      *
      * @return MindboxClientV2
      */
@@ -94,7 +94,7 @@ class MindboxClientV2Test extends AbstractMindboxClientTest
     }
 
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Mindbox\DTO\MindboxXMLSerializer
      */
     protected function getXmlSerializerStub()
     {
