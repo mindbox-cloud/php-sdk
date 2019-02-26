@@ -51,7 +51,7 @@ class HttpClientFactory
      * Определение и инициализация клиента по умолчанию.
      * При наличиии расширения cURL возвращает экземпляр CurlHttpClient, иначе StreamHttpClient.
      *
-     * @param int $timeout Таймаут соединения.
+     * @param int|null $timeout Таймаут соединения.
      *
      * @return IHttpClient
      */

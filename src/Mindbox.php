@@ -2,9 +2,8 @@
 
 namespace Mindbox;
 
+use Mindbox\Clients\AbstractMindboxClient;
 use Mindbox\Clients\MindboxClientFactory;
-use Mindbox\Clients\MindboxClientV2;
-use Mindbox\Clients\MindboxClientV3;
 use Mindbox\Exceptions\MindboxConfigException;
 use Mindbox\Exceptions\MindboxException;
 use Mindbox\Helpers\CustomerHelper;
@@ -34,12 +33,12 @@ class Mindbox
     ];
 
     /**
-     * @var MindboxClientV3 Экземпляр клиента для отправки запросов к Mindbox v3 API.
+     * @var AbstractMindboxClient Экземпляр клиента для отправки запросов к Mindbox v3 API.
      */
     private $client;
 
     /**
-     * @var MindboxClientV2 Экземпляр клиента для отправки запросов к Mindbox v2.1 API.
+     * @var AbstractMindboxClient Экземпляр клиента для отправки запросов к Mindbox v2.1 API.
      */
     private $clientV2;
 
@@ -141,7 +140,7 @@ class Mindbox
     /**
      * Геттер для $client.
      *
-     * @return MindboxClientV3
+     * @return AbstractMindboxClient
      */
     public function getClientV3()
     {
@@ -151,7 +150,7 @@ class Mindbox
     /**
      * Геттер для $clientV2.
      *
-     * @return MindboxClientV2
+     * @return AbstractMindboxClient
      */
     public function getClientV2()
     {
@@ -163,7 +162,7 @@ class Mindbox
      *
      * @param string $apiVersion Версия API.
      *
-     * @return MindboxClientV2|MindboxClientV3
+     * @return AbstractMindboxClient
      * @throws MindboxException
      */
     public function getClient($apiVersion)
