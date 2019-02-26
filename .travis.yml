@@ -1,0 +1,31 @@
+# Project language
+language: php
+
+# List of PHP version we want to test
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+  - 7.3
+
+# Allows use container-based infrastructure
+sudo: false
+
+# Cache composer packages so "composer install" is faster
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+# Update composer
+before_install:
+  - travis_retry composer self-update
+
+# Install composer dependencies
+install:
+  - travis_retry composer install --prefer-dist --no-interaction
+
+# Run script
+script:
+  - vendor/bin/phpcs
+  - vendor/bin/phpunit --coverage-text
