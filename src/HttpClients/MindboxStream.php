@@ -45,7 +45,7 @@ class MindboxStream
         $rawHeaders = !empty($http_response_header) ? $http_response_header : [];
         $this->setRawHeaders($rawHeaders);
 
-        return trim($rawBody);
+        return trim((string)$rawBody);
     }
 
     /**

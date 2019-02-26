@@ -21,7 +21,7 @@ class HttpClientRawResponse
     private $headers;
 
     /**
-     * @var array Тело ответа.
+     * @var string Тело ответа.
      */
     private $body;
 

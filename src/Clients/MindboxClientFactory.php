@@ -26,7 +26,7 @@ class MindboxClientFactory
      * @param IHttpClient     $httpClient Экземпляр HTTP клиента.
      * @param LoggerInterface $logger     Экземпляр логгера.
      *
-     * @return AbstractMindboxClient
+     * @return MindboxClientV3|MindboxClientV2
      */
     public function createMindboxClient(
         $apiVersion,
