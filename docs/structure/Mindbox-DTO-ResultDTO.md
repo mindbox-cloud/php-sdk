@@ -1,7 +1,7 @@
 Mindbox\DTO\ResultDTO
 ===============
 
-Class DTO
+Class ResultDTO
 
 
 
@@ -63,11 +63,121 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $status
 
-    public string 
+    public string $status
 
-totalCount
+
+
+
+
+* Visibility: **public**
+
+
+### $validationMessages
+
+    public \Mindbox\DTO\ValidationMessageResponseCollection $validationMessages
+
+
+
+
+
+* Visibility: **public**
+
+
+### $customer
+
+    public \Mindbox\DTO\CustomerResponseDTO $customer
+
+
+
+
+
+* Visibility: **public**
+
+
+### $smsConfirmation
+
+    public \Mindbox\DTO\SmsConfirmationResponseDTO $smsConfirmation
+
+
+
+
+
+* Visibility: **public**
+
+
+### $mergedCustomers
+
+    public \Mindbox\DTO\MergeCustomersResponseDTO $mergedCustomers
+
+
+
+
+
+* Visibility: **public**
+
+
+### $orders
+
+    public \Mindbox\DTO\OrderResponseCollection $orders
+
+
+
+
+
+* Visibility: **public**
+
+
+### $customerActions
+
+    public \Mindbox\DTO\CustomerActionResponseCollection $customerActions
+
+
+
+
+
+* Visibility: **public**
+
+
+### $customerSegmentations
+
+    public \Mindbox\DTO\CustomerSegmentationResponseCollection $customerSegmentations
+
+
+
+
+
+* Visibility: **public**
+
+
+### $productList
+
+    public \Mindbox\DTO\ProductListItemResponseCollection $productList
+
+
+
+
+
+* Visibility: **public**
+
+
+### $balances
+
+    public \Mindbox\DTO\BalanceResponseCollection $balances
+
+
+
+
+
+* Visibility: **public**
+
+
+### $totalCount
+
+    public string $totalCount
+
+
 
 
 
@@ -355,7 +465,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -366,7 +476,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

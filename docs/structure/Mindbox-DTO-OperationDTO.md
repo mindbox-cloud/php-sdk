@@ -1,7 +1,7 @@
 Mindbox\DTO\OperationDTO
 ===============
 
-Class DTO
+Class OperationDTO
 
 
 
@@ -63,11 +63,99 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $customer
 
-    public \Mindbox\DTO\SetProductCountInListRequestDTO 
+    public \Mindbox\DTO\CustomerRequestDTO $customer
 
-setProductCountInList
+
+
+
+
+* Visibility: **public**
+
+
+### $authentificationCode
+
+    public string $authentificationCode
+
+
+
+
+
+* Visibility: **public**
+
+
+### $smsConfirmation
+
+    public \Mindbox\DTO\SmsConfirmationRequestDTO $smsConfirmation
+
+
+
+
+
+* Visibility: **public**
+
+
+### $mergeCustomers
+
+    public \Mindbox\DTO\MergeCustomersRequestDTO $mergeCustomers
+
+
+
+
+
+* Visibility: **public**
+
+
+### $page
+
+    public \Mindbox\DTO\PageRequestDTO $page
+
+
+
+
+
+* Visibility: **public**
+
+
+### $productList
+
+    public \Mindbox\DTO\ProductListItemRequestCollection $productList
+
+
+
+
+
+* Visibility: **public**
+
+
+### $addProductToList
+
+    public \Mindbox\DTO\AddProductToListRequestDTO $addProductToList
+
+
+
+
+
+* Visibility: **public**
+
+
+### $removeProductFromList
+
+    public \Mindbox\DTO\RemoveProductFromListRequestDTO $removeProductFromList
+
+
+
+
+
+* Visibility: **public**
+
+
+### $setProductCountInList
+
+    public \Mindbox\DTO\SetProductCountInListRequestDTO $setProductCountInList
+
+
 
 
 
@@ -80,7 +168,7 @@ Methods
 
 ### getCustomer
 
-    \Mindbox\DTO\CustomerIdentityRequestDTO Mindbox\DTO\OperationDTO::getCustomer()
+    \Mindbox\DTO\CustomerRequestDTO Mindbox\DTO\OperationDTO::getCustomer()
 
 
 
@@ -444,7 +532,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -455,7 +543,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

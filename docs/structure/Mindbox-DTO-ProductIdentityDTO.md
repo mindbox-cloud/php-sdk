@@ -1,7 +1,7 @@
 Mindbox\DTO\ProductIdentityDTO
 ===============
 
-Class DTO
+Class ProductIdentityDTO
 
 
 
@@ -64,11 +64,11 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $ids
 
-    public array 
+    public array $ids
 
-ids
+
 
 
 
@@ -81,7 +81,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\ProductIdentityDTO::getId($name)
+    string|null Mindbox\DTO\ProductIdentityDTO::getId(string $name)
 
 
 
@@ -91,13 +91,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\ProductIdentityDTO::getIds()
+    mixed Mindbox\DTO\ProductIdentityDTO::getIds()
 
 
 
@@ -242,7 +242,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -253,7 +253,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

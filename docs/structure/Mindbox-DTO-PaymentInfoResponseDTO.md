@@ -1,7 +1,7 @@
 Mindbox\DTO\PaymentInfoResponseDTO
 ===============
 
-Class DTO
+Class PaymentInfoResponseDTO
 
 
 
@@ -63,11 +63,33 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $type
 
-    public \Mindbox\DTO\GiftCardResponseDTO 
+    public string $type
 
-giftCard
+
+
+
+
+* Visibility: **public**
+
+
+### $availableAmountForCurrentOrder
+
+    public string $availableAmountForCurrentOrder
+
+
+
+
+
+* Visibility: **public**
+
+
+### $giftCard
+
+    public \Mindbox\DTO\GiftCardResponseDTO $giftCard
+
+
 
 
 
@@ -251,7 +273,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -262,7 +284,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

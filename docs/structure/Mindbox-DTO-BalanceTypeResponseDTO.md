@@ -1,7 +1,7 @@
 Mindbox\DTO\BalanceTypeResponseDTO
 ===============
 
-Class DTO
+Class BalanceTypeResponseDTO
 
 
 
@@ -74,11 +74,11 @@ Properties
 * Visibility: **public**
 
 
-### 
+### $ids
 
-    public array 
+    public array $ids
 
-ids
+
 
 
 
@@ -105,7 +105,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\BalanceTypeDTO::getId($name)
+    string|null Mindbox\DTO\BalanceTypeDTO::getId(string $name)
 
 
 
@@ -116,13 +116,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\BalanceTypeDTO::getIds()
+    mixed Mindbox\DTO\BalanceTypeDTO::getIds()
 
 
 
@@ -268,7 +268,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -279,7 +279,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

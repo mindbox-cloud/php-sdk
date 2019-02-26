@@ -1,7 +1,7 @@
 Mindbox\DTO\ContentItemResponseDTO
 ===============
 
-Class DTO
+Class ContentItemResponseDTO
 
 
 
@@ -63,11 +63,33 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $type
 
-    public string 
+    public string $type
 
-value
+
+
+
+
+* Visibility: **public**
+
+
+### $promoActionId
+
+    public string $promoActionId
+
+
+
+
+
+* Visibility: **public**
+
+
+### $value
+
+    public string $value
+
+
 
 
 
@@ -106,7 +128,7 @@ Methods
 
 ### getValue
 
-    string Mindbox\DTO\ContentItemResponseDTO::getValue()
+    mixed Mindbox\DTO\ContentItemResponseDTO::getValue()
 
 
 
@@ -251,7 +273,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -262,7 +284,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

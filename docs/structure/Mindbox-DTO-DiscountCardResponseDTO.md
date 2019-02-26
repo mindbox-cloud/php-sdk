@@ -1,7 +1,7 @@
 Mindbox\DTO\DiscountCardResponseDTO
 ===============
 
-Class DTO
+Class DiscountCardResponseDTO
 
 
 
@@ -63,11 +63,33 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $type
 
-    public string 
+    public \Mindbox\DTO\DiscountCardTypeResponseDTO $type
 
-status
+
+
+
+
+* Visibility: **public**
+
+
+### $ids
+
+    public array $ids
+
+
+
+
+
+* Visibility: **public**
+
+
+### $status
+
+    public string $status
+
+
 
 
 
@@ -106,7 +128,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\DiscountCardResponseDTO::getId($name)
+    string|null Mindbox\DTO\DiscountCardResponseDTO::getId(string $name)
 
 
 
@@ -116,13 +138,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\DiscountCardResponseDTO::getIds()
+    mixed Mindbox\DTO\DiscountCardResponseDTO::getIds()
 
 
 
@@ -267,7 +289,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -278,7 +300,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

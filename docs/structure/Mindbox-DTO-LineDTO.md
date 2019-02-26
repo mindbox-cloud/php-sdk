@@ -1,7 +1,7 @@
 Mindbox\DTO\LineDTO
 ===============
 
-Class DTO
+Class LineDTO
 
 
 
@@ -64,11 +64,33 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $quantity
 
-    public string 
+    public string $quantity
 
-status
+
+
+
+
+* Visibility: **public**
+
+
+### $customFields
+
+    public array $customFields
+
+
+
+
+
+* Visibility: **public**
+
+
+### $status
+
+    public string $status
+
+
 
 
 
@@ -107,7 +129,7 @@ Methods
 
 ### getCustomField
 
-    string|null Mindbox\DTO\LineDTO::getCustomField($name)
+    string|null Mindbox\DTO\LineDTO::getCustomField(string $name)
 
 
 
@@ -117,13 +139,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getCustomFields
 
-    array Mindbox\DTO\LineDTO::getCustomFields()
+    mixed Mindbox\DTO\LineDTO::getCustomFields()
 
 
 
@@ -268,7 +290,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -279,7 +301,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

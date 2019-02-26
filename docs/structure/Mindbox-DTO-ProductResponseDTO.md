@@ -1,7 +1,7 @@
 Mindbox\DTO\ProductResponseDTO
 ===============
 
-Class DTO
+Class ProductResponseDTO
 
 
 
@@ -63,15 +63,38 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $sku
 
-    public \Mindbox\DTO\CategoryResponseCollection 
+    public \Mindbox\DTO\SkuResponseDTO $sku
 
-categories
+
 
 
 
 * Visibility: **public**
+
+
+### $categories
+
+    public \Mindbox\DTO\CategoryResponseCollection $categories
+
+
+
+
+
+* Visibility: **public**
+
+
+### $ids
+
+    public array $ids
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\ProductIdentityDTO](Mindbox-DTO-ProductIdentityDTO.md)
 
 
 Methods
@@ -210,7 +233,7 @@ Methods
 
 ### getCustomField
 
-    string|null Mindbox\DTO\ProductResponseDTO::getCustomField($name)
+    string|null Mindbox\DTO\ProductResponseDTO::getCustomField(string $name)
 
 
 
@@ -220,13 +243,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getCustomFields
 
-    array Mindbox\DTO\ProductResponseDTO::getCustomFields()
+    mixed Mindbox\DTO\ProductResponseDTO::getCustomFields()
 
 
 
@@ -239,7 +262,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\ProductIdentityDTO::getId($name)
+    string|null Mindbox\DTO\ProductIdentityDTO::getId(string $name)
 
 
 
@@ -250,13 +273,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\ProductIdentityDTO::getIds()
+    mixed Mindbox\DTO\ProductIdentityDTO::getIds()
 
 
 
@@ -402,7 +425,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -413,7 +436,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

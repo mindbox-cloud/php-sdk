@@ -1,7 +1,7 @@
 Mindbox\DTO\PlaceholderResponseDTO
 ===============
 
-Class DTO
+Class PlaceholderResponseDTO
 
 
 
@@ -63,11 +63,22 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $id
 
-    public \Mindbox\DTO\ContentItemResponseCollection 
+    public string $id
 
-content
+
+
+
+
+* Visibility: **public**
+
+
+### $content
+
+    public \Mindbox\DTO\ContentItemResponseCollection $content
+
+
 
 
 
@@ -238,7 +249,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -249,7 +260,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

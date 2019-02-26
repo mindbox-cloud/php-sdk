@@ -1,7 +1,7 @@
 Mindbox\DTO\GiftCardDTO
 ===============
 
-Class DTO
+Class GiftCardDTO
 
 
 
@@ -64,11 +64,22 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $id
 
-    public string 
+    public string $id
 
-getFromPool
+
+
+
+
+* Visibility: **public**
+
+
+### $getFromPool
+
+    public string $getFromPool
+
+
 
 
 
@@ -239,7 +250,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -250,7 +261,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

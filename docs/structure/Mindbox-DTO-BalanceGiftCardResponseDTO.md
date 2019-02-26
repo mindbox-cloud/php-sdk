@@ -1,7 +1,7 @@
 Mindbox\DTO\BalanceGiftCardResponseDTO
 ===============
 
-Class DTO
+Class BalanceGiftCardResponseDTO
 
 
 
@@ -63,11 +63,33 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $total
 
-    public string 
+    public string $total
 
-used
+
+
+
+
+* Visibility: **public**
+
+
+### $available
+
+    public string $available
+
+
+
+
+
+* Visibility: **public**
+
+
+### $used
+
+    public string $used
+
+
 
 
 
@@ -251,7 +273,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -262,7 +284,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

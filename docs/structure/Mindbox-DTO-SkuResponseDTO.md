@@ -1,7 +1,7 @@
 Mindbox\DTO\SkuResponseDTO
 ===============
 
-Class DTO
+Class SkuResponseDTO
 
 
 
@@ -63,11 +63,11 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $ids
 
-    public array 
+    public array $ids
 
-ids
+
 
 
 
@@ -120,7 +120,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\SkuIdentityDTO::getId($name)
+    string|null Mindbox\DTO\SkuIdentityDTO::getId(string $name)
 
 
 
@@ -131,13 +131,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\SkuIdentityDTO::getIds()
+    mixed Mindbox\DTO\SkuIdentityDTO::getIds()
 
 
 
@@ -283,7 +283,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -294,7 +294,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

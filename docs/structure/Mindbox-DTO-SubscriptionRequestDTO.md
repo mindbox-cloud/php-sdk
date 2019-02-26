@@ -1,7 +1,7 @@
 Mindbox\DTO\SubscriptionRequestDTO
 ===============
 
-Class DTO
+Class SubscriptionRequestDTO
 
 
 
@@ -63,15 +63,63 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $valueByDefault
 
-    public string 
+    public string $valueByDefault
 
-valueByDefault
+
 
 
 
 * Visibility: **public**
+
+
+### $pointOfContact
+
+    public string $pointOfContact
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\SubscriptionDTO](Mindbox-DTO-SubscriptionDTO.md)
+
+
+### $topic
+
+    public string $topic
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\SubscriptionDTO](Mindbox-DTO-SubscriptionDTO.md)
+
+
+### $isSubscribed
+
+    public string $isSubscribed
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\SubscriptionDTO](Mindbox-DTO-SubscriptionDTO.md)
+
+
+### $brand
+
+    public string $brand
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\SubscriptionDTO](Mindbox-DTO-SubscriptionDTO.md)
 
 
 Methods
@@ -361,7 +409,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -372,7 +420,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

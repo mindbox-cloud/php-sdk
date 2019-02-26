@@ -1,7 +1,7 @@
 Mindbox\DTO\PromoCodeResponseDTO
 ===============
 
-Class DTO
+Class PromoCodeResponseDTO
 
 
 
@@ -63,11 +63,66 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $id
 
-    public string 
+    public string $id
 
-usedDateTimeUtc
+
+
+
+
+* Visibility: **public**
+
+
+### $status
+
+    public string $status
+
+
+
+
+
+* Visibility: **public**
+
+
+### $type
+
+    public \Mindbox\DTO\PromoCodeTypeResponseDTO $type
+
+
+
+
+
+* Visibility: **public**
+
+
+### $availableFromDateTimeUtc
+
+    public string $availableFromDateTimeUtc
+
+
+
+
+
+* Visibility: **public**
+
+
+### $availableTillDateTimeUtc
+
+    public string $availableTillDateTimeUtc
+
+
+
+
+
+* Visibility: **public**
+
+
+### $usedDateTimeUtc
+
+    public string $usedDateTimeUtc
+
+
 
 
 
@@ -290,7 +345,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -301,7 +356,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

@@ -225,6 +225,7 @@ Methods
 
 
 * Visibility: **protected**
+* This method is **abstract**.
 * This method is defined by [Mindbox\Clients\AbstractMindboxClient](Mindbox-Clients-AbstractMindboxClient.md)
 
 
@@ -237,11 +238,12 @@ Methods
 
     array Mindbox\Clients\AbstractMindboxClient::prepareResponseBody(string $rawBody)
 
-Конвертация тела ответа из json в массив.
+Конвертация тела ответа в массив.
 
 
 
 * Visibility: **protected**
+* This method is **abstract**.
 * This method is defined by [Mindbox\Clients\AbstractMindboxClient](Mindbox-Clients-AbstractMindboxClient.md)
 
 

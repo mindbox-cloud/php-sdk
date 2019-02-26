@@ -63,15 +63,39 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $product
 
-    public \Mindbox\DTO\ProductRequestDTO 
+    public \Mindbox\DTO\ProductRequestDTO $product
 
-product
+
 
 
 
 * Visibility: **public**
+
+
+### $count
+
+    public string $count
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\ProductListItemDTO](Mindbox-DTO-ProductListItemDTO.md)
+
+
+### $price
+
+    public string $price
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\ProductListItemDTO](Mindbox-DTO-ProductListItemDTO.md)
 
 
 Methods
@@ -93,7 +117,7 @@ Methods
 
 ### setProduct
 
-    mixed Mindbox\DTO\ProductListItemRequestDTO::setProduct(\Mindbox\DTO\ProductRequestDTO $product)
+    mixed Mindbox\DTO\ProductListItemRequestDTO::setProduct(\Mindbox\DTO\ProductRequestDTO|array $product)
 
 
 
@@ -103,7 +127,7 @@ Methods
 
 
 #### Arguments
-* $product **[Mindbox\DTO\ProductRequestDTO](Mindbox-DTO-ProductRequestDTO.md)**
+* $product **[Mindbox\DTO\ProductRequestDTO](Mindbox-DTO-ProductRequestDTO.md)|array**
 
 
 
@@ -301,7 +325,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -312,7 +336,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

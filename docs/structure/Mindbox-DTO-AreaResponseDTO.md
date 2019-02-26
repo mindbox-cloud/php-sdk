@@ -63,11 +63,23 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $ids
 
-    public string 
+    public array $ids
 
-name
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\AreaDTO](Mindbox-DTO-AreaDTO.md)
+
+
+### $name
+
+    public string $name
+
+
 
 
 
@@ -95,7 +107,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\AreaDTO::getId($name)
+    string|null Mindbox\DTO\AreaDTO::getId(string $name)
 
 
 
@@ -106,13 +118,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\AreaDTO::getIds()
+    mixed Mindbox\DTO\AreaDTO::getIds()
 
 
 
@@ -258,7 +270,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -269,7 +281,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

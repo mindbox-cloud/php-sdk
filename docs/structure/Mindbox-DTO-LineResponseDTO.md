@@ -1,7 +1,7 @@
 Mindbox\DTO\LineResponseDTO
 ===============
 
-Class DTO
+Class LineResponseDTO
 
 
 
@@ -63,15 +63,106 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $sku
 
-    public string 
+    public \Mindbox\DTO\SkuResponseDTO $sku
 
-discountedPrice
+
 
 
 
 * Visibility: **public**
+
+
+### $basePricePerItem
+
+    public string $basePricePerItem
+
+
+
+
+
+* Visibility: **public**
+
+
+### $appliedDiscounts
+
+    public \Mindbox\DTO\AppliedDiscountResponseCollection $appliedDiscounts
+
+
+
+
+
+* Visibility: **public**
+
+
+### $placeHolders
+
+    public \Mindbox\DTO\PlaceholderResponseCollection $placeHolders
+
+
+
+
+
+* Visibility: **public**
+
+
+### $giftCard
+
+    public \Mindbox\DTO\GiftCardResponseDTO $giftCard
+
+
+
+
+
+* Visibility: **public**
+
+
+### $discountedPrice
+
+    public string $discountedPrice
+
+
+
+
+
+* Visibility: **public**
+
+
+### $quantity
+
+    public string $quantity
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\LineDTO](Mindbox-DTO-LineDTO.md)
+
+
+### $customFields
+
+    public array $customFields
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\LineDTO](Mindbox-DTO-LineDTO.md)
+
+
+### $status
+
+    public string $status
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\LineDTO](Mindbox-DTO-LineDTO.md)
 
 
 Methods
@@ -186,7 +277,7 @@ Methods
 
 ### getCustomField
 
-    string|null Mindbox\DTO\LineDTO::getCustomField($name)
+    string|null Mindbox\DTO\LineDTO::getCustomField(string $name)
 
 
 
@@ -197,13 +288,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getCustomFields
 
-    array Mindbox\DTO\LineDTO::getCustomFields()
+    mixed Mindbox\DTO\LineDTO::getCustomFields()
 
 
 
@@ -349,7 +440,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -360,7 +451,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

@@ -1,7 +1,7 @@
 Mindbox\DTO\SetProductListRequestDTO
 ===============
 
-Class DTO
+Class SetProductListRequestDTO
 
 
 
@@ -63,11 +63,11 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $products
 
-    public \Mindbox\DTO\ProductListItemRequestCollection 
+    public \Mindbox\DTO\ProductListItemRequestCollection $products
 
-products
+
 
 
 
@@ -241,7 +241,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -252,7 +252,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

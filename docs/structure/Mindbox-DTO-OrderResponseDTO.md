@@ -1,7 +1,7 @@
 Mindbox\DTO\OrderResponseDTO
 ===============
 
-Class DTO
+Class OrderResponseDTO
 
 
 
@@ -63,15 +63,161 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $discountedTotalPrice
 
-    public \Mindbox\DTO\PaymentResponseCollection 
+    public string $discountedTotalPrice
 
-payments
+
 
 
 
 * Visibility: **public**
+
+
+### $appliedDiscounts
+
+    public \Mindbox\DTO\AppliedDiscountResponseCollection $appliedDiscounts
+
+
+
+
+
+* Visibility: **public**
+
+
+### $totalAcquiredBalanceChange
+
+    public string $totalAcquiredBalanceChange
+
+
+
+
+
+* Visibility: **public**
+
+
+### $createdPointOfContact
+
+    public string $createdPointOfContact
+
+
+
+
+
+* Visibility: **public**
+
+
+### $placeHolders
+
+    public \Mindbox\DTO\PlaceholderResponseCollection $placeHolders
+
+
+
+
+
+* Visibility: **public**
+
+
+### $discountsInfo
+
+    public \Mindbox\DTO\DiscountInfoResponseCollection $discountsInfo
+
+
+
+
+
+* Visibility: **public**
+
+
+### $paymentsInfo
+
+    public \Mindbox\DTO\PaymentInfoResponseCollection $paymentsInfo
+
+
+
+
+
+* Visibility: **public**
+
+
+### $createdDateTimeUtc
+
+    public string $createdDateTimeUtc
+
+
+
+
+
+* Visibility: **public**
+
+
+### $customer
+
+    public \Mindbox\DTO\CustomerResponseDTO $customer
+
+
+
+
+
+* Visibility: **public**
+
+
+### $lines
+
+    public \Mindbox\DTO\LineResponseCollection $lines
+
+
+
+
+
+* Visibility: **public**
+
+
+### $payments
+
+    public \Mindbox\DTO\PaymentResponseCollection $payments
+
+
+
+
+
+* Visibility: **public**
+
+
+### $ids
+
+    public array $ids
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\OrderDTO](Mindbox-DTO-OrderDTO.md)
+
+
+### $pointOfContact
+
+    public string $pointOfContact
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\OrderDTO](Mindbox-DTO-OrderDTO.md)
+
+
+### $area
+
+    public string $area
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\OrderDTO](Mindbox-DTO-OrderDTO.md)
 
 
 Methods
@@ -251,7 +397,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\OrderDTO::getId($name)
+    string|null Mindbox\DTO\OrderDTO::getId(string $name)
 
 
 
@@ -262,13 +408,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\OrderDTO::getIds()
+    mixed Mindbox\DTO\OrderDTO::getIds()
 
 
 
@@ -414,7 +560,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -425,7 +571,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

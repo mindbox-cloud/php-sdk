@@ -1,7 +1,7 @@
 Mindbox\DTO\CustomerBalanceChangeResponseDTO
 ===============
 
-Class DTO
+Class CustomerBalanceChangeResponseDTO
 
 
 
@@ -63,11 +63,44 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $changeAmount
 
-    public \Mindbox\DTO\BalanceChangeKindResponseDTO 
+    public string $changeAmount
 
-balanceChangeKind
+
+
+
+
+* Visibility: **public**
+
+
+### $expirationDateTimeUtc
+
+    public string $expirationDateTimeUtc
+
+
+
+
+
+* Visibility: **public**
+
+
+### $isAvailable
+
+    public string $isAvailable
+
+
+
+
+
+* Visibility: **public**
+
+
+### $balanceChangeKind
+
+    public \Mindbox\DTO\BalanceChangeKindResponseDTO $balanceChangeKind
+
+
 
 
 
@@ -264,7 +297,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -275,7 +308,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 

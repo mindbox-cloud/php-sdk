@@ -1,7 +1,7 @@
 Mindbox\DTO\CustomerResponseDTO
 ===============
 
-Class MergeCustomersRequestDTO
+Class CustomerResponseDTO
 
 
 
@@ -63,15 +63,181 @@ Properties
 * Visibility: **protected**
 
 
-### 
+### $processingStatus
 
-    public string 
+    public string $processingStatus
 
-timeZoneSource
+
 
 
 
 * Visibility: **public**
+
+
+### $sex
+
+    public string $sex
+
+
+
+
+
+* Visibility: **public**
+
+
+### $isEmailInvalid
+
+    public string $isEmailInvalid
+
+
+
+
+
+* Visibility: **public**
+
+
+### $isEmailConfirmed
+
+    public string $isEmailConfirmed
+
+
+
+
+
+* Visibility: **public**
+
+
+### $pendingEmail
+
+    public string $pendingEmail
+
+
+
+
+
+* Visibility: **public**
+
+
+### $isMobilePhoneInvalid
+
+    public string $isMobilePhoneInvalid
+
+
+
+
+
+* Visibility: **public**
+
+
+### $isMobilePhoneConfirmed
+
+    public string $isMobilePhoneConfirmed
+
+
+
+
+
+* Visibility: **public**
+
+
+### $pendingMobilePhone
+
+    public string $pendingMobilePhone
+
+
+
+
+
+* Visibility: **public**
+
+
+### $area
+
+    public \Mindbox\DTO\AreaResponseDTO $area
+
+
+
+
+
+* Visibility: **public**
+
+
+### $subscriptions
+
+    public \Mindbox\DTO\SubscriptionResponseCollection $subscriptions
+
+
+
+
+
+* Visibility: **public**
+
+
+### $changeDateTimeUtc
+
+    public string $changeDateTimeUtc
+
+
+
+
+
+* Visibility: **public**
+
+
+### $status
+
+    public string $status
+
+
+
+
+
+* Visibility: **public**
+
+
+### $discountCards
+
+    public \Mindbox\DTO\DiscountCardResponseCollection $discountCards
+
+
+
+
+
+* Visibility: **public**
+
+
+### $ianaTimeZone
+
+    public string $ianaTimeZone
+
+
+
+
+
+* Visibility: **public**
+
+
+### $timeZoneSource
+
+    public string $timeZoneSource
+
+
+
+
+
+* Visibility: **public**
+
+
+### $ids
+
+    public array $ids
+
+
+
+
+
+* Visibility: **public**
+* This property is defined by [Mindbox\DTO\CustomerIdentityDTO](Mindbox-DTO-CustomerIdentityDTO.md)
 
 
 Methods
@@ -354,7 +520,7 @@ Methods
 
 ### getCustomField
 
-    string|null Mindbox\DTO\CustomerResponseDTO::getCustomField($name)
+    string|null Mindbox\DTO\CustomerResponseDTO::getCustomField(string $name)
 
 
 
@@ -364,13 +530,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getCustomFields
 
-    array Mindbox\DTO\CustomerResponseDTO::getCustomFields()
+    mixed Mindbox\DTO\CustomerResponseDTO::getCustomFields()
 
 
 
@@ -383,7 +549,7 @@ Methods
 
 ### getId
 
-    string|null Mindbox\DTO\CustomerIdentityDTO::getId($name)
+    string|null Mindbox\DTO\CustomerIdentityDTO::getId(string $name)
 
 
 
@@ -394,13 +560,13 @@ Methods
 
 
 #### Arguments
-* $name **mixed**
+* $name **string**
 
 
 
 ### getIds
 
-    array Mindbox\DTO\CustomerIdentityDTO::getIds()
+    mixed Mindbox\DTO\CustomerIdentityDTO::getIds()
 
 
 
@@ -546,7 +712,7 @@ Methods
 
 ### unsetMetaInfo
 
-    array Mindbox\DTO\DTO::unsetMetaInfo(array $value)
+    array Mindbox\DTO\DTO::unsetMetaInfo(mixed $value)
 
 Рекурсивно убирает из переданного массив мета-информацию.
 
@@ -557,7 +723,7 @@ Methods
 
 
 #### Arguments
-* $value **array** - &lt;p&gt;Массив данных.&lt;/p&gt;
+* $value **mixed** - &lt;p&gt;Массив данных.&lt;/p&gt;
 
 
 
