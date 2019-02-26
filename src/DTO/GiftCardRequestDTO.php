@@ -4,6 +4,9 @@
 namespace Mindbox\DTO;
 
 /**
+ * Class GiftCardRequestDTO
+ *
+ * @package Mindbox\DTO
  **/
 class GiftCardRequestDTO extends GiftCardDTO
 {

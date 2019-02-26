@@ -4,6 +4,9 @@
 namespace Mindbox\DTO;
 
 /**
+ * Class DiscountRequestDTO
+ *
+ * @package Mindbox\DTO
  **/
 class DiscountRequestDTO extends DiscountDTO
 {

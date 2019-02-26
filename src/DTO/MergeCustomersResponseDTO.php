@@ -4,13 +4,16 @@
 namespace Mindbox\DTO;
 
 /**
- * @property CustomerIdentityResponseCollection customersToMerge
- * @property CustomerIdentityResponseDTO        resultingCustomer
+ * Class MergeCustomersResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property CustomerIdentityResponseCollection $customersToMerge
+ * @property CustomerIdentityResponseDTO        $resultingCustomer
  **/
 class MergeCustomersResponseDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'customersToMerge'  => CustomerIdentityResponseCollection::class,
@@ -18,7 +21,7 @@ class MergeCustomersResponseDTO extends DTO
     ];
 
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'result';
 

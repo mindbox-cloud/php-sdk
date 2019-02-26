@@ -4,24 +4,27 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string                   id
- * @property string                   status
- * @property PromoCodeTypeResponseDTO type
- * @property string                   availableFromDateTimeUtc
- * @property string                   availableTillDateTimeUtc
- * @property string                   usedDateTimeUtc
+ * Class PromoCodeResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string                   $id
+ * @property string                   $status
+ * @property PromoCodeTypeResponseDTO $type
+ * @property string                   $availableFromDateTimeUtc
+ * @property string                   $availableTillDateTimeUtc
+ * @property string                   $usedDateTimeUtc
  **/
 class PromoCodeResponseDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'type' => PromoCodeTypeResponseDTO::class,
     ];
 
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'promoCode';
 

@@ -4,14 +4,17 @@
 namespace Mindbox\DTO;
 
 /**
- * @property array ids
+ * Class PointOfContactResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property array $ids
  **/
 class PointOfContactResponseDTO extends DTO
 {
     use IdentityDTO;
 
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'pointOfContact';
 }

@@ -4,15 +4,18 @@
 namespace Mindbox\DTO;
 
 /**
- * @property SkuRequestDTO             sku
- * @property CategoryRequestCollection categories
+ * Class ProductRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property SkuRequestDTO             $sku
+ * @property CategoryRequestCollection $categories
  **/
 class ProductRequestDTO extends ProductIdentityRequestDTO
 {
     use ProductDTO, CustomFieldRequestDTO;
 
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'sku'        => SkuRequestDTO::class,

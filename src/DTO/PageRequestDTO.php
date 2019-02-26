@@ -4,15 +4,18 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string sinceDateTimeUtc
- * @property string tillDateTimeUtc
- * @property string pageNumber
- * @property string itemsPerPage
+ * Class PageRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $sinceDateTimeUtc
+ * @property string $tillDateTimeUtc
+ * @property string $pageNumber
+ * @property string $itemsPerPage
  **/
 class PageRequestDTO extends DTO
 {
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'page';
 

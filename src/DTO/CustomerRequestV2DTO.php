@@ -4,10 +4,10 @@
 namespace Mindbox\DTO;
 
 /**
- * Class MergeCustomersRequestDTO
+ * Class CustomerRequestV2DTO
  *
  * @package Mindbox\DTO
- * @property string isAuthorized
+ * @property string $isAuthorized
  */
 class CustomerRequestV2DTO extends CustomerRequestDTO
 {

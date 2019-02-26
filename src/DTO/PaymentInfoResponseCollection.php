@@ -11,7 +11,7 @@ namespace Mindbox\DTO;
 class PaymentInfoResponseCollection extends DTOCollection
 {
     /**
-     * @var string Map of collections`s fields.
+     * @var string Название элементов коллекции для корректной генерации xml.
      */
     protected static $collectionItemsName = PaymentInfoResponseDTO::class;
 }

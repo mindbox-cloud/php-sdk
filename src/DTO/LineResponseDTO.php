@@ -4,17 +4,20 @@
 namespace Mindbox\DTO;
 
 /**
- * @property SkuResponseDTO                    sku
- * @property string                            basePricePerItem
- * @property AppliedDiscountResponseCollection appliedDiscounts
- * @property PlaceholderResponseCollection     placeHolders
- * @property GiftCardResponseDTO               giftCard
- * @property string                            discountedPrice
+ * Class LineResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property SkuResponseDTO                    $sku
+ * @property string                            $basePricePerItem
+ * @property AppliedDiscountResponseCollection $appliedDiscounts
+ * @property PlaceholderResponseCollection     $placeHolders
+ * @property GiftCardResponseDTO               $giftCard
+ * @property string                            $discountedPrice
  **/
 class LineResponseDTO extends LineDTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'sku'              => SkuResponseDTO::class,

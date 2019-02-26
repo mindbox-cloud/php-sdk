@@ -4,21 +4,24 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string                 type
- * @property string                 id
- * @property string                 amount
- * @property PromoActionResponseDTO promoAction
- * @property BalanceTypeResponseDTO balanceType
+ * Class AppliedDiscountResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string                 $type
+ * @property string                 $id
+ * @property string                 $amount
+ * @property PromoActionResponseDTO $promoAction
+ * @property BalanceTypeResponseDTO $balanceType
  */
 class AppliedDiscountResponseDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'appliedDiscount';
 
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'promoAction' => PromoActionResponseDTO::class,

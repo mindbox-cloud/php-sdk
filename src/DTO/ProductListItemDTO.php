@@ -4,13 +4,16 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string count
- * @property string price
+ * Class ProductListItemDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $count
+ * @property string $price
  **/
 abstract class ProductListItemDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'productListItem';
 

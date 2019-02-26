@@ -4,8 +4,11 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string updatedDateTimeUtc
- * @property string totalPrice
+ * Class OrderUpdateRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $updatedDateTimeUtc
+ * @property string $totalPrice
  **/
 class OrderUpdateRequestDTO extends OrderRequestDTO
 {

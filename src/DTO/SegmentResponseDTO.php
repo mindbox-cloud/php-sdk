@@ -4,15 +4,18 @@
 namespace Mindbox\DTO;
 
 /**
- * @property array  ids
- * @property string name
+ * Class SegmentResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property array  $ids
+ * @property string $name
  **/
 class SegmentResponseDTO extends DTO
 {
     use IdentityDTO;
 
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'segment';
 

@@ -4,13 +4,16 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string message
- * @property string location
+ * Class ValidationMessageResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $message
+ * @property string $location
  **/
 class ValidationMessageResponseDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'validationMessage';
 

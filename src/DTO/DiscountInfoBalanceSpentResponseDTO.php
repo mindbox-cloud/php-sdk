@@ -4,7 +4,10 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string spentAmountForCurrentOrder
+ * Class DiscountInfoBalanceSpentResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $spentAmountForCurrentOrder
  **/
 class DiscountInfoBalanceSpentResponseDTO extends DiscountInfoBalanceResponseDTO
 {

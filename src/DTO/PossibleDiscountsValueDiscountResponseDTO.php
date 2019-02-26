@@ -7,13 +7,13 @@ namespace Mindbox\DTO;
  * Class PossibleDiscountsValueDiscountResponseDTO
  *
  * @package Mindbox\DTO
- * @property string amount
- * @property string amountType
+ * @property string $amount
+ * @property string $amountType
  */
 class PossibleDiscountsValueDiscountResponseDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'discount';
 

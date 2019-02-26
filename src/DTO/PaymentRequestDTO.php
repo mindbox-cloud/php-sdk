@@ -4,6 +4,9 @@
 namespace Mindbox\DTO;
 
 /**
+ * Class PaymentRequestDTO
+ *
+ * @package Mindbox\DTO
  **/
 class PaymentRequestDTO extends PaymentDTO
 {

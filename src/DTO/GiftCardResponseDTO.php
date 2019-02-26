@@ -4,13 +4,16 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string                     status
- * @property BalanceGiftCardResponseDTO balance
+ * Class GiftCardResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string                     $status
+ * @property BalanceGiftCardResponseDTO $balance
  **/
 class GiftCardResponseDTO extends GiftCardDTO
 {
     /**
-     * @var array Map of object`s fields.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'balance' => BalanceGiftCardResponseDTO::class,

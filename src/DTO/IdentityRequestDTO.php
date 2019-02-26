@@ -13,8 +13,8 @@ trait IdentityRequestDTO
     use IdentityDTO;
 
     /**
-     * @param $name
-     * @param $value
+     * @param string $name
+     * @param mixed  $value
      */
     public function setId($name, $value)
     {
@@ -24,7 +24,7 @@ trait IdentityRequestDTO
     }
 
     /**
-     * @param array
+     * @param array $ids
      */
     public function setIds($ids)
     {

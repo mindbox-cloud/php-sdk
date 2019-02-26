@@ -4,18 +4,21 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string                        fullName
- * @property string                        password
- * @property AreaRequestDTO                area
- * @property SubscriptionRequestCollection subscriptions
- * @property string                        authenticationTicket
+ * Class CustomerRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property string                        $fullName
+ * @property string                        $password
+ * @property AreaRequestDTO                $area
+ * @property SubscriptionRequestCollection $subscriptions
+ * @property string                        $authenticationTicket
  **/
 class CustomerRequestDTO extends CustomerIdentityRequestDTO
 {
     use CustomerDTO, CustomFieldRequestDTO;
 
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'area'          => AreaRequestDTO::class,

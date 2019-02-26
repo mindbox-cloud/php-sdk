@@ -4,13 +4,16 @@
 namespace Mindbox\DTO;
 
 /**
- * @property SegmentationResponseDTO segmentation
- * @property SegmentResponseDTO      segment
+ * Class CustomerSegmentationResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property SegmentationResponseDTO $segmentation
+ * @property SegmentResponseDTO      $segment
  **/
 class CustomerSegmentationResponseDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'segmentation' => SegmentationResponseDTO::class,
@@ -18,7 +21,7 @@ class CustomerSegmentationResponseDTO extends DTO
     ];
 
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'customerSegmentation';
 

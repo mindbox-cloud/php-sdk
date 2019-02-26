@@ -4,19 +4,22 @@
 namespace Mindbox\DTO;
 
 /**
- * @property ProductListItemRequestCollection products
+ * Class SetProductListRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property ProductListItemRequestCollection $products
  **/
 class SetProductListRequestDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'products' => ProductListItemRequestCollection::class,
     ];
 
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'productList';
 

@@ -7,14 +7,14 @@ namespace Mindbox\DTO;
  * Class CategoryRequestDTO
  *
  * @package Mindbox\DTO
- * @property array ids
+ * @property array $ids
  */
 class CategoryRequestDTO extends DTO
 {
     use IdentityRequestDTO;
 
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'category';
 }

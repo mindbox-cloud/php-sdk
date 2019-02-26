@@ -4,15 +4,18 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string pointOfContact
- * @property string topic
- * @property string isSubscribed
- * @property string brand
+ * Class SubscriptionDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $pointOfContact
+ * @property string $topic
+ * @property string $isSubscribed
+ * @property string $brand
  **/
 abstract class SubscriptionDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'subscription';
 

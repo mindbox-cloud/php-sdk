@@ -4,7 +4,10 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string calculationDateTimeUtc
+ * Class PreorderRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $calculationDateTimeUtc
  **/
 class PreorderRequestDTO extends OrderRequestDTO
 {

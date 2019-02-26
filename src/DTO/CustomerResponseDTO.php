@@ -4,28 +4,31 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string                         processingStatus
- * @property string                         sex
- * @property string                         isEmailInvalid
- * @property string                         isEmailConfirmed
- * @property string                         pendingEmail
- * @property string                         isMobilePhoneInvalid
- * @property string                         isMobilePhoneConfirmed
- * @property string                         pendingMobilePhone
- * @property AreaResponseDTO                area
- * @property SubscriptionResponseCollection subscriptions
- * @property string                         changeDateTimeUtc
- * @property string                         status
- * @property DiscountCardResponseCollection discountCards
- * @property string                         ianaTimeZone
- * @property string                         timeZoneSource
+ * Class CustomerResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string                         $processingStatus
+ * @property string                         $sex
+ * @property string                         $isEmailInvalid
+ * @property string                         $isEmailConfirmed
+ * @property string                         $pendingEmail
+ * @property string                         $isMobilePhoneInvalid
+ * @property string                         $isMobilePhoneConfirmed
+ * @property string                         $pendingMobilePhone
+ * @property AreaResponseDTO                $area
+ * @property SubscriptionResponseCollection $subscriptions
+ * @property string                         $changeDateTimeUtc
+ * @property string                         $status
+ * @property DiscountCardResponseCollection $discountCards
+ * @property string                         $ianaTimeZone
+ * @property string                         $timeZoneSource
  **/
 class CustomerResponseDTO extends CustomerIdentityResponseDTO
 {
     use CustomerDTO, CustomFieldDTO;
 
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'area'          => AreaResponseDTO::class,

@@ -4,21 +4,24 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string              type
- * @property string              availableAmountForCurrentOrder
- * @property GiftCardResponseDTO giftCard
+ * Class PaymentInfoResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string              $type
+ * @property string              $availableAmountForCurrentOrder
+ * @property GiftCardResponseDTO $giftCard
  **/
 class PaymentInfoResponseDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'giftCard' => GiftCardResponseDTO::class,
     ];
 
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'paymentInfo';
 

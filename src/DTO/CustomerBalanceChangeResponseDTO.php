@@ -4,22 +4,25 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string                       changeAmount
- * @property string                       expirationDateTimeUtc
- * @property string                       isAvailable
- * @property BalanceChangeKindResponseDTO balanceChangeKind
+ * Class CustomerBalanceChangeResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string                       $changeAmount
+ * @property string                       $expirationDateTimeUtc
+ * @property string                       $isAvailable
+ * @property BalanceChangeKindResponseDTO $balanceChangeKind
  **/
 class CustomerBalanceChangeResponseDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'balanceChangeKind' => BalanceChangeKindResponseDTO::class,
     ];
 
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'customerBalanceChange';
 

@@ -4,12 +4,15 @@
 namespace Mindbox\DTO;
 
 /**
- * @property BalanceDiscountResponseDTO balance
+ * Class DiscountInfoBalanceResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property BalanceDiscountResponseDTO $balance
  **/
 class DiscountInfoBalanceResponseDTO extends DiscountInfoResponseDTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'balance' => BalanceDiscountResponseDTO::class,

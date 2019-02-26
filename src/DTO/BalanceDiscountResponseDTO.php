@@ -4,22 +4,25 @@
 namespace Mindbox\DTO;
 
 /**
- * @property BalanceTypeResponseDTO balanceType
- * @property string                 total
- * @property string                 available
- * @property string                 blocked
+ * Class BalanceDiscountResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property BalanceTypeResponseDTO $balanceType
+ * @property string                 $total
+ * @property string                 $available
+ * @property string                 $blocked
  **/
 class BalanceDiscountResponseDTO extends DTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'balanceType' => BalanceTypeResponseDTO::class,
     ];
 
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'balance';
 

@@ -5,6 +5,8 @@ namespace Mindbox\DTO;
 
 /**
  * Class AreaRequestDTO
+ *
+ * @package Mindbox\DTO
  */
 class AreaRequestDTO extends AreaDTO
 {

@@ -4,7 +4,10 @@
 namespace Mindbox\DTO;
 
 /**
- * @property array  ids
+ * Class PromoActionResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property array  $ids
  * @property string $name
  */
 class PromoActionResponseDTO extends DTO
@@ -12,7 +15,7 @@ class PromoActionResponseDTO extends DTO
     use IdentityDTO;
 
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'promoAction';
 

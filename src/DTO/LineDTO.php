@@ -4,16 +4,19 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string quantity
- * @property array  customFields
- * @property string status
+ * Class LineDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $quantity
+ * @property array  $customFields
+ * @property string $status
  **/
 abstract class LineDTO extends DTO
 {
     use CustomFieldDTO;
 
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'line';
 

@@ -4,10 +4,10 @@
 namespace Mindbox\DTO;
 
 /**
- * Class MergeCustomersRequestDTO
+ * Class CustomerIdentityResponseDTO
  *
  * @package Mindbox\DTO
- * @property string processingStatus
+ * @property string $processingStatus
  */
 class CustomerIdentityResponseDTO extends CustomerIdentityDTO
 {

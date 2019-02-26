@@ -4,12 +4,15 @@
 namespace Mindbox\DTO;
 
 /**
- * @property PromoCodeResponseDTO promoCode
+ * Class DiscountInfoPromoCodeResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property PromoCodeResponseDTO $promoCode
  **/
 class DiscountInfoPromoCodeResponseDTO extends DiscountInfoResponseDTO
 {
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'promoCode' => PromoCodeResponseDTO::class,

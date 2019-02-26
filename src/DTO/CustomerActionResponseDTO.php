@@ -4,25 +4,28 @@
 namespace Mindbox\DTO;
 
 /**
- * @property array                                   ids
- * @property ActionTemplateResponseDTO               actionTemplate
- * @property string                                  dateTimeUtc
- * @property PointOfContactResponseDTO               pointOfContact
- * @property CustomerResponseDTO                     customer
- * @property CustomerBalanceChangeResponseCollection customerBalanceChanges
- * @property OrderResponseDTO                        order
+ * Class CustomerActionResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property array                                   $ids
+ * @property ActionTemplateResponseDTO               $actionTemplate
+ * @property string                                  $dateTimeUtc
+ * @property PointOfContactResponseDTO               $pointOfContact
+ * @property CustomerResponseDTO                     $customer
+ * @property CustomerBalanceChangeResponseCollection $customerBalanceChanges
+ * @property OrderResponseDTO                        $order
  **/
 class CustomerActionResponseDTO extends DTO
 {
     use IdentityDTO;
 
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'customerAction';
 
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'actionTemplate'         => ActionTemplateResponseDTO::class,

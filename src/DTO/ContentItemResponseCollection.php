@@ -11,12 +11,12 @@ namespace Mindbox\DTO;
 class ContentItemResponseCollection extends DTOCollection
 {
     /**
-     * @var string Map of collections`s fields.
+     * @var string Название элементов коллекции для корректной генерации xml.
      */
     protected static $collectionItemsName = ContentItemResponseDTO::class;
 
     /**
-     * @var string DTO name for Xml.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'content';
 }

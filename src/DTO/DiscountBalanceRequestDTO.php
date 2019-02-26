@@ -4,12 +4,15 @@
 namespace Mindbox\DTO;
 
 /**
- * @property BalanceTypeRequestDTO balanceType
+ * Class DiscountBalanceRequestDTO
+ *
+ * @package Mindbox\DTO
+ * @property BalanceTypeRequestDTO $balanceType
  **/
 class DiscountBalanceRequestDTO extends DiscountRequestDTO
 {
     /**
-     * @var array Map of object`s fields.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'balanceType' => BalanceTypeRequestDTO::class,

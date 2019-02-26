@@ -4,9 +4,12 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string productId
- * @property string basePricePerItem
- * @property string skuId
+ * Trait SkuDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $productId
+ * @property string $basePricePerItem
+ * @property string $skuId
  **/
 trait SkuDTO
 {

@@ -4,15 +4,18 @@
 namespace Mindbox\DTO;
 
 /**
- * @property SkuResponseDTO             sku
- * @property CategoryResponseCollection categories
+ * Class ProductResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property SkuResponseDTO             $sku
+ * @property CategoryResponseCollection $categories
  **/
 class ProductResponseDTO extends ProductIdentityResponseDTO
 {
     use ProductDTO, CustomFieldDTO;
 
     /**
-     * @var array Maps object key names to DTO types.
+     * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
         'sku'        => SkuResponseDTO::class,

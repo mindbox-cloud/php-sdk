@@ -11,12 +11,12 @@ namespace Mindbox\DTO;
 class DTOCollection extends DTO
 {
     /**
-     * @var string Name of collections`s fields for xml generation.
+     * @var string Название элементов коллекции для корректной генерации xml.
      */
     protected static $collectionItemsName = DTO::class;
 
     /**
-     * DTOCollection constructor.
+     * Конструктор DTOCollection.
      *
      * @param array $data
      */
@@ -45,7 +45,7 @@ class DTOCollection extends DTO
     }
 
     /**
-     * Getter for $collectionItemsName.
+     * Геттер для $collectionItemsName.
      *
      * @return string
      */

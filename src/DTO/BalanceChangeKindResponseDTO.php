@@ -4,12 +4,15 @@
 namespace Mindbox\DTO;
 
 /**
- * @property string systemName
+ * Class BalanceChangeKindResponseDTO
+ *
+ * @package Mindbox\DTO
+ * @property string $systemName
  */
 class BalanceChangeKindResponseDTO extends DTO
 {
     /**
-     * @var string DTO name.
+     * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'balanceChangeKind';
 
