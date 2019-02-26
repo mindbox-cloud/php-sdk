@@ -132,7 +132,7 @@ class MindboxClientV2 extends AbstractMindboxClient
     }
 
     /**
-     * Конвертация сырого тела ответа их XML в массив.
+     * Конвертация сырого тела ответа из XML в массив.
      *
      * @param string $rawBody Сырое тело ответа.
      *

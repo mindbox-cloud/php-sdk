@@ -104,7 +104,7 @@ class AbstractMindboxClientTest extends TestCase
     }
 
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Mindbox\DTO\DTO
      */
     protected function getDTOStub()
     {
@@ -224,7 +224,7 @@ class AbstractMindboxClientTest extends TestCase
     }
 
     /**
-     * @param $expected
+     * @param array $expected
      *
      * @return \Mindbox\MindboxRequest
      */
@@ -254,16 +254,22 @@ class AbstractMindboxClientTest extends TestCase
     }
 
     /**
-     * @param $secret
-     * @param $httpClient
-     * @param $loggerClient
+     * @param mixed $secret
+     * @param mixed $httpClient
+     * @param mixed $loggerClient
      *
      * @return \PHPUnit\Framework\MockObject\MockObject|AbstractMindboxClient
      */
     protected function getClient($secret, $httpClient, $loggerClient)
     {
         $clientStub = $this->getMockBuilder(AbstractMindboxClient::class)
-            ->setMethods(['prepareUrl', 'prepareQueryParams', 'prepareAuthorizationHeader'])
+            ->setMethods([
+                'prepareUrl',
+                'prepareQueryParams',
+                'prepareAuthorizationHeader',
+                'prepareBody',
+                'prepareResponseBody'
+            ])
             ->setConstructorArgs([$secret, $httpClient, $loggerClient])
             ->getMock();
 
@@ -275,14 +281,18 @@ class AbstractMindboxClientTest extends TestCase
             ->method('prepareAuthorizationHeader')
             ->willReturn($this->authHeader);
 
+        $clientStub->expects($this->any())
+            ->method('prepareBody')
+            ->willReturn($this->body);
+
         return $clientStub;
     }
 
     /**
      * @dataProvider expectedArgsForSendProvider
      *
-     * @param $params
-     * @param $expected
+     * @param array $params
+     * @param array $expected
      */
     public function testPrepareRequest($params, $expected)
     {
@@ -298,8 +308,8 @@ class AbstractMindboxClientTest extends TestCase
     /**
      * @dataProvider expectedArgsForSendProvider
      *
-     * @param $params
-     * @param $expected
+     * @param array $params
+     * @param array $expected
      */
     public function testSetRequest($params, $expected)
     {
@@ -313,8 +323,8 @@ class AbstractMindboxClientTest extends TestCase
     /**
      * @dataProvider expectedArgsForSendProvider
      *
-     * @param $params
-     * @param $expected
+     * @param array $params
+     * @param array $expected
      */
     public function testGetPreparedRequest($params, $expected)
     {
@@ -330,8 +340,8 @@ class AbstractMindboxClientTest extends TestCase
     /**
      * @dataProvider expectedArgsForSendProvider
      *
-     * @param $params
-     * @param $expected
+     * @param array $params
+     * @param array $expected
      *
      * @throws \Mindbox\Exceptions\MindboxBadRequestException
      * @throws \Mindbox\Exceptions\MindboxClientException
@@ -364,7 +374,6 @@ class AbstractMindboxClientTest extends TestCase
 
     /**
      * @expectedException \Mindbox\Exceptions\MindboxClientException
-     *
      * @throws \Mindbox\Exceptions\MindboxBadRequestException
      * @throws \Mindbox\Exceptions\MindboxClientException
      * @throws \Mindbox\Exceptions\MindboxConflictException
@@ -383,7 +392,6 @@ class AbstractMindboxClientTest extends TestCase
 
     /**
      * @expectedException \Mindbox\Exceptions\MindboxClientException
-     *
      * @throws \Mindbox\Exceptions\MindboxBadRequestException
      * @throws \Mindbox\Exceptions\MindboxClientException
      * @throws \Mindbox\Exceptions\MindboxConflictException
@@ -408,8 +416,8 @@ class AbstractMindboxClientTest extends TestCase
     /**
      * @dataProvider expectedArgsForSendProvider
      *
-     * @param $params
-     * @param $expected
+     * @param array $params
+     * @param array $expected
      *
      * @throws \Mindbox\Exceptions\MindboxBadRequestException
      * @throws \Mindbox\Exceptions\MindboxClientException
@@ -442,10 +450,10 @@ class AbstractMindboxClientTest extends TestCase
     /**
      * @dataProvider expectedExceptionProvider
      *
-     * @param $body
-     * @param $code
-     * @param $expectedLogMethod
-     * @param $expectedException
+     * @param mixed  $body
+     * @param mixed  $code
+     * @param string $expectedLogMethod
+     * @param string $expectedException
      *
      * @throws \Mindbox\Exceptions\MindboxBadRequestException
      * @throws \Mindbox\Exceptions\MindboxClientException

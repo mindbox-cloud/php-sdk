@@ -205,10 +205,7 @@ abstract class AbstractMindboxClient
      *
      * @return string
      */
-    protected function prepareBody(\Mindbox\DTO\DTO $body = null)
-    {
-        return $body ? $body->toJson() : '';
-    }
+    abstract protected function prepareBody(\Mindbox\DTO\DTO $body = null);
 
     /**
      * Инициализация экземпляра запроса.
@@ -322,16 +319,13 @@ abstract class AbstractMindboxClient
     }
 
     /**
-     * Конвертация тела ответа из json в массив.
+     * Конвертация тела ответа в массив.
      *
      * @param string $rawBody Сырое тело ответа.
      *
      * @return array
      */
-    protected function prepareResponseBody($rawBody)
-    {
-        return $rawBody ? json_decode($rawBody, true) : [];
-    }
+    abstract protected function prepareResponseBody($rawBody);
 
     /**
      * Подготовка контекста запроса для логгера.
