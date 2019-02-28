@@ -4,6 +4,8 @@ namespace Mindbox\Tests\Clients;
 
 use Mindbox\Clients\AbstractMindboxClient;
 use Mindbox\Exceptions\MindboxHttpClientException;
+use Mindbox\MindboxResponse;
+use Mindbox\Responses\MindboxOrderResponse;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -296,13 +298,11 @@ class AbstractMindboxClientTest extends TestCase
      */
     public function testPrepareRequest($params, $expected)
     {
-        $client = $this->client;
+        $this->assertSame(null, $this->client->getRequest());
 
-        $this->assertSame(null, $client->getRequest());
+        $this->client->prepareRequest(...$params);
 
-        $client->prepareRequest(...$params);
-
-        $this->assertEquals($this->getRequestStub($expected), $client->getRequest());
+        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest());
     }
 
     /**
@@ -313,11 +313,9 @@ class AbstractMindboxClientTest extends TestCase
      */
     public function testSetRequest($params, $expected)
     {
-        $client = $this->client;
+        $this->client->setRequest($this->getRequestStub($expected));
 
-        $client->setRequest($this->getRequestStub($expected));
-
-        $this->assertEquals($this->getRequestStub($expected), $client->getRequest());
+        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest());
     }
 
     /**
@@ -328,13 +326,11 @@ class AbstractMindboxClientTest extends TestCase
      */
     public function testGetPreparedRequest($params, $expected)
     {
-        $client = $this->client;
+        $this->assertSame(null, $this->client->getRequest());
 
-        $this->assertSame(null, $client->getRequest());
+        $this->client->setRequest($this->getRequestStub($expected));
 
-        $client->setRequest($this->getRequestStub($expected));
-
-        $this->assertEquals($this->getRequestStub($expected), $client->getRequest());
+        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest());
     }
 
     /**
@@ -354,8 +350,6 @@ class AbstractMindboxClientTest extends TestCase
      */
     public function testSendPreparedRequest($params, $expected)
     {
-        $client = $this->client;
-
         $rawResponseStub = $this->getRawResponseStub(200, 'body');
 
         $this->httpClientStub->expects($this->once())
@@ -366,7 +360,7 @@ class AbstractMindboxClientTest extends TestCase
         $this->loggerStub->expects($this->once())
             ->method('info');
 
-        $response = $client->prepareRequest(...$params)
+        $response = $this->client->prepareRequest(...$params)
             ->sendRequest();
 
         $this->assertInstanceOf(\Mindbox\MindboxResponse::class, $response);
@@ -385,9 +379,7 @@ class AbstractMindboxClientTest extends TestCase
      */
     public function testSendPreparedRequestWillThrowExceptionWhenRequestEmpty()
     {
-        $client = $this->client;
-
-        $client->sendRequest();
+        $this->client->sendRequest();
     }
 
     /**
@@ -403,13 +395,11 @@ class AbstractMindboxClientTest extends TestCase
      */
     public function testSendPreparedRequestWillThrowExceptionWhenHttpClientThrowException()
     {
-        $client = $this->client;
-
         $this->httpClientStub->expects($this->once())
             ->method('send')
             ->willThrowException(new MindboxHttpClientException());
 
-        $client->prepareRequest('POST', 'operation', $this->getDTOStub())
+        $this->client->prepareRequest('POST', 'operation', $this->getDTOStub())
             ->sendRequest();
     }
 
@@ -466,8 +456,6 @@ class AbstractMindboxClientTest extends TestCase
      */
     public function testSendRequestWillThrowHttpClientException($body, $code, $expectedLogMethod, $expectedException)
     {
-        $client = $this->client;
-
         $rawResponseStub = $this->getRawResponseStub($code, $body);
 
         $this->httpClientStub->expects($this->any())
@@ -479,7 +467,109 @@ class AbstractMindboxClientTest extends TestCase
 
         $this->expectException($expectedException);
 
-        $client->prepareRequest('POST', 'operation', $this->getDTOStub())
+        $this->client->prepareRequest('POST', 'operation', $this->getDTOStub())
             ->sendRequest();
+    }
+
+    /**
+     * @throws \Mindbox\Exceptions\MindboxBadRequestException
+     * @throws \Mindbox\Exceptions\MindboxClientException
+     * @throws \Mindbox\Exceptions\MindboxConflictException
+     * @throws \Mindbox\Exceptions\MindboxForbiddenException
+     * @throws \Mindbox\Exceptions\MindboxNotFoundException
+     * @throws \Mindbox\Exceptions\MindboxTooManyRequestsException
+     * @throws \Mindbox\Exceptions\MindboxUnauthorizedException
+     * @throws \Mindbox\Exceptions\MindboxUnavailableException
+     */
+    public function testNotSetResponseType()
+    {
+        $rawResponseStub = $this->getRawResponseStub(200, 'someBody');
+
+        $this->httpClientStub->expects($this->any())
+            ->method('send')
+            ->willReturn($rawResponseStub);
+
+        $result = $this->client->prepareRequest('POST', 'operation', $this->getDTOStub())
+            ->sendRequest();
+
+        $this->assertInstanceOf(MindboxResponse::class, $result);
+    }
+
+    /**
+     * @throws \Mindbox\Exceptions\MindboxBadRequestException
+     * @throws \Mindbox\Exceptions\MindboxClientException
+     * @throws \Mindbox\Exceptions\MindboxConflictException
+     * @throws \Mindbox\Exceptions\MindboxForbiddenException
+     * @throws \Mindbox\Exceptions\MindboxNotFoundException
+     * @throws \Mindbox\Exceptions\MindboxTooManyRequestsException
+     * @throws \Mindbox\Exceptions\MindboxUnauthorizedException
+     * @throws \Mindbox\Exceptions\MindboxUnavailableException
+     */
+    public function testSetResponseType()
+    {
+        $rawResponseStub = $this->getRawResponseStub(200, 'someBody');
+
+        $this->httpClientStub->expects($this->any())
+            ->method('send')
+            ->willReturn($rawResponseStub);
+
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
+        $result = $this->client->prepareRequest('POST', 'operation', $this->getDTOStub())
+            ->sendRequest();
+
+        $this->assertInstanceOf(MindboxOrderResponse::class, $result);
+    }
+
+    /**
+     * @throws \Mindbox\Exceptions\MindboxBadRequestException
+     * @throws \Mindbox\Exceptions\MindboxClientException
+     * @throws \Mindbox\Exceptions\MindboxConflictException
+     * @throws \Mindbox\Exceptions\MindboxForbiddenException
+     * @throws \Mindbox\Exceptions\MindboxNotFoundException
+     * @throws \Mindbox\Exceptions\MindboxTooManyRequestsException
+     * @throws \Mindbox\Exceptions\MindboxUnauthorizedException
+     * @throws \Mindbox\Exceptions\MindboxUnavailableException
+     */
+    public function testSetResponseTypeWithInvalidClassName()
+    {
+        $rawResponseStub = $this->getRawResponseStub(200, 'someBody');
+
+        $this->httpClientStub->expects($this->any())
+            ->method('send')
+            ->willReturn($rawResponseStub);
+
+        $this->client->setResponseType('notExistingClassName');
+
+        $result = $this->client->prepareRequest('POST', 'operation', $this->getDTOStub())
+            ->sendRequest();
+
+        $this->assertInstanceOf(MindboxResponse::class, $result);
+    }
+
+    /**
+     * @throws \Mindbox\Exceptions\MindboxBadRequestException
+     * @throws \Mindbox\Exceptions\MindboxClientException
+     * @throws \Mindbox\Exceptions\MindboxConflictException
+     * @throws \Mindbox\Exceptions\MindboxForbiddenException
+     * @throws \Mindbox\Exceptions\MindboxNotFoundException
+     * @throws \Mindbox\Exceptions\MindboxTooManyRequestsException
+     * @throws \Mindbox\Exceptions\MindboxUnauthorizedException
+     * @throws \Mindbox\Exceptions\MindboxUnavailableException
+     */
+    public function testSetResponseTypeWithNotResponseClassName()
+    {
+        $rawResponseStub = $this->getRawResponseStub(200, 'someBody');
+
+        $this->httpClientStub->expects($this->any())
+            ->method('send')
+            ->willReturn($rawResponseStub);
+
+        $this->client->setResponseType(AbstractMindboxClient::class);
+
+        $result = $this->client->prepareRequest('POST', 'operation', $this->getDTOStub())
+            ->sendRequest();
+
+        $this->assertInstanceOf(MindboxResponse::class, $result);
     }
 }
