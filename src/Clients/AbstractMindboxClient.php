@@ -47,6 +47,11 @@ abstract class AbstractMindboxClient
     protected $preparedRequest;
 
     /**
+     * @var string $responseType Имя потомка MindboxResponse для парсинга ответа от Mindbox.
+     */
+    protected $responseType;
+
+    /**
      * Конструктор AbstractMindboxClient.
      *
      * @param string          $secretKey  Секретный ключ.
@@ -55,9 +60,10 @@ abstract class AbstractMindboxClient
      */
     public function __construct($secretKey, IHttpClient $httpClient, LoggerInterface $logger)
     {
-        $this->secretKey  = $secretKey;
-        $this->httpClient = $httpClient;
-        $this->logger     = $logger;
+        $this->secretKey    = $secretKey;
+        $this->httpClient   = $httpClient;
+        $this->logger       = $logger;
+        $this->responseType = MindboxResponse::class;
     }
 
     /**
@@ -247,7 +253,7 @@ abstract class AbstractMindboxClient
         $body       = $rawResponse->getBody();
 
         $this->setLastResponse(
-            new MindboxResponse(
+            new $this->responseType(
                 $statusCode,
                 $rawResponse->getHeaders(),
                 $this->prepareResponseBody($body),
@@ -351,5 +357,21 @@ abstract class AbstractMindboxClient
                 'body'     => $response->getRawBody(),
             ],
         ];
+    }
+
+    /**
+     * Сеттер для responseType.
+     *
+     * @param string $type Имя потомка MindboxResponse.
+     */
+    public function setResponseType($type)
+    {
+        if (!class_exists($type)) {
+            return;
+        }
+        if (!is_subclass_of($type, MindboxResponse::class)) {
+            return;
+        }
+        $this->responseType = $type;
     }
 }

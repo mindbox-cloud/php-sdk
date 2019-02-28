@@ -21,27 +21,27 @@ class MindboxResponse
     /**
      * @var int $httpCode HTTP код ответа.
      */
-    private $httpCode;
+    protected $httpCode;
 
     /**
      * @var array $headers Заголовки ответа.
      */
-    private $headers;
+    protected $headers;
 
     /**
      * @var array $body Тело ответа в виде массива.
      */
-    private $body;
+    protected $body;
 
     /**
      * @var string $rawBody "Сырое" тело ответа (xml|json).
      */
-    private $rawBody;
+    protected $rawBody;
 
     /**
      * @var MindboxRequest $request Экземпляр связанного запроса.
      */
-    private $request;
+    protected $request;
 
     /**
      * Конструктор MindboxResponse.
