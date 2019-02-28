@@ -38,7 +38,7 @@ Methods
 
 ### detectDefaultClient
 
-    \Mindbox\HttpClients\IHttpClient Mindbox\HttpClients\HttpClientFactory::detectDefaultClient(integer $timeout)
+    \Mindbox\HttpClients\IHttpClient Mindbox\HttpClients\HttpClientFactory::detectDefaultClient(integer|null $timeout)
 
 Определение и инициализация клиента по умолчанию.
 
@@ -48,7 +48,7 @@ Methods
 
 
 #### Arguments
-* $timeout **integer** - &lt;p&gt;Таймаут соединения.&lt;/p&gt;
+* $timeout **integer|null** - &lt;p&gt;Таймаут соединения.&lt;/p&gt;
 
 
 

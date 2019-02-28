@@ -121,6 +121,17 @@ Properties
 * Visibility: **protected**
 
 
+### $responseType
+
+    protected string $responseType
+
+
+
+
+
+* Visibility: **protected**
+
+
 Methods
 -------
 
@@ -406,5 +417,22 @@ Methods
 
 #### Arguments
 * $response **[Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)** - &lt;p&gt;Ответ от Mindbox.&lt;/p&gt;
+
+
+
+### setResponseType
+
+    mixed Mindbox\Clients\AbstractMindboxClient::setResponseType(string $type)
+
+Сеттер для responseType.
+
+
+
+* Visibility: **public**
+* This method is defined by [Mindbox\Clients\AbstractMindboxClient](Mindbox-Clients-AbstractMindboxClient.md)
+
+
+#### Arguments
+* $type **string** - &lt;p&gt;Имя потомка MindboxResponse.&lt;/p&gt;
 
 

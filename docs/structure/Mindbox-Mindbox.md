@@ -31,7 +31,7 @@ Properties
 
 ### $client
 
-    private \Mindbox\Clients\MindboxClientV3 $client
+    private \Mindbox\Clients\AbstractMindboxClient $client
 
 
 
@@ -42,7 +42,7 @@ Properties
 
 ### $clientV2
 
-    private \Mindbox\Clients\MindboxClientV2 $clientV2
+    private \Mindbox\Clients\AbstractMindboxClient $clientV2
 
 
 
@@ -173,7 +173,7 @@ Methods
 
 ### getClientV3
 
-    \Mindbox\Clients\MindboxClientV3 Mindbox\Mindbox::getClientV3()
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Mindbox::getClientV3()
 
 Геттер для $client.
 
@@ -186,7 +186,7 @@ Methods
 
 ### getClientV2
 
-    \Mindbox\Clients\MindboxClientV2 Mindbox\Mindbox::getClientV2()
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Mindbox::getClientV2()
 
 Геттер для $clientV2.
 
@@ -199,7 +199,7 @@ Methods
 
 ### getClient
 
-    \Mindbox\Clients\MindboxClientV2|\Mindbox\Clients\MindboxClientV3 Mindbox\Mindbox::getClient(string $apiVersion)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Mindbox::getClient(string $apiVersion)
 
 Геттер для MindboxClient по версии API.
 

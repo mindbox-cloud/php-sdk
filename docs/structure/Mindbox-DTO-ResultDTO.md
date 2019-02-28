@@ -107,9 +107,20 @@ Properties
 * Visibility: **public**
 
 
-### $mergedCustomers
+### $customersToMerge
 
-    public \Mindbox\DTO\MergeCustomersResponseDTO $mergedCustomers
+    public \Mindbox\DTO\CustomerIdentityResponseCollection $customersToMerge
+
+
+
+
+
+* Visibility: **public**
+
+
+### $resultingCustomer
+
+    public \Mindbox\DTO\CustomerIdentityResponseDTO $resultingCustomer
 
 
 
@@ -240,9 +251,22 @@ Methods
 
 
 
-### getMergedCustomers
+### getCustomersToMerge
 
-    \Mindbox\DTO\MergeCustomersResponseDTO Mindbox\DTO\ResultDTO::getMergedCustomers()
+    \Mindbox\DTO\CustomerIdentityResponseCollection Mindbox\DTO\ResultDTO::getCustomersToMerge()
+
+
+
+
+
+* Visibility: **public**
+
+
+
+
+### getResultingCustomer
+
+    \Mindbox\DTO\CustomerIdentityResponseDTO Mindbox\DTO\ResultDTO::getResultingCustomer()
 
 
 
@@ -266,9 +290,35 @@ Methods
 
 
 
+### getOrder
+
+    \Mindbox\DTO\OrderResponseDTO Mindbox\DTO\ResultDTO::getOrder()
+
+
+
+
+
+* Visibility: **public**
+
+
+
+
 ### getCustomerActions
 
     \Mindbox\DTO\CustomerActionResponseCollection Mindbox\DTO\ResultDTO::getCustomerActions()
+
+
+
+
+
+* Visibility: **public**
+
+
+
+
+### getCustomerActionsCount
+
+    string Mindbox\DTO\ResultDTO::getCustomerActionsCount()
 
 
 
