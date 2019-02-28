@@ -2,6 +2,9 @@
 
 namespace Mindbox\Helpers;
 
+use Mindbox\Responses\MindboxOrderResponse;
+use Mindbox\Responses\MindboxOrdersResponse;
+
 /**
  * Хелпер, являющий обёрткой над универсальным запросом. Содержит методы для отправки запросов, связанных с
  * процессингом заказов.
@@ -22,6 +25,8 @@ class OrderHelper extends AbstractMindboxHelper
      */
     public function calculateCart(\Mindbox\DTO\PreorderRequestDTO $order, $operationName)
     {
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
         return $this->client->prepareRequest('POST', $operationName, $order, 'get-pre-order-info', [], true, false);
     }
 
@@ -36,6 +41,8 @@ class OrderHelper extends AbstractMindboxHelper
      */
     public function createOrder(\Mindbox\DTO\OrderCreateRequestDTO $order, $operationName)
     {
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
         return $this->client->prepareRequest('POST', $operationName, $order, 'create', [], true, false);
     }
 
@@ -99,6 +106,8 @@ class OrderHelper extends AbstractMindboxHelper
             'mindbox'       => $mindbox,
             'startingIndex' => $startingIndex,
         ];
+
+        $this->client->setResponseType(MindboxOrdersResponse::class);
 
         return $this->client->prepareRequest('GET', $operationName, null, 'by-customer', $queryParams, true, false);
     }

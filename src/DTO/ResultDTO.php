@@ -11,7 +11,8 @@ namespace Mindbox\DTO;
  * @property ValidationMessageResponseCollection    $validationMessages
  * @property CustomerResponseDTO                    $customer
  * @property SmsConfirmationResponseDTO             $smsConfirmation
- * @property MergeCustomersResponseDTO              $mergedCustomers
+ * @property CustomerIdentityResponseCollection     $customersToMerge
+ * @property CustomerIdentityResponseDTO            $resultingCustomer
  * @property OrderResponseCollection                $orders
  * @property CustomerActionResponseCollection       $customerActions
  * @property CustomerSegmentationResponseCollection $customerSegmentations
@@ -28,7 +29,8 @@ class ResultDTO extends DTO
         'validationMessages'    => ValidationMessageResponseCollection::class,
         'customer'              => CustomerResponseDTO::class,
         'smsConfirmation'       => SmsConfirmationResponseDTO::class,
-        'mergedCustomers'       => MergeCustomersResponseDTO::class,
+        'customersToMerge'      => CustomerIdentityResponseCollection::class,
+        'resultingCustomer'     => CustomerIdentityResponseDTO::class,
         'orders'                => OrderResponseCollection::class,
         'customerActions'       => CustomerActionResponseCollection::class,
         'customerSegmentations' => CustomerSegmentationResponseCollection::class,
@@ -75,11 +77,19 @@ class ResultDTO extends DTO
     }
 
     /**
-     * @return MergeCustomersResponseDTO
+     * @return CustomerIdentityResponseCollection
      */
-    public function getMergedCustomers()
+    public function getCustomersToMerge()
     {
-        return $this->getField('mergedCustomers');
+        return $this->getField('customersToMerge');
+    }
+
+    /**
+     * @return CustomerIdentityResponseDTO
+     */
+    public function getResultingCustomer()
+    {
+        return $this->getField('resultingCustomer');
     }
 
     /**
@@ -91,11 +101,27 @@ class ResultDTO extends DTO
     }
 
     /**
+     * @return OrderResponseDTO
+     */
+    public function getOrder()
+    {
+        return $this->getField('order');
+    }
+
+    /**
      * @return CustomerActionResponseCollection
      */
     public function getCustomerActions()
     {
         return $this->getField('customerActions');
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustomerActionsCount()
+    {
+        return $this->getField('customerActionsCount');
     }
 
     /**

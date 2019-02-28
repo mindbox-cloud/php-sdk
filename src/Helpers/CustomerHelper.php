@@ -2,6 +2,14 @@
 
 namespace Mindbox\Helpers;
 
+use Mindbox\Responses\MindboxBalanceResponse;
+use Mindbox\Responses\MindboxBonusPointsResponse;
+use Mindbox\Responses\MindboxCustomerIdentityResponse;
+use Mindbox\Responses\MindboxCustomerProcessingStatusResponse;
+use Mindbox\Responses\MindboxCustomerResponse;
+use Mindbox\Responses\MindboxMergeCustomersResponse;
+use Mindbox\Responses\MindboxSmsConfirmationResponse;
+
 /**
  * Хелпер, являющий обёрткой над универсальным запросом. Содержит методы для отправки запросов, связанных с
  * действиями над потребителем.
@@ -46,6 +54,8 @@ class CustomerHelper extends AbstractMindboxHelper
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
 
+        $this->client->setResponseType(MindboxCustomerResponse::class);
+
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
     }
 
@@ -64,6 +74,8 @@ class CustomerHelper extends AbstractMindboxHelper
     {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
+
+        $this->client->setResponseType(MindboxCustomerResponse::class);
 
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
     }
@@ -84,6 +96,8 @@ class CustomerHelper extends AbstractMindboxHelper
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
 
+        $this->client->setResponseType(MindboxCustomerIdentityResponse::class);
+
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
     }
 
@@ -103,6 +117,8 @@ class CustomerHelper extends AbstractMindboxHelper
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
 
+        $this->client->setResponseType(MindboxCustomerIdentityResponse::class);
+
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
     }
 
@@ -121,6 +137,8 @@ class CustomerHelper extends AbstractMindboxHelper
     {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
+
+        $this->client->setResponseType(MindboxCustomerIdentityResponse::class);
 
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
     }
@@ -145,6 +163,8 @@ class CustomerHelper extends AbstractMindboxHelper
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
 
+        $this->client->setResponseType(MindboxCustomerResponse::class);
+
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
     }
 
@@ -165,6 +185,8 @@ class CustomerHelper extends AbstractMindboxHelper
         $operationName,
         $addDeviceUUID = true
     ) {
+        $this->client->setResponseType(MindboxMergeCustomersResponse::class);
+
         return $this->client->prepareRequest('POST', $operationName, $customersToMerge, '', [], true, $addDeviceUUID);
     }
 
@@ -183,6 +205,8 @@ class CustomerHelper extends AbstractMindboxHelper
     {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
+
+        $this->client->setResponseType(MindboxCustomerResponse::class);
 
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
     }
@@ -209,6 +233,8 @@ class CustomerHelper extends AbstractMindboxHelper
         $operation->setCustomer($customer);
         $operation->setPage($page);
 
+        $this->client->setResponseType(MindboxBonusPointsResponse::class);
+
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
     }
 
@@ -233,6 +259,8 @@ class CustomerHelper extends AbstractMindboxHelper
     ) {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
+
+        $this->client->setResponseType(MindboxCustomerProcessingStatusResponse::class);
 
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], $isSync, $addDeviceUUID);
     }
@@ -259,6 +287,8 @@ class CustomerHelper extends AbstractMindboxHelper
         $operation->setCustomer($customer);
         $operation->setAuthentificationCode($authentificationCode);
 
+        $this->client->setResponseType(MindboxCustomerIdentityResponse::class);
+
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
     }
 
@@ -283,6 +313,8 @@ class CustomerHelper extends AbstractMindboxHelper
     ) {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
+
+        $this->client->setResponseType(MindboxCustomerProcessingStatusResponse::class);
 
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], $isSync, $addDeviceUUID);
     }
@@ -313,6 +345,8 @@ class CustomerHelper extends AbstractMindboxHelper
         $operation->setCustomer($customer);
         $operation->setSmsConfirmation($smsConfirmation);
 
+        $this->client->setResponseType(MindboxSmsConfirmationResponse::class);
+
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], $isSync, $addDeviceUUID);
     }
 
@@ -337,6 +371,8 @@ class CustomerHelper extends AbstractMindboxHelper
     ) {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
+
+        $this->client->setResponseType(MindboxCustomerResponse::class);
 
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], $isSync, $addDeviceUUID);
     }
@@ -375,6 +411,8 @@ class CustomerHelper extends AbstractMindboxHelper
     {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
+
+        $this->client->setResponseType(MindboxBalanceResponse::class);
 
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
     }

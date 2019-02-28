@@ -144,6 +144,7 @@ class Mindbox
      */
     public function getClientV3()
     {
+        $this->client->setResponseType(MindboxResponse::class);
         return $this->client;
     }
 
@@ -154,6 +155,7 @@ class Mindbox
      */
     public function getClientV2()
     {
+        $this->clientV2->setResponseType(MindboxResponse::class);
         return $this->clientV2;
     }
 

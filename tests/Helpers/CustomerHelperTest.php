@@ -4,6 +4,13 @@ namespace Mindbox\Tests\Helpers;
 
 use Mindbox\DTO\OperationDTO;
 use Mindbox\Helpers\CustomerHelper;
+use Mindbox\Responses\MindboxBalanceResponse;
+use Mindbox\Responses\MindboxBonusPointsResponse;
+use Mindbox\Responses\MindboxCustomerIdentityResponse;
+use Mindbox\Responses\MindboxCustomerProcessingStatusResponse;
+use Mindbox\Responses\MindboxCustomerResponse;
+use Mindbox\Responses\MindboxMergeCustomersResponse;
+use Mindbox\Responses\MindboxSmsConfirmationResponse;
 
 /**
  * Class CustomerHelperTest
@@ -48,6 +55,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
 
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxBalanceResponse::class);
+
         $this->helper->getBalance($dto, $operationName, $addDeviceUUID);
     }
 
@@ -60,6 +71,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
         $this->mindboxClientStub->expects($this->once())
             ->method('prepareRequest')
             ->with('POST', $operationName, $dto, '', [], true, $addDeviceUUID);
+
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxMergeCustomersResponse::class);
 
         $this->helper->merge($dto, $operationName, $addDeviceUUID);
     }
@@ -77,6 +92,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
         $this->mindboxClientStub->expects($this->once())
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
+
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxBonusPointsResponse::class);
 
         $this->helper->getBonusPointsHistory(
             $customerDto,
@@ -113,6 +132,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
 
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxCustomerResponse::class);
+
         $this->helper->checkActive($dto, $operationName, $addDeviceUUID);
     }
 
@@ -127,6 +150,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
         $this->mindboxClientStub->expects($this->once())
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
+
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxCustomerResponse::class);
 
         $this->helper->checkByMail($dto, $operationName, $addDeviceUUID);
     }
@@ -143,6 +170,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
 
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxCustomerIdentityResponse::class);
+
         $this->helper->fill($dto, $operationName, $addDeviceUUID);
     }
 
@@ -157,6 +188,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
         $this->mindboxClientStub->expects($this->once())
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
+
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxCustomerResponse::class);
 
         $this->helper->subscribe($dto, $operationName, $addDeviceUUID);
     }
@@ -173,6 +208,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
 
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxCustomerIdentityResponse::class);
+
         $this->helper->edit($dto, $operationName, $addDeviceUUID);
     }
 
@@ -187,6 +226,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
         $this->mindboxClientStub->expects($this->once())
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
+
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxCustomerIdentityResponse::class);
 
         $this->helper->register($dto, $operationName, $addDeviceUUID);
     }
@@ -203,6 +246,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
 
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxCustomerProcessingStatusResponse::class);
+
         $this->helper->resendConfirmationCode($dto, $operationName, $addDeviceUUID);
     }
 
@@ -217,6 +264,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
         $this->mindboxClientStub->expects($this->once())
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
+
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxCustomerResponse::class);
 
         $this->helper->checkByPhone($dto, $operationName, $addDeviceUUID);
     }
@@ -233,6 +284,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
 
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxCustomerProcessingStatusResponse::class);
+
         $this->helper->sendAuthorizationCode($dto, $operationName, $addDeviceUUID);
     }
 
@@ -247,6 +302,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
         $this->mindboxClientStub->expects($this->once())
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
+
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxCustomerResponse::class);
 
         $this->helper->getDataByDiscountCard($dto, $operationName, $addDeviceUUID);
     }
@@ -280,6 +339,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
 
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxSmsConfirmationResponse::class);
+
         $this->helper->confirmMobile($dto, $smsConfirmation, $operationName, $addDeviceUUID);
     }
 
@@ -296,6 +359,10 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
         $this->mindboxClientStub->expects($this->once())
             ->method('prepareRequest')
             ->with('POST', $operationName, $operationDto, '', [], true, $addDeviceUUID);
+
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxCustomerIdentityResponse::class);
 
         $this->helper->checkAuthorizationCode($dto, $authCode, $operationName, $addDeviceUUID);
     }

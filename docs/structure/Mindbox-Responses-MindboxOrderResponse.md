@@ -1,13 +1,14 @@
-Mindbox\MindboxResponse
+Mindbox\Responses\MindboxOrderResponse
 ===============
 
-Класс, содержащий данные ответа от Mindbox API и методы для получения этих данных в удобном пользователю виде.
+Класс, расширяющий стандартный класс ответа от Mindbox и используемый в стандартных запросах по изменению заказа.
 
-Class MindboxResponse
+Class MindboxOrderResponse
 
 
-* Class name: MindboxResponse
-* Namespace: Mindbox
+* Class name: MindboxOrderResponse
+* Namespace: Mindbox\Responses
+* Parent class: [Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)
 
 
 
@@ -86,6 +87,19 @@ Methods
 -------
 
 
+### getOrder
+
+    \Mindbox\DTO\OrderResponseDTO|null Mindbox\Responses\MindboxOrderResponse::getOrder()
+
+Возвращает объект заказа, если такой есть в ответе.
+
+
+
+* Visibility: **public**
+
+
+
+
 ### __construct
 
     mixed Mindbox\MindboxResponse::__construct(integer $httpCode, array $headers, array $body, string $rawBody, \Mindbox\MindboxRequest $request)
@@ -95,6 +109,7 @@ Methods
 
 
 * Visibility: **public**
+* This method is defined by [Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)
 
 
 #### Arguments
@@ -117,6 +132,7 @@ Methods
 При отличии статуса от MINDBOX_SUCCESS_STATUS возвращает true.
 
 * Visibility: **public**
+* This method is defined by [Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)
 
 
 
@@ -130,6 +146,7 @@ Methods
 
 
 * Visibility: **public**
+* This method is defined by [Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)
 
 
 
@@ -143,6 +160,7 @@ Methods
 
 
 * Visibility: **public**
+* This method is defined by [Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)
 
 
 
@@ -156,6 +174,7 @@ Methods
 
 
 * Visibility: **public**
+* This method is defined by [Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)
 
 
 
@@ -169,6 +188,7 @@ Methods
 
 
 * Visibility: **public**
+* This method is defined by [Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)
 
 
 
@@ -182,6 +202,7 @@ Methods
 
 
 * Visibility: **public**
+* This method is defined by [Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)
 
 
 
@@ -195,6 +216,7 @@ Methods
 
 
 * Visibility: **public**
+* This method is defined by [Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)
 
 
 
@@ -208,6 +230,7 @@ Methods
 
 
 * Visibility: **public**
+* This method is defined by [Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)
 
 
 
@@ -221,6 +244,7 @@ Methods
 
 
 * Visibility: **public**
+* This method is defined by [Mindbox\MindboxResponse](Mindbox-MindboxResponse.md)
 
 
 

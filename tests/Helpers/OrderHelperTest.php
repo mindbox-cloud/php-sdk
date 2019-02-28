@@ -3,6 +3,8 @@
 namespace Mindbox\Tests\Helpers;
 
 use Mindbox\Helpers\OrderHelper;
+use Mindbox\Responses\MindboxOrderResponse;
+use Mindbox\Responses\MindboxOrdersResponse;
 
 /**
  * Class OrderHelperTest
@@ -60,6 +62,10 @@ class OrderHelperTest extends AbstractMindboxHelperTest
             ->method('prepareRequest')
             ->with('GET', $operationName, null, 'by-customer', $params, true, false);
 
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxOrdersResponse::class);
+
         $this->helper->getOrders(
             $params['countToReturn'],
             $params['mindbox'],
@@ -101,6 +107,10 @@ class OrderHelperTest extends AbstractMindboxHelperTest
             ->method('prepareRequest')
             ->with('POST', $operationName, $dto, 'get-pre-order-info', [], true, false);
 
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxOrderResponse::class);
+
         $this->helper->calculateCart($dto, $operationName);
     }
 
@@ -112,6 +122,10 @@ class OrderHelperTest extends AbstractMindboxHelperTest
         $this->mindboxClientStub->expects($this->once())
             ->method('prepareRequest')
             ->with('POST', $operationName, $dto, 'create', [], true, false);
+
+        $this->mindboxClientStub->expects($this->once())
+            ->method('setResponseType')
+            ->with(MindboxOrderResponse::class);
 
         $this->helper->createOrder($dto, $operationName);
     }
