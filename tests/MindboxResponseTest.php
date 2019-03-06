@@ -3,7 +3,7 @@
 namespace Mindbox\Tests;
 
 use Mindbox\DTO\ResultDTO;
-use Mindbox\DTO\ValidationMessageResponseCollection;
+use Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection;
 use Mindbox\MindboxResponse;
 use PHPUnit\Framework\TestCase;
 

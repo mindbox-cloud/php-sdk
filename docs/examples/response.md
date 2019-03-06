@@ -39,7 +39,7 @@ try {
 }
 
 foreach ($response->getResult()->getOrders() as $order) {
-    /* @var $order \Mindbox\DTO\OrderResponseDTO */
+    /* @var $order \Mindbox\DTO\V2\Responses\OrderResponseDTO */
     var_dump($order->discountedTotalPrice());
     var_dump($order->getLines());
 }

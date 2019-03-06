@@ -36,7 +36,7 @@ Methods
 
 ### calculateCart
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\OrderHelper::calculateCart(\Mindbox\DTO\PreorderRequestDTO $order, string $operationName)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\OrderHelper::calculateCart(\Mindbox\DTO\V2\Requests\PreorderRequestDTO $order, string $operationName)
 
 Выполняет вызов стандартной операции Website.CalculateCart:
 
@@ -46,14 +46,14 @@ Methods
 
 
 #### Arguments
-* $order **[Mindbox\DTO\PreorderRequestDTO](Mindbox-DTO-PreorderRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные корзины для запроса.&lt;/p&gt;
+* $order **[Mindbox\DTO\V2\Requests\PreorderRequestDTO](Mindbox-DTO-V2-Requests-PreorderRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные корзины для запроса.&lt;/p&gt;
 * $operationName **string** - &lt;p&gt;Название операции.&lt;/p&gt;
 
 
 
 ### createOrder
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\OrderHelper::createOrder(\Mindbox\DTO\OrderCreateRequestDTO $order, string $operationName)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\OrderHelper::createOrder(\Mindbox\DTO\V2\Requests\OrderCreateRequestDTO $order, string $operationName)
 
 Выполняет вызов стандартной операции Website.CreateOrder:
 
@@ -63,14 +63,14 @@ Methods
 
 
 #### Arguments
-* $order **[Mindbox\DTO\OrderCreateRequestDTO](Mindbox-DTO-OrderCreateRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные корзины для запроса.&lt;/p&gt;
+* $order **[Mindbox\DTO\V2\Requests\OrderCreateRequestDTO](Mindbox-DTO-V2-Requests-OrderCreateRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные корзины для запроса.&lt;/p&gt;
 * $operationName **string** - &lt;p&gt;Название операции.&lt;/p&gt;
 
 
 
 ### confirmOrder
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\OrderHelper::confirmOrder(\Mindbox\DTO\OrderUpdateRequestDTO $order, string $operationName)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\OrderHelper::confirmOrder(\Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO $order, string $operationName)
 
 Выполняет вызов стандартной операции Website.ConfirmOrder:
 
@@ -80,14 +80,14 @@ Methods
 
 
 #### Arguments
-* $order **[Mindbox\DTO\OrderUpdateRequestDTO](Mindbox-DTO-OrderUpdateRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные корзины для запроса.&lt;/p&gt;
+* $order **[Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO](Mindbox-DTO-V2-Requests-OrderUpdateRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные корзины для запроса.&lt;/p&gt;
 * $operationName **string** - &lt;p&gt;Название операции.&lt;/p&gt;
 
 
 
 ### cancelOrder
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\OrderHelper::cancelOrder(\Mindbox\DTO\OrderUpdateRequestDTO $order, string $operationName)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\OrderHelper::cancelOrder(\Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO $order, string $operationName)
 
 Выполняет вызов стандартной операции Website.CancelOrder:
 
@@ -97,14 +97,14 @@ Methods
 
 
 #### Arguments
-* $order **[Mindbox\DTO\OrderUpdateRequestDTO](Mindbox-DTO-OrderUpdateRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные корзины для запроса.&lt;/p&gt;
+* $order **[Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO](Mindbox-DTO-V2-Requests-OrderUpdateRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные корзины для запроса.&lt;/p&gt;
 * $operationName **string** - &lt;p&gt;Название операции.&lt;/p&gt;
 
 
 
 ### offlineOrder
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\OrderHelper::offlineOrder(\Mindbox\DTO\OrderUpdateRequestDTO $order, string $operationName)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\OrderHelper::offlineOrder(\Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO $order, string $operationName)
 
 Выполняет вызов стандартной операции Website.OfflineOrder:
 
@@ -114,7 +114,7 @@ Methods
 
 
 #### Arguments
-* $order **[Mindbox\DTO\OrderUpdateRequestDTO](Mindbox-DTO-OrderUpdateRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные корзины для запроса.&lt;/p&gt;
+* $order **[Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO](Mindbox-DTO-V2-Requests-OrderUpdateRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные корзины для запроса.&lt;/p&gt;
 * $operationName **string** - &lt;p&gt;Название операции.&lt;/p&gt;
 
 

@@ -2,7 +2,7 @@
 
 namespace Mindbox\Tests\Responses;
 
-use Mindbox\DTO\OrderResponseDTO;
+use Mindbox\DTO\V2\Responses\OrderResponseDTO;
 use Mindbox\MindboxRequest;
 use Mindbox\Responses\MindboxOrderResponse;
 use PHPUnit\Framework\TestCase;

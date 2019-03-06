@@ -3,6 +3,15 @@
 
 namespace Mindbox\DTO;
 
+use Mindbox\DTO\V3\Requests\AddProductToListRequestDTO;
+use Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO;
+use Mindbox\DTO\V3\Requests\CustomerRequestDTO;
+use Mindbox\DTO\V3\Requests\PageRequestDTO;
+use Mindbox\DTO\V3\Requests\ProductListItemRequestCollection;
+use Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO;
+use Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO;
+use Mindbox\DTO\V3\Requests\SmsConfirmationRequestDTO;
+
 /**
  * Class OperationDTO
  *
@@ -10,7 +19,6 @@ namespace Mindbox\DTO;
  * @property CustomerRequestDTO               $customer
  * @property string                           $authentificationCode
  * @property SmsConfirmationRequestDTO        $smsConfirmation
- * @property MergeCustomersRequestDTO         $mergeCustomers
  * @property PageRequestDTO                   $page
  * @property ProductListItemRequestCollection $productList
  * @property AddProductToListRequestDTO       $addProductToList

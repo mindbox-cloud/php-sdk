@@ -2,6 +2,12 @@
 
 namespace Mindbox\Helpers;
 
+use Mindbox\DTO\V3\Requests\AddProductToListRequestDTO;
+use Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO;
+use Mindbox\DTO\V3\Requests\ProductListItemRequestCollection;
+use Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO;
+use Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO;
+
 /**
  * Хелпер, являющий обёрткой над универсальным запросом. Содержит методы для отправки запросов, связанных с изменением
  * списка продуктов в корзине.
@@ -16,14 +22,13 @@ class ProductListHelper extends AbstractMindboxHelper
      *
      * @see https://developers.mindbox.ru/docs/prodlistactionxml
      *
-     * @param \Mindbox\DTO\AddProductToListRequestDTO $product       Объект, содержащий данные продукта для запроса.
-     * @param string                                  $operationName Название операции.
-     * @param bool                                    $addDeviceUUID Флаг, сообщающий о необходимости передать в запросе
-     *                                                               DeviceUUID.
+     * @param AddProductToListRequestDTO $product       Объект, содержащий данные продукта для запроса.
+     * @param string                     $operationName Название операции.
+     * @param bool                       $addDeviceUUID Флаг, сообщающий о необходимости передать в запросе DeviceUUID.
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function addToCart(\Mindbox\DTO\AddProductToListRequestDTO $product, $operationName, $addDeviceUUID = true)
+    public function addToCart(AddProductToListRequestDTO $product, $operationName, $addDeviceUUID = true)
     {
         $operation = $this->createOperation();
         $operation->setAddProductToList($product);
@@ -36,16 +41,15 @@ class ProductListHelper extends AbstractMindboxHelper
      *
      * @see https://developers.mindbox.ru/docs/prodlistactionxml
      *
-     * @param \Mindbox\DTO\RemoveProductFromListRequestDTO $product       Объект, содержащий данные продукта для
-     *                                                                    запроса.
-     * @param string                                       $operationName Название операции.
-     * @param bool                                         $addDeviceUUID Флаг, сообщающий о необходимости передать в
-     *                                                                    запросе DeviceUUID.
+     * @param RemoveProductFromListRequestDTO $product       Объект, содержащий данные продукта для запроса.
+     * @param string                          $operationName Название операции.
+     * @param bool                            $addDeviceUUID Флаг, сообщающий о необходимости передать в запросе
+     *                                                       DeviceUUID.
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
     public function removeFromCart(
-        \Mindbox\DTO\RemoveProductFromListRequestDTO $product,
+        RemoveProductFromListRequestDTO $product,
         $operationName,
         $addDeviceUUID = true
     ) {
@@ -60,16 +64,15 @@ class ProductListHelper extends AbstractMindboxHelper
      *
      * @see https://developers.mindbox.ru/docs/prodlistactionxml
      *
-     * @param \Mindbox\DTO\SetProductCountInListRequestDTO $product       Объект, содержащий данные продукта для
-     *                                                                    запроса.
-     * @param string                                       $operationName Название операции.
-     * @param bool                                         $addDeviceUUID Флаг, сообщающий о необходимости передать в
-     *                                                                    запросе DeviceUUID.
+     * @param SetProductCountInListRequestDTO $product       Объект, содержащий данные продукта для запроса.
+     * @param string                          $operationName Название операции.
+     * @param bool                            $addDeviceUUID Флаг, сообщающий о необходимости передать в запросе
+     *                                                       DeviceUUID.
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
     public function setProductCount(
-        \Mindbox\DTO\SetProductCountInListRequestDTO $product,
+        SetProductCountInListRequestDTO $product,
         $operationName,
         $addDeviceUUID = true
     ) {
@@ -84,21 +87,19 @@ class ProductListHelper extends AbstractMindboxHelper
      *
      * @see https://developers.mindbox.ru/docs/prodlistactionxml
      *
-     * @param \Mindbox\DTO\ProductListItemRequestCollection $products         Объект, содержащий данные списка
-     *                                                                        продуктов
-     *                                                                        для запроса.
-     * @param string                                        $operationName    Название операции.
-     * @param \Mindbox\DTO\CustomerIdentityRequestDTO|null  $customerIdentity Объект, содержащий данные потребителя для
-     *                                                                        запроса.
-     * @param bool                                          $addDeviceUUID    Флаг, сообщающий о необходимости передать
-     *                                                                        в запросе DeviceUUID.
+     * @param ProductListItemRequestCollection $products         Объект, содержащий данные списка продуктов для
+     *                                                           запроса.
+     * @param string                           $operationName    Название операции.
+     * @param CustomerIdentityRequestDTO|null  $customerIdentity Объект, содержащий данные потребителя для запроса.
+     * @param bool                             $addDeviceUUID    Флаг, сообщающий о необходимости передать в запросе
+     *                                                           DeviceUUID.
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
     public function setProductList(
-        \Mindbox\DTO\ProductListItemRequestCollection $products,
+        ProductListItemRequestCollection $products,
         $operationName,
-        \Mindbox\DTO\CustomerIdentityRequestDTO $customerIdentity = null,
+        CustomerIdentityRequestDTO $customerIdentity = null,
         $addDeviceUUID = true
     ) {
         $operation = $this->createOperation();

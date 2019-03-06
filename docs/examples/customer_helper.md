@@ -12,7 +12,7 @@
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 
 /* Формирование данных о потребителе */
@@ -40,7 +40,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setMobilePhone(77777777777);
 
 try {
@@ -66,7 +66,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 
 try {
@@ -92,7 +92,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 
 /* Формирование данных о потребителе */
@@ -120,7 +120,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 $customer->setId('mindboxId', 12345);
 
@@ -149,7 +149,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 $customer->setId('mindboxId', 12345);
 
@@ -178,9 +178,9 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 
-$discountCard = new \Mindbox\DTO\DiscountCardIdentityRequestDTO();
+$discountCard = new \Mindbox\DTO\V3\Requests\DiscountCardIdentityRequestDTO();
 $discountCard->setId('number', 1111111111111);
 
 $customer->setDiscountCard($discountCard);
@@ -210,14 +210,14 @@ var_dump($response->getBody());
 
 $mergeCustomers = new Mindbox\DTO\MergeCustomersRequestDTO();
 
-$customerToMerge = new \Mindbox\DTO\CustomerIdentityRequestDTO();
+$customerToMerge = new \Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO();
 $customerToMerge->setId('mindboxId', 1029);
 
-$customersToMerge = new \Mindbox\DTO\CustomerIdentityRequestCollection([$customerToMerge]);
+$customersToMerge = new \Mindbox\DTO\V3\Requests\CustomerIdentityRequestCollection([$customerToMerge]);
 
 $mergeCustomers->setCustomersToMerge($customersToMerge);
 
-$resultingCustomer = new \Mindbox\DTO\CustomerIdentityRequestDTO();
+$resultingCustomer = new \Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO();
 $resultingCustomer->setId('mindboxId', 328);
 
 $mergeCustomers->setResultingCustomer($resultingCustomer);
@@ -242,7 +242,7 @@ try {
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setId('mindboxId', 328);
 
 try {
@@ -268,10 +268,10 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setId('mindboxId', 1812);
 
-$page = new \Mindbox\DTO\PageRequestDTO();
+$page = new \Mindbox\DTO\V3\Requests\PageRequestDTO();
 $page->setItemsPerPage(10);
 $page->setPageNumber(1);
 
@@ -299,7 +299,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setMobilePhone(77777777777);
 
 try {
@@ -326,7 +326,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setMobilePhone(77777777777);
 
 try {
@@ -353,7 +353,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setId('mindboxId', 1812);
 
 try {
@@ -380,10 +380,10 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setId('mindboxId', 1812);
 
-$smsConfirmation = new \Mindbox\DTO\SmsConfirmationRequestDTO();
+$smsConfirmation = new \Mindbox\DTO\V3\Requests\SmsConfirmationRequestDTO();
 $smsConfirmation->setCode(1234);
 
 try {
@@ -411,13 +411,13 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 
-$subscription = new \Mindbox\DTO\SubscriptionRequestDTO();
+$subscription = new \Mindbox\DTO\V3\Requests\SubscriptionRequestDTO();
 $subscription->setPointOfContact('email');
 
-$subscriptionCollection = new \Mindbox\DTO\SubscriptionRequestCollection([$subscription]);
+$subscriptionCollection = new \Mindbox\DTO\V3\Requests\SubscriptionRequestCollection([$subscription]);
 
 $customer->setSubscriptions($subscriptionCollection);
 
@@ -445,7 +445,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setMobilePhone(77777777777);
 $customer->setId('mindboxId', 1812);
 
@@ -472,7 +472,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setId('mindboxId', 1812);
 
 try {

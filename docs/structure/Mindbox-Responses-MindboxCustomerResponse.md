@@ -90,9 +90,22 @@ Methods
 
 ### getCustomer
 
-    \Mindbox\DTO\CustomerResponseDTO|null Mindbox\Responses\MindboxCustomerResponse::getCustomer()
+    \Mindbox\DTO\V3\Responses\CustomerResponseDTO|null Mindbox\Responses\MindboxCustomerResponse::getCustomer()
 
 Возвращает объект потребителя, если такой есть в ответе.
+
+
+
+* Visibility: **public**
+
+
+
+
+### getDiscountCards
+
+    \Mindbox\DTO\V3\Responses\DiscountCardResponseCollection|null Mindbox\Responses\MindboxCustomerResponse::getDiscountCards()
+
+Возвращает коллекцию карт лояльности потребителя, если такие есть в ответе.
 
 
 
@@ -182,7 +195,7 @@ Methods
 
 ### getValidationErrors
 
-    \Mindbox\DTO\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
+    \Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
 
 Возвращает ошибки валидации в виде DTO, если такие присутствуют в ответе.
 

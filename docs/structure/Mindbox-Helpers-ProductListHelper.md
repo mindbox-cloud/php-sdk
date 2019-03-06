@@ -36,7 +36,7 @@ Methods
 
 ### addToCart
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\ProductListHelper::addToCart(\Mindbox\DTO\AddProductToListRequestDTO $product, string $operationName, boolean $addDeviceUUID)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\ProductListHelper::addToCart(\Mindbox\DTO\V3\Requests\AddProductToListRequestDTO $product, string $operationName, boolean $addDeviceUUID)
 
 Выполняет вызов стандартной операции Website.AddToCart:
 
@@ -46,16 +46,15 @@ Methods
 
 
 #### Arguments
-* $product **[Mindbox\DTO\AddProductToListRequestDTO](Mindbox-DTO-AddProductToListRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные продукта для запроса.&lt;/p&gt;
+* $product **[Mindbox\DTO\V3\Requests\AddProductToListRequestDTO](Mindbox-DTO-V3-Requests-AddProductToListRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные продукта для запроса.&lt;/p&gt;
 * $operationName **string** - &lt;p&gt;Название операции.&lt;/p&gt;
-* $addDeviceUUID **boolean** - &lt;p&gt;Флаг, сообщающий о необходимости передать в запросе
-DeviceUUID.&lt;/p&gt;
+* $addDeviceUUID **boolean** - &lt;p&gt;Флаг, сообщающий о необходимости передать в запросе DeviceUUID.&lt;/p&gt;
 
 
 
 ### removeFromCart
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\ProductListHelper::removeFromCart(\Mindbox\DTO\RemoveProductFromListRequestDTO $product, string $operationName, boolean $addDeviceUUID)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\ProductListHelper::removeFromCart(\Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO $product, string $operationName, boolean $addDeviceUUID)
 
 Выполняет вызов стандартной операции Website.RemoveFromCart:
 
@@ -65,17 +64,16 @@ DeviceUUID.&lt;/p&gt;
 
 
 #### Arguments
-* $product **[Mindbox\DTO\RemoveProductFromListRequestDTO](Mindbox-DTO-RemoveProductFromListRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные продукта для
-запроса.&lt;/p&gt;
+* $product **[Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO](Mindbox-DTO-V3-Requests-RemoveProductFromListRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные продукта для запроса.&lt;/p&gt;
 * $operationName **string** - &lt;p&gt;Название операции.&lt;/p&gt;
-* $addDeviceUUID **boolean** - &lt;p&gt;Флаг, сообщающий о необходимости передать в
-запросе DeviceUUID.&lt;/p&gt;
+* $addDeviceUUID **boolean** - &lt;p&gt;Флаг, сообщающий о необходимости передать в запросе
+DeviceUUID.&lt;/p&gt;
 
 
 
 ### setProductCount
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\ProductListHelper::setProductCount(\Mindbox\DTO\SetProductCountInListRequestDTO $product, string $operationName, boolean $addDeviceUUID)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\ProductListHelper::setProductCount(\Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO $product, string $operationName, boolean $addDeviceUUID)
 
 Выполняет вызов стандартной операции Website.SetProductCount:
 
@@ -85,17 +83,16 @@ DeviceUUID.&lt;/p&gt;
 
 
 #### Arguments
-* $product **[Mindbox\DTO\SetProductCountInListRequestDTO](Mindbox-DTO-SetProductCountInListRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные продукта для
-запроса.&lt;/p&gt;
+* $product **[Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO](Mindbox-DTO-V3-Requests-SetProductCountInListRequestDTO.md)** - &lt;p&gt;Объект, содержащий данные продукта для запроса.&lt;/p&gt;
 * $operationName **string** - &lt;p&gt;Название операции.&lt;/p&gt;
-* $addDeviceUUID **boolean** - &lt;p&gt;Флаг, сообщающий о необходимости передать в
-запросе DeviceUUID.&lt;/p&gt;
+* $addDeviceUUID **boolean** - &lt;p&gt;Флаг, сообщающий о необходимости передать в запросе
+DeviceUUID.&lt;/p&gt;
 
 
 
 ### setProductList
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\ProductListHelper::setProductList(\Mindbox\DTO\ProductListItemRequestCollection $products, string $operationName, \Mindbox\DTO\CustomerIdentityRequestDTO|null $customerIdentity, boolean $addDeviceUUID)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Helpers\ProductListHelper::setProductList(\Mindbox\DTO\V3\Requests\ProductListItemRequestCollection $products, string $operationName, \Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO|null $customerIdentity, boolean $addDeviceUUID)
 
 Выполняет вызов стандартной операции Website.SetProductList:
 
@@ -105,14 +102,12 @@ DeviceUUID.&lt;/p&gt;
 
 
 #### Arguments
-* $products **[Mindbox\DTO\ProductListItemRequestCollection](Mindbox-DTO-ProductListItemRequestCollection.md)** - &lt;p&gt;Объект, содержащий данные списка
-продуктов
-для запроса.&lt;/p&gt;
-* $operationName **string** - &lt;p&gt;Название операции.&lt;/p&gt;
-* $customerIdentity **[Mindbox\DTO\CustomerIdentityRequestDTO](Mindbox-DTO-CustomerIdentityRequestDTO.md)|null** - &lt;p&gt;Объект, содержащий данные потребителя для
+* $products **[Mindbox\DTO\V3\Requests\ProductListItemRequestCollection](Mindbox-DTO-V3-Requests-ProductListItemRequestCollection.md)** - &lt;p&gt;Объект, содержащий данные списка продуктов для
 запроса.&lt;/p&gt;
-* $addDeviceUUID **boolean** - &lt;p&gt;Флаг, сообщающий о необходимости передать
-в запросе DeviceUUID.&lt;/p&gt;
+* $operationName **string** - &lt;p&gt;Название операции.&lt;/p&gt;
+* $customerIdentity **[Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO](Mindbox-DTO-V3-Requests-CustomerIdentityRequestDTO.md)|null** - &lt;p&gt;Объект, содержащий данные потребителя для запроса.&lt;/p&gt;
+* $addDeviceUUID **boolean** - &lt;p&gt;Флаг, сообщающий о необходимости передать в запросе
+DeviceUUID.&lt;/p&gt;
 
 
 

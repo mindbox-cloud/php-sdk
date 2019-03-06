@@ -2,7 +2,8 @@
 
 namespace Mindbox\Tests\Responses;
 
-use Mindbox\DTO\CustomerResponseDTO;
+use Mindbox\DTO\V3\Responses\CustomerResponseDTO;
+use Mindbox\DTO\V3\Responses\DiscountCardResponseCollection;
 use Mindbox\MindboxRequest;
 use Mindbox\Responses\MindboxCustomerResponse;
 use PHPUnit\Framework\TestCase;
@@ -29,6 +30,7 @@ class MindboxCustomerResponseTest extends TestCase
                     'customer' => [
                         'processingStatus' => 'status',
                     ],
+                    'discountCards' => [],
                 ],
             ],
             '',
@@ -36,8 +38,13 @@ class MindboxCustomerResponseTest extends TestCase
         );
     }
 
-    public function testGetCustomerIdentity()
+    public function testGetCustomer()
     {
         $this->assertInstanceOf(CustomerResponseDTO::class, $this->response->getCustomer());
+    }
+
+    public function testGetDiscountCards()
+    {
+        $this->assertInstanceOf(DiscountCardResponseCollection::class, $this->response->getDiscountCards());
     }
 }

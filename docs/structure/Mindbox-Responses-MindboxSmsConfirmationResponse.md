@@ -90,7 +90,7 @@ Methods
 
 ### getSmsConfirmation
 
-    \Mindbox\DTO\SmsConfirmationResponseDTO|null Mindbox\Responses\MindboxSmsConfirmationResponse::getSmsConfirmation()
+    \Mindbox\DTO\V3\Responses\SmsConfirmationResponseDTO|null Mindbox\Responses\MindboxSmsConfirmationResponse::getSmsConfirmation()
 
 Возвращает объект результата подтверждения телефона, если такой присутствует в ответе.
 
@@ -182,7 +182,7 @@ Methods
 
 ### getValidationErrors
 
-    \Mindbox\DTO\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
+    \Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
 
 Возвращает ошибки валидации в виде DTO, если такие присутствуют в ответе.
 

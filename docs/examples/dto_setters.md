@@ -14,7 +14,7 @@ require_once __DIR__ . '{путь/до/автозагрузчика}';
 
 $operation = new \Mindbox\DTO\OperationDTO();
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setFirstName('some_firstName');
 $customer->setMiddleName('some_middleName');
 $customer->setLastName('some_lastName');
@@ -33,12 +33,12 @@ $subscriptionsData = [
 
 $subscriptionsCollection = [];
 foreach ($subscriptionsData as $subscriptionsDatum) {
-    $subscription = new \Mindbox\DTO\SubscriptionRequestDTO();
+    $subscription = new \Mindbox\DTO\V3\Requests\SubscriptionRequestDTO();
     $subscription->setPointOfContact($subscriptionsDatum['pointOfContact']);
     $subscription->setTopic($subscriptionsDatum['topic']);
     $subscriptionsCollection[] = $subscription;
 }
-$subscriptions = new \Mindbox\DTO\SubscriptionRequestCollection($subscriptionsCollection);
+$subscriptions = new \Mindbox\DTO\V3\Requests\SubscriptionRequestCollection($subscriptionsCollection);
 $customer->setSubscriptions($subscriptions);
 
 $operation->setCustomer($customer);
@@ -102,7 +102,7 @@ require_once __DIR__ . '{путь/до/автозагрузчика}';
 
 $operation = new \Mindbox\DTO\OperationDTO();
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setFirstName('some_firstName');
 $customer->setMiddleName('some_middleName');
 $customer->setField('someField', 'someValue');

@@ -90,7 +90,7 @@ Methods
 
 ### getCustomerIdentity
 
-    \Mindbox\DTO\CustomerResponseDTO|null Mindbox\Responses\MindboxCustomerIdentityResponse::getCustomerIdentity()
+    \Mindbox\DTO\V3\Responses\CustomerResponseDTO|null Mindbox\Responses\MindboxCustomerIdentityResponse::getCustomerIdentity()
 
 Возвращает объект идинтификации потребителя, если такой есть в ответе.
 
@@ -182,7 +182,7 @@ Methods
 
 ### getValidationErrors
 
-    \Mindbox\DTO\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
+    \Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
 
 Возвращает ошибки валидации в виде DTO, если такие присутствуют в ответе.
 

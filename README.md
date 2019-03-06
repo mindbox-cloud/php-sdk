@@ -72,7 +72,7 @@ $mindbox = new \Mindbox\Mindbox([
     'domain'       => '{domain}',
 ], $logger);
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 $customer->setMobilePhone('77777777777');
 $customer->setId('mindboxId', '1028');
@@ -109,7 +109,7 @@ $mindbox = new \Mindbox\Mindbox([
 
 $operation = new \Mindbox\DTO\OperationDTO();
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 $customer->setMobilePhone('77777777777');
 $customer->setId('mindboxId', '1028');

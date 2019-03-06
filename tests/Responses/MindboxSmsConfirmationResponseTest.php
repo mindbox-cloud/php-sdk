@@ -2,7 +2,7 @@
 
 namespace Mindbox\Tests\Responses;
 
-use Mindbox\DTO\SmsConfirmationResponseDTO;
+use Mindbox\DTO\V3\Responses\SmsConfirmationResponseDTO;
 use Mindbox\MindboxRequest;
 use Mindbox\Responses\MindboxSmsConfirmationResponse;
 use PHPUnit\Framework\TestCase;
