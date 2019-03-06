@@ -2,8 +2,8 @@
 
 namespace Mindbox\Tests\Responses;
 
-use Mindbox\DTO\CustomerIdentityResponseCollection;
-use Mindbox\DTO\CustomerIdentityResponseDTO;
+use Mindbox\DTO\V3\Responses\CustomerIdentityResponseCollection;
+use Mindbox\DTO\V3\Responses\CustomerIdentityResponseDTO;
 use Mindbox\MindboxRequest;
 use Mindbox\Responses\MindboxMergeCustomersResponse;
 use PHPUnit\Framework\TestCase;

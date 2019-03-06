@@ -38,7 +38,7 @@ class ProductListHelperTest extends AbstractMindboxHelperTest
 
     public function testRemoveFromCart()
     {
-        $dto           = new \Mindbox\DTO\RemoveProductFromListRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -54,7 +54,7 @@ class ProductListHelperTest extends AbstractMindboxHelperTest
 
     public function testAddToCart()
     {
-        $dto           = new \Mindbox\DTO\AddProductToListRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\AddProductToListRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -70,7 +70,7 @@ class ProductListHelperTest extends AbstractMindboxHelperTest
 
     public function testSetProductCount()
     {
-        $dto           = new \Mindbox\DTO\SetProductCountInListRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -86,7 +86,7 @@ class ProductListHelperTest extends AbstractMindboxHelperTest
 
     public function testSetProductList()
     {
-        $dto           = new \Mindbox\DTO\ProductListItemRequestCollection();
+        $dto           = new \Mindbox\DTO\V3\Requests\ProductListItemRequestCollection();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -102,8 +102,8 @@ class ProductListHelperTest extends AbstractMindboxHelperTest
 
     public function testSetProductListWithCustomer()
     {
-        $dto           = new \Mindbox\DTO\ProductListItemRequestCollection();
-        $customer      = new \Mindbox\DTO\CustomerIdentityRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\ProductListItemRequestCollection();
+        $customer      = new \Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 

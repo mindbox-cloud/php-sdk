@@ -82,11 +82,13 @@ class ResultDTOTest extends DTOTest
             'customersToMerge'      => [['someField' => 'some_field',]],
             'resultingCustomer'     => ['someField' => 'some_field',],
             'orders'                => [['someField' => 'some_field',]],
+            'order'                 => ['someField' => 'some_field',],
             'customerActions'       => [['someField' => 'some_field',]],
             'customerSegmentations' => [['someField' => 'some_field',]],
             'productList'           => [['someField' => 'some_field',]],
             'balances'              => [['someField' => 'some_field',]],
             'totalCount'            => 'some_totalCount',
+            'discountCards'         => [['someField' => 'some_field',]],
         ];
         $this->resultDto = new ResultDTO($data);
     }
@@ -102,70 +104,77 @@ class ResultDTOTest extends DTOTest
     {
         $messages = $this->resultDto->getValidationMessages();
 
-        $this->assertInstanceOf(\Mindbox\DTO\ValidationMessageResponseCollection::class, $messages);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection::class, $messages);
     }
 
     public function testGetCustomer()
     {
         $customer = $this->resultDto->getCustomer();
 
-        $this->assertInstanceOf(\Mindbox\DTO\CustomerResponseDTO::class, $customer);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\CustomerResponseDTO::class, $customer);
     }
 
     public function testGetSmsConfirmation()
     {
         $smsConfirmation = $this->resultDto->getSmsConfirmation();
 
-        $this->assertInstanceOf(\Mindbox\DTO\SmsConfirmationResponseDTO::class, $smsConfirmation);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\SmsConfirmationResponseDTO::class, $smsConfirmation);
     }
 
     public function testGetCustomersToMerge()
     {
         $customersToMerge = $this->resultDto->getCustomersToMerge();
 
-        $this->assertInstanceOf(\Mindbox\DTO\CustomerIdentityResponseCollection::class, $customersToMerge);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\CustomerIdentityResponseCollection::class, $customersToMerge);
     }
 
     public function testGetResultingCustomer()
     {
         $customersToMerge = $this->resultDto->getResultingCustomer();
 
-        $this->assertInstanceOf(\Mindbox\DTO\CustomerIdentityResponseDTO::class, $customersToMerge);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\CustomerIdentityResponseDTO::class, $customersToMerge);
     }
 
     public function testGetOrders()
     {
         $orders = $this->resultDto->getOrders();
 
-        $this->assertInstanceOf(\Mindbox\DTO\OrderResponseCollection::class, $orders);
+        $this->assertInstanceOf(\Mindbox\DTO\V2\Responses\OrderResponseCollection::class, $orders);
+    }
+
+    public function testGetOrder()
+    {
+        $orders = $this->resultDto->getOrder();
+
+        $this->assertInstanceOf(\Mindbox\DTO\V2\Responses\OrderResponseDTO::class, $orders);
     }
 
     public function testGetCustomerActions()
     {
         $actions = $this->resultDto->getCustomerActions();
 
-        $this->assertInstanceOf(\Mindbox\DTO\CustomerActionResponseCollection::class, $actions);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\CustomerActionResponseCollection::class, $actions);
     }
 
     public function testGetCustomerSegmentations()
     {
         $segmentations = $this->resultDto->getCustomerSegmentations();
 
-        $this->assertInstanceOf(\Mindbox\DTO\CustomerSegmentationResponseCollection::class, $segmentations);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\CustomerSegmentationResponseCollection::class, $segmentations);
     }
 
     public function testGetProductList()
     {
-        $segmentations = $this->resultDto->getProductList();
+        $products = $this->resultDto->getProductList();
 
-        $this->assertInstanceOf(\Mindbox\DTO\ProductListItemResponseCollection::class, $segmentations);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\ProductListItemResponseCollection::class, $products);
     }
 
     public function testGetBalances()
     {
-        $segmentations = $this->resultDto->getBalances();
+        $balances = $this->resultDto->getBalances();
 
-        $this->assertInstanceOf(\Mindbox\DTO\BalanceResponseCollection::class, $segmentations);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\BalanceResponseCollection::class, $balances);
     }
 
     public function testGetTotalCount()
@@ -173,5 +182,12 @@ class ResultDTOTest extends DTOTest
         $totalCount = $this->resultDto->getTotalCount();
 
         $this->assertSame('some_totalCount', $totalCount);
+    }
+
+    public function testGetDiscountCards()
+    {
+        $discountCards = $this->resultDto->getDiscountCards();
+
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\DiscountCardResponseCollection::class, $discountCards);
     }
 }

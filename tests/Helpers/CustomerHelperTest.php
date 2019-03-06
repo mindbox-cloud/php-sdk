@@ -45,7 +45,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testGetBalance()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -64,7 +64,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testMerge()
     {
-        $dto           = new \Mindbox\DTO\MergeCustomersRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\MergeCustomersRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -81,8 +81,8 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testGetBonusPointsHistory()
     {
-        $customerDto   = new \Mindbox\DTO\CustomerRequestDTO();
-        $pageDto       = new \Mindbox\DTO\PageRequestDTO();
+        $customerDto   = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
+        $pageDto       = new \Mindbox\DTO\V3\Requests\PageRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -107,7 +107,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testAuthorize()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -122,7 +122,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testCheckActive()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -141,7 +141,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testCheckByMail()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -160,7 +160,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testFill()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -179,7 +179,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testSubscribe()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -198,7 +198,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testEdit()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -217,7 +217,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testRegister()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -236,7 +236,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testResendConfirmationCode()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -255,7 +255,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testCheckByPhone()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -274,7 +274,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testSendAuthorizationCode()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -293,7 +293,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testGetDataByDiscountCard()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -312,7 +312,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testAutoConfirmMobile()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
 
@@ -327,8 +327,8 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testConfirmMobile()
     {
-        $dto             = new \Mindbox\DTO\CustomerRequestDTO();
-        $smsConfirmation = new \Mindbox\DTO\SmsConfirmationRequestDTO();
+        $dto             = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
+        $smsConfirmation = new \Mindbox\DTO\V3\Requests\SmsConfirmationRequestDTO();
         $operationName   = 'Website.OperationName';
         $addDeviceUUID   = false;
 
@@ -348,7 +348,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
 
     public function testCheckAuthorizationCode()
     {
-        $dto           = new \Mindbox\DTO\CustomerRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
         $operationName = 'Website.OperationName';
         $addDeviceUUID = false;
         $authCode      = 'authCode';

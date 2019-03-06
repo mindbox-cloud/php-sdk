@@ -2,7 +2,7 @@
 
 namespace Mindbox\Tests\Responses;
 
-use Mindbox\DTO\BalanceResponseCollection;
+use Mindbox\DTO\V3\Responses\BalanceResponseCollection;
 use Mindbox\MindboxRequest;
 use Mindbox\Responses\MindboxBalanceResponse;
 use PHPUnit\Framework\TestCase;

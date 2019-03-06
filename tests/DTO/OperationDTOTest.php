@@ -40,7 +40,7 @@ class OperationDTOTest extends DTOTest
     {
         $field = $this->dto->getCustomer();
 
-        $this->assertInstanceOf(\Mindbox\DTO\CustomerRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\CustomerRequestDTO::class, $field);
     }
 
     public function testSetCustomer()
@@ -48,7 +48,7 @@ class OperationDTOTest extends DTOTest
         $this->dto->setCustomer(['email' => 'some_email']);
         $field = $this->dto->getCustomer();
 
-        $this->assertInstanceOf(\Mindbox\DTO\CustomerRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\CustomerRequestDTO::class, $field);
         $this->assertSame('some_email', $field->getEmail());
     }
 
@@ -71,7 +71,7 @@ class OperationDTOTest extends DTOTest
     {
         $field = $this->dto->getSmsConfirmation();
 
-        $this->assertInstanceOf(\Mindbox\DTO\SmsConfirmationRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\SmsConfirmationRequestDTO::class, $field);
     }
 
     public function testSetSmsConfirmation()
@@ -79,7 +79,7 @@ class OperationDTOTest extends DTOTest
         $this->dto->setSmsConfirmation(['code' => 'some_code']);
         $field = $this->dto->getSmsConfirmation();
 
-        $this->assertInstanceOf(\Mindbox\DTO\SmsConfirmationRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\SmsConfirmationRequestDTO::class, $field);
         $this->assertSame('some_code', $field->getCode());
     }
 
@@ -87,7 +87,7 @@ class OperationDTOTest extends DTOTest
     {
         $field = $this->dto->getPage();
 
-        $this->assertInstanceOf(\Mindbox\DTO\PageRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\PageRequestDTO::class, $field);
     }
 
     public function testSetPage()
@@ -95,7 +95,7 @@ class OperationDTOTest extends DTOTest
         $this->dto->setPage(['itemsPerPage' => '12']);
         $field = $this->dto->getPage();
 
-        $this->assertInstanceOf(\Mindbox\DTO\PageRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\PageRequestDTO::class, $field);
         $this->assertSame('12', $field->getItemsPerPage());
     }
 
@@ -103,7 +103,7 @@ class OperationDTOTest extends DTOTest
     {
         $field = $this->dto->getProductList();
 
-        $this->assertInstanceOf(\Mindbox\DTO\ProductListItemRequestCollection::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\ProductListItemRequestCollection::class, $field);
     }
 
     public function testSetProductList()
@@ -111,14 +111,14 @@ class OperationDTOTest extends DTOTest
         $this->dto->setProductList(['productListItem' => ['price' => '1000']]);
         $field = $this->dto->getProductList();
 
-        $this->assertInstanceOf(\Mindbox\DTO\ProductListItemRequestCollection::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\ProductListItemRequestCollection::class, $field);
     }
 
     public function testGetAddProductToList()
     {
         $field = $this->dto->getAddProductToList();
 
-        $this->assertInstanceOf(\Mindbox\DTO\AddProductToListRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\AddProductToListRequestDTO::class, $field);
     }
 
     public function testSetAddProductToList()
@@ -126,7 +126,7 @@ class OperationDTOTest extends DTOTest
         $this->dto->setAddProductToList(['product' => ['price' => '1000']]);
         $field = $this->dto->getAddProductToList();
 
-        $this->assertInstanceOf(\Mindbox\DTO\AddProductToListRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\AddProductToListRequestDTO::class, $field);
         $this->assertSame('1000', $field->getProduct()->getPrice());
     }
 
@@ -134,7 +134,7 @@ class OperationDTOTest extends DTOTest
     {
         $field = $this->dto->getRemoveProductFromList();
 
-        $this->assertInstanceOf(\Mindbox\DTO\RemoveProductFromListRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO::class, $field);
     }
 
     public function testSetRemoveProductFromList()
@@ -142,7 +142,7 @@ class OperationDTOTest extends DTOTest
         $this->dto->setRemoveProductFromList(['product' => ['price' => '1500']]);
         $field = $this->dto->getRemoveProductFromList();
 
-        $this->assertInstanceOf(\Mindbox\DTO\RemoveProductFromListRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO::class, $field);
         $this->assertSame('1500', $field->getProduct()->getPrice());
     }
 
@@ -150,7 +150,7 @@ class OperationDTOTest extends DTOTest
     {
         $field = $this->dto->getSetProductCountInList();
 
-        $this->assertInstanceOf(\Mindbox\DTO\SetProductCountInListRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO::class, $field);
     }
 
     public function testSetSetProductCountInList()
@@ -158,7 +158,7 @@ class OperationDTOTest extends DTOTest
         $this->dto->setSetProductCountInList(['product' => ['price' => '2500']]);
         $field = $this->dto->getSetProductCountInList();
 
-        $this->assertInstanceOf(\Mindbox\DTO\SetProductCountInListRequestDTO::class, $field);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO::class, $field);
         $this->assertSame('2500', $field->getProduct()->getPrice());
     }
 }
