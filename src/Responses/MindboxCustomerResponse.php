@@ -2,7 +2,8 @@
 
 namespace Mindbox\Responses;
 
-use Mindbox\DTO\CustomerResponseDTO;
+use Mindbox\DTO\V3\Responses\CustomerResponseDTO;
+use Mindbox\DTO\V3\Responses\DiscountCardResponseCollection;
 use Mindbox\MindboxResponse;
 
 /**
@@ -22,5 +23,15 @@ class MindboxCustomerResponse extends MindboxResponse
     public function getCustomer()
     {
         return $this->getResult()->getCustomer();
+    }
+
+    /**
+     * Возвращает коллекцию карт лояльности потребителя, если такие есть в ответе.
+     *
+     * @return DiscountCardResponseCollection|null
+     */
+    public function getDiscountCards()
+    {
+        return $this->getResult()->getDiscountCards();
     }
 }

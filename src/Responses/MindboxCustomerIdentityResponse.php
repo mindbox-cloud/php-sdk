@@ -2,7 +2,7 @@
 
 namespace Mindbox\Responses;
 
-use Mindbox\DTO\CustomerResponseDTO;
+use Mindbox\DTO\V3\Responses\CustomerResponseDTO;
 use Mindbox\MindboxResponse;
 
 /**

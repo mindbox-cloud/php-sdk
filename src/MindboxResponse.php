@@ -3,7 +3,7 @@
 namespace Mindbox;
 
 use Mindbox\DTO\ResultDTO;
-use Mindbox\DTO\ValidationMessageResponseCollection;
+use Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection;
 
 /**
  * Класс, содержащий данные ответа от Mindbox API и методы для получения этих данных в удобном пользователю виде.

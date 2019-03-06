@@ -2,7 +2,7 @@
 
 namespace Mindbox\Responses;
 
-use Mindbox\DTO\OrderResponseCollection;
+use Mindbox\DTO\V2\Responses\OrderResponseCollection;
 use Mindbox\MindboxResponse;
 
 /**

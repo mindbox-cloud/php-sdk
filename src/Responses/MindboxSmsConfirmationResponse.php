@@ -2,7 +2,7 @@
 
 namespace Mindbox\Responses;
 
-use Mindbox\DTO\SmsConfirmationResponseDTO;
+use Mindbox\DTO\V3\Responses\SmsConfirmationResponseDTO;
 use Mindbox\MindboxResponse;
 
 /**
