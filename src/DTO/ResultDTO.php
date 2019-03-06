@@ -3,6 +3,19 @@
 
 namespace Mindbox\DTO;
 
+use Mindbox\DTO\V2\Responses\OrderResponseCollection;
+use Mindbox\DTO\V2\Responses\OrderResponseDTO;
+use Mindbox\DTO\V3\Responses\BalanceResponseCollection;
+use Mindbox\DTO\V3\Responses\CustomerActionResponseCollection;
+use Mindbox\DTO\V3\Responses\CustomerIdentityResponseCollection;
+use Mindbox\DTO\V3\Responses\CustomerIdentityResponseDTO;
+use Mindbox\DTO\V3\Responses\CustomerResponseDTO;
+use Mindbox\DTO\V3\Responses\CustomerSegmentationResponseCollection;
+use Mindbox\DTO\V3\Responses\DiscountCardResponseCollection;
+use Mindbox\DTO\V3\Responses\ProductListItemResponseCollection;
+use Mindbox\DTO\V3\Responses\SmsConfirmationResponseDTO;
+use Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection;
+
 /**
  * Class ResultDTO
  *
@@ -19,6 +32,8 @@ namespace Mindbox\DTO;
  * @property ProductListItemResponseCollection      $productList
  * @property BalanceResponseCollection              $balances
  * @property string                                 $totalCount
+ * @property OrderResponseDTO                       $order
+ * @property DiscountCardResponseCollection         $discountCards
  **/
 class ResultDTO extends DTO
 {
@@ -37,6 +52,7 @@ class ResultDTO extends DTO
         'productList'           => ProductListItemResponseCollection::class,
         'balances'              => BalanceResponseCollection::class,
         'order'                 => OrderResponseDTO::class,
+        'discountCards'         => DiscountCardResponseCollection::class,
     ];
 
     /**
@@ -154,5 +170,13 @@ class ResultDTO extends DTO
     public function getTotalCount()
     {
         return $this->getField('totalCount');
+    }
+
+    /**
+     * @return DiscountCardResponseCollection
+     */
+    public function getDiscountCards()
+    {
+        return $this->getField('discountCards');
     }
 }
