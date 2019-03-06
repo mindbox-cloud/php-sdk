@@ -90,7 +90,7 @@ Methods
 
 ### getCustomersToMerge
 
-    \Mindbox\DTO\CustomerIdentityResponseCollection|null Mindbox\Responses\MindboxMergeCustomersResponse::getCustomersToMerge()
+    \Mindbox\DTO\V3\Responses\CustomerIdentityResponseCollection|null Mindbox\Responses\MindboxMergeCustomersResponse::getCustomersToMerge()
 
 Возвращает коллекцию объединяемых потребителей, если такие есть в ответе.
 
@@ -103,7 +103,7 @@ Methods
 
 ### getResultingCustomer
 
-    \Mindbox\DTO\CustomerIdentityResponseDTO|null Mindbox\Responses\MindboxMergeCustomersResponse::getResultingCustomer()
+    \Mindbox\DTO\V3\Responses\CustomerIdentityResponseDTO|null Mindbox\Responses\MindboxMergeCustomersResponse::getResultingCustomer()
 
 Возвращает объект результирующего потребителя, если такой есть в ответе.
 
@@ -195,7 +195,7 @@ Methods
 
 ### getValidationErrors
 
-    \Mindbox\DTO\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
+    \Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
 
 Возвращает ошибки валидации в виде DTO, если такие присутствуют в ответе.
 

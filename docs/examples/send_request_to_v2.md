@@ -8,7 +8,7 @@
 * additionalUrl - дополнительный URL, конкатенируется с базовым URL: https://{{domain}}/v2.1/orders/{additionalUrl}, необязательный параметр;
 * queryParams - массив дополнительных GET параметров, необязательный параметр.
 
-Базовый DTO для формирования тела запроса к v2.1 - \Mindbox\DTO\OrderRequestDTO() и его потомки:
+Базовый DTO для формирования тела запроса к v2.1 - \Mindbox\DTO\V2\Requests\OrderRequestDTO() и его потомки:
 * OrderCreateRequestDTO;
 * OrderUpdateRequestDTO;
 * PreorderRequestDTO.
@@ -28,13 +28,13 @@ $mindbox = new \Mindbox\Mindbox([
     'domain'       => '{domain}',
 ], $logger);
 
-$customer = new \Mindbox\DTO\CustomerRequestV2DTO();
+$customer = new \Mindbox\DTO\V2\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 $customer->setMobilePhone('79374134389');
 $customer->setId('bitrixId', '123456');
 $customer->setId('mindboxId', '1028');
 
-$order = new \Mindbox\DTO\OrderCreateRequestDTO();
+$order = new \Mindbox\DTO\V2\Requests\OrderCreateRequestDTO();
 $order->setCustomer($customer);
 
 /* Формирование состава заказа */

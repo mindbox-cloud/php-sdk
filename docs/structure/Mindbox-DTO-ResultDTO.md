@@ -76,7 +76,7 @@ Properties
 
 ### $validationMessages
 
-    public \Mindbox\DTO\ValidationMessageResponseCollection $validationMessages
+    public \Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection $validationMessages
 
 
 
@@ -87,7 +87,7 @@ Properties
 
 ### $customer
 
-    public \Mindbox\DTO\CustomerResponseDTO $customer
+    public \Mindbox\DTO\V3\Responses\CustomerResponseDTO $customer
 
 
 
@@ -98,7 +98,7 @@ Properties
 
 ### $smsConfirmation
 
-    public \Mindbox\DTO\SmsConfirmationResponseDTO $smsConfirmation
+    public \Mindbox\DTO\V3\Responses\SmsConfirmationResponseDTO $smsConfirmation
 
 
 
@@ -109,7 +109,7 @@ Properties
 
 ### $customersToMerge
 
-    public \Mindbox\DTO\CustomerIdentityResponseCollection $customersToMerge
+    public \Mindbox\DTO\V3\Responses\CustomerIdentityResponseCollection $customersToMerge
 
 
 
@@ -120,7 +120,7 @@ Properties
 
 ### $resultingCustomer
 
-    public \Mindbox\DTO\CustomerIdentityResponseDTO $resultingCustomer
+    public \Mindbox\DTO\V3\Responses\CustomerIdentityResponseDTO $resultingCustomer
 
 
 
@@ -131,7 +131,7 @@ Properties
 
 ### $orders
 
-    public \Mindbox\DTO\OrderResponseCollection $orders
+    public \Mindbox\DTO\V2\Responses\OrderResponseCollection $orders
 
 
 
@@ -142,7 +142,7 @@ Properties
 
 ### $customerActions
 
-    public \Mindbox\DTO\CustomerActionResponseCollection $customerActions
+    public \Mindbox\DTO\V3\Responses\CustomerActionResponseCollection $customerActions
 
 
 
@@ -153,7 +153,7 @@ Properties
 
 ### $customerSegmentations
 
-    public \Mindbox\DTO\CustomerSegmentationResponseCollection $customerSegmentations
+    public \Mindbox\DTO\V3\Responses\CustomerSegmentationResponseCollection $customerSegmentations
 
 
 
@@ -164,7 +164,7 @@ Properties
 
 ### $productList
 
-    public \Mindbox\DTO\ProductListItemResponseCollection $productList
+    public \Mindbox\DTO\V3\Responses\ProductListItemResponseCollection $productList
 
 
 
@@ -175,7 +175,7 @@ Properties
 
 ### $balances
 
-    public \Mindbox\DTO\BalanceResponseCollection $balances
+    public \Mindbox\DTO\V3\Responses\BalanceResponseCollection $balances
 
 
 
@@ -187,6 +187,28 @@ Properties
 ### $totalCount
 
     public string $totalCount
+
+
+
+
+
+* Visibility: **public**
+
+
+### $order
+
+    public \Mindbox\DTO\V2\Responses\OrderResponseDTO $order
+
+
+
+
+
+* Visibility: **public**
+
+
+### $discountCards
+
+    public \Mindbox\DTO\V3\Responses\DiscountCardResponseCollection $discountCards
 
 
 
@@ -214,7 +236,7 @@ Methods
 
 ### getValidationMessages
 
-    \Mindbox\DTO\ValidationMessageResponseCollection Mindbox\DTO\ResultDTO::getValidationMessages()
+    \Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection Mindbox\DTO\ResultDTO::getValidationMessages()
 
 
 
@@ -227,7 +249,7 @@ Methods
 
 ### getCustomer
 
-    \Mindbox\DTO\CustomerResponseDTO Mindbox\DTO\ResultDTO::getCustomer()
+    \Mindbox\DTO\V3\Responses\CustomerResponseDTO Mindbox\DTO\ResultDTO::getCustomer()
 
 
 
@@ -240,7 +262,7 @@ Methods
 
 ### getSmsConfirmation
 
-    \Mindbox\DTO\SmsConfirmationResponseDTO Mindbox\DTO\ResultDTO::getSmsConfirmation()
+    \Mindbox\DTO\V3\Responses\SmsConfirmationResponseDTO Mindbox\DTO\ResultDTO::getSmsConfirmation()
 
 
 
@@ -253,7 +275,7 @@ Methods
 
 ### getCustomersToMerge
 
-    \Mindbox\DTO\CustomerIdentityResponseCollection Mindbox\DTO\ResultDTO::getCustomersToMerge()
+    \Mindbox\DTO\V3\Responses\CustomerIdentityResponseCollection Mindbox\DTO\ResultDTO::getCustomersToMerge()
 
 
 
@@ -266,7 +288,7 @@ Methods
 
 ### getResultingCustomer
 
-    \Mindbox\DTO\CustomerIdentityResponseDTO Mindbox\DTO\ResultDTO::getResultingCustomer()
+    \Mindbox\DTO\V3\Responses\CustomerIdentityResponseDTO Mindbox\DTO\ResultDTO::getResultingCustomer()
 
 
 
@@ -279,7 +301,7 @@ Methods
 
 ### getOrders
 
-    \Mindbox\DTO\OrderResponseCollection Mindbox\DTO\ResultDTO::getOrders()
+    \Mindbox\DTO\V2\Responses\OrderResponseCollection Mindbox\DTO\ResultDTO::getOrders()
 
 
 
@@ -292,7 +314,7 @@ Methods
 
 ### getOrder
 
-    \Mindbox\DTO\OrderResponseDTO Mindbox\DTO\ResultDTO::getOrder()
+    \Mindbox\DTO\V2\Responses\OrderResponseDTO Mindbox\DTO\ResultDTO::getOrder()
 
 
 
@@ -305,7 +327,7 @@ Methods
 
 ### getCustomerActions
 
-    \Mindbox\DTO\CustomerActionResponseCollection Mindbox\DTO\ResultDTO::getCustomerActions()
+    \Mindbox\DTO\V3\Responses\CustomerActionResponseCollection Mindbox\DTO\ResultDTO::getCustomerActions()
 
 
 
@@ -331,7 +353,7 @@ Methods
 
 ### getCustomerSegmentations
 
-    \Mindbox\DTO\CustomerSegmentationResponseCollection Mindbox\DTO\ResultDTO::getCustomerSegmentations()
+    \Mindbox\DTO\V3\Responses\CustomerSegmentationResponseCollection Mindbox\DTO\ResultDTO::getCustomerSegmentations()
 
 
 
@@ -344,7 +366,7 @@ Methods
 
 ### getProductList
 
-    \Mindbox\DTO\ProductListItemResponseCollection Mindbox\DTO\ResultDTO::getProductList()
+    \Mindbox\DTO\V3\Responses\ProductListItemResponseCollection Mindbox\DTO\ResultDTO::getProductList()
 
 
 
@@ -357,7 +379,7 @@ Methods
 
 ### getBalances
 
-    \Mindbox\DTO\BalanceResponseCollection Mindbox\DTO\ResultDTO::getBalances()
+    \Mindbox\DTO\V3\Responses\BalanceResponseCollection Mindbox\DTO\ResultDTO::getBalances()
 
 
 
@@ -371,6 +393,19 @@ Methods
 ### getTotalCount
 
     string Mindbox\DTO\ResultDTO::getTotalCount()
+
+
+
+
+
+* Visibility: **public**
+
+
+
+
+### getDiscountCards
+
+    \Mindbox\DTO\V3\Responses\DiscountCardResponseCollection Mindbox\DTO\ResultDTO::getDiscountCards()
 
 
 

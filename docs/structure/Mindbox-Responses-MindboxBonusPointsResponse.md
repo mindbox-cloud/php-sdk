@@ -116,7 +116,7 @@ Methods
 
 ### getBalances
 
-    \Mindbox\DTO\BalanceResponseCollection|null Mindbox\Responses\MindboxBonusPointsResponse::getBalances()
+    \Mindbox\DTO\V3\Responses\BalanceResponseCollection|null Mindbox\Responses\MindboxBonusPointsResponse::getBalances()
 
 Возвращает историю изменений баланса потребителя, если такая есть в ответе.
 
@@ -208,7 +208,7 @@ Methods
 
 ### getValidationErrors
 
-    \Mindbox\DTO\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
+    \Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
 
 Возвращает ошибки валидации в виде DTO, если такие присутствуют в ответе.
 

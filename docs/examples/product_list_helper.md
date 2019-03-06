@@ -12,7 +12,7 @@
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$addProductToListRequest = new \Mindbox\DTO\AddProductToListRequestDTO();
+$addProductToListRequest = new \Mindbox\DTO\V3\Requests\AddProductToListRequestDTO();
 
 $product = new Mindbox\DTO\ProductRequestDTO();
 $product->setName('name');
@@ -44,7 +44,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$removeProductFromListRequest = new \Mindbox\DTO\RemoveProductFromListRequestDTO();
+$removeProductFromListRequest = new \Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO();
 
 $product = new Mindbox\DTO\ProductRequestDTO();
 $product->setName('name');
@@ -76,7 +76,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$setProductCountInListRequest = new \Mindbox\DTO\SetProductCountInListRequestDTO();
+$setProductCountInListRequest = new \Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO();
 
 $product = new Mindbox\DTO\ProductRequestDTO();
 $product->setName('name');
@@ -115,9 +115,9 @@ $products[] = $product;
 
 /* Формирование данных о составе корзины */
 
-$products = new \Mindbox\DTO\ProductListItemRequestCollection($products);
+$products = new \Mindbox\DTO\V3\Requests\ProductListItemRequestCollection($products);
 
-$customerIdentity = new \Mindbox\DTO\CustomerIdentityRequestDTO();
+$customerIdentity = new \Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO();
 $customerIdentity->setId('mindboxId', 'some_mindboxId');
 
 try {

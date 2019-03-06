@@ -27,7 +27,7 @@ $mindbox = new \Mindbox\Mindbox([
     'domain'       => '{domain}',
 ], $logger);
 
-$customer = new \Mindbox\DTO\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 $customer->setMobilePhone('79374134389');
 $customer->setId('bitrixId', '123456');

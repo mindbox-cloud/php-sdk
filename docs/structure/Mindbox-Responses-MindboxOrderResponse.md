@@ -89,7 +89,7 @@ Methods
 
 ### getOrder
 
-    \Mindbox\DTO\OrderResponseDTO|null Mindbox\Responses\MindboxOrderResponse::getOrder()
+    \Mindbox\DTO\V2\Responses\OrderResponseDTO|null Mindbox\Responses\MindboxOrderResponse::getOrder()
 
 Возвращает объект заказа, если такой есть в ответе.
 
@@ -181,7 +181,7 @@ Methods
 
 ### getValidationErrors
 
-    \Mindbox\DTO\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
+    \Mindbox\DTO\V3\Responses\ValidationMessageResponseCollection|null Mindbox\MindboxResponse::getValidationErrors()
 
 Возвращает ошибки валидации в виде DTO, если такие присутствуют в ответе.
 
