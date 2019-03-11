@@ -408,7 +408,7 @@ class DTOTest extends TestCase
     {
         $dto = $this->getDto();
 
-        $this->assertIsArray($dto::getDTOMap());
+        $this->assertInternalType('array', $dto::getDTOMap());
     }
 
     /**
@@ -428,7 +428,7 @@ class DTOTest extends TestCase
     {
         $dto = $this->getDto();
 
-        $this->assertIsString($dto->getXmlName());
+        $this->assertInternalType('string', $dto->getXmlName());
     }
 
     /**

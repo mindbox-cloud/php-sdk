@@ -1,5 +1,7 @@
 # Mindbox PHP SDK
 
+[![Build Status](https://travis-ci.org/mindbox-moscow/php-sdk.svg?branch=master)](https://travis-ci.org/mindbox-moscow/php-sdk)
+
 PHP библиотека для упрощённого взаимодейтсвия вашего PHP приложения с API Mindbox. С полной документацией API Mindbox можно ознакомиться [здесь](https://developers.mindbox.ru/docs/v3).
 
 ## Начало работы

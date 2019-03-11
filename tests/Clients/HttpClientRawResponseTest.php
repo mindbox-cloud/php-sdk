@@ -92,7 +92,6 @@ HEADER;
         $body     = '';
         $response = new HttpClientRawResponse([$headers], $body);
         $headers  = $response->getHeaders();
-        $this->assertIsArray($headers);
         $this->assertSame($this->fakeHeadersAsArray, $headers);
     }
 
