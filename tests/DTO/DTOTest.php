@@ -29,6 +29,14 @@ class DTOTest extends TestCase
     }
 
     /**
+     * @return string
+     */
+    protected function getXmlName()
+    {
+        return ($this->dtoClassName)::getXmlName();
+    }
+
+    /**
      *
      */
     public function getFieldsProvider()
@@ -80,7 +88,7 @@ class DTOTest extends TestCase
                     'dto'            => $this->getDto(['dto' => 'value']),
                 ],
                 [
-                    ($this->dtoClassName)::getXmlName() => [
+                    $this->getXmlName() => [
                         'name'           => 'Andrew',
                         'age'            => 33,
                         'someField'      => true,
@@ -92,7 +100,7 @@ class DTOTest extends TestCase
             [
                 ['name' => 'Andrew', 'age' => 33, 'someField' => true, 33 => '345'],
                 [
-                    ($this->dtoClassName)::getXmlName() => [
+                    $this->getXmlName() => [
                         'name'      => 'Andrew',
                         'age'       => 33,
                         'someField' => true,
@@ -176,13 +184,13 @@ class DTOTest extends TestCase
                     'someDtoField'   => $this->getDto(['dto' => 'value']),
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><name>Andrew</name><age>33</age><someField>1</someField><someArrayField><field>value</field></someArrayField><someDtoField><dto>value</dto></someDtoField></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><name>Andrew</name><age>33</age><someField>1</someField><someArrayField><field>value</field></someArrayField><someDtoField><dto>value</dto></someDtoField></' . $this->getXmlName() . '>
 ',
             ],
             [
                 ['name' => 'Andrew', 'age' => 33, 'someField' => true, 33 => '345'],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><name>Andrew</name><age>33</age><someField>1</someField><value>345</value></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><name>Andrew</name><age>33</age><someField>1</someField><value>345</value></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -219,7 +227,7 @@ class DTOTest extends TestCase
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><orders><order><ids><mindbox>189</mindbox><transactionId>0000001282018244543</transactionId></ids><createdPointOfContact>244543</createdPointOfContact><createdDateTimeUtc>2018-09-28 10:35:57</createdDateTimeUtc><lines><line><quantity>1</quantity><discountedPrice>45</discountedPrice></line><line><quantity>2</quantity><discountedPrice>145</discountedPrice></line></lines></order><order><ids><mindbox>188</mindbox><transactionId>0000001272018244543</transactionId></ids><createdPointOfContact>244543</createdPointOfContact><createdDateTimeUtc>2018-09-28 10:34:12</createdDateTimeUtc></order></orders></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><orders><order><ids><mindbox>189</mindbox><transactionId>0000001282018244543</transactionId></ids><createdPointOfContact>244543</createdPointOfContact><createdDateTimeUtc>2018-09-28 10:35:57</createdDateTimeUtc><lines><line><quantity>1</quantity><discountedPrice>45</discountedPrice></line><line><quantity>2</quantity><discountedPrice>145</discountedPrice></line></lines></order><order><ids><mindbox>188</mindbox><transactionId>0000001272018244543</transactionId></ids><createdPointOfContact>244543</createdPointOfContact><createdDateTimeUtc>2018-09-28 10:34:12</createdDateTimeUtc></order></orders></' . $this->getXmlName() . '>
 ',
             ],
         ];
@@ -369,7 +377,7 @@ class DTOTest extends TestCase
     {
         $dto = $this->getDto($items);
 
-        $this->assertSame($asArray[($this->dtoClassName)::getXmlName()], $dto->getFieldsAsArray());
+        $this->assertSame($asArray[$this->getXmlName()], $dto->getFieldsAsArray());
     }
 
     /**
