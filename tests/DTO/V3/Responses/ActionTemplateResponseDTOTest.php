@@ -49,7 +49,7 @@ class ActionTemplateResponseDTOTest extends DTOTest
                     'name'       => 33,
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><systemName>Andrew</systemName><name>33</name></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><systemName>Andrew</systemName><name>33</name></' . $this->getXmlName() . '>
 ',
             ],
         ]);

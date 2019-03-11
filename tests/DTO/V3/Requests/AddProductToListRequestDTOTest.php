@@ -51,7 +51,7 @@ class AddProductToListRequestDTOTest extends DTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><product><someField>someName</someField></product></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><product><someField>someName</someField></product></' . $this->getXmlName() . '>
 ',
             ],
         ]);

@@ -142,7 +142,7 @@ class OrderRequestDTOTest extends DTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><ids><someField>someValue</someField><otherField>otherValue</otherField></ids><area><someField>someValue</someField></area></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><ids><someField>someValue</someField><otherField>otherValue</otherField></ids><area><someField>someValue</someField></area></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -157,7 +157,7 @@ class OrderRequestDTOTest extends DTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><lines><line><someField>someValue</someField></line><line><someField2>someValue2</someField2></line></lines></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><lines><line><someField>someValue</someField></line><line><someField2>someValue2</someField2></line></lines></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -169,7 +169,7 @@ class OrderRequestDTOTest extends DTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><lines><line><someField>someValue</someField></line></lines></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><lines><line><someField>someValue</someField></line></lines></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -186,7 +186,7 @@ class OrderRequestDTOTest extends DTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><lines><line><someField>someValue</someField></line><line><someField2>someValue2</someField2></line></lines></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><lines><line><someField>someValue</someField></line><line><someField2>someValue2</someField2></line></lines></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -199,7 +199,7 @@ class OrderRequestDTOTest extends DTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><lines><line><someField>someValue</someField></line></lines></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><lines><line><someField>someValue</someField></line></lines></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -213,7 +213,7 @@ class OrderRequestDTOTest extends DTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><customFields><someField>someValue</someField><someArrayField><value>someValue</value><value>someValue2</value></someArrayField></customFields></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><customFields><someField>someValue</someField><someArrayField><value>someValue</value><value>someValue2</value></someArrayField></customFields></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -228,7 +228,7 @@ class OrderRequestDTOTest extends DTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><customFields><someField>someValue</someField><someArrayField><value>someValue</value><value>someValue2</value></someArrayField></customFields></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><customFields><someField>someValue</someField><someArrayField><value>someValue</value><value>someValue2</value></someArrayField></customFields></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -238,7 +238,7 @@ class OrderRequestDTOTest extends DTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><customFields><someField>someValue</someField></customFields></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><customFields><someField>someValue</someField></customFields></' . $this->getXmlName() . '>
 ',
             ],
         ]);

@@ -143,7 +143,7 @@ class CustomerRequestDTOTest extends CustomerIdentityRequestDTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><ids><someField>someValue</someField><otherField>otherValue</otherField></ids><area><someField>someValue</someField></area></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><ids><someField>someValue</someField><otherField>otherValue</otherField></ids><area><someField>someValue</someField></area></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -158,7 +158,7 @@ class CustomerRequestDTOTest extends CustomerIdentityRequestDTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><subscriptions><subscription><someField>someValue</someField></subscription><subscription><someField2>someValue2</someField2></subscription></subscriptions></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><subscriptions><subscription><someField>someValue</someField></subscription><subscription><someField2>someValue2</someField2></subscription></subscriptions></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -170,7 +170,7 @@ class CustomerRequestDTOTest extends CustomerIdentityRequestDTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><subscriptions><subscription><someField>someValue</someField></subscription></subscriptions></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><subscriptions><subscription><someField>someValue</someField></subscription></subscriptions></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -184,7 +184,7 @@ class CustomerRequestDTOTest extends CustomerIdentityRequestDTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><subscriptions><subscription><someField>someValue</someField></subscription></subscriptions></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><subscriptions><subscription><someField>someValue</someField></subscription></subscriptions></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -200,7 +200,7 @@ class CustomerRequestDTOTest extends CustomerIdentityRequestDTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><subscriptions><subscription><someField>someValue</someField></subscription><subscription><someField2>someValue2</someField2></subscription></subscriptions></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><subscriptions><subscription><someField>someValue</someField></subscription><subscription><someField2>someValue2</someField2></subscription></subscriptions></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -213,7 +213,7 @@ class CustomerRequestDTOTest extends CustomerIdentityRequestDTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><subscriptions><subscription><someField>someValue</someField></subscription></subscriptions></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><subscriptions><subscription><someField>someValue</someField></subscription></subscriptions></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -227,7 +227,7 @@ class CustomerRequestDTOTest extends CustomerIdentityRequestDTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><customFields><someField>someValue</someField><someArrayField><value>someValue</value><value>someValue2</value></someArrayField></customFields></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><customFields><someField>someValue</someField><someArrayField><value>someValue</value><value>someValue2</value></someArrayField></customFields></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -242,7 +242,7 @@ class CustomerRequestDTOTest extends CustomerIdentityRequestDTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><customFields><someField>someValue</someField><someArrayField><value>someValue</value><value>someValue2</value></someArrayField></customFields></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><customFields><someField>someValue</someField><someArrayField><value>someValue</value><value>someValue2</value></someArrayField></customFields></' . $this->getXmlName() . '>
 ',
             ],
             [
@@ -252,7 +252,7 @@ class CustomerRequestDTOTest extends CustomerIdentityRequestDTOTest
                     ],
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . ($this->dtoClassName)::getXmlName() . '><customFields><someField>someValue</someField></customFields></' . ($this->dtoClassName)::getXmlName() . '>
+<' . $this->getXmlName() . '><customFields><someField>someValue</someField></customFields></' . $this->getXmlName() . '>
 ',
             ],
         ]);
