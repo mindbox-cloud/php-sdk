@@ -94,11 +94,11 @@ class MindboxClientV2Test extends AbstractMindboxClientTest
     }
 
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject|\Mindbox\DTO\MindboxXMLSerializer
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Mindbox\XMLHelper\MindboxXMLSerializer
      */
     protected function getXmlSerializerStub()
     {
-        $serializerStub = $this->getMockBuilder(\Mindbox\DTO\MindboxXMLSerializer::class)
+        $serializerStub = $this->getMockBuilder(\Mindbox\XMLHelper\MindboxXMLSerializer::class)
             ->getMock();
 
         return $serializerStub;

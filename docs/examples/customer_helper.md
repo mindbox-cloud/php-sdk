@@ -208,7 +208,7 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$mergeCustomers = new Mindbox\DTO\MergeCustomersRequestDTO();
+$mergeCustomers = new Mindbox\DTO\V3\Requests\MergeCustomersRequestDTO();
 
 $customerToMerge = new \Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO();
 $customerToMerge->setId('mindboxId', 1029);

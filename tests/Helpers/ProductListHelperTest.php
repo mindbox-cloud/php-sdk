@@ -2,7 +2,7 @@
 
 namespace Mindbox\Tests\Helpers;
 
-use Mindbox\DTO\OperationDTO;
+use Mindbox\DTO\V3\OperationDTO;
 use Mindbox\Helpers\ProductListHelper;
 
 /**

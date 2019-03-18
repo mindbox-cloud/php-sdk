@@ -3,7 +3,7 @@
 
 namespace Mindbox\Clients;
 
-use Mindbox\DTO\MindboxXMLSerializer;
+use Mindbox\XMLHelper\MindboxXMLSerializer;
 use Mindbox\Exceptions\MindboxConfigException;
 use Mindbox\HttpClients\IHttpClient;
 use Psr\Log\LoggerInterface;

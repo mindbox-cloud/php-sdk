@@ -3,8 +3,6 @@
 
 namespace Mindbox\DTO\V2\Requests;
 
-use Mindbox\DTO\CustomFieldRequestDTO;
-use Mindbox\DTO\IdentityRequestDTO;
 use Mindbox\DTO\V2\OrderDTO;
 
 /**

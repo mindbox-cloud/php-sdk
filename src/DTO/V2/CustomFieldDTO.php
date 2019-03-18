@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Mindbox\DTO;
+namespace Mindbox\DTO\V2;
 
 /**
  * Trait CustomFieldDTO
  *
- * @package Mindbox\DTO
+ * @package Mindbox\DTO\V2
  */
 trait CustomFieldDTO
 {

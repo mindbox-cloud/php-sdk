@@ -12,7 +12,7 @@ DTO в Mindbox SDK используются для упрощения форми
 ``` php
 require_once __DIR__ . '{путь/до/автозагрузчика}';
 
-$operation = new \Mindbox\DTO\OperationDTO();
+$operation = new \Mindbox\DTO\V3\OperationDTO();
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setFirstName('some_firstName');
@@ -100,7 +100,7 @@ JSON:
 ``` php
 require_once __DIR__ . '{путь/до/автозагрузчика}';
 
-$operation = new \Mindbox\DTO\OperationDTO();
+$operation = new \Mindbox\DTO\V3\OperationDTO();
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setFirstName('some_firstName');

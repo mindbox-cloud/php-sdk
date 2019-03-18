@@ -1,14 +1,15 @@
 <?php
 
 
-namespace Mindbox\DTO;
+namespace Mindbox\XMLHelper;
 
+use Mindbox\DTO\DTO;
 use SimpleXMLElement;
 
 /**
  * Class MindboxXMLSerializer
  *
- * @package Mindbox\DTO
+ * @package Mindbox\XMLHelper
  */
 class MindboxXMLSerializer
 {

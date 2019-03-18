@@ -1,8 +1,9 @@
 <?php
 
 
-namespace Mindbox\DTO;
+namespace Mindbox\DTO\V3;
 
+use Mindbox\DTO\DTO;
 use Mindbox\DTO\V3\Requests\AddProductToListRequestDTO;
 use Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO;
 use Mindbox\DTO\V3\Requests\CustomerRequestDTO;
@@ -15,7 +16,7 @@ use Mindbox\DTO\V3\Requests\SmsConfirmationRequestDTO;
 /**
  * Class OperationDTO
  *
- * @package Mindbox\DTO
+ * @package Mindbox\DTO\V3
  * @property CustomerRequestDTO               $customer
  * @property string                           $authentificationCode
  * @property SmsConfirmationRequestDTO        $smsConfirmation

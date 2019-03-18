@@ -4,7 +4,6 @@
 namespace Mindbox\DTO\V3\Requests;
 
 use Mindbox\DTO\DTO;
-use Mindbox\DTO\IdentityRequestDTO;
 
 /**
  * Class DiscountCardIdentityRequestDTO

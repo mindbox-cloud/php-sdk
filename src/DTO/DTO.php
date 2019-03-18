@@ -8,6 +8,7 @@ use ArrayIterator;
 use Countable;
 use IteratorAggregate;
 use Mindbox\Exceptions\MindboxException;
+use Mindbox\XMLHelper\MindboxXMLSerializer;
 
 /**
  * Class DTO

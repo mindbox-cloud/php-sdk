@@ -10,7 +10,7 @@
 * isSync - флаг, синхронный или асинхронный запрос, по умолчанию true (синхронный), необязательный параметр;
 * addDeviceUUID - флаг, добавлять ли DeviceUUID в запрос, по умолчанию true (добавляет DeviceUUID из куки mindboxDeviceUUID в query-параметры запроса и IP-адрес потребителя в заголовок X-Customer-IP), необязательный параметр.
 
-Базовый DTO для формирования тела запроса к v3 - \Mindbox\DTO\OperationDTO().
+Базовый DTO для формирования тела запроса к v3 - \Mindbox\DTO\V3\OperationDTO().
 
 Запросы к Mindbox API v3 отправляются в формате JSON, в кодировке UTF-8.
 
@@ -33,7 +33,7 @@ $customer->setMobilePhone('79374134389');
 $customer->setId('bitrixId', '123456');
 $customer->setId('mindboxId', '1028');
 
-$operation = new \Mindbox\DTO\OperationDTO();
+$operation = new \Mindbox\DTO\V3\OperationDTO();
 $operation->setCustomer($customer);
 
 /* Формирование состава операции */

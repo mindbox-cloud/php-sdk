@@ -22,7 +22,7 @@ class MindboxClientFactoryTest extends TestCase
     /* @var MindboxClientFactory $mindboxClientFactory */
     protected $mindboxClientFactory;
 
-    /* @var \Mindbox\DTO\MindboxXMLSerializer $xmlSerializerStub */
+    /* @var \Mindbox\XMLHelper\MindboxXMLSerializer $xmlSerializerStub */
     protected $xmlSerializerStub;
 
     /**
@@ -99,7 +99,7 @@ class MindboxClientFactoryTest extends TestCase
 
         $this->loggerHandlerStub = $this->createMock(\Psr\Log\LoggerInterface::class);
 
-        $this->xmlSerializerStub = $this->createMock(\Mindbox\DTO\MindboxXMLSerializer::class);
+        $this->xmlSerializerStub = $this->createMock(\Mindbox\XMLHelper\MindboxXMLSerializer::class);
 
         $this->mindboxClientFactory = new MindboxClientFactory();
     }

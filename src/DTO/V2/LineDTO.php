@@ -3,7 +3,6 @@
 
 namespace Mindbox\DTO\V2;
 
-use Mindbox\DTO\CustomFieldDTO;
 use Mindbox\DTO\DTO;
 
 /**
