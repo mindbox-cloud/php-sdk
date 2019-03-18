@@ -1,4 +1,4 @@
-Mindbox\DTO\OperationDTO
+Mindbox\DTO\V3\OperationDTO
 ===============
 
 Class OperationDTO
@@ -7,7 +7,7 @@ Class OperationDTO
 
 
 * Class name: OperationDTO
-* Namespace: Mindbox\DTO
+* Namespace: Mindbox\DTO\V3
 * Parent class: [Mindbox\DTO\DTO](Mindbox-DTO-DTO.md)
 
 
@@ -157,7 +157,7 @@ Methods
 
 ### getCustomer
 
-    \Mindbox\DTO\V3\Requests\CustomerRequestDTO Mindbox\DTO\OperationDTO::getCustomer()
+    \Mindbox\DTO\V3\Requests\CustomerRequestDTO Mindbox\DTO\V3\OperationDTO::getCustomer()
 
 
 
@@ -170,7 +170,7 @@ Methods
 
 ### setCustomer
 
-    mixed Mindbox\DTO\OperationDTO::setCustomer(array|\Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO $customer)
+    mixed Mindbox\DTO\V3\OperationDTO::setCustomer(array|\Mindbox\DTO\V3\Requests\CustomerIdentityRequestDTO $customer)
 
 
 
@@ -186,7 +186,7 @@ Methods
 
 ### getAuthentificationCode
 
-    string Mindbox\DTO\OperationDTO::getAuthentificationCode()
+    string Mindbox\DTO\V3\OperationDTO::getAuthentificationCode()
 
 
 
@@ -199,7 +199,7 @@ Methods
 
 ### setAuthentificationCode
 
-    mixed Mindbox\DTO\OperationDTO::setAuthentificationCode(mixed $code)
+    mixed Mindbox\DTO\V3\OperationDTO::setAuthentificationCode(mixed $code)
 
 
 
@@ -215,7 +215,7 @@ Methods
 
 ### getSmsConfirmation
 
-    \Mindbox\DTO\V3\Requests\SmsConfirmationRequestDTO Mindbox\DTO\OperationDTO::getSmsConfirmation()
+    \Mindbox\DTO\V3\Requests\SmsConfirmationRequestDTO Mindbox\DTO\V3\OperationDTO::getSmsConfirmation()
 
 
 
@@ -228,7 +228,7 @@ Methods
 
 ### setSmsConfirmation
 
-    mixed Mindbox\DTO\OperationDTO::setSmsConfirmation(array|\Mindbox\DTO\V3\Requests\SmsConfirmationRequestDTO $smsConfirmation)
+    mixed Mindbox\DTO\V3\OperationDTO::setSmsConfirmation(array|\Mindbox\DTO\V3\Requests\SmsConfirmationRequestDTO $smsConfirmation)
 
 
 
@@ -244,7 +244,7 @@ Methods
 
 ### getPage
 
-    \Mindbox\DTO\V3\Requests\PageRequestDTO Mindbox\DTO\OperationDTO::getPage()
+    \Mindbox\DTO\V3\Requests\PageRequestDTO Mindbox\DTO\V3\OperationDTO::getPage()
 
 
 
@@ -257,7 +257,7 @@ Methods
 
 ### setPage
 
-    mixed Mindbox\DTO\OperationDTO::setPage(array|\Mindbox\DTO\V3\Requests\PageRequestDTO $page)
+    mixed Mindbox\DTO\V3\OperationDTO::setPage(array|\Mindbox\DTO\V3\Requests\PageRequestDTO $page)
 
 
 
@@ -273,7 +273,7 @@ Methods
 
 ### getProductList
 
-    \Mindbox\DTO\V3\Requests\ProductListItemRequestCollection Mindbox\DTO\OperationDTO::getProductList()
+    \Mindbox\DTO\V3\Requests\ProductListItemRequestCollection Mindbox\DTO\V3\OperationDTO::getProductList()
 
 
 
@@ -286,7 +286,7 @@ Methods
 
 ### setProductList
 
-    mixed Mindbox\DTO\OperationDTO::setProductList(array|\Mindbox\DTO\V3\Requests\ProductListItemRequestCollection $productList)
+    mixed Mindbox\DTO\V3\OperationDTO::setProductList(array|\Mindbox\DTO\V3\Requests\ProductListItemRequestCollection $productList)
 
 
 
@@ -302,7 +302,7 @@ Methods
 
 ### getAddProductToList
 
-    \Mindbox\DTO\V3\Requests\AddProductToListRequestDTO Mindbox\DTO\OperationDTO::getAddProductToList()
+    \Mindbox\DTO\V3\Requests\AddProductToListRequestDTO Mindbox\DTO\V3\OperationDTO::getAddProductToList()
 
 
 
@@ -315,7 +315,7 @@ Methods
 
 ### setAddProductToList
 
-    mixed Mindbox\DTO\OperationDTO::setAddProductToList(array|\Mindbox\DTO\V3\Requests\AddProductToListRequestDTO $addProductToList)
+    mixed Mindbox\DTO\V3\OperationDTO::setAddProductToList(array|\Mindbox\DTO\V3\Requests\AddProductToListRequestDTO $addProductToList)
 
 
 
@@ -331,7 +331,7 @@ Methods
 
 ### getRemoveProductFromList
 
-    \Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO Mindbox\DTO\OperationDTO::getRemoveProductFromList()
+    \Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO Mindbox\DTO\V3\OperationDTO::getRemoveProductFromList()
 
 
 
@@ -344,7 +344,7 @@ Methods
 
 ### setRemoveProductFromList
 
-    mixed Mindbox\DTO\OperationDTO::setRemoveProductFromList(array|\Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO $removeProductFromList)
+    mixed Mindbox\DTO\V3\OperationDTO::setRemoveProductFromList(array|\Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO $removeProductFromList)
 
 
 
@@ -360,7 +360,7 @@ Methods
 
 ### getSetProductCountInList
 
-    \Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO Mindbox\DTO\OperationDTO::getSetProductCountInList()
+    \Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO Mindbox\DTO\V3\OperationDTO::getSetProductCountInList()
 
 
 
@@ -373,7 +373,7 @@ Methods
 
 ### setSetProductCountInList
 
-    mixed Mindbox\DTO\OperationDTO::setSetProductCountInList(array|\Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO $setProductCountInList)
+    mixed Mindbox\DTO\V3\OperationDTO::setSetProductCountInList(array|\Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO $setProductCountInList)
 
 
 

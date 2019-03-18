@@ -2,6 +2,8 @@ API Index
 =========
 
 * Mindbox
+    * Mindbox\XMLHelper
+        * [MindboxXMLSerializer](Mindbox-XMLHelper-MindboxXMLSerializer.md)
     * Mindbox\DTO
         * [DTO](Mindbox-DTO-DTO.md)
         * Mindbox\DTO\V2
@@ -80,7 +82,6 @@ API Index
             * [GiftCardDTO](Mindbox-DTO-V2-GiftCardDTO.md)
             * [CustomerIdentityDTO](Mindbox-DTO-V2-CustomerIdentityDTO.md)
             * [SkuIdentityDTO](Mindbox-DTO-V2-SkuIdentityDTO.md)
-        * [MindboxXMLSerializer](Mindbox-DTO-MindboxXMLSerializer.md)
         * Mindbox\DTO\V3
             * [LineDTO](Mindbox-DTO-V3-LineDTO.md)
             * Mindbox\DTO\V3\Requests
@@ -160,11 +161,11 @@ API Index
             * [SubscriptionDTO](Mindbox-DTO-V3-SubscriptionDTO.md)
             * [PaymentDTO](Mindbox-DTO-V3-PaymentDTO.md)
             * [AreaDTO](Mindbox-DTO-V3-AreaDTO.md)
+            * [OperationDTO](Mindbox-DTO-V3-OperationDTO.md)
             * [ProductListItemDTO](Mindbox-DTO-V3-ProductListItemDTO.md)
             * [CustomerIdentityDTO](Mindbox-DTO-V3-CustomerIdentityDTO.md)
             * [ProductIdentityDTO](Mindbox-DTO-V3-ProductIdentityDTO.md)
             * [SkuIdentityDTO](Mindbox-DTO-V3-SkuIdentityDTO.md)
-        * [OperationDTO](Mindbox-DTO-OperationDTO.md)
         * [DTOCollection](Mindbox-DTO-DTOCollection.md)
         * [ResultDTO](Mindbox-DTO-ResultDTO.md)
     * Mindbox\Loggers
