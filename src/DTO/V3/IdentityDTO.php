@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Mindbox\DTO;
+namespace Mindbox\DTO\V3;
 
 /**
  * Trait IdentityDTO
  *
- * @package Mindbox\DTO
+ * @package Mindbox\DTO\V3
  */
 trait IdentityDTO
 {

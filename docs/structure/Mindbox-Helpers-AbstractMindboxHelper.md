@@ -51,7 +51,7 @@ Methods
 
 ### createOperation
 
-    \Mindbox\DTO\OperationDTO Mindbox\Helpers\AbstractMindboxHelper::createOperation()
+    \Mindbox\DTO\V3\OperationDTO Mindbox\Helpers\AbstractMindboxHelper::createOperation()
 
 Инициализация объекта OperationDTO.
 

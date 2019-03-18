@@ -1,12 +1,14 @@
 <?php
 
 
-namespace Mindbox\DTO;
+namespace Mindbox\DTO\V3\Requests;
+
+use Mindbox\DTO\V3\CustomFieldDTO;
 
 /**
  * Trait CustomFieldRequestDTO
  *
- * @package Mindbox\DTO
+ * @package Mindbox\DTO\V3\Requests
  */
 trait CustomFieldRequestDTO
 {

@@ -109,7 +109,7 @@ $mindbox = new \Mindbox\Mindbox([
     'domain'       => '{domain}',
 ], $logger);
 
-$operation = new \Mindbox\DTO\OperationDTO();
+$operation = new \Mindbox\DTO\V3\OperationDTO();
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');

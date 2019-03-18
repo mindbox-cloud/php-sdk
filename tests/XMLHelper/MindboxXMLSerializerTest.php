@@ -1,14 +1,14 @@
 <?php
 
-namespace Mindbox\Tests\DTO;
+namespace Mindbox\Tests\XMLHelper;
 
 use Mindbox\DTO\DTO;
-use Mindbox\DTO\MindboxXMLSerializer;
+use Mindbox\XMLHelper\MindboxXMLSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class MindboxXMLSerializerTest
- * @package Mindbox\Tests\DTO
+ * @package Mindbox\Tests\XMLHelper
  */
 class MindboxXMLSerializerTest extends TestCase
 {

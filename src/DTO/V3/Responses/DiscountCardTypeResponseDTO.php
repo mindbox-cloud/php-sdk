@@ -4,7 +4,7 @@
 namespace Mindbox\DTO\V3\Responses;
 
 use Mindbox\DTO\DTO;
-use Mindbox\DTO\IdentityDTO;
+use Mindbox\DTO\V3\IdentityDTO;
 
 /**
  * Class DiscountCardTypeResponseDTO

@@ -3,7 +3,7 @@
 namespace Mindbox\Helpers;
 
 use Mindbox\Clients\AbstractMindboxClient;
-use Mindbox\DTO\OperationDTO;
+use Mindbox\DTO\V3\OperationDTO;
 use Mindbox\MindboxResponse;
 
 /**

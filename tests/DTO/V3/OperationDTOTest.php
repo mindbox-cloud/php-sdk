@@ -1,13 +1,14 @@
 <?php
 
-namespace Mindbox\Tests\DTO;
+namespace Mindbox\Tests\DTO\V3;
 
-use Mindbox\DTO\OperationDTO;
+use Mindbox\DTO\V3\OperationDTO;
+use Mindbox\Tests\DTO\DTOTest;
 
 /**
  * Class OperationDTOTest
  *
- * @package Mindbox\Tests\DTO
+ * @package Mindbox\Tests\DTO\V3
  */
 class OperationDTOTest extends DTOTest
 {

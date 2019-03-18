@@ -4,7 +4,7 @@
 namespace Mindbox\Clients;
 
 use Mindbox\DTO\DTO;
-use Mindbox\DTO\MindboxXMLSerializer;
+use Mindbox\XMLHelper\MindboxXMLSerializer;
 use Mindbox\HttpClients\IHttpClient;
 use Psr\Log\LoggerInterface;
 

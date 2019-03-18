@@ -4,7 +4,7 @@
 namespace Mindbox\DTO\V2\Responses;
 
 use Mindbox\DTO\DTO;
-use Mindbox\DTO\IdentityDTO;
+use Mindbox\DTO\V2\IdentityDTO;
 
 /**
  * Class PromoActionResponseDTO

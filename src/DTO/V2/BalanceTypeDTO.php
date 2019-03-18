@@ -4,7 +4,6 @@
 namespace Mindbox\DTO\V2;
 
 use Mindbox\DTO\DTO;
-use Mindbox\DTO\IdentityDTO;
 
 /**
  * Class BalanceTypeDTO

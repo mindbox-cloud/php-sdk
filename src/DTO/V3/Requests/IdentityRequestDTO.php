@@ -1,12 +1,14 @@
 <?php
 
 
-namespace Mindbox\DTO;
+namespace Mindbox\DTO\V3\Requests;
+
+use Mindbox\DTO\V3\IdentityDTO;
 
 /**
  * Trait IdentityRequestDTO
  *
- * @package Mindbox\DTO
+ * @package Mindbox\DTO\V3\Requests
  */
 trait IdentityRequestDTO
 {

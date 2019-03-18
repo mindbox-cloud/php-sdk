@@ -57,7 +57,7 @@ Properties
 
 ### $xmlSerializer
 
-    private \Mindbox\DTO\MindboxXMLSerializer $xmlSerializer
+    private \Mindbox\XMLHelper\MindboxXMLSerializer $xmlSerializer
 
 
 

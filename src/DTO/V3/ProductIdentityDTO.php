@@ -4,7 +4,6 @@
 namespace Mindbox\DTO\V3;
 
 use Mindbox\DTO\DTO;
-use Mindbox\DTO\IdentityDTO;
 
 /**
  * Class ProductIdentityDTO

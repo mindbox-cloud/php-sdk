@@ -1,4 +1,4 @@
-Mindbox\DTO\MindboxXMLSerializer
+Mindbox\XMLHelper\MindboxXMLSerializer
 ===============
 
 Class MindboxXMLSerializer
@@ -7,7 +7,7 @@ Class MindboxXMLSerializer
 
 
 * Class name: MindboxXMLSerializer
-* Namespace: Mindbox\DTO
+* Namespace: Mindbox\XMLHelper
 
 
 
@@ -21,7 +21,7 @@ Methods
 
 ### fromArrayToXML
 
-    string Mindbox\DTO\MindboxXMLSerializer::fromArrayToXML(string $name, array $data)
+    string Mindbox\XMLHelper\MindboxXMLSerializer::fromArrayToXML(string $name, array $data)
 
 Генерация xml строки из массива данных.
 
@@ -39,7 +39,7 @@ Methods
 
 ### getXML
 
-    \SimpleXMLElement Mindbox\DTO\MindboxXMLSerializer::getXML(\SimpleXMLElement $xml, array $data)
+    \SimpleXMLElement Mindbox\XMLHelper\MindboxXMLSerializer::getXML(\SimpleXMLElement $xml, array $data)
 
 Рекурсивно конвертирует массив в xml.
 
@@ -57,7 +57,7 @@ Methods
 
 ### getKey
 
-    string Mindbox\DTO\MindboxXMLSerializer::getKey(mixed $key, mixed $data)
+    string Mindbox\XMLHelper\MindboxXMLSerializer::getKey(mixed $key, mixed $data)
 
 Возвращает ключ для элемента xml.
 
@@ -75,7 +75,7 @@ Methods
 
 ### fromXMLToArray
 
-    array Mindbox\DTO\MindboxXMLSerializer::fromXMLToArray(string $xmlString)
+    array Mindbox\XMLHelper\MindboxXMLSerializer::fromXMLToArray(string $xmlString)
 
 Генерирует массив из строки xml.
 
@@ -91,7 +91,7 @@ Methods
 
 ### normalizeArray
 
-    array Mindbox\DTO\MindboxXMLSerializer::normalizeArray(array $data)
+    array Mindbox\XMLHelper\MindboxXMLSerializer::normalizeArray(array $data)
 
 Приводит массив, сформированный из xml, к общему виду с аналогичным массивом, сформированным из json.
 
