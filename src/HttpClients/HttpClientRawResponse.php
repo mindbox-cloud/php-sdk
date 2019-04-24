@@ -76,7 +76,7 @@ class HttpClientRawResponse
         // or a proxy was followed, etc
         $headerCollection = explode("\n\n", trim($rawHeaders));
         // We just want the last response (at the end)
-        while($httpCode === 0 && count($headerCollection) > 0) {
+        while ($httpCode === 0 && count($headerCollection) > 0) {
             $rawHeader = array_pop($headerCollection);
             $headerComponents = explode("\n", (string)$rawHeader);
             foreach ($headerComponents as $line) {
