@@ -69,14 +69,11 @@ class HttpClientRawResponse
         }
         $headers    = [];
         $httpCode   = 0;
-        $rawHeaders = implode("\r\n", $rawHeaders);
-        // Normalize line breaks
-        $rawHeaders = str_replace("\r\n", "\n", $rawHeaders);
-        // There will be multiple headers if a 301 was followed
-        // or a proxy was followed, etc
-        $headerCollection = explode("\n\n", trim($rawHeaders));
+        
+        $headerCollection = $rawHeaders;
         // We just want the last response (at the end)
         while ($httpCode === 0 && count($headerCollection) > 0) {
+            $headers    = [];
             $rawHeader = array_pop($headerCollection);
             $headerComponents = explode("\n", (string)$rawHeader);
             foreach ($headerComponents as $line) {
