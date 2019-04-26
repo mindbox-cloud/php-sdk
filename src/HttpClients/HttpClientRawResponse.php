@@ -81,7 +81,7 @@ class HttpClientRawResponse
         foreach ($headerComponents as $line) {
             if (strpos($line, ': ') === false) {
                 $code = $this->getHttpResponseCodeFromHeader($line);
-                if($httpCode === 0) {
+                if ($httpCode === 0) {
                     $httpCode = $code;
                 } elseif ($httpCode > 0 && $code > 0) {
                     $httpCode = $code;
