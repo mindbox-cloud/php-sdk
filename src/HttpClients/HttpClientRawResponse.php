@@ -80,7 +80,12 @@ class HttpClientRawResponse
         $headerComponents = explode("\n", (string)$rawHeader);
         foreach ($headerComponents as $line) {
             if (strpos($line, ': ') === false) {
-                $httpCode = $this->getHttpResponseCodeFromHeader($line);
+                $code = $this->getHttpResponseCodeFromHeader($line);
+                if($httpCode === 0) {
+                    $httpCode = $code;
+                } elseif ($httpCode > 0 && $code > 0) {
+                    $httpCode = $code;
+                }
             } else {
                 list($key, $value) = explode(': ', $line, 2);
                 $headers[$key] = $value;
