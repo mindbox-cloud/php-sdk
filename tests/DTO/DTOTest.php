@@ -184,13 +184,13 @@ class DTOTest extends TestCase
                     'someDtoField'   => $this->getDto(['dto' => 'value']),
                 ],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . $this->getXmlName() . '><name>Andrew</name><age>33</age><someField>1</someField><someArrayField><field>value</field></someArrayField><someDtoField><dto>value</dto></someDtoField></' . $this->getXmlName() . '>
+<' . $this->getXmlName() . '><name>Andrew</name><age>33</age><someField>true</someField><someArrayField><field>value</field></someArrayField><someDtoField><dto>value</dto></someDtoField></' . $this->getXmlName() . '>
 ',
             ],
             [
                 ['name' => 'Andrew', 'age' => 33, 'someField' => true, 33 => '345'],
                 '<?xml version="1.0" encoding="utf-8"?>
-<' . $this->getXmlName() . '><name>Andrew</name><age>33</age><someField>1</someField><value>345</value></' . $this->getXmlName() . '>
+<' . $this->getXmlName() . '><name>Andrew</name><age>33</age><someField>true</someField><value>345</value></' . $this->getXmlName() . '>
 ',
             ],
             [

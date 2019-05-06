@@ -47,6 +47,8 @@ class MindboxXMLSerializer
             if (is_array($value)) {
                 $subNode = $xml->addChild($key);
                 self::getXML($subNode, $value);
+            } elseif (is_bool($value)) {
+                $xml->addChild($key, var_export($value, true));
             } else {
                 $xml->addChild($key, $value);
             }
