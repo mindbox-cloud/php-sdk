@@ -57,6 +57,15 @@ class LineRequestDTO extends LineDTO
         $this->setField('sku', $sku);
     }
 
+
+    /**
+     * @param array|ProductRequestDTO $product
+     */
+    public function setProduct($product)
+    {
+        $this->setField('product', $product);
+    }
+
     /**
      * @return GiftCardRequestDTO
      */

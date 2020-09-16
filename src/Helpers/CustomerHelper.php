@@ -34,12 +34,12 @@ class CustomerHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function authorize(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true)
+
+    public function authorize(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true, $isSync)
     {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
-
-        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], false, $addDeviceUUID);
+        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], $isSync, $addDeviceUUID);
     }
 
     /**
@@ -95,14 +95,12 @@ class CustomerHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function register(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true)
+    public function register(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true, $isSync)
     {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
-
         $this->client->setResponseType(MindboxCustomerIdentityResponse::class);
-
-        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
+        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], $isSync, $addDeviceUUID);
     }
 
     /**
@@ -116,14 +114,12 @@ class CustomerHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function edit(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true)
+    public function edit(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true, $isSync)
     {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
-
         $this->client->setResponseType(MindboxCustomerIdentityResponse::class);
-
-        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
+        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], $isSync, $addDeviceUUID);
     }
 
     /**
