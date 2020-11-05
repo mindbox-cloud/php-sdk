@@ -10,7 +10,6 @@ use Mindbox\DTO\V3\ProductDTO;
  * Class ProductResponseDTO
  *
  * @package Mindbox\DTO\V3\Responses
- * @property SkuResponseDTO             $sku
  * @property CategoryResponseCollection $categories
  **/
 class ProductResponseDTO extends ProductIdentityResponseDTO
@@ -21,17 +20,8 @@ class ProductResponseDTO extends ProductIdentityResponseDTO
      * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
-        'sku'        => SkuResponseDTO::class,
         'categories' => CategoryResponseCollection::class,
     ];
-
-    /**
-     * @return SkuResponseDTO
-     */
-    public function getSku()
-    {
-        return $this->getField('sku');
-    }
 
     /**
      * @return CategoryResponseCollection

@@ -9,7 +9,6 @@ use Mindbox\DTO\V2\LineDTO;
  * Class LineResponseDTO
  *
  * @package Mindbox\DTO\V2\Responses
- * @property SkuResponseDTO                    $sku
  * @property string                            $basePricePerItem
  * @property AppliedDiscountResponseCollection $appliedDiscounts
  * @property PlaceholderResponseCollection     $placeHolders
@@ -22,19 +21,10 @@ class LineResponseDTO extends LineDTO
      * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
-        'sku'              => SkuResponseDTO::class,
         'appliedDiscounts' => AppliedDiscountResponseCollection::class,
         'placeHolders'     => PlaceholderResponseCollection::class,
         'giftCard'         => GiftCardResponseDTO::class,
     ];
-
-    /**
-     * @return SkuResponseDTO
-     */
-    public function getSku()
-    {
-        return $this->getField('sku');
-    }
 
     /**
      * @return string

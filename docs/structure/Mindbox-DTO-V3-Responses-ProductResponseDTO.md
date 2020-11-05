@@ -63,17 +63,6 @@ Properties
 * Visibility: **protected**
 
 
-### $sku
-
-    public \Mindbox\DTO\V3\Responses\SkuResponseDTO $sku
-
-
-
-
-
-* Visibility: **public**
-
-
 ### $categories
 
     public \Mindbox\DTO\V3\Responses\CategoryResponseCollection $categories
@@ -99,19 +88,6 @@ Properties
 
 Methods
 -------
-
-
-### getSku
-
-    \Mindbox\DTO\V3\Responses\SkuResponseDTO Mindbox\DTO\V3\Responses\ProductResponseDTO::getSku()
-
-
-
-
-
-* Visibility: **public**
-
-
 
 
 ### getCategories

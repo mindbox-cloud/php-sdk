@@ -10,7 +10,6 @@ use Mindbox\DTO\V3\LineDTO;
  *
  * @package Mindbox\DTO\V3\Responses
  * @property ProductIdentityResponseDTO         $product
- * @property SkuIdentityResponseDTO             $sku
  * @property string                             $basePricePerItem
  * @property string                             $priceOfLine
  * @property LineStatusResponseDTO              $status
@@ -25,7 +24,6 @@ class LineResponseDTO extends LineDTO
      */
     protected static $DTOMap = [
         'product'           => ProductIdentityResponseDTO::class,
-        'sku'               => SkuIdentityResponseDTO::class,
         'status'            => LineStatusResponseDTO::class,
         'appliedPromotions' => AppliedPromotionResponseCollection::class,
         'giftCard'          => GiftCardResponseDTO::class,
@@ -37,14 +35,6 @@ class LineResponseDTO extends LineDTO
     public function getProduct()
     {
         return $this->getField('product');
-    }
-
-    /**
-     * @return SkuIdentityResponseDTO
-     */
-    public function getSku()
-    {
-        return $this->getField('sku');
     }
 
     /**

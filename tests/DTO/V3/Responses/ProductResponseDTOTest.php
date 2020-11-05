@@ -25,7 +25,6 @@ class ProductResponseDTOTest extends DTOTest
     {
         $data      = [
             'ids'          => ['someField' => 'someValue'],
-            'sku'          => ['someField' => 'someValue'],
             'price'        => 'some_price',
             'categories'   => ['some_category' => 'some_categoryValue'],
             'name'         => 'some_name',
@@ -52,13 +51,6 @@ class ProductResponseDTOTest extends DTOTest
         $field = $this->dto->getId('someField');
 
         $this->assertSame('someValue', $field);
-    }
-
-    public function testGetSku()
-    {
-        $field = $this->dto->getSku();
-
-        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\SkuResponseDTO::class, $field);
     }
 
     public function testGetPrice()

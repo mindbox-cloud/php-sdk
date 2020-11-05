@@ -63,16 +63,6 @@ Properties
 * Visibility: **protected**
 
 
-### $sku
-
-    public \Mindbox\DTO\V2\Responses\SkuResponseDTO $sku
-
-
-
-
-
-* Visibility: **public**
-
 
 ### $basePricePerItem
 
@@ -167,18 +157,6 @@ Properties
 
 Methods
 -------
-
-
-### getSku
-
-    \Mindbox\DTO\V2\Responses\SkuResponseDTO Mindbox\DTO\V2\Responses\LineResponseDTO::getSku()
-
-
-
-
-
-* Visibility: **public**
-
 
 
 

@@ -35,7 +35,7 @@ class CustomerHelper extends AbstractMindboxHelper
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
 
-    public function authorize(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true, $isSync)
+    public function authorize(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true, $isSync = false)
     {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);

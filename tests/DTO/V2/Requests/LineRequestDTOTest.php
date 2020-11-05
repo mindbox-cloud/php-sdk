@@ -24,7 +24,6 @@ class LineRequestDTOTest extends DTOTest
     public function setUp()
     {
         $data      = [
-            'sku'          => ['someField' => 'someValue'],
             'quantity'     => 'some_quantity',
             'customFields' => ['someField' => 'someValue'],
             'status'       => 'some_status',
@@ -36,22 +35,6 @@ class LineRequestDTOTest extends DTOTest
             'placeHolders'     => [['someField' => 'someValue']],
         ];
         $this->dto = new LineRequestDTO($data);
-    }
-
-    public function testGetSku()
-    {
-        $field = $this->dto->getSku();
-
-        $this->assertInstanceOf(\Mindbox\DTO\V2\Requests\SkuRequestDTO::class, $field);
-    }
-
-    public function testSetSku()
-    {
-        $this->dto->setSku(['skuId' => 'some_skuId']);
-        $field = $this->dto->getSku();
-
-        $this->assertInstanceOf(\Mindbox\DTO\V2\Requests\SkuRequestDTO::class, $field);
-        $this->assertSame('some_skuId', $field->getSkuId());
     }
 
     public function testGetQuantity()

@@ -30,11 +30,4 @@ class ProductRequestDTO extends ProductIdentityRequestDTO
         $this->setField('basePricePerItem', $basePricePerItem);
     }
 
-    /**
-     * @param mixed $skuId
-     */
-    public function setSkuId($skuId)
-    {
-        $this->setField('skuId', $skuId);
-    }
 }

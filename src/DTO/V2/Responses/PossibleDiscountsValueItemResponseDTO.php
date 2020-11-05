@@ -9,7 +9,6 @@ use Mindbox\DTO\DTO;
  * Class PossibleDiscountsValueItemResponseDTO
  *
  * @package Mindbox\DTO\V2\Responses
- * @property SkuResponseDTO $sku
  */
 class PossibleDiscountsValueItemResponseDTO extends DTO
 {
@@ -17,7 +16,7 @@ class PossibleDiscountsValueItemResponseDTO extends DTO
      * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
-        'sku' => SkuResponseDTO::class,
+
     ];
 
     /**
@@ -25,11 +24,4 @@ class PossibleDiscountsValueItemResponseDTO extends DTO
      */
     protected static $xmlName = 'item';
 
-    /**
-     * @return SkuResponseDTO
-     */
-    public function getSku()
-    {
-        return $this->getField('sku');
-    }
 }

@@ -9,14 +9,12 @@ API Index
         * Mindbox\DTO\V2
             * [LineDTO](Mindbox-DTO-V2-LineDTO.md)
             * Mindbox\DTO\V2\Requests
-                * [SkuRequestDTO](Mindbox-DTO-V2-Requests-SkuRequestDTO.md)
                 * [DiscountRequestDTO](Mindbox-DTO-V2-Requests-DiscountRequestDTO.md)
                 * [PaymentRequestDTO](Mindbox-DTO-V2-Requests-PaymentRequestDTO.md)
                 * [DiscountCardIdentityRequestDTO](Mindbox-DTO-V2-Requests-DiscountCardIdentityRequestDTO.md)
                 * [LineRequestDTO](Mindbox-DTO-V2-Requests-LineRequestDTO.md)
                 * [OrderUpdateRequestDTO](Mindbox-DTO-V2-Requests-OrderUpdateRequestDTO.md)
                 * [SubscriptionRequestCollection](Mindbox-DTO-V2-Requests-SubscriptionRequestCollection.md)
-                * [SkuIdentityRequestDTO](Mindbox-DTO-V2-Requests-SkuIdentityRequestDTO.md)
                 * [LineRequestCollection](Mindbox-DTO-V2-Requests-LineRequestCollection.md)
                 * [CustomerRequestDTO](Mindbox-DTO-V2-Requests-CustomerRequestDTO.md)
                 * [CustomerIdentityRequestDTO](Mindbox-DTO-V2-Requests-CustomerIdentityRequestDTO.md)
@@ -31,7 +29,6 @@ API Index
                 * [AreaRequestDTO](Mindbox-DTO-V2-Requests-AreaRequestDTO.md)
                 * [SubscriptionRequestDTO](Mindbox-DTO-V2-Requests-SubscriptionRequestDTO.md)
             * Mindbox\DTO\V2\Responses
-                * [SkuIdentityResponseDTO](Mindbox-DTO-V2-Responses-SkuIdentityResponseDTO.md)
                 * [DiscountCardResponseCollection](Mindbox-DTO-V2-Responses-DiscountCardResponseCollection.md)
                 * [OrderResponseDTO](Mindbox-DTO-V2-Responses-OrderResponseDTO.md)
                 * [DiscountInfoBalanceSpentResponseDTO](Mindbox-DTO-V2-Responses-DiscountInfoBalanceSpentResponseDTO.md)
@@ -67,7 +64,6 @@ API Index
                 * [AppliedDiscountResponseDTO](Mindbox-DTO-V2-Responses-AppliedDiscountResponseDTO.md)
                 * [DiscountCardTypeResponseDTO](Mindbox-DTO-V2-Responses-DiscountCardTypeResponseDTO.md)
                 * [PaymentInfoResponseCollection](Mindbox-DTO-V2-Responses-PaymentInfoResponseCollection.md)
-                * [SkuResponseDTO](Mindbox-DTO-V2-Responses-SkuResponseDTO.md)
                 * [PromoActionResponseDTO](Mindbox-DTO-V2-Responses-PromoActionResponseDTO.md)
                 * [ContentItemTextResponseDTO](Mindbox-DTO-V2-Responses-ContentItemTextResponseDTO.md)
                 * [PromoCodeResponseDTO](Mindbox-DTO-V2-Responses-PromoCodeResponseDTO.md)
@@ -81,17 +77,14 @@ API Index
             * [AreaDTO](Mindbox-DTO-V2-AreaDTO.md)
             * [GiftCardDTO](Mindbox-DTO-V2-GiftCardDTO.md)
             * [CustomerIdentityDTO](Mindbox-DTO-V2-CustomerIdentityDTO.md)
-            * [SkuIdentityDTO](Mindbox-DTO-V2-SkuIdentityDTO.md)
         * Mindbox\DTO\V3
             * [LineDTO](Mindbox-DTO-V3-LineDTO.md)
             * Mindbox\DTO\V3\Requests
-                * [SkuRequestDTO](Mindbox-DTO-V3-Requests-SkuRequestDTO.md)
                 * [SetProductListRequestDTO](Mindbox-DTO-V3-Requests-SetProductListRequestDTO.md)
                 * [DiscountCardIdentityRequestDTO](Mindbox-DTO-V3-Requests-DiscountCardIdentityRequestDTO.md)
                 * [SmsConfirmationRequestDTO](Mindbox-DTO-V3-Requests-SmsConfirmationRequestDTO.md)
                 * [RemoveProductFromListRequestDTO](Mindbox-DTO-V3-Requests-RemoveProductFromListRequestDTO.md)
                 * [SubscriptionRequestCollection](Mindbox-DTO-V3-Requests-SubscriptionRequestCollection.md)
-                * [SkuIdentityRequestDTO](Mindbox-DTO-V3-Requests-SkuIdentityRequestDTO.md)
                 * [ProductRequestDTO](Mindbox-DTO-V3-Requests-ProductRequestDTO.md)
                 * [CategoryRequestDTO](Mindbox-DTO-V3-Requests-CategoryRequestDTO.md)
                 * [CategoryRequestCollection](Mindbox-DTO-V3-Requests-CategoryRequestCollection.md)
@@ -108,7 +101,6 @@ API Index
                 * [AreaRequestDTO](Mindbox-DTO-V3-Requests-AreaRequestDTO.md)
                 * [SubscriptionRequestDTO](Mindbox-DTO-V3-Requests-SubscriptionRequestDTO.md)
             * Mindbox\DTO\V3\Responses
-                * [SkuIdentityResponseDTO](Mindbox-DTO-V3-Responses-SkuIdentityResponseDTO.md)
                 * [DiscountCardResponseCollection](Mindbox-DTO-V3-Responses-DiscountCardResponseCollection.md)
                 * [OrderResponseDTO](Mindbox-DTO-V3-Responses-OrderResponseDTO.md)
                 * [AppliedPromotionResponseDTO](Mindbox-DTO-V3-Responses-AppliedPromotionResponseDTO.md)
@@ -148,7 +140,6 @@ API Index
                 * [CustomerBalanceChangeResponseDTO](Mindbox-DTO-V3-Responses-CustomerBalanceChangeResponseDTO.md)
                 * [CustomerIdentityResponseDTO](Mindbox-DTO-V3-Responses-CustomerIdentityResponseDTO.md)
                 * [DiscountCardTypeResponseDTO](Mindbox-DTO-V3-Responses-DiscountCardTypeResponseDTO.md)
-                * [SkuResponseDTO](Mindbox-DTO-V3-Responses-SkuResponseDTO.md)
                 * [LineStatusResponseDTO](Mindbox-DTO-V3-Responses-LineStatusResponseDTO.md)
                 * [ActionTemplateResponseDTO](Mindbox-DTO-V3-Responses-ActionTemplateResponseDTO.md)
                 * [ValidationMessageResponseDTO](Mindbox-DTO-V3-Responses-ValidationMessageResponseDTO.md)
@@ -165,7 +156,6 @@ API Index
             * [ProductListItemDTO](Mindbox-DTO-V3-ProductListItemDTO.md)
             * [CustomerIdentityDTO](Mindbox-DTO-V3-CustomerIdentityDTO.md)
             * [ProductIdentityDTO](Mindbox-DTO-V3-ProductIdentityDTO.md)
-            * [SkuIdentityDTO](Mindbox-DTO-V3-SkuIdentityDTO.md)
         * [DTOCollection](Mindbox-DTO-DTOCollection.md)
         * [ResultDTO](Mindbox-DTO-ResultDTO.md)
     * Mindbox\Loggers

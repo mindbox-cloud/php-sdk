@@ -9,7 +9,6 @@ use Mindbox\DTO\V2\LineDTO;
  * Class LineRequestDTO
  *
  * @package Mindbox\DTO\V2\Requests
- * @property SkuRequestDTO             $sku
  * @property GiftCardRequestDTO        $giftCard
  * @property DiscountRequestCollection $discounts
  **/
@@ -20,7 +19,6 @@ class LineRequestDTO extends LineDTO
      * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
-        'sku'       => SkuRequestDTO::class,
         'giftCard'  => GiftCardRequestDTO::class,
         'discounts' => DiscountRequestCollection::class,
     ];
@@ -39,22 +37,6 @@ class LineRequestDTO extends LineDTO
     public function setStatus($status)
     {
         $this->setField('status', $status);
-    }
-
-    /**
-     * @return SkuRequestDTO
-     */
-    public function getSku()
-    {
-        return $this->getField('sku');
-    }
-
-    /**
-     * @param array|SkuRequestDTO $sku
-     */
-    public function setSku($sku)
-    {
-        $this->setField('sku', $sku);
     }
 
 
@@ -96,5 +78,13 @@ class LineRequestDTO extends LineDTO
     public function setDiscounts($discounts)
     {
         $this->setField('discounts', $discounts);
+    }
+
+    /**
+     * @return ProductRequestDTO
+     */
+    public function getProduct()
+    {
+        return $this->getField('product');
     }
 }

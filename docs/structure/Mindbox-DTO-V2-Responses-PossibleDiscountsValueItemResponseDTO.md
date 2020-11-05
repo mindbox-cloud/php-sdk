@@ -63,31 +63,9 @@ Properties
 * Visibility: **protected**
 
 
-### $sku
-
-    public \Mindbox\DTO\V2\Responses\SkuResponseDTO $sku
-
-
-
-
-
-* Visibility: **public**
-
 
 Methods
 -------
-
-
-### getSku
-
-    \Mindbox\DTO\V2\Responses\SkuResponseDTO Mindbox\DTO\V2\Responses\PossibleDiscountsValueItemResponseDTO::getSku()
-
-
-
-
-
-* Visibility: **public**
-
 
 
 
