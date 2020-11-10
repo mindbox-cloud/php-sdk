@@ -35,6 +35,23 @@ class OrderHelper extends AbstractMindboxHelper
     }
 
     /**
+     * Выполняет вызов стандартной операции Website.CalculateAuthorizedCart:
+     *
+     * @see https://developers.mindbox.ru/docs/preorderxml
+     *
+     * @param PreorderRequestDTO $order         Объект, содержащий данные корзины для запроса.
+     * @param string             $operationName Название операции.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function calculateAuthorizedCart(PreorderRequestDTO $order, $operationName)
+    {
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
+        return $this->client->prepareRequest('POST', $operationName, $order, 'get-pre-order-info', [], true, true);
+    }
+
+    /**
      * Выполняет вызов стандартной операции Website.CreateOrder:
      *
      * @see https://developers.mindbox.ru/docs/xml
