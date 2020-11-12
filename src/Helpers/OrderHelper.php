@@ -44,7 +44,7 @@ class OrderHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function calculateAuthorizedCart(PreorderRequestDTO $order, $operationName)
+    public function calculateAuthorizedCart(\Mindbox\DTO\V3\Requests\PreorderRequestDTO $order, $operationName)
     {
         $this->client->setResponseType(MindboxOrderResponse::class);
 

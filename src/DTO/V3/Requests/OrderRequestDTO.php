@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Mindbox\DTO\V2\Requests;
+namespace Mindbox\DTO\V3\Requests;
 
-use Mindbox\DTO\V2\OrderDTO;
+use Mindbox\DTO\V3\OrderDTO;
 
 /**
  * Class OrderRequestDTO
