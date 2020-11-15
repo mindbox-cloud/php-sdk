@@ -1,18 +1,18 @@
 <?php
 
 
-namespace Mindbox\DTO\V3\Requests;
+namespace Mindbox\DTO\V2\Requests;
 
-use Mindbox\DTO\V3\SkuDTO;
+use Mindbox\DTO\V2\ProductDTO;
 
 /**
- * Class SkuRequestDTO
+ * Class ProductRequestDTO
  *
- * @package Mindbox\DTO\V3\Requests
+ * @package Mindbox\DTO\V2\Requests
  **/
-class SkuRequestDTO extends SkuIdentityRequestDTO
+class ProductRequestDTO extends ProductIdentityRequestDTO
 {
-    use SkuDTO;
+    use ProductDTO;
 
     /**
      * @param mixed $productId
@@ -28,13 +28,5 @@ class SkuRequestDTO extends SkuIdentityRequestDTO
     public function setBasePricePerItem($basePricePerItem)
     {
         $this->setField('basePricePerItem', $basePricePerItem);
-    }
-
-    /**
-     * @param mixed $skuId
-     */
-    public function setSkuId($skuId)
-    {
-        $this->setField('skuId', $skuId);
     }
 }

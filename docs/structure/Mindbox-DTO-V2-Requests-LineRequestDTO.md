@@ -63,17 +63,6 @@ Properties
 * Visibility: **protected**
 
 
-### $sku
-
-    public \Mindbox\DTO\V2\Requests\SkuRequestDTO $sku
-
-
-
-
-
-* Visibility: **public**
-
-
 ### $giftCard
 
     public \Mindbox\DTO\V2\Requests\GiftCardRequestDTO $giftCard
@@ -165,35 +154,6 @@ Methods
 
 #### Arguments
 * $status **mixed**
-
-
-
-### getSku
-
-    \Mindbox\DTO\V2\Requests\SkuRequestDTO Mindbox\DTO\V2\Requests\LineRequestDTO::getSku()
-
-
-
-
-
-* Visibility: **public**
-
-
-
-
-### setSku
-
-    mixed Mindbox\DTO\V2\Requests\LineRequestDTO::setSku(array|\Mindbox\DTO\V2\Requests\SkuRequestDTO $sku)
-
-
-
-
-
-* Visibility: **public**
-
-
-#### Arguments
-* $sku **array|[array](Mindbox-DTO-V2-Requests-SkuRequestDTO.md)**
 
 
 

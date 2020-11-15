@@ -63,16 +63,6 @@ Properties
 * Visibility: **protected**
 
 
-### $sku
-
-    public \Mindbox\DTO\V3\Requests\SkuRequestDTO $sku
-
-
-
-
-
-* Visibility: **public**
-
 
 ### $categories
 
@@ -99,34 +89,6 @@ Properties
 
 Methods
 -------
-
-
-### getSku
-
-    \Mindbox\DTO\V3\Requests\SkuRequestDTO Mindbox\DTO\V3\Requests\ProductRequestDTO::getSku()
-
-
-
-
-
-* Visibility: **public**
-
-
-
-
-### setSku
-
-    mixed Mindbox\DTO\V3\Requests\ProductRequestDTO::setSku(array|\Mindbox\DTO\V3\Requests\SkuRequestDTO $sku)
-
-
-
-
-
-* Visibility: **public**
-
-
-#### Arguments
-* $sku **array|[array](Mindbox-DTO-V3-Requests-SkuRequestDTO.md)**
 
 
 

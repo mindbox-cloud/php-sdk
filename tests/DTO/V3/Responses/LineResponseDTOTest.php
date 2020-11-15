@@ -26,7 +26,6 @@ class LineResponseDTOTest extends DTOTest
     {
         $data      = [
             'product'           => ['someField' => 'someValue'],
-            'sku'               => ['someField' => 'someValue'],
             'basePricePerItem'  => 'some_basePricePerItem',
             'priceOfLine'       => 'some_priceOfLine',
             'status'            => ['someField' => 'someValue'],
@@ -45,12 +44,6 @@ class LineResponseDTOTest extends DTOTest
         $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\ProductIdentityResponseDTO::class, $field);
     }
 
-    public function testGetSku()
-    {
-        $field = $this->dto->getSku();
-
-        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\SkuIdentityResponseDTO::class, $field);
-    }
 
     public function testGetBasePricePerItem()
     {

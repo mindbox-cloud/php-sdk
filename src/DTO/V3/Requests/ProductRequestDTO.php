@@ -9,7 +9,6 @@ use Mindbox\DTO\V3\ProductDTO;
  * Class ProductRequestDTO
  *
  * @package Mindbox\DTO\V3\Requests
- * @property SkuRequestDTO             $sku
  * @property CategoryRequestCollection $categories
  **/
 class ProductRequestDTO extends ProductIdentityRequestDTO
@@ -20,25 +19,8 @@ class ProductRequestDTO extends ProductIdentityRequestDTO
      * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
-        'sku'        => SkuRequestDTO::class,
         'categories' => CategoryRequestCollection::class,
     ];
-
-    /**
-     * @return SkuRequestDTO
-     */
-    public function getSku()
-    {
-        return $this->getField('sku');
-    }
-
-    /**
-     * @param array|SkuRequestDTO $sku
-     */
-    public function setSku($sku)
-    {
-        $this->setField('sku', $sku);
-    }
 
     /**
      * @return CategoryRequestCollection
@@ -62,6 +44,22 @@ class ProductRequestDTO extends ProductIdentityRequestDTO
     public function setPrice($price)
     {
         $this->setField('price', $price);
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setPricePerItem($price)
+    {
+        $this->setField('pricePerItem', $price);
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setPriceOfLine($price)
+    {
+        $this->setField('priceOfLine', $price);
     }
 
     /**
