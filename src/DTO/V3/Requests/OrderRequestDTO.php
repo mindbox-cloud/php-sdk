@@ -110,6 +110,14 @@ class OrderRequestDTO extends OrderDTO
     }
 
     /**
+     * @param array|DiscountRequestCollection $discounts
+     */
+    public function setCoupons($coupons)
+    {
+        $this->setField('coupons', $coupons);
+    }
+
+    /**
      * @return string
      */
     public function getDeliveryCost()
