@@ -137,6 +137,23 @@ class OrderHelper extends AbstractMindboxHelper
     }
 
     /**
+     * Выполняет вызов стандартной операции Website.SaveOfflineOrder:
+     *
+     * @see https://developers.mindbox.ru/docs/processing-offline-order
+     *
+     * @param OrderCreateRequestDTO $order         Объект, содержащий данные корзины для запроса.
+     * @param string                $operationName Название операции.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function SaveOfflineOrder(OrderCreateRequestDTO $order, $operationName)
+    {
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
+        return $this->client->prepareRequest('POST', $operationName, $order, 'create', [], false, true);
+    }
+
+    /**
      * Выполняет вызов стандартной операции Website.createUnauthorizedOrder:
      *
      * @see https://developers.mindbox.ru/docs/xml

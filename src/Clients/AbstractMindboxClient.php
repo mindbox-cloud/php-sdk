@@ -270,6 +270,8 @@ abstract class AbstractMindboxClient
             throw new \Mindbox\Exceptions\MindboxClientException('Empty response body');
         }
 
+        //$statusCode = 503;
+
         switch ($statusCode) {
             case 200:
                 $this->logger->info($message, $context);
