@@ -275,6 +275,6 @@ class OrderHelper extends AbstractMindboxHelper
 
         $this->client->setResponseType(MindboxOrdersResponse::class);
 
-        return $this->client->prepareRequest('GET', $operationName, null, 'by-customer', $queryParams, true, false);
+        return $this->client->prepareRequest('POST', $operationName, null, 'by-customer', $queryParams, true, false);
     }
 }
