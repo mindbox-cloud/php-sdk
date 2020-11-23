@@ -92,19 +92,4 @@ class SubscriptionRequestDTOTest extends DTOTest
 
         $this->assertSame('new_brand', $field);
     }
-
-    public function testGetValueByDefault()
-    {
-        $field = $this->dto->getValueByDefault();
-
-        $this->assertSame('some_valueByDefault', $field);
-    }
-
-    public function testSetValueByDefault()
-    {
-        $this->dto->setValueByDefault('new_valueByDefault');
-        $field = $this->dto->getValueByDefault();
-
-        $this->assertSame('new_valueByDefault', $field);
-    }
 }

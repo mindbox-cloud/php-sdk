@@ -52,6 +52,11 @@ abstract class AbstractMindboxClient
     protected $responseType;
 
     /**
+     * @var array $headers Поля хедера для запроса.
+     */
+    protected $headers;
+
+    /**
      * Конструктор AbstractMindboxClient.
      *
      * @param string          $secretKey  Секретный ключ.
@@ -64,6 +69,7 @@ abstract class AbstractMindboxClient
         $this->httpClient   = $httpClient;
         $this->logger       = $logger;
         $this->responseType = MindboxResponse::class;
+        $this->headers = $this->getDefaultHeaders();
     }
 
     /**
@@ -184,17 +190,11 @@ abstract class AbstractMindboxClient
     /**
      * Подготовка массива заголовков запроса.
      *
-     * @param bool $addDeviceUUID Флаг: добавлять ли в запрос DeviceUUID.
-     *
      * @return array
      */
-    protected function prepareHeaders($addDeviceUUID = true)
+    protected function prepareHeaders()
     {
-        return [
-            'Accept'        => 'application/json',
-            'Content-Type'  => 'application/json',
-            'Authorization' => $this->prepareAuthorizationHeader(),
-        ];
+        return $this->headers;
     }
 
     /**
@@ -373,5 +373,38 @@ abstract class AbstractMindboxClient
             return;
         }
         $this->responseType = $type;
+    }
+
+    /**
+     * Возвращает стандартные заголовки запроса.
+     *
+     * @return array
+     */
+    protected function getDefaultHeaders()
+    {
+        return [
+            'Accept'        => 'application/json',
+            'Content-Type'  => 'application/json',
+            'Authorization' => $this->prepareAuthorizationHeader(),
+            'Mindbox-Integration' => 'PhpSDK',
+            'Mindbox-Integration-Version' => '1.0'
+        ];
+    }
+
+    /**
+     * Добавляет заголовок запроса.
+     *
+     * @param array $headers Заголовок или массив заголовков.
+     *
+     * Пример:
+     *
+     * ['Mindbox-Integration' => 'PhpSDK']
+     *
+     */
+    public function addHeaders(array $headers)
+    {
+        if (is_array($headers)) {
+            $this->headers = array_merge($this->headers, $headers);
+        }
     }
 }

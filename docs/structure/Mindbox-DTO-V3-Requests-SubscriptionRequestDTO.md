@@ -190,18 +190,6 @@ Methods
 
 
 
-### getValueByDefault
-
-    string Mindbox\DTO\V3\Requests\SubscriptionRequestDTO::getValueByDefault()
-
-
-
-
-
-* Visibility: **public**
-
-
-
 
 ### setValueByDefault
 
