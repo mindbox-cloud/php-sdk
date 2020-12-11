@@ -146,7 +146,7 @@ class OrderHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function SaveOfflineOrder(OrderCreateRequestDTO $order, $operationName)
+    public function SaveOfflineOrder(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
     {
         $this->client->setResponseType(MindboxOrderResponse::class);
 
