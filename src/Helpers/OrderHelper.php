@@ -112,7 +112,7 @@ class OrderHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function BeginUnauthorizedOrderTransaction(OrderCreateRequestDTO $order, $operationName)
+    public function BeginUnauthorizedOrderTransaction(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
     {
         $this->client->setResponseType(MindboxOrderResponse::class);
 
@@ -129,7 +129,7 @@ class OrderHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function BeginAuthorizedOrderTransaction(OrderCreateRequestDTO $order, $operationName)
+    public function BeginAuthorizedOrderTransaction(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
     {
         $this->client->setResponseType(MindboxOrderResponse::class);
 
