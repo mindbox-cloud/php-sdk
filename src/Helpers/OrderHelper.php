@@ -150,7 +150,7 @@ class OrderHelper extends AbstractMindboxHelper
     {
         $this->client->setResponseType(MindboxOrderResponse::class);
 
-        return $this->client->prepareRequest('POST', $operationName, $order, 'create', [], false, true);
+        return $this->client->prepareRequest('POST', $operationName, $order, 'create', [], false, false);
     }
 
     /**
