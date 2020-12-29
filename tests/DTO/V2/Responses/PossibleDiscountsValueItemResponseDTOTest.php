@@ -28,5 +28,4 @@ class PossibleDiscountsValueItemResponseDTOTest extends DTOTest
         ];
         $this->dto = new PossibleDiscountsValueItemResponseDTO($data);
     }
-
 }

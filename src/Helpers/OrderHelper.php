@@ -95,7 +95,7 @@ class OrderHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function CreateAuthorizedOrder(OrderCreateRequestDTO $order, $operationName)
+    public function createAuthorizedOrder(OrderCreateRequestDTO $order, $operationName)
     {
         $this->client->setResponseType(MindboxOrderResponse::class);
 
