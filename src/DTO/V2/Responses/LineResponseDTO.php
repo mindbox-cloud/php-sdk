@@ -63,6 +63,6 @@ class LineResponseDTO extends LineDTO
      */
     public function getDiscountedPrice()
     {
-        return $this->getField('discountedPrice');
+        return $this->getField('discountedPriceOfLine');
     }
 }

@@ -270,6 +270,8 @@ abstract class AbstractMindboxClient
             throw new \Mindbox\Exceptions\MindboxClientException('Empty response body');
         }
 
+        //$statusCode = 503;
+
         switch ($statusCode) {
             case 200:
                 $this->logger->info($message, $context);
@@ -280,7 +282,9 @@ abstract class AbstractMindboxClient
                 throw new \Mindbox\Exceptions\MindboxUnavailableException('Service unavailable');
             case 400:
                 $this->logger->error($message, $context);
-                throw new \Mindbox\Exceptions\MindboxBadRequestException('Bad request');
+                $body = $context['response']['body'];
+                $arBody  = json_decode($body, true);
+                throw new \Mindbox\Exceptions\MindboxBadRequestException(substr($arBody['errorMessage'], strpos($arBody['errorMessage'], ":") + 1));
             case 409:
                 $this->logger->error($message, $context);
                 throw new \Mindbox\Exceptions\MindboxConflictException('Conflict');

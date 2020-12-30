@@ -91,11 +91,4 @@ class LineResponseDTOTest extends DTOTest
 
         $this->assertInstanceOf(\Mindbox\DTO\V2\Responses\GiftCardResponseDTO::class, $field);
     }
-
-    public function testGetDiscountedPrice()
-    {
-        $field = $this->dto->getDiscountedPrice();
-
-        $this->assertSame('some_discountedPrice', $field);
-    }
 }

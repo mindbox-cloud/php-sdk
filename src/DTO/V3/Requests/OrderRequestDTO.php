@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Mindbox\DTO\V2\Requests;
+namespace Mindbox\DTO\V3\Requests;
 
-use Mindbox\DTO\V2\OrderDTO;
+use Mindbox\DTO\V3\OrderDTO;
 
 /**
  * Class OrderRequestDTO
@@ -107,6 +107,14 @@ class OrderRequestDTO extends OrderDTO
     public function setDiscounts($discounts)
     {
         $this->setField('discounts', $discounts);
+    }
+
+    /**
+     * @param array|DiscountRequestCollection $discounts
+     */
+    public function setCoupons($coupons)
+    {
+        $this->setField('coupons', $coupons);
     }
 
     /**

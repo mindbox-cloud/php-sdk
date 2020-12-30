@@ -35,6 +35,40 @@ class OrderHelper extends AbstractMindboxHelper
     }
 
     /**
+     * Выполняет вызов стандартной операции Website.CalculateAuthorizedCart:
+     *
+     * @see https://developers.mindbox.ru/docs/processing-calculate
+     *
+     * @param PreorderRequestDTO $order         Объект, содержащий данные корзины для запроса.
+     * @param string             $operationName Название операции.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function calculateAuthorizedCart(\Mindbox\DTO\V3\Requests\PreorderRequestDTO $order, $operationName)
+    {
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
+        return $this->client->prepareRequest('POST', $operationName, $order, 'get-pre-order-info', [], true, true);
+    }
+
+    /**
+     * Выполняет вызов стандартной операции Website.CalculateUnauthorizedCart
+     *
+     * @see https://developers.mindbox.ru/docs/processing-calculate
+     *
+     * @param PreorderRequestDTO $order         Объект, содержащий данные корзины для запроса.
+     * @param string             $operationName Название операции.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function calculateUnauthorizedCart(\Mindbox\DTO\V3\Requests\PreorderRequestDTO $order, $operationName)
+    {
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
+        return $this->client->prepareRequest('POST', $operationName, $order, 'get-pre-order-info', [], true, true);
+    }
+
+    /**
      * Выполняет вызов стандартной операции Website.CreateOrder:
      *
      * @see https://developers.mindbox.ru/docs/xml
@@ -69,6 +103,57 @@ class OrderHelper extends AbstractMindboxHelper
     }
 
     /**
+     * Выполняет вызов стандартной операции Website.beginUnauthroziedOrderTransaction:
+     *
+     * @see https://developers.mindbox.ru/docs/xml
+     *
+     * @param OrderCreateRequestDTO $order         Объект, содержащий данные корзины для запроса.
+     * @param string                $operationName Название операции.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function beginUnauthorizedOrderTransaction(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
+    {
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
+        return $this->client->prepareRequest('POST', $operationName, $order, 'create', [], true, true);
+    }
+
+    /**
+     * Выполняет вызов стандартной операции Website.beginAuthroziedOrderTransaction:
+     *
+     * @see https://developers.mindbox.ru/docs/xml
+     *
+     * @param OrderCreateRequestDTO $order         Объект, содержащий данные корзины для запроса.
+     * @param string                $operationName Название операции.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function beginAuthorizedOrderTransaction(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
+    {
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
+        return $this->client->prepareRequest('POST', $operationName, $order, 'create', [], true, true);
+    }
+
+    /**
+     * Выполняет вызов стандартной операции Website.SaveOfflineOrder:
+     *
+     * @see https://developers.mindbox.ru/docs/processing-offline-order
+     *
+     * @param OrderCreateRequestDTO $order         Объект, содержащий данные корзины для запроса.
+     * @param string                $operationName Название операции.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function saveOfflineOrder(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
+    {
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
+        return $this->client->prepareRequest('POST', $operationName, $order, 'create', [], false, false);
+    }
+
+    /**
      * Выполняет вызов стандартной операции Website.createUnauthorizedOrder:
      *
      * @see https://developers.mindbox.ru/docs/xml
@@ -84,6 +169,44 @@ class OrderHelper extends AbstractMindboxHelper
 
         return $this->client->prepareRequest('POST', $operationName, $order, 'create', [], false, true);
     }
+
+
+    /**
+     * Выполняет вызов стандартной операции Website.CommitOrderTransaction:
+     *
+     * @see https://developers.mindbox.ru/docs/processing-commit-order-transaction
+     *
+     * @param OrderCreateRequestDTO $order         Объект, содержащий данные заказа для запроса.
+     * @param string                $operationName Название операции.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function commitOrderTransaction(OrderCreateRequestDTO $order, $operationName)
+    {
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
+        return $this->client->prepareRequest('POST', $operationName, $order, 'create', [], false, true);
+    }
+
+    /**
+     * Выполняет вызов стандартной операции Website.RollbackOrderTransaction:
+     *
+     * @see https://developers.mindbox.ru/docs/processing-rollback-order-transaction
+     *
+     * @param OrderCreateRequestDTO $order         Объект, содержащий данные заказа для запроса.
+     * @param string                $operationName Название операции.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function rollbackOrderTransaction(OrderCreateRequestDTO $order, $operationName)
+    {
+        $this->client->setResponseType(MindboxOrderResponse::class);
+
+        return $this->client->prepareRequest('POST', $operationName, $order, 'create', [], false, true);
+    }
+
+
+
 
     /**
      * Выполняет вызов стандартной операции Website.ConfirmOrder:
@@ -152,6 +275,6 @@ class OrderHelper extends AbstractMindboxHelper
 
         $this->client->setResponseType(MindboxOrdersResponse::class);
 
-        return $this->client->prepareRequest('GET', $operationName, null, 'by-customer', $queryParams, true, false);
+        return $this->client->prepareRequest('POST', $operationName, null, 'by-customer', $queryParams, true, false);
     }
 }

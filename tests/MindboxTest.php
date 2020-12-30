@@ -8,6 +8,7 @@ use Mindbox\Mindbox;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionException;
+use Mindbox\Options;
 
 /**
  * Class MindboxTest

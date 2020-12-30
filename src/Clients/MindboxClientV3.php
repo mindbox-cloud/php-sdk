@@ -5,7 +5,6 @@ namespace Mindbox\Clients;
 
 use Mindbox\HttpClients\IHttpClient;
 use Psr\Log\LoggerInterface;
-use Mindbox\Options;
 
 /**
  * Клиент для отправки запросов к v3 API Mindbox.
@@ -122,8 +121,8 @@ class MindboxClientV3 extends AbstractMindboxClient
      */
     private function getDeviceUUID()
     {
-        if(empty($_COOKIE['mindboxDeviceUUID'])) {
-            $logger = new \Mindbox\Loggers\MindboxFileLogger(Options::getModuleOption('LOG_PATH'));
+        if (empty($_COOKIE['mindboxDeviceUUID'])) {
+            $logger = new \Mindbox\Loggers\MindboxFileLogger(__DIR__ . '/getDeviceUUID/');
             $message = date('d.m.Y H:i:s');
             $logger->error($message, ['$_COOKIE' => $_COOKIE, '$_REQUEST' => $_REQUEST, '$_SERVER' => $_SERVER]);
         }

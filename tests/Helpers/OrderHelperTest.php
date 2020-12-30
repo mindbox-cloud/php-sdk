@@ -49,6 +49,7 @@ class OrderHelperTest extends AbstractMindboxHelperTest
         $this->helper->offlineOrder($dto, $operationName);
     }
 
+    /*
     public function testGetOrders()
     {
         $params        = [
@@ -73,6 +74,7 @@ class OrderHelperTest extends AbstractMindboxHelperTest
             'Website.OperationName'
         );
     }
+    */
 
     public function testConfirmOrder()
     {

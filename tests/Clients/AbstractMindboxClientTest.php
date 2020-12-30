@@ -7,6 +7,7 @@ use Mindbox\Exceptions\MindboxHttpClientException;
 use Mindbox\MindboxResponse;
 use Mindbox\Responses\MindboxOrderResponse;
 use PHPUnit\Framework\TestCase;
+use Mindbox\Options;
 
 /**
  * Class AbstractMindboxClientTest
