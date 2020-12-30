@@ -112,7 +112,7 @@ class OrderHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function BeginUnauthorizedOrderTransaction(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
+    public function beginUnauthorizedOrderTransaction(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
     {
         $this->client->setResponseType(MindboxOrderResponse::class);
 
@@ -129,7 +129,7 @@ class OrderHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function BeginAuthorizedOrderTransaction(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
+    public function beginAuthorizedOrderTransaction(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
     {
         $this->client->setResponseType(MindboxOrderResponse::class);
 
@@ -146,7 +146,7 @@ class OrderHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function SaveOfflineOrder(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
+    public function saveOfflineOrder(\Mindbox\DTO\V3\Requests\OrderCreateRequestDTO $order, $operationName)
     {
         $this->client->setResponseType(MindboxOrderResponse::class);
 
@@ -181,7 +181,7 @@ class OrderHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function CommitOrderTransaction(OrderCreateRequestDTO $order, $operationName)
+    public function commitOrderTransaction(OrderCreateRequestDTO $order, $operationName)
     {
         $this->client->setResponseType(MindboxOrderResponse::class);
 
@@ -198,7 +198,7 @@ class OrderHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function RollbackOrderTransaction(OrderCreateRequestDTO $order, $operationName)
+    public function rollbackOrderTransaction(OrderCreateRequestDTO $order, $operationName)
     {
         $this->client->setResponseType(MindboxOrderResponse::class);
 
