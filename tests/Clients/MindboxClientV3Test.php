@@ -3,6 +3,7 @@
 namespace Mindbox\Tests\Clients;
 
 use Mindbox\Clients\MindboxClientV3;
+use Mindbox\Options;
 
 /**
  * Class MindboxClientV3Test

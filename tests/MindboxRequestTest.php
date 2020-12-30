@@ -4,6 +4,7 @@ namespace Mindbox\Tests;
 
 use Mindbox\MindboxRequest;
 use PHPUnit\Framework\TestCase;
+use Mindbox\Options;
 
 /**
  * Class MindboxRequestTest
