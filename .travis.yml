@@ -28,4 +28,4 @@ install:
 # Run scripts
 script:
   - vendor/bin/phpcs
-  - vendor/bin/phpunit --coverage-text
+  - vendor/bin/phpunit
