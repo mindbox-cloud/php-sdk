@@ -29,5 +29,4 @@ class ProductRequestDTO extends ProductIdentityRequestDTO
     {
         $this->setField('basePricePerItem', $basePricePerItem);
     }
-
 }

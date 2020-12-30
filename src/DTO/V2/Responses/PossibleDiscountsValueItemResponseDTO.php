@@ -23,5 +23,4 @@ class PossibleDiscountsValueItemResponseDTO extends DTO
      * @var string Название элемента для корректной генерации xml.
      */
     protected static $xmlName = 'item';
-
 }

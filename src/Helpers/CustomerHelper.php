@@ -95,7 +95,7 @@ class CustomerHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function register(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true, $isSync)
+    public function register(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true, $isSync = true)
     {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
@@ -114,7 +114,7 @@ class CustomerHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function edit(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true, $isSync = false)
+    public function edit(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true, $isSync = true)
     {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
