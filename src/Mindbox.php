@@ -102,7 +102,7 @@ class Mindbox
      *
      * @param array $config Массив, содержащий конфигурацию.
      */
-    protected function setConfig(array $config)
+    private function setConfig(array $config)
     {
         $this->config = array_merge($this->getDefaultConfig(), $config);
     }
