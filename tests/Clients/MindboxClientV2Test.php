@@ -31,6 +31,8 @@ class MindboxClientV2Test extends AbstractMindboxClientTest
                         'Accept'        => 'application/xml',
                         'Content-Type'  => 'application/xml',
                         'Authorization' => 'DirectCrm key="' . $this->secret . '"',
+                        'Mindbox-Integration' => 'PhpSDK',
+                        'Mindbox-Integration-Version' => '1.0'
                     ],
                 ],
             ],
@@ -51,6 +53,8 @@ class MindboxClientV2Test extends AbstractMindboxClientTest
                         'Accept'        => 'application/xml',
                         'Content-Type'  => 'application/xml',
                         'Authorization' => 'DirectCrm key="' . $this->secret . '"',
+                        'Mindbox-Integration' => 'PhpSDK',
+                        'Mindbox-Integration-Version' => '1.0'
                     ],
                 ],
             ],
