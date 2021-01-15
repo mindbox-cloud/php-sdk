@@ -360,6 +360,32 @@ class CustomerHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
+    public function subscribeCustomer(
+        CustomerRequestDTO $customer,
+        $operationName,
+        $addDeviceUUID = false,
+        $isSync = true
+    ) {
+        $operation = $this->createOperation();
+        $operation->setCustomer($customer);
+
+        $this->client->setResponseType(MindboxCustomerResponse::class);
+
+        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], $isSync, $addDeviceUUID);
+    }
+
+    /**
+     * Выполняет вызов стандартной операции Website.Subscribe:
+     *
+     * @see https://developers.mindbox.ru/v3.0/docs/json
+     *
+     * @param CustomerRequestDTO $customer      Объект, содержащий данные потребителя для запроса.
+     * @param string             $operationName Название операции.
+     * @param bool               $addDeviceUUID Флаг, сообщающий о необходимости передать в запросе DeviceUUID.
+     * @param bool               $isSync        Флаг, сообщающий о необходимости выполнять запрос синхронно/асинхронно.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
     public function subscribe(
         CustomerRequestDTO $customer,
         $operationName,

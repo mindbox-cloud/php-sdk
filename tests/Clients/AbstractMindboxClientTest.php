@@ -29,7 +29,7 @@ class AbstractMindboxClientTest extends TestCase
     /**
      * @var string
      */
-    private $authHeader = 'authHeader';
+    private $authHeader = null;
 
     /**
      * @var \PHPUnit\Framework\MockObject\MockObject|\Mindbox\HttpClients\AbstractHttpClient
@@ -80,6 +80,8 @@ class AbstractMindboxClientTest extends TestCase
                         'Accept'        => 'application/json',
                         'Content-Type'  => 'application/json',
                         'Authorization' => $this->authHeader,
+                        'Mindbox-Integration' => 'PhpSDK',
+                        'Mindbox-Integration-Version' => '1.0'
                     ],
                 ],
             ],
@@ -98,8 +100,11 @@ class AbstractMindboxClientTest extends TestCase
                     'body'    => $this->getDTOStub()->toJson(),
                     'headers' => [
                         'Accept'        => 'application/json',
-                        'Content-Type'  => 'application/json',
+                        'Content-Type' => 'application/json',
                         'Authorization' => $this->authHeader,
+                        'Mindbox-Integration' => 'PhpSDK',
+                        'Mindbox-Integration-Version' => '1.0'
+
                     ],
                 ],
             ],

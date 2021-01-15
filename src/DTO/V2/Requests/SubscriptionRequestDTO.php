@@ -46,14 +46,6 @@ class SubscriptionRequestDTO extends SubscriptionDTO
     }
 
     /**
-     * @return string
-     */
-    public function getValueByDefault()
-    {
-        return $this->getField('valueByDefault');
-    }
-
-    /**
      * @param mixed $valueByDefault
      */
     public function setValueByDefault($valueByDefault)

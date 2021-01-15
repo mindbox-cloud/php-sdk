@@ -193,7 +193,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
             ->method('setResponseType')
             ->with(MindboxCustomerResponse::class);
 
-        $this->helper->subscribe($dto, $operationName, $addDeviceUUID);
+        $this->helper->subscribeCustomer($dto, $operationName, $addDeviceUUID);
     }
 
     public function testEdit()

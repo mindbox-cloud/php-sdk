@@ -25,6 +25,9 @@ before_install:
 install:
   - travis_retry composer install --prefer-dist --no-interaction
 
+before_script:
+  - export XDEBUG_MODE=coverage
+
 # Run scripts
 script:
   - vendor/bin/phpcs

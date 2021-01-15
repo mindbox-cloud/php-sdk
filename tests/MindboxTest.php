@@ -114,7 +114,7 @@ class MindboxTest extends TestCase
             ->setMethods(['getHttpClientsFactory', 'getMindboxClientFactory', 'setConfig'])
             ->getMock();
 
-        $mindboxStub->expects($this->once())
+        $mindboxStub->expects($this->never())
             ->method('setConfig')
             ->with($this->equalTo($this->correctConfig));
 
