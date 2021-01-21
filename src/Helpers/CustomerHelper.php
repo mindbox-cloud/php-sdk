@@ -191,6 +191,24 @@ class CustomerHelper extends AbstractMindboxHelper
     }
 
     /**
+     * Выполняет вызов стандартной операции Website.CheckCustomer:
+     *
+     * @see https://developers.mindbox.ru/docs/получение-данных-потребителя
+     *
+     * @param CustomerRequestDTO $customer      Объект, содержащий данные потребителя для запроса.
+     * @param string             $operationName Название операции.
+     * @param bool               $addDeviceUUID Флаг, сообщающий о необходимости передать в запросе DeviceUUID.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function CheckCustomer(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true) {
+        $operation = $this->createOperation();
+        $operation->setCustomer($customer);
+        $this->client->setResponseType(MindboxCustomerResponse::class);
+        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
+    }
+
+    /**
      * Выполняет вызов стандартной операции Website.CheckCustomerIsInLoyalityProgram:
      *
      * @see https://developers.mindbox.ru/docs/получение-сегментов-потребителя
