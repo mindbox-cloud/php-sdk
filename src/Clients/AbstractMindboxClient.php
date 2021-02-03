@@ -360,6 +360,8 @@ abstract class AbstractMindboxClient
                 'headers'  => $response->getHeaders(),
                 'body'     => $response->getRawBody(),
             ],
+            'request_uri'    =>  $_SERVER['REQUEST_URI'],
+            'http_referer'  =>  $_SERVER['HTTP_REFERER'],
         ];
     }
 
