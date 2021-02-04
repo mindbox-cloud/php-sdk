@@ -348,6 +348,17 @@ abstract class AbstractMindboxClient
     {
         $request = $response->getRequest();
 
+        $request_uri = '';
+        if(!empty($_SERVER['REQUEST_URI'])) {
+            $request_uri = $_SERVER['REQUEST_URI'];
+        }
+
+        $http_referer = '';
+        if(!empty($_SERVER['HTTP_REFERER'])) {
+            $http_referer = $_SERVER['HTTP_REFERER'];
+        }
+
+
         return [
             'request'  => [
                 'url'     => $request->getUrl(),
@@ -360,8 +371,8 @@ abstract class AbstractMindboxClient
                 'headers'  => $response->getHeaders(),
                 'body'     => $response->getRawBody(),
             ],
-            'request_uri'    =>  $_SERVER['REQUEST_URI'],
-            'http_referer'  =>  $_SERVER['HTTP_REFERER'],
+            'request_uri'    =>  $request_uri,
+            'http_referer'  =>  $http_referer,
         ];
     }
 
