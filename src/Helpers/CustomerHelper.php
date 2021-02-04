@@ -201,7 +201,8 @@ class CustomerHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function CheckCustomer(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true) {
+    public function checkCustomer(CustomerRequestDTO $customer, $operationName, $addDeviceUUID = true)
+    {
         $operation = $this->createOperation();
         $operation->setCustomer($customer);
         $this->client->setResponseType(MindboxCustomerResponse::class);
