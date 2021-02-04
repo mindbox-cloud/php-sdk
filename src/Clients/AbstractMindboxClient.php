@@ -349,12 +349,12 @@ abstract class AbstractMindboxClient
         $request = $response->getRequest();
 
         $request_uri = '';
-        if(!empty($_SERVER['REQUEST_URI'])) {
+        if (!empty($_SERVER['REQUEST_URI'])) {
             $request_uri = $_SERVER['REQUEST_URI'];
         }
 
         $http_referer = '';
-        if(!empty($_SERVER['HTTP_REFERER'])) {
+        if (!empty($_SERVER['HTTP_REFERER'])) {
             $http_referer = $_SERVER['HTTP_REFERER'];
         }
 
