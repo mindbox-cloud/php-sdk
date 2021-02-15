@@ -45,7 +45,7 @@ class MindboxClientFactory
                     throw new MindboxConfigException('Endpoint id cant`t be empty for v3 API');
                 }
 
-                return new MindboxClientV3($endpointId, $secretKey, $httpClient, $logger);
+                return new MindboxClientV3($endpointId, $secretKey, $httpClient, $logger, $domain);
             case 'v2.1':
                 if (empty($domain)) {
                     throw new MindboxConfigException('Domain cant`t be empty for v2.1 API');
