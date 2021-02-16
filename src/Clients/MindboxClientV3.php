@@ -22,7 +22,7 @@ class MindboxClientV3 extends AbstractMindboxClient
     /**
      * Базовый URL на который будут отправляться запросы.
      */
-    const BASE_V3_URL = 'https://{{domain}}/v3/operations/';
+    const BASE_V3_URL = 'https://api.mindbox.{{domainZone}}/v3/operations/';
 
     /**
      * Секретный ключ.
@@ -30,9 +30,9 @@ class MindboxClientV3 extends AbstractMindboxClient
     const SECRET_KEY_NAME = 'Mindbox secretKey';
 
     /**
-     * @var string Домен клиента.
+     * @var string Доменная зона API.
      */
-    private $domain;
+    private $domainZone;
 
     /**
      * @var string Уникальный идентификатор сайта/мобильного приложения/и т.п.
@@ -46,12 +46,12 @@ class MindboxClientV3 extends AbstractMindboxClient
      * @param string $secretKey Секретный ключ.
      * @param IHttpClient $httpClient Экземпляр HTTP клиента.
      * @param LoggerInterface $logger Экземпляр логгера.
-     * @param string $domain
+     * @param string $domainZone
      */
-    public function __construct($endpointId, $secretKey, IHttpClient $httpClient, LoggerInterface $logger, $domain = 'api.mindbox.ru')
+    public function __construct($endpointId, $secretKey, IHttpClient $httpClient, LoggerInterface $logger, $domainZone)
     {
         parent::__construct($secretKey, $httpClient, $logger);
-        $this->domain        = $domain;
+        $this->domainZone = $domainZone;
         $this->endpointId = $endpointId;
     }
 
@@ -96,7 +96,7 @@ class MindboxClientV3 extends AbstractMindboxClient
      */
     protected function prepareUrl($url, array $queryParams, $isSync = true)
     {
-        $domain = str_replace('{{domain}}', $this->domain, static::BASE_V3_URL);
+        $domain = str_replace('{{domainZone}}', $this->domainZone, static::BASE_V3_URL);
         return $domain . ($isSync ? 'sync' : 'async') . '?' . http_build_query($queryParams);
     }
 
