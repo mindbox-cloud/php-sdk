@@ -173,7 +173,7 @@ class ProductListHelper extends AbstractMindboxHelper
      *
      * @return \Mindbox\Clients\AbstractMindboxClient
      */
-    public function ClearCart(
+    public function clearCart(
         $operationName,
         CustomerIdentityRequestDTO $customerIdentity = null,
         $addDeviceUUID = true
