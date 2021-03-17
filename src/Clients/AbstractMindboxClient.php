@@ -282,7 +282,14 @@ abstract class AbstractMindboxClient
                 throw new \Mindbox\Exceptions\MindboxUnavailableException('Service unavailable');
             case 400:
                 $this->logger->error($message, $context);
-                throw new \Mindbox\Exceptions\MindboxBadRequestException('Bad request');
+                $body = $context['response']['body'];
+                $arBody  = json_decode($body, true);
+                if ($arBody) {
+                    $message = substr($arBody['errorMessage'], strpos($arBody['errorMessage'], ":") + 1);
+                } else {
+                    $message = 'Bad request';
+                }
+                throw new \Mindbox\Exceptions\MindboxBadRequestException($message);
             case 409:
                 $this->logger->error($message, $context);
                 throw new \Mindbox\Exceptions\MindboxConflictException('Conflict');
