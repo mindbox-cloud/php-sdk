@@ -29,6 +29,11 @@ class AbstractMindboxClientTest extends TestCase
     /**
      * @var string
      */
+    protected $domain = 'ru';
+
+    /**
+     * @var string
+     */
     private $authHeader = null;
 
     /**
@@ -53,9 +58,10 @@ class AbstractMindboxClientTest extends TestCase
 
     public function setUp()
     {
+        $this->domain         = $this->domain;
         $this->httpClientStub = $this->getHttpClientStub();
         $this->loggerStub     = $this->getLoggerStub();
-        $this->client         = $this->getClient($this->secret, $this->httpClientStub, $this->loggerStub);
+        $this->client         = $this->getClient($this->secret, $this->httpClientStub, $this->loggerStub, $this->domain);
         $this->dtoStub        = $this->getDTOStub();
     }
 
@@ -278,7 +284,7 @@ class AbstractMindboxClientTest extends TestCase
                 'prepareBody',
                 'prepareResponseBody'
             ])
-            ->setConstructorArgs([$secret, $httpClient, $loggerClient])
+            ->setConstructorArgs([$secret, $httpClient, $loggerClient, $this->domain])
             ->getMock();
 
         $clientStub->expects($this->any())

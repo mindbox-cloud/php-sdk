@@ -104,7 +104,7 @@ class MindboxClientV3Test extends AbstractMindboxClientTest
      */
     protected function getClient($secret, $httpClient, $loggerClient)
     {
-        $client = new MindboxClientV3($this->endpointId, $secret, $httpClient, $loggerClient);
+        $client = new MindboxClientV3($this->endpointId, $secret, $httpClient, $loggerClient, $this->domain);
 
         return $client;
     }

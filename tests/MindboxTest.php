@@ -29,6 +29,7 @@ class MindboxTest extends TestCase
         'endpointId' => 'test',
         'secretKey'  => 'test',
         'domain'     => 'test',
+        'domainZone'     => 'test',
     ];
 
     public function setUp()
@@ -47,6 +48,7 @@ class MindboxTest extends TestCase
                     'endpointId' => '',
                     'secretKey'  => 'test',
                     'domain'     => 'test',
+                    'domainZone' => 'test',
                 ],
             ],
             [
@@ -54,6 +56,7 @@ class MindboxTest extends TestCase
                     'endpointId' => 'test',
                     'secretKey'  => '',
                     'domain'     => 'test',
+                    'domainZone' => 'test',
                 ],
             ],
             [
@@ -61,6 +64,7 @@ class MindboxTest extends TestCase
                     'endpointId' => 'test',
                     'secretKey'  => 'test',
                     'domain'     => '',
+                    'domainZone' => '',
                 ],
             ],
             [
@@ -68,6 +72,7 @@ class MindboxTest extends TestCase
                     'endpointId' => 'test',
                     'secretKey'  => 'test',
                     'domain'     => 'test',
+                    'domainZone' => 'test',
                     'httpClient' => 'test',
                 ],
             ],

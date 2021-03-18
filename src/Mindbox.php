@@ -83,7 +83,7 @@ class Mindbox
             'v3',
             $this->config['endpointId'],
             $this->config['secretKey'],
-            $this->config['domain'],
+            $this->config['domainZone'],
             $httpClient,
             $logger
         );

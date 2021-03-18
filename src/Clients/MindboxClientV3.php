@@ -22,12 +22,17 @@ class MindboxClientV3 extends AbstractMindboxClient
     /**
      * Базовый URL на который будут отправляться запросы.
      */
-    const BASE_V3_URL = 'https://api.mindbox.ru/v3/operations/';
+    const BASE_V3_URL = 'https://api.mindbox.{{domainZone}}/v3/operations/';
 
     /**
      * Секретный ключ.
      */
     const SECRET_KEY_NAME = 'Mindbox secretKey';
+
+    /**
+     * @var string Доменная зона API.
+     */
+    private $domainZone;
 
     /**
      * @var string Уникальный идентификатор сайта/мобильного приложения/и т.п.
@@ -37,14 +42,16 @@ class MindboxClientV3 extends AbstractMindboxClient
     /**
      * Конструктор MindboxRequest.
      *
-     * @param string          $endpointId Уникальный идентификатор сайта/мобильного приложения/и т.п.
-     * @param string          $secretKey  Секретный ключ.
-     * @param IHttpClient     $httpClient Экземпляр HTTP клиента.
-     * @param LoggerInterface $logger     Экземпляр логгера.
+     * @param string $endpointId Уникальный идентификатор сайта/мобильного приложения/и т.п.
+     * @param string $secretKey Секретный ключ.
+     * @param IHttpClient $httpClient Экземпляр HTTP клиента.
+     * @param LoggerInterface $logger Экземпляр логгера.
+     * @param string $domainZone
      */
-    public function __construct($endpointId, $secretKey, IHttpClient $httpClient, LoggerInterface $logger)
+    public function __construct($endpointId, $secretKey, IHttpClient $httpClient, LoggerInterface $logger, $domainZone)
     {
         parent::__construct($secretKey, $httpClient, $logger);
+        $this->domainZone = $domainZone;
         $this->endpointId = $endpointId;
     }
 
@@ -89,7 +96,8 @@ class MindboxClientV3 extends AbstractMindboxClient
      */
     protected function prepareUrl($url, array $queryParams, $isSync = true)
     {
-        return static::BASE_V3_URL . ($isSync ? 'sync' : 'async') . '?' . http_build_query($queryParams);
+        $domain = str_replace('{{domainZone}}', $this->domainZone, static::BASE_V3_URL);
+        return $domain . ($isSync ? 'sync' : 'async') . '?' . http_build_query($queryParams);
     }
 
     /**

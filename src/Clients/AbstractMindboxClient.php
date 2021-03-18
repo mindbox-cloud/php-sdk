@@ -284,7 +284,12 @@ abstract class AbstractMindboxClient
                 $this->logger->error($message, $context);
                 $body = $context['response']['body'];
                 $arBody  = json_decode($body, true);
-                throw new \Mindbox\Exceptions\MindboxBadRequestException(substr($arBody['errorMessage'], strpos($arBody['errorMessage'], ":") + 1));
+                if ($arBody) {
+                    $message = substr($arBody['errorMessage'], strpos($arBody['errorMessage'], ":") + 1);
+                } else {
+                    $message = 'Bad request';
+                }
+                throw new \Mindbox\Exceptions\MindboxBadRequestException($message);
             case 409:
                 $this->logger->error($message, $context);
                 throw new \Mindbox\Exceptions\MindboxConflictException('Conflict');
