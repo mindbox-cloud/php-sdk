@@ -110,4 +110,76 @@ class ProductListHelper extends AbstractMindboxHelper
 
         return $this->client->prepareRequest('POST', $operationName, $operation, '', [], false, $addDeviceUUID);
     }
+
+    /**
+     * Выполняет вызов стандартной операции Website.SetWishList:
+     *
+     * @see https://developers.mindbox.ru/docs/prodlistactionxml
+     *
+     * @param ProductListItemRequestCollection $products         Объект, содержащий данные списка продуктов для
+     *                                                           запроса.
+     * @param string                           $operationName    Название операции.
+     * @param CustomerIdentityRequestDTO|null  $customerIdentity Объект, содержащий данные потребителя для запроса.
+     * @param bool                             $addDeviceUUID    Флаг, сообщающий о необходимости передать в запросе
+     *                                                           DeviceUUID.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function setWishList(
+        ProductListItemRequestCollection $products,
+        $operationName,
+        CustomerIdentityRequestDTO $customerIdentity = null,
+        $addDeviceUUID = true
+    ) {
+        $operation = $this->createOperation();
+        $operation->setProductList($products);
+        if (isset($customerIdentity)) {
+            $operation->setCustomer($customerIdentity);
+        }
+
+        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], false, $addDeviceUUID);
+    }
+
+    /**
+     * Выполняет вызов стандартной операции Website.ClearWishList:
+     *
+     * @see https://developers.mindbox.ru/docs/prodlistactionxml
+     *
+     * @param string                           $operationName    Название операции.
+     * @param CustomerIdentityRequestDTO|null  $customerIdentity Объект, содержащий данные потребителя для запроса.
+     * @param bool                             $addDeviceUUID    Флаг, сообщающий о необходимости передать в запросе
+     *                                                           DeviceUUID.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function clearWishList(
+        $operationName,
+        CustomerIdentityRequestDTO $customerIdentity = null,
+        $addDeviceUUID = true
+    ) {
+        $operation = $this->createOperation();
+        $operation->setField('executionDateTimeUtc', gmdate('d.m.Y H:i:s'));
+        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], false, $addDeviceUUID);
+    }
+
+    /**
+     * Выполняет вызов стандартной операции Website.ClearCart:
+     *
+     *
+     * @param string                           $operationName    Название операции.
+     * @param CustomerIdentityRequestDTO|null  $customerIdentity Объект, содержащий данные потребителя для запроса.
+     * @param bool                             $addDeviceUUID    Флаг, сообщающий о необходимости передать в запросе
+     *                                                           DeviceUUID.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function clearCart(
+        $operationName,
+        CustomerIdentityRequestDTO $customerIdentity = null,
+        $addDeviceUUID = true
+    ) {
+        $operation = $this->createOperation();
+        $operation->setField('executionDateTimeUtc', gmdate('d.m.Y H:i:s'));
+        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], false, $addDeviceUUID);
+    }
 }
