@@ -363,12 +363,6 @@ abstract class AbstractMindboxClient
             $http_referer = $_SERVER['HTTP_REFERER'];
         }
 
-        if (\Bitrix\Main\Loader::includeModule('intensa.logger')) {
-            $logger = new \Intensa\Logger\ILog('prepareContext');
-            $logger->log('$request', $request);
-            $logger->log('$response', $response);
-        }
-
         return [
             'request'  => [
                 'url'     => $request->getUrl(),
@@ -383,7 +377,7 @@ abstract class AbstractMindboxClient
             ],
             'request_uri'    =>  $request_uri,
             'http_referer'  =>  $http_referer,
-            'time'          =>  $response->getEndTime() - $request->getStartTime()
+            'time'          =>  round($response->getEndTime() - $request->getStartTime(), 2) . 's'
         ];
     }
 
