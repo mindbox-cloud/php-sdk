@@ -129,11 +129,6 @@ class MindboxClientV3 extends AbstractMindboxClient
      */
     private function getDeviceUUID()
     {
-        if (empty($_COOKIE['mindboxDeviceUUID'])) {
-            $logger = new \Mindbox\Loggers\MindboxFileLogger(__DIR__ . '/getDeviceUUID/');
-            $message = date('d.m.Y H:i:s');
-            $logger->error($message, ['$_COOKIE' => $_COOKIE, '$_REQUEST' => $_REQUEST, '$_SERVER' => $_SERVER]);
-        }
         return isset($_COOKIE['mindboxDeviceUUID']) ? $_COOKIE['mindboxDeviceUUID'] : '';
     }
 
