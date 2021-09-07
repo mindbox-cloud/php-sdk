@@ -1,0 +1,346 @@
+07.09.2021 11:40:45 LEVEL::error
+Array
+(
+    [request] => Array
+        (
+            [url] => https://api.mindbox.ru/v3/operations/sync?endpointId=SampleBitrixStandard&operation=Website.CalculateCart
+            [method] => POST
+            [headers] => Array
+                (
+                    [Accept] => application/json
+                    [Content-Type] => application/json
+                    [Authorization] => Mindbox secretKey=
+                    [Mindbox-Integration] => PhpSDK
+                    [Mindbox-Integration-Version] => 1.0
+                )
+
+            [body] => {"customer":{"email":"test@test.ru"}}
+        )
+
+    [response] => Array
+        (
+            [httpCode] => 400
+            [headers] => Array
+                (
+                    [cache-control] => no-cache
+                    [content-length] => 155
+                    [content-security-policy] => default-src 'self' 'unsafe-inline'
+                    [content-type] => application/json; charset=utf-8
+                    [date] => Tue, 07 Sep 2021 08:40:45 GMT
+                    [expires] => -1
+                    [feature-policy] => vibrate 'self'
+                    [pragma] => no-cache
+                    [referrer-policy] => same-origin
+                    [server] => Kestrel
+                    [strict-transport-security] => max-age=315360000; includeSubDomains; preload
+                    [x-content-type-options] => nosniff
+                    [x-frame-options] => DENY
+                    [x-xss-protection] => 1; mode=block
+                )
+
+            [body] => {"status":"ProtocolError","errorMessage":"Operation Website.CalculateCart not found","errorId":"d3a63664-89dd-4f89-b5b8-cf3522714a19","httpStatusCode":400}
+        )
+
+    [request_uri] => 
+    [http_referer] => 
+)
+
+
+
+07.09.2021 11:44:43 LEVEL::error
+Array
+(
+    [request] => Array
+        (
+            [url] => https://api.mindbox.ru/v3/operations/sync?endpointId=SampleBitrixStandard&operation=Website.CreateOrder
+            [method] => POST
+            [headers] => Array
+                (
+                    [Accept] => application/json
+                    [Content-Type] => application/json
+                    [Authorization] => Mindbox secretKey=
+                    [Mindbox-Integration] => PhpSDK
+                    [Mindbox-Integration-Version] => 1.0
+                )
+
+            [body] => {"customer":{"email":"test@test.ru"}}
+        )
+
+    [response] => Array
+        (
+            [httpCode] => 400
+            [headers] => Array
+                (
+                    [cache-control] => no-cache
+                    [content-length] => 153
+                    [content-security-policy] => default-src 'self' 'unsafe-inline'
+                    [content-type] => application/json; charset=utf-8
+                    [date] => Tue, 07 Sep 2021 08:44:43 GMT
+                    [expires] => -1
+                    [feature-policy] => vibrate 'self'
+                    [pragma] => no-cache
+                    [referrer-policy] => same-origin
+                    [server] => Kestrel
+                    [strict-transport-security] => max-age=315360000; includeSubDomains; preload
+                    [x-content-type-options] => nosniff
+                    [x-frame-options] => DENY
+                    [x-xss-protection] => 1; mode=block
+                )
+
+            [body] => {"status":"ProtocolError","errorMessage":"Operation Website.CreateOrder not found","errorId":"8340867e-ae81-4bdf-a85c-7e3b0ed7e8ee","httpStatusCode":400}
+        )
+
+    [request_uri] => 
+    [http_referer] => 
+)
+
+
+
+07.09.2021 11:49:14 LEVEL::error
+Array
+(
+    [request] => Array
+        (
+            [url] => https://api.mindbox.ru/v3/operations/sync?endpointId=SamplyLoyaltyBitrix&operation=Website.CreateOrder
+            [method] => POST
+            [headers] => Array
+                (
+                    [Accept] => application/json
+                    [Content-Type] => application/json
+                    [Authorization] => Mindbox secretKey=
+                    [Mindbox-Integration] => PhpSDK
+                    [Mindbox-Integration-Version] => 1.0
+                )
+
+            [body] => {"customer":{"email":"test@test.ru"}}
+        )
+
+    [response] => Array
+        (
+            [httpCode] => 400
+            [headers] => Array
+                (
+                    [cache-control] => no-cache
+                    [content-length] => 153
+                    [content-security-policy] => default-src 'self' 'unsafe-inline'
+                    [content-type] => application/json; charset=utf-8
+                    [date] => Tue, 07 Sep 2021 08:49:13 GMT
+                    [expires] => -1
+                    [feature-policy] => vibrate 'self'
+                    [pragma] => no-cache
+                    [referrer-policy] => same-origin
+                    [server] => Kestrel
+                    [strict-transport-security] => max-age=315360000; includeSubDomains; preload
+                    [x-content-type-options] => nosniff
+                    [x-frame-options] => DENY
+                    [x-xss-protection] => 1; mode=block
+                )
+
+            [body] => {"status":"ProtocolError","errorMessage":"Operation Website.CreateOrder not found","errorId":"8c5f2016-53cc-41d9-aedd-ee3317b48c9c","httpStatusCode":400}
+        )
+
+    [request_uri] => 
+    [http_referer] => 
+)
+
+
+
+07.09.2021 11:50:24 LEVEL::error
+Array
+(
+    [request] => Array
+        (
+            [url] => https://api.mindbox.ru/v3/operations/sync?endpointId=SampleBitrixStandard&operation=SampleBitrixStandard.CreateOrder
+            [method] => POST
+            [headers] => Array
+                (
+                    [Accept] => application/json
+                    [Content-Type] => application/json
+                    [Authorization] => Mindbox secretKey=
+                    [Mindbox-Integration] => PhpSDK
+                    [Mindbox-Integration-Version] => 1.0
+                )
+
+            [body] => {"customer":{"email":"test@test.ru"}}
+        )
+
+    [response] => Array
+        (
+            [httpCode] => 400
+            [headers] => Array
+                (
+                    [cache-control] => no-cache
+                    [content-length] => 166
+                    [content-security-policy] => default-src 'self' 'unsafe-inline'
+                    [content-type] => application/json; charset=utf-8
+                    [date] => Tue, 07 Sep 2021 08:50:23 GMT
+                    [expires] => -1
+                    [feature-policy] => vibrate 'self'
+                    [pragma] => no-cache
+                    [referrer-policy] => same-origin
+                    [server] => Kestrel
+                    [strict-transport-security] => max-age=315360000; includeSubDomains; preload
+                    [x-content-type-options] => nosniff
+                    [x-frame-options] => DENY
+                    [x-xss-protection] => 1; mode=block
+                )
+
+            [body] => {"status":"ProtocolError","errorMessage":"Operation SampleBitrixStandard.CreateOrder not found","errorId":"ceefed46-f2fc-4041-9084-30abb82785c4","httpStatusCode":400}
+        )
+
+    [request_uri] => 
+    [http_referer] => 
+)
+
+
+
+07.09.2021 11:54:14 LEVEL::error
+Array
+(
+    [request] => Array
+        (
+            [url] => https://api.mindbox.ru/v3/operations/sync?endpointId=SampleBitrixStandard&operation=Website.createAuthorizedOrder
+            [method] => POST
+            [headers] => Array
+                (
+                    [Accept] => application/json
+                    [Content-Type] => application/json
+                    [Authorization] => Mindbox secretKey=
+                    [Mindbox-Integration] => PhpSDK
+                    [Mindbox-Integration-Version] => 1.0
+                )
+
+            [body] => {"customer":{"email":"test@test.ru"}}
+        )
+
+    [response] => Array
+        (
+            [httpCode] => 400
+            [headers] => Array
+                (
+                    [cache-control] => private
+                    [content-length] => 189
+                    [content-security-policy] => default-src 'self' 'unsafe-inline'
+                    [content-type] => application/json; charset=utf-8
+                    [date] => Tue, 07 Sep 2021 08:54:13 GMT
+                    [feature-policy] => vibrate 'self'
+                    [referrer-policy] => same-origin
+                    [server] => Kestrel
+                    [strict-transport-security] => max-age=315360000; includeSubDomains; preload
+                    [x-content-type-options] => nosniff
+                    [x-frame-options] => DENY
+                    [x-request-id] => ce3848c3-ae13-4476-a096-9337ea8aad96
+                    [x-revision] => 60668c8e3a4d7ef57a3401d2e6cc143609b5a4a0
+                    [x-server-name] => WEB-CDP18
+                    [x-xss-protection] => 1; mode=block
+                )
+
+            [body] => {"status":"ProtocolError","errorMessage":"/customer/ids/websiteId: Поле должно быть заполнено.","errorId":"a8a6730b-d1d9-4dbc-994d-b0c421f935f1","httpStatusCode":400}
+        )
+
+    [request_uri] => 
+    [http_referer] => 
+)
+
+
+
+07.09.2021 11:54:59 LEVEL::error
+Array
+(
+    [request] => Array
+        (
+            [url] => https://api.mindbox.ru/v3/operations/sync?endpointId=SampleBitrixStandard&operation=Website.createAuthorizedOrder
+            [method] => POST
+            [headers] => Array
+                (
+                    [Accept] => application/json
+                    [Content-Type] => application/json
+                    [Authorization] => Mindbox secretKey=
+                    [Mindbox-Integration] => PhpSDK
+                    [Mindbox-Integration-Version] => 1.0
+                )
+
+            [body] => {"customer":{"email":"test@test.ru"}}
+        )
+
+    [response] => Array
+        (
+            [httpCode] => 400
+            [headers] => Array
+                (
+                    [cache-control] => private
+                    [content-length] => 189
+                    [content-security-policy] => default-src 'self' 'unsafe-inline'
+                    [content-type] => application/json; charset=utf-8
+                    [date] => Tue, 07 Sep 2021 08:54:58 GMT
+                    [feature-policy] => vibrate 'self'
+                    [referrer-policy] => same-origin
+                    [server] => Kestrel
+                    [strict-transport-security] => max-age=315360000; includeSubDomains; preload
+                    [x-content-type-options] => nosniff
+                    [x-frame-options] => DENY
+                    [x-request-id] => 095cf292-095f-4eb5-ae9a-eefef81a3664
+                    [x-revision] => 60668c8e3a4d7ef57a3401d2e6cc143609b5a4a0
+                    [x-server-name] => WEB-CDP18
+                    [x-xss-protection] => 1; mode=block
+                )
+
+            [body] => {"status":"ProtocolError","errorMessage":"/customer/ids/websiteId: Поле должно быть заполнено.","errorId":"4cdce0b9-eba6-43f5-baea-0ba0e1f18b68","httpStatusCode":400}
+        )
+
+    [request_uri] => 
+    [http_referer] => 
+)
+
+
+
+07.09.2021 11:55:19 LEVEL::error
+Array
+(
+    [request] => Array
+        (
+            [url] => https://api.mindbox.ru/v3/operations/sync?endpointId=SampleBitrixStandard&operation=Website.createAuthorizedOrder
+            [method] => POST
+            [headers] => Array
+                (
+                    [Accept] => application/json
+                    [Content-Type] => application/json
+                    [Authorization] => Mindbox secretKey=
+                    [Mindbox-Integration] => PhpSDK
+                    [Mindbox-Integration-Version] => 1.0
+                )
+
+            [body] => {"customer":{"email":"test@test.ru"}}
+        )
+
+    [response] => Array
+        (
+            [httpCode] => 400
+            [headers] => Array
+                (
+                    [cache-control] => private
+                    [content-length] => 189
+                    [content-security-policy] => default-src 'self' 'unsafe-inline'
+                    [content-type] => application/json; charset=utf-8
+                    [date] => Tue, 07 Sep 2021 08:55:18 GMT
+                    [feature-policy] => vibrate 'self'
+                    [referrer-policy] => same-origin
+                    [server] => Kestrel
+                    [strict-transport-security] => max-age=315360000; includeSubDomains; preload
+                    [x-content-type-options] => nosniff
+                    [x-frame-options] => DENY
+                    [x-request-id] => 31896e75-163c-4098-a6c1-3c54f78c3e23
+                    [x-revision] => 60668c8e3a4d7ef57a3401d2e6cc143609b5a4a0
+                    [x-server-name] => WEB-CDP16
+                    [x-xss-protection] => 1; mode=block
+                )
+
+            [body] => {"status":"ProtocolError","errorMessage":"/customer/ids/websiteId: Поле должно быть заполнено.","errorId":"16b428c4-16c2-4367-9801-c881d14b6924","httpStatusCode":400}
+        )
+
+    [request_uri] => 
+    [http_referer] => 
+)
+
+
+
