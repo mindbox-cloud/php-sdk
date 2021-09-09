@@ -16,8 +16,7 @@ jobs:
         with:
           php_version: 7.0
           version: 2
-      - uses: php-actions/phpunit@v3
+      - uses: php-actions/phpunit@9
         with:
-          version: 8
           php_version: 7.0
       - run: vendor/bin/phpcs
