@@ -11,21 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkouut
-      uses: actions/checkout@v2
-    
-    - name: Install dependencies
-      uses: php-actions/composer@v6
-      with:
-        php_version: 7.0
-        version: 2
-        
-    - name: Run phpcs
-      run: vendor/bin/phpcs
-      
-    - name: PHPUnit install
-      uses: php-actions/phpunit@v3
-
-    - name: Run phpunit tests
-      run: vendor/bin/phpunit
+      - uses: actions/checkout@v2
+      - uses: php-actions/composer@v6
+      - uses: php-actions/phpunit@v3
       
