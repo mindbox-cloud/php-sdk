@@ -14,13 +14,11 @@ jobs:
         os:
           - ubuntu-18.04
     steps:
-      - name: Cache multiple paths
-        uses: actions/cache@v2
+      - name: Setup PHP with Xdebug 2.x
+        uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.0'
-          path: $HOME/.composer/cache
-          key: '${{ runner.os }}-${{ hashFiles(''TODO'') }}'
-      - uses: actions/checkout@v2
+          php-version: '7.4'
+          coverage: xdebug2
       - run:  composer self-update
       - run:  composer install --prefer-dist --no-interaction
       - run: export XDEBUG_MODE=coverage
