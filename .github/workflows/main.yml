@@ -20,8 +20,8 @@ jobs:
           path: $HOME/.composer/cache
           key: '${{ runner.os }}-${{ hashFiles(''TODO'') }}'
       - uses: actions/checkout@v2
-      - run: travis_retry composer self-update
-      - run: travis_retry composer install --prefer-dist --no-interaction
+      - run:  composer self-update
+      - run:  composer install --prefer-dist --no-interaction
       - run: export XDEBUG_MODE=coverage
       - run: vendor/bin/phpcs
       - run: vendor/bin/phpunit
