@@ -7,20 +7,10 @@ name: Check code style and tests
     branches:
       - master
 jobs:
-  Build:
-    runs-on: '${{ matrix.os }}'
-    strategy:
-      matrix:
-        os:
-          - ubuntu-18.04
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Setup PHP with Xdebug 2.x
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.4'
-          coverage: xdebug2
-      - run: composer self-update
-      - run: composer install
-      - run: export XDEBUG_MODE=coverage
-      - run: vendor/bin/phpcs
-      - run: vendor/bin/phpunit
+    - uses: actions/checkout@v2
+    - uses: php-actions/composer@v6
+    - run: composer self-update
