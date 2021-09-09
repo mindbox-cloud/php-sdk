@@ -19,8 +19,8 @@ jobs:
         with:
           php-version: '7.4'
           coverage: xdebug2
-      - run:  composer self-update
-      - run:  composer install --prefer-dist --no-interaction
+      - run: composer self-update
+      - run: composer install
       - run: export XDEBUG_MODE=coverage
       - run: vendor/bin/phpcs
       - run: vendor/bin/phpunit
