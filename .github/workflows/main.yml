@@ -22,3 +22,7 @@ jobs:
         
     - name: Run phpcs
       run: vendor/bin/phpcs
+      
+    - name: Run phpunit
+      run: vendor/bin/phpunit
+      
