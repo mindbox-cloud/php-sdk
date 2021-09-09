@@ -23,6 +23,9 @@ jobs:
     - name: Run phpcs
       run: vendor/bin/phpcs
       
-    - name: Run phpunit
+    - name: PHPUnit install
+      uses: php-actions/phpunit@v3
+
+    - name: Run phpunit tests
       run: vendor/bin/phpunit
       
