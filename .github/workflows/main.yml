@@ -17,6 +17,7 @@ jobs:
       - name: Cache multiple paths
         uses: actions/cache@v2
         with:
+          php-version: '7.0'
           path: $HOME/.composer/cache
           key: '${{ runner.os }}-${{ hashFiles(''TODO'') }}'
       - uses: actions/checkout@v2
