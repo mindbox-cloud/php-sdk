@@ -20,4 +20,4 @@ jobs:
         with:
           version: 8
           php_version: 7.0
-    
+      - run: vendor/bin/phpcs
