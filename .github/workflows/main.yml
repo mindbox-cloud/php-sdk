@@ -7,7 +7,7 @@ name: Check code style and tests
     branches:
       - master
 jobs:
-  build:
+  build7.2:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,3 +31,29 @@ jobs:
         
       - name: Run tests
         run: vendor/bin/phpunit
+        
+  build5.6:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+      - uses: actions/checkout@v2
+      - uses: php-actions/composer@v6
+        with:
+          php_version: 5.6
+          version: 2
+          
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 5.6
+          
+      - name: PHP version
+        run: php -v
+          
+      - name: Run phpcs    
+        run: vendor/bin/phpcs
+        
+      - name: Run tests
+        run: vendor/bin/phpunit
+
