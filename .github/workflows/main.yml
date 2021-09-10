@@ -43,6 +43,7 @@ jobs:
         with:
           php_version: 7.0
           version: 2
+          dev: 'no'
           
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
