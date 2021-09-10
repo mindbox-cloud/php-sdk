@@ -7,7 +7,7 @@ name: Check code style and tests
     branches:
       - master
 jobs:
-  build7.2:
+  build_7_2:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +32,7 @@ jobs:
       - name: Run tests
         run: vendor/bin/phpunit
         
-  build5.6:
+  build_5_6:
     runs-on: ubuntu-latest
 
     steps:
