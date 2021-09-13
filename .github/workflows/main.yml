@@ -24,6 +24,9 @@ jobs:
         with:
           php-version: 5.6
           
+      - name: Update packages
+        run: sudo composer update
+          
       - name: PHP version
         run: php -v
           
@@ -43,11 +46,15 @@ jobs:
         with:
           php_version: 7.0
           version: 2
+          command: update
           
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 7.0
+          
+      - name: Update packages
+        run: sudo composer update
           
       - name: PHP version
         run: php -v
@@ -74,6 +81,9 @@ jobs:
         with:
           php-version: 7.1
           
+      - name: Update packages
+        run: sudo composer update
+          
       - name: PHP version
         run: php -v
           
@@ -99,6 +109,9 @@ jobs:
         with:
           php-version: 7.2
           
+      - name: Update packages
+        run: sudo composer update
+          
       - name: PHP version
         run: php -v
           
@@ -123,6 +136,9 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 7.3
+          
+      - name: Update packages
+        run: sudo composer update
           
       - name: PHP version
         run: php -v
