@@ -44,6 +44,10 @@ jobs:
           php_version: 7.0
           version: 2
           command: update
+        
+      - name: Update packages
+        run: composer update
+          
           
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
