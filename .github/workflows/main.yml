@@ -51,7 +51,7 @@ jobs:
           php-version: 7.0
           
       - name: Update packages
-        run: composer update
+        run: sudo composer update
           
       - name: PHP version
         run: php -v
