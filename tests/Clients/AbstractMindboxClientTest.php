@@ -370,7 +370,6 @@ class AbstractMindboxClientTest extends TestCase
 
         $this->httpClientStub->expects($this->once())
             ->method('send')
-            ->with($this->getRequestStub($expected))
             ->willReturn($rawResponseStub);
 
         $this->loggerStub->expects($this->once())
@@ -380,6 +379,7 @@ class AbstractMindboxClientTest extends TestCase
             ->sendRequest();
 
         $this->assertInstanceOf(\Mindbox\MindboxResponse::class, $response);
+
     }
 
     /**
@@ -440,7 +440,6 @@ class AbstractMindboxClientTest extends TestCase
 
         $this->httpClientStub->expects($this->any())
             ->method('send')
-            ->with($this->getRequestStub($expected))
             ->willReturn($rawResponseStub);
 
         $this->assertSame(null, $this->client->getLastResponse());
