@@ -379,7 +379,6 @@ class AbstractMindboxClientTest extends TestCase
             ->sendRequest();
 
         $this->assertInstanceOf(\Mindbox\MindboxResponse::class, $response);
-
     }
 
     /**
