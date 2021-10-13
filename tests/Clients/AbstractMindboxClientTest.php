@@ -326,11 +326,6 @@ class AbstractMindboxClientTest extends TestCase
     public function testSetRequest($params, $expected)
     {
         $this->client->setRequest($this->getRequestStub($expected));
-
-        //file_put_contents(__DIR__ . '/getRequestStub.log', var_export($this->getRequestStub($expected), true));
-
-        //file_put_contents(__DIR__ . '/getRequest.log', var_export($this->client->getRequest(), true));
-
         $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest(), '', 0.01);
     }
 
