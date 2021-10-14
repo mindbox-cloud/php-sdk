@@ -37,6 +37,11 @@ class MindboxRequest
     private $headers;
 
     /**
+     * @var float $startTime Время начала запроса
+     */
+    private $startTime;
+
+    /**
      * Конструктор MindboxRequest.
      *
      * @param string $apiVersion
@@ -52,6 +57,7 @@ class MindboxRequest
         $this->method     = $method;
         $this->body       = $body;
         $this->headers    = $headers;
+        $this->startTime  = microtime(true);
     }
 
     /**
@@ -170,5 +176,15 @@ class MindboxRequest
         }
 
         return $res;
+    }
+
+    /**
+     * Геттер для $startTime
+     *
+     * @return float
+     */
+    public function getStartTime()
+    {
+        return $this->startTime;
     }
 }

@@ -44,6 +44,11 @@ class MindboxResponse
     protected $request;
 
     /**
+     * @var float $endTime Время окончания ответа
+     */
+    protected $endTime;
+
+    /**
      * Конструктор MindboxResponse.
      *
      * @param int            $httpCode HTTP код ответа.
@@ -59,6 +64,7 @@ class MindboxResponse
         $this->body     = $body;
         $this->rawBody  = $rawBody;
         $this->request  = $request;
+        $this->endTime  = microtime(true);
     }
 
     /**
@@ -180,5 +186,15 @@ class MindboxResponse
     public function getRequest()
     {
         return $this->request;
+    }
+
+    /**
+     * Геттер для $endTime.
+     *
+     * @return float
+     */
+    public function getEndTime()
+    {
+        return $this->endTime;
     }
 }

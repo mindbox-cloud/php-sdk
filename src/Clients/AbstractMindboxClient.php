@@ -363,7 +363,6 @@ abstract class AbstractMindboxClient
             $http_referer = $_SERVER['HTTP_REFERER'];
         }
 
-
         return [
             'request'  => [
                 'url'     => $request->getUrl(),
@@ -378,6 +377,7 @@ abstract class AbstractMindboxClient
             ],
             'request_uri'    =>  $request_uri,
             'http_referer'  =>  $http_referer,
+            'time'          =>  round($response->getEndTime() - $request->getStartTime(), 2) . 's'
         ];
     }
 
