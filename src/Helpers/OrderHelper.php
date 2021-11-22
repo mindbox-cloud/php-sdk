@@ -2,9 +2,9 @@
 
 namespace Mindbox\Helpers;
 
-use Mindbox\DTO\V2\Requests\OrderCreateRequestDTO;
-use Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO;
-use Mindbox\DTO\V2\Requests\PreorderRequestDTO;
+use Mindbox\DTO\V3\Requests\OrderCreateRequestDTO;
+use Mindbox\DTO\V3\Requests\OrderUpdateRequestDTO;
+use Mindbox\DTO\V3\Requests\PreorderRequestDTO;
 use Mindbox\Responses\MindboxOrderResponse;
 use Mindbox\Responses\MindboxOrdersResponse;
 

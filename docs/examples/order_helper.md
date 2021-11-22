@@ -12,10 +12,10 @@
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\V2\Requests\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 
-$order = new \Mindbox\DTO\V2\Requests\OrderCreateRequestDTO();
+$order = new \Mindbox\DTO\V3\Requests\OrderCreateRequestDTO();
 $order->setCustomer($customer);
 
 /* Формирование состава заказа */
@@ -42,10 +42,10 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\V2\Requests\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 
-$order = new \Mindbox\DTO\V2\Requests\PreorderRequestDTO();
+$order = new \Mindbox\DTO\V3\Requests\PreorderRequestDTO();
 $order->setCustomer($customer);
 
 /* Формирование состава заказа */
@@ -72,10 +72,10 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\V2\Requests\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 
-$order = new \Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO();
+$order = new \Mindbox\DTO\V3\Requests\OrderUpdateRequestDTO();
 $order->setCustomer($customer);
 
 /* Формирование состава заказа */
@@ -102,10 +102,10 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\V2\Requests\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 
-$order = new \Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO();
+$order = new \Mindbox\DTO\V3\Requests\OrderUpdateRequestDTO();
 $order->setCustomer($customer);
 
 /* Формирование состава заказа */
@@ -132,10 +132,10 @@ var_dump($response->getBody());
 
 /* Подключение автозагрузчика и инициализация SDK */
 
-$customer = new \Mindbox\DTO\V2\Requests\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 
-$order = new \Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO();
+$order = new \Mindbox\DTO\V3\Requests\OrderUpdateRequestDTO();
 $order->setCustomer($customer);
 
 /* Формирование состава заказа */
