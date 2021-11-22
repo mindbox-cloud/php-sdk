@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Mindbox\DTO\V2\Requests;
+namespace Mindbox\DTO\V3\Requests;
 
 /**
  * Class OrderUpdateRequestDTO
  *
- * @package Mindbox\DTO\V2\Requests
+ * @package Mindbox\DTO\V3\Requests
  * @property string $updatedDateTimeUtc
  * @property string $totalPrice
  **/
