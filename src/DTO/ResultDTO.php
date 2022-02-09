@@ -3,8 +3,8 @@
 
 namespace Mindbox\DTO;
 
-use Mindbox\DTO\V2\Responses\OrderResponseCollection;
-use Mindbox\DTO\V2\Responses\OrderResponseDTO;
+use Mindbox\DTO\V3\Responses\OrderResponseCollection;
+use Mindbox\DTO\V3\Responses\OrderResponseDTO;
 use Mindbox\DTO\V3\Responses\BalanceResponseCollection;
 use Mindbox\DTO\V3\Responses\CustomerActionResponseCollection;
 use Mindbox\DTO\V3\Responses\CustomerIdentityResponseCollection;
