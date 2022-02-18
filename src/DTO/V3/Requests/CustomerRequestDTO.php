@@ -14,6 +14,7 @@ use Mindbox\DTO\V3\CustomerDTO;
  * @property AreaRequestDTO                $area
  * @property SubscriptionRequestCollection $subscriptions
  * @property string                        $authenticationTicket
+ * @property string                        $isAuthorized
  **/
 class CustomerRequestDTO extends CustomerIdentityRequestDTO
 {
@@ -170,5 +171,21 @@ class CustomerRequestDTO extends CustomerIdentityRequestDTO
     public function setDiscountCard($discountCard)
     {
         $this->setField('discountCard', $discountCard);
+    }
+
+    /**
+     * @return string
+     */
+    public function getIsAuthorized()
+    {
+        return $this->getField('isAuthorized');
+    }
+
+    /**
+     * @param mixed $isAuthorized
+     */
+    public function setIsAuthorized($isAuthorized)
+    {
+        $this->setField('isAuthorized', $isAuthorized);
     }
 }

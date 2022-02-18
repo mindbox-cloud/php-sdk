@@ -3,44 +3,109 @@
 
 namespace Mindbox\DTO\V3\Responses;
 
-use Mindbox\DTO\DTO;
-use Mindbox\DTO\V3\IdentityDTO;
+use Mindbox\DTO\V3\OrderDTO;
 
 /**
  * Class OrderResponseDTO
  *
  * @package Mindbox\DTO\V3\Responses
- * @property array                              $ids
- * @property string                             $isCurrentState
- * @property LineResponseCollection             $lines
- * @property AppliedPromotionResponseCollection $appliedPromotions
- * @property PaymentResponseCollection          $payments
- * @property string                             $totalPrice
+ * @property string                            $discountedTotalPrice
+ * @property AppliedDiscountResponseCollection $appliedDiscounts
+ * @property string                            $totalAcquiredBalanceChange
+ * @property string                            $createdPointOfContact
+ * @property PlaceholderResponseCollection     $placeHolders
+ * @property DiscountInfoResponseCollection    $discountsInfo
+ * @property PaymentInfoResponseCollection     $paymentsInfo
+ * @property string                            $createdDateTimeUtc
+ * @property CustomerResponseDTO               $customer
+ * @property LineResponseCollection            $lines
+ * @property PaymentResponseCollection         $payments
  **/
-class OrderResponseDTO extends DTO
+class OrderResponseDTO extends OrderDTO
 {
-    use IdentityDTO;
-
-    /**
-     * @var string Название элемента для корректной генерации xml.
-     */
-    protected static $xmlName = 'order';
-
     /**
      * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
-        'lines'             => LineResponseCollection::class,
-        'appliedPromotions' => AppliedPromotionResponseCollection::class,
-        'payments'          => PaymentResponseCollection::class,
+        'appliedDiscounts' => AppliedDiscountResponseCollection::class,
+        'placeHolders'     => PlaceholderResponseCollection::class,
+        'discountsInfo'    => DiscountInfoResponseCollection::class,
+        'paymentsInfo'     => PaymentInfoResponseCollection::class,
+        'customer'         => CustomerResponseDTO::class,
+        'lines'            => LineResponseCollection::class,
+        'payments'         => PaymentResponseCollection::class,
     ];
 
     /**
      * @return string
      */
-    public function getIsCurrentState()
+    public function getDiscountedTotalPrice()
     {
-        return $this->getField('isCurrentState');
+        return $this->getField('discountedTotalPrice');
+    }
+
+    /**
+     * @return AppliedDiscountResponseCollection
+     */
+    public function getAppliedDiscounts()
+    {
+        return $this->getField('appliedDiscounts');
+    }
+
+    /**
+     * @return string
+     */
+    public function getTotalAcquiredBalanceChange()
+    {
+        return $this->getField('totalAcquiredBalanceChange');
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreatedPointOfContact()
+    {
+        return $this->getField('createdPointOfContact');
+    }
+
+    /**
+     * @return PlaceholderResponseCollection
+     */
+    public function getPlaceholders()
+    {
+        return $this->getField('placeHolders');
+    }
+
+    /**
+     * @return DiscountInfoResponseCollection
+     */
+    public function getDiscountsInfo()
+    {
+        return $this->getField('discountsInfo');
+    }
+
+    /**
+     * @return PaymentInfoResponseCollection
+     */
+    public function getPaymentsInfo()
+    {
+        return $this->getField('paymentsInfo');
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreatedDateTimeUtc()
+    {
+        return $this->getField('createdDateTimeUtc');
+    }
+
+    /**
+     * @return CustomerResponseDTO
+     */
+    public function getCustomer()
+    {
+        return $this->getField('customer');
     }
 
     /**
@@ -52,26 +117,10 @@ class OrderResponseDTO extends DTO
     }
 
     /**
-     * @return AppliedPromotionResponseCollection
-     */
-    public function getAppliedPromotions()
-    {
-        return $this->getField('appliedPromotions');
-    }
-
-    /**
      * @return PaymentResponseCollection
      */
     public function getPayments()
     {
         return $this->getField('payments');
-    }
-
-    /**
-     * @return string
-     */
-    public function getTotalPrice()
-    {
-        return $this->getField('totalPrice');
     }
 }
