@@ -9,17 +9,17 @@ use Mindbox\DTO\V3\OrderDTO;
  * Class OrderResponseDTO
  *
  * @package Mindbox\DTO\V3\Responses
- * @property string                            $discountedTotalPrice
+ * @property string $discountedTotalPrice
  * @property AppliedDiscountResponseCollection $appliedDiscounts
- * @property string                            $totalAcquiredBalanceChange
- * @property string                            $createdPointOfContact
- * @property PlaceholderResponseCollection     $placeHolders
- * @property DiscountInfoResponseCollection    $discountsInfo
- * @property PaymentInfoResponseCollection     $paymentsInfo
- * @property string                            $createdDateTimeUtc
- * @property CustomerResponseDTO               $customer
- * @property LineResponseCollection            $lines
- * @property PaymentResponseCollection         $payments
+ * @property string $totalAcquiredBalanceChange
+ * @property string $createdPointOfContact
+ * @property PlaceholderResponseCollection $placeHolders
+ * @property DiscountInfoResponseCollection $discountsInfo
+ * @property PaymentInfoResponseCollection $paymentsInfo
+ * @property string $createdDateTimeUtc
+ * @property CustomerResponseDTO $customer
+ * @property LineResponseCollection $lines
+ * @property PaymentResponseCollection $payments
  **/
 class OrderResponseDTO extends OrderDTO
 {
@@ -27,13 +27,14 @@ class OrderResponseDTO extends OrderDTO
      * @var array Мэппинг преобразрования полей в объекты DTO.
      */
     protected static $DTOMap = [
-        'appliedDiscounts' => AppliedDiscountResponseCollection::class,
-        'placeHolders'     => PlaceholderResponseCollection::class,
-        'discountsInfo'    => DiscountInfoResponseCollection::class,
-        'paymentsInfo'     => PaymentInfoResponseCollection::class,
-        'customer'         => CustomerResponseDTO::class,
-        'lines'            => LineResponseCollection::class,
-        'payments'         => PaymentResponseCollection::class,
+        'appliedDiscounts'  => AppliedDiscountResponseCollection::class,
+        'placeHolders'      => PlaceholderResponseCollection::class,
+        'discountsInfo'     => DiscountInfoResponseCollection::class,
+        'paymentsInfo'      => PaymentInfoResponseCollection::class,
+        'customer'          => CustomerResponseDTO::class,
+        'lines'             => LineResponseCollection::class,
+        'payments'          => PaymentResponseCollection::class,
+        'appliedPromotions' => AppliedPromotionResponseCollection::class
     ];
 
     /**
