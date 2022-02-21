@@ -39,6 +39,14 @@ class OrderResponseDTO extends OrderDTO
     /**
      * @return string
      */
+    public function getIsCurrentState()
+    {
+        return $this->getField('isCurrentState');
+    }
+
+    /**
+     * @return string
+     */
     public function getDiscountedTotalPrice()
     {
         return $this->getField('discountedTotalPrice');
@@ -50,6 +58,14 @@ class OrderResponseDTO extends OrderDTO
     public function getAppliedDiscounts()
     {
         return $this->getField('appliedDiscounts');
+    }
+
+    /**
+     * @return AppliedPromotionResponseCollection
+     */
+    public function getAppliedPromotions()
+    {
+        return $this->getField('appliedPromotions');
     }
 
     /**
@@ -122,5 +138,13 @@ class OrderResponseDTO extends OrderDTO
     public function getPayments()
     {
         return $this->getField('payments');
+    }
+
+    /**
+     * @return string
+     */
+    public function getTotalPrice()
+    {
+        return $this->getField('totalPrice');
     }
 }
