@@ -258,6 +258,33 @@ class CustomerHelper extends AbstractMindboxHelper
     }
 
     /**
+     * Выполняет вызов стандартной операции LoyaltyWebsite.GetOrdersList:
+     *
+     * @see https://developers.mindbox.ru/docs/%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BE%D0%B2-%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%B8%D1%82%D0%B5%D0%BB%D1%8F
+     *
+     * @param CustomerRequestDTO $customer      Объект, содержащий данные потребителя для запроса.
+     * @param PageRequestDTO     $page          Объект, содержащий данные пагинации для запроса.
+     * @param string             $operationName Название операции.
+     * @param bool               $addDeviceUUID Флаг, сообщающий о необходимости передать в запросе DeviceUUID.
+     *
+     * @return \Mindbox\Clients\AbstractMindboxClient
+     */
+    public function getOrdersList(
+        CustomerRequestDTO $customer,
+        PageRequestDTO $page,
+        $operationName,
+        $addDeviceUUID = true
+    ) {
+        $operation = $this->createOperation();
+        $operation->setCustomer($customer);
+        $operation->setPage($page);
+
+        $this->client->setResponseType(MindboxBonusPointsResponse::class);
+
+        return $this->client->prepareRequest('POST', $operationName, $operation, '', [], true, $addDeviceUUID);
+    }
+
+    /**
      * Выполняет вызов стандартной операции Website.SendMobilePhoneAuthorizationCode:
      *
      * @see https://developers.mindbox.ru/docs/send-confirmation-code
