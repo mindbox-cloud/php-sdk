@@ -10,7 +10,7 @@
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Инициализация SDK */
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
@@ -26,21 +26,19 @@ try {
             $order, // OrderCreateRequestDTO
             'Website.CreateOrder' // название операции
         )->sendRequest();
+    
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Предварительный расчет заказа](https://developers.mindbox.ru/docs/preorderxml):
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Инициализация SDK */
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
@@ -56,21 +54,19 @@ try {
             $order, // PreorderRequestDTO
             'Website.CalculateCart' // название операции
         )->sendRequest();
+        
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Подтверждение заказа](https://developers.mindbox.ru/docs/изменение-заказа):
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Инициализация SDK */
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
@@ -86,21 +82,19 @@ try {
             $order, // OrderUpdateRequestDTO
             'Website.ConfirmOrder' // название операции
         )->sendRequest();
+        
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Отмена заказа](https://developers.mindbox.ru/docs/изменение-заказа):
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Инициализация SDK */
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
@@ -116,21 +110,19 @@ try {
             $order, // OrderUpdateRequestDTO
             'Website.CancelOrder' // название операции
         )->sendRequest();
+    
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Оффлайн заказ](https://developers.mindbox.ru/docs/изменение-заказа):
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Инициализация SDK */
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
@@ -146,21 +138,19 @@ try {
             $order, // OrderUpdateRequestDTO
             'Website.OfflineOrder' // название операции
         )->sendRequest();
+    
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Получение списка заказов потребителя](https://developers.mindbox.ru/docs/получение-списка-заказов-потребителя):
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Инициализация SDK */
 
 try {
     $response = $mindbox->order()
@@ -170,12 +160,10 @@ try {
             1, // порядковый номер заказа, начиная с которого будет сформирован список заказов
             'Website.GetCustomerOrders' // название операции
         )->sendRequest();
+    
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```

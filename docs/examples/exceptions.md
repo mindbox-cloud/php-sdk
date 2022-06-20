@@ -18,14 +18,12 @@
 ## Пример обработки исключений
 
 ```php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
-
 $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 
 $mindbox = new \Mindbox\Mindbox([
-    'endpointId'   => '{endpointId}',
-    'secretKey'    => '{secretKey}',
-    'domain'       => '{domain}',
+    'endpointId' => '{endpointId}',
+    'secretKey' => '{secretKey}',
+    'domainZone' => '{domain}',
 ], $logger);
 
 try {
@@ -33,36 +31,21 @@ try {
         ->getOrders(10, 252, 0, 'DirectCrm.V21CustomerOrderListOperation')
         ->sendRequest();
 } catch (\Mindbox\Exceptions\MindboxBadRequestException $e) {
-    echo $e->getMessage().PHP_EOL;
-    
-    $mindbox->order()->getLastResponse();
-
     /* можно отлавливать и обрабатывать определённое исключение, в данном случае с кодом ответа 400 */
-
-    return;
+    echo $e->getMessage().PHP_EOL;
+    $mindbox->order()->getLastResponse();
 } catch (\Mindbox\Exceptions\MindboxClientErrorException $e) {
-    echo $e->getMessage().PHP_EOL;
-    
-    $mindbox->order()->getLastResponse();
-
     /* можно отлавливать и обрабатывать более общее исключение, в данном случае с кодом ответа 4XX */
-
-    return;
-} catch (\Mindbox\Exceptions\MindboxUnavailableException $e) {
     echo $e->getMessage().PHP_EOL;
-    
     $mindbox->order()->getLastResponse();
-
-    /* можно отлавливать и каким-либо образом обрабатывать исключение с кодом ответа 5XX */
-
+} catch (\Mindbox\Exceptions\MindboxUnavailableException $e) {
+     /* можно отлавливать и каким-либо образом обрабатывать исключение с кодом ответа 5XX */
+    echo $e->getMessage().PHP_EOL;
+    $mindbox->order()->getLastResponse();
     return;
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
-    echo $e->getMessage().PHP_EOL;
-    
-    $mindbox->order()->getLastResponse();
-
     /* можно отлавливать самое верхнеуровневое исключение */
-
-    return;
+    echo $e->getMessage().PHP_EOL;
+    $mindbox->order()->getLastResponse();
 }
 ```

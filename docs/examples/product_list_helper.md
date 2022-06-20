@@ -10,7 +10,7 @@
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Инициализация SDK */
 
 $addProductToListRequest = new \Mindbox\DTO\V3\Requests\AddProductToListRequestDTO();
 
@@ -28,21 +28,19 @@ try {
             'Website.AddToCart', // название операции
             false // добавлять ли DeviceUUID в запрос, необязательный параметр
         )->sendRequest();
+        
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Удаление продукта из корзины](https://developers.mindbox.ru/docs/prodlistactionxml):
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Инициализация SDK */
 
 $removeProductFromListRequest = new \Mindbox\DTO\V3\Requests\RemoveProductFromListRequestDTO();
 
@@ -60,21 +58,19 @@ try {
             'Website.RemoveFromCart', // название операции
             false // добавлять ли DeviceUUID в запрос, необязательный параметр
         )->sendRequest();
+        
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Изменение количества продукта в корзине](https://developers.mindbox.ru/docs/prodlistactionxml):
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Инициализация SDK */
 
 $setProductCountInListRequest = new \Mindbox\DTO\V3\Requests\SetProductCountInListRequestDTO();
 
@@ -92,21 +88,19 @@ try {
             'Website.SetProductCount', // название операции
             false // добавлять ли DeviceUUID в запрос, необязательный параметр
         )->sendRequest();
+    
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Установка состава корзины](https://developers.mindbox.ru/docs/prodlistactionxml):
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Инициализация SDK */
 
 $product = new Mindbox\DTO\V3\Requests\ProductListItemRequestDTO();
 $product->setCount(6);
@@ -128,12 +122,10 @@ try {
             $customerIdentity, // идентификаторы потребителя CustomerIdentityRequestDTO, необязательный параметр
             false // добавлять ли DeviceUUID в запрос, необязательный параметр
         )->sendRequest();
+    
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```

@@ -39,20 +39,27 @@ require_once __DIR__ . '/path/to/mindboxSDK/vendor/autoload.php';
 ```
 
 ## Использование
+Обязательные параметры конфигурации SDK:
+- `{logsDir}` - директория для логов
+- `{endpointId}` - уникальный идентификатор сайта/мобильного приложения/и т.п. Значение нужно уточнить у менеджера Mindbox.
+- `{secretKey}` - секретный ключ, соответствующий endpointId. Значение нужно уточнить у менеджера Mindbox.
+- `{domainZone}` домен API Mindbox, на который будут отправляться запросы
+
+Опциональные параметры:
+- `{timeout}` таймаут соединения http запроса (в секундах), опционально. По умолчанию 5 секунд.
+- `{httpClient}` способ отправки запроса ("curl", "stream"), опционально. По умолчанию curl, если установлено расширение ext-curl, иначе stream.
 
 ### Инициализация SDK
 
 ```php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
-
-$logger = new \Mindbox\Loggers\MindboxFileLogger('{путь/к/директории/в/которую/будут/записаны/логи}');
+$logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 
 $mindbox = new \Mindbox\Mindbox([
-    'endpointId'   => '{endpointId}',
-    'secretKey'    => '{secretKey}',
-    'domain'       => '{domain}',
-    //'timeout'    => '{timeout}', // Таймаут соединения http запроса (в секундах), опционально. По умолчанию 5 секунд.
-    //'httpClient' => '{httpClient}', // Способ отправки запроса ("curl", "stream"), опционально. По умолчанию curl, если установлено расширение ext-curl, иначе stream.
+    'endpointId' => '{endpointId}',
+    'secretKey' => '{secretKey}',
+    'domainZone' => '{domainZone}',
+    //'timeout' => '{timeout}',
+    //'httpClient' => '{httpClient}',
 ], $logger);
 ```
 
@@ -64,14 +71,12 @@ $mindbox = new \Mindbox\Mindbox([
 Простой пример отправки запроса авторизации потребителя к Mindbox с использованием хелпера:
 
 ```php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
-
 $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 
 $mindbox = new \Mindbox\Mindbox([
-    'endpointId'   => '{endpointId}',
-    'secretKey'    => '{secretKey}',
-    'domain'       => '{domain}',
+    'endpointId' => '{endpointId}',
+    'secretKey' => '{secretKey}',
+    'domainZone' => '{domainZone}',
 ], $logger);
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
@@ -83,13 +88,13 @@ try {
     $response = $mindbox->customer()
         ->authorize($customer, 'Website.AuthorizeCustomer')
         ->sendRequest();
+    
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
     return;
 }
-
-var_dump($response->getRequest()->getBody());
-var_dump($response->getBody());
 ```
 
 Подробнее об использовании хелперов SDK [здесь](docs/README.md#примеры-использования-sdk).
@@ -99,14 +104,13 @@ var_dump($response->getBody());
 Запросы, для которых не реализованы хелперы, можно выполнить с помощью универсальных методов:
 
 ```php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
 
 $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 
 $mindbox = new \Mindbox\Mindbox([
-    'endpointId'   => '{endpointId}',
-    'secretKey'    => '{secretKey}',
-    'domain'       => '{domain}',
+    'endpointId' => '{endpointId}',
+    'secretKey' => '{secretKey}',
+    'domainZone' => '{domainZone}',
 ], $logger);
 
 $operation = new \Mindbox\DTO\V3\OperationDTO();
@@ -122,13 +126,11 @@ try {
     $response = $mindbox->getClientV3()
         ->prepareRequest('POST', 'Website.AuthorizeCustomer', $operation, '', [], false)
         ->sendRequest();
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-    return;
 }
-
-var_dump($response->getRequest()->getBody());
-var_dump($response->getBody());
 ```
 
 Подробнее об использовании универсальных методов SDK [здесь](docs/README.md#примеры-использования-sdk).

@@ -9,8 +9,6 @@ DTO в Mindbox SDK используются для упрощения форми
 ## Пример
 
 ``` php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
-
 $operation = new \Mindbox\DTO\V3\OperationDTO([
     'customer' => [
         'firstName'     => 'some_firstName',
@@ -85,8 +83,6 @@ JSON:
 Пример:
 
 ``` php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
-
 $operation = new \Mindbox\DTO\V3\OperationDTO([
    'customer' => [
        'firstName'        => 'some_firstName',
