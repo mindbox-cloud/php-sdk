@@ -16,14 +16,12 @@
 ## Пример работы с результатом запроса к Mindbox API
 
 ```php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
-
 $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 
 $mindbox = new \Mindbox\Mindbox([
-    'endpointId'   => '{endpointId}',
-    'secretKey'    => '{secretKey}',
-    'domain'       => '{domain}',
+    'endpointId' => '{endpointId}',
+    'secretKey' => '{secretKey}',
+    'domainZone' => '{domainZone}',
 ], $logger);
 
 try {
@@ -34,7 +32,7 @@ try {
     echo $e->getMessage().PHP_EOL;
 
     $response = $mindbox->order()->getLastResponse();
-    var_dump($response->isError()); // выведет true
+    var_dump($response->isError()); // вернет true
     return;
 }
 

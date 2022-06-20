@@ -10,8 +10,6 @@ DTO в Mindbox SDK используются для упрощения форми
 ## Пример
 
 ``` php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
-
 $operation = new \Mindbox\DTO\V3\OperationDTO();
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
@@ -32,12 +30,14 @@ $subscriptionsData = [
 ];
 
 $subscriptionsCollection = [];
+
 foreach ($subscriptionsData as $subscriptionsDatum) {
     $subscription = new \Mindbox\DTO\V3\Requests\SubscriptionRequestDTO();
     $subscription->setPointOfContact($subscriptionsDatum['pointOfContact']);
     $subscription->setTopic($subscriptionsDatum['topic']);
     $subscriptionsCollection[] = $subscription;
 }
+
 $subscriptions = new \Mindbox\DTO\V3\Requests\SubscriptionRequestCollection($subscriptionsCollection);
 $customer->setSubscriptions($subscriptions);
 
@@ -98,8 +98,6 @@ JSON:
 Пример:
 
 ``` php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
-
 $operation = new \Mindbox\DTO\V3\OperationDTO();
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
