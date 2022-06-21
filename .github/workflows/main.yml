@@ -18,6 +18,7 @@ jobs:
         with:
           php_version: 5.6
           version: 2
+          command: update
           
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
