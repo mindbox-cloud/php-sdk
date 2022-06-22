@@ -1,7 +1,5 @@
 # Mindbox PHP SDK
 
-[![Build Status](https://travis-ci.org/mindbox-moscow/php-sdk.svg?branch=master)](https://travis-ci.org/mindbox-moscow/php-sdk)
-
 PHP библиотека для упрощённого взаимодейтсвия вашего PHP приложения с API Mindbox. С полной документацией API Mindbox можно ознакомиться [здесь](https://developers.mindbox.ru/docs/v3).
 
 ## Начало работы
@@ -74,7 +72,7 @@ $mindbox = new \Mindbox\Mindbox([
     'domain'       => '{domain}',
 ], $logger);
 
-$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 $customer->setMobilePhone('77777777777');
 $customer->setId('mindboxId', '1028');
@@ -109,9 +107,9 @@ $mindbox = new \Mindbox\Mindbox([
     'domain'       => '{domain}',
 ], $logger);
 
-$operation = new \Mindbox\DTO\V3\OperationDTO();
+$operation = new \Mindbox\DTO\OperationDTO();
 
-$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 $customer->setMobilePhone('77777777777');
 $customer->setId('mindboxId', '1028');
