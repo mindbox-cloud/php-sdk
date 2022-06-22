@@ -24,24 +24,22 @@ try {
             'Website.AuthorizeCustomer', // название операции
             false // добавлять ли DeviceUUID в запрос, необязательный параметр
         )->sendRequest();
+        
+        $requestBody = $response->getRequest()->getBody();
+        $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Поиск потребителя по номеру телефона](https://developers.mindbox.ru/docs/получение-данных-потребителя):
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Иинициализация SDK */
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
-$customer->setMobilePhone(77777777777);
+$customer->setMobilePhone(79999999999);
 
 try {
     $response = $mindbox->customer()
@@ -50,10 +48,11 @@ try {
             'Website.CheckCustomerByMobilePhone', // название операции
             false // добавлять ли DeviceUUID в запрос, необязательный параметр
         )->sendRequest();
+        
+        $requestBody = $response->getRequest()->getBody();
+        $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
 
 var_dump($response->getRequest());
@@ -64,7 +63,7 @@ var_dump($response->getBody());
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
+/* Инициализация SDK */
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
@@ -76,27 +75,23 @@ try {
             'Website.CheckCustomerByEmail', // название операции
             false // добавлять ли DeviceUUID в запрос, необязательный параметр
         )->sendRequest();
+    
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Регистрация потребителя](https://developers.mindbox.ru/docs/получение-данных-потребителя):
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
-
+/* Инициализация SDK */
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 
-/* Формирование данных о потребителе */
-
+/* Отправка запроса в Mindbox */
 try {
     $response = $mindbox->customer()
         ->register(
@@ -104,28 +99,25 @@ try {
             'Website.RegisterCustomer', // название операции
             false // добавлять ли DeviceUUID в запрос, необязательный параметр
         )->sendRequest();
+        
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
 
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Редактирование данных потребителя](https://developers.mindbox.ru/docs/userredxml):
 
 ``` php
 
-/* Подключение автозагрузчика и инициализация SDK */
-
+/* Инициализация SDK */
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 $customer->setId('mindboxId', 12345);
 
-/* Формирование данных о потребителе */
-
+/* Отправка запроса в Mindbox */
 try {
     $response = $mindbox->customer()
         ->edit(
@@ -133,14 +125,13 @@ try {
             'Website.EditCustomer', // название операции
             false // добавлять ли DeviceUUID в запрос, необязательный параметр
         )->sendRequest();
+        
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
 
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```
 
 [Дозаполнение профиля потребителя](https://developers.mindbox.ru/docs/userredxml):
