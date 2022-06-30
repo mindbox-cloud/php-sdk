@@ -9,14 +9,12 @@
 ## Пример создания экземпляра запроса и установка его в MindboxClient
 
 ``` php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
-
 $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 
 $mindbox = new \Mindbox\Mindbox([
-    'endpointId'   => '{endpointId}',
-    'secretKey'    => '{secretKey}',
-    'domain'       => '{domain}',
+    'endpointId' => '{endpointId}',
+    'secretKey' => '{secretKey}',
+    'domainZone' => '{domainZone}',
 ], $logger);
 
 $apiVersion = 'v3';
