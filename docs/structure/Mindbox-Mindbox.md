@@ -10,13 +10,8 @@ Class Mindbox
 * Class name: Mindbox
 * Namespace: Mindbox
 
-
-
-
-
 Properties
 ----------
-
 
 ### $defaultConfig
 
