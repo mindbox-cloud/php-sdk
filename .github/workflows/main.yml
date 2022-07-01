@@ -16,9 +16,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: php-actions/composer@v6
         with:
-          php_version: 5.6
-          version: "2.2"
-          command: update
+          php_version: "5.6"
+          version: 1
           
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -45,9 +44,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: php-actions/composer@v6
         with:
-          php_version: 7.0
-          version: 2
-          command: update
+          php_version: "7.0"
+          version: 1
           
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -74,9 +72,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: php-actions/composer@v6
         with:
-          php_version: 7.1
-          version: 2
-          command: update
+          php_version: "7.1"
+          version: 1
           
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
