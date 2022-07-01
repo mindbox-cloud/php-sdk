@@ -17,8 +17,7 @@ jobs:
       - uses: php-actions/composer@v6
         with:
           php_version: "5.6"
-          version: 2
-          command: "self-update --2.2"
+          version: 2.2.x
           
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
