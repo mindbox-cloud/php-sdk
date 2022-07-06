@@ -58,7 +58,6 @@ class AbstractMindboxClientTest extends TestCase
 
     public function setUp()
     {
-        $this->domain         = $this->domain;
         $this->httpClientStub = $this->getHttpClientStub();
         $this->loggerStub     = $this->getLoggerStub();
         $this->client         = $this->getClient($this->secret, $this->httpClientStub, $this->loggerStub, $this->domain);
