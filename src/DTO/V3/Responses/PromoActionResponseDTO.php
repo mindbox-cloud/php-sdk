@@ -1,25 +1,26 @@
 <?php
 
 
-namespace Mindbox\DTO\V2;
+namespace Mindbox\DTO\V3\Responses;
 
 use Mindbox\DTO\DTO;
+use Mindbox\DTO\V3\IdentityDTO;
 
 /**
- * Class AreaDTO
+ * Class PromoActionResponseDTO
  *
- * @package Mindbox\DTO\V2
+ * @package Mindbox\DTO\V3\Responses
  * @property array  $ids
  * @property string $name
  */
-abstract class AreaDTO extends DTO
+class PromoActionResponseDTO extends DTO
 {
     use IdentityDTO;
 
     /**
      * @var string Название элемента для корректной генерации xml.
      */
-    protected static $xmlName = 'area';
+    protected static $xmlName = 'promoAction';
 
     /**
      * @return string

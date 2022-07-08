@@ -32,13 +32,6 @@ class MindboxClientFactoryTest extends TestCase
     {
         return [
             [
-                'v2.1',
-                '',
-                'secret',
-                'domain',
-                \Mindbox\Clients\MindboxClientV2::class,
-            ],
-            [
                 'v3',
                 'endpoint',
                 'secret',

@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Mindbox\DTO\V2\Responses;
+namespace Mindbox\DTO\V3\Responses;
 
 use Mindbox\DTO\DTO;
 
 /**
  * Class PaymentInfoResponseDTO
  *
- * @package Mindbox\DTO\V2\Responses
+ * @package Mindbox\DTO\V3\Responses
  * @property string              $type
  * @property string              $availableAmountForCurrentOrder
  * @property GiftCardResponseDTO $giftCard

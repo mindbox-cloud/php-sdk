@@ -1,24 +1,24 @@
 <?php
 
 
-namespace Mindbox\DTO\V2\Responses;
+namespace Mindbox\DTO\V3\Responses;
 
 use Mindbox\DTO\DTOCollection;
 
 /**
- * Class DiscountCardResponseCollection
+ * Class PaymentInfoResponseCollection
  *
- * @package Mindbox\DTO\V2\Responses
+ * @package Mindbox\DTO\V3\Responses
  */
-class DiscountCardResponseCollection extends DTOCollection
+class PaymentInfoResponseCollection extends DTOCollection
 {
     /**
      * @var string Название элементов коллекции для корректной генерации xml.
      */
-    protected static $collectionItemsName = DiscountCardResponseDTO::class;
+    protected static $collectionItemsName = PaymentInfoResponseDTO::class;
 
     /**
      * @var string Название элемента для корректной генерации xml.
      */
-    protected static $xmlName = 'discountCards';
+    protected static $xmlName = 'paymentsInfo';
 }
