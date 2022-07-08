@@ -12,27 +12,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
+
       - uses: actions/checkout@v2
       - uses: php-actions/composer@v6
         with:
           php_version: 7.3
           version: 2
-          
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 7.3
-          
+
       - name: Update packages
         run: sudo composer update
-          
+
       - name: PHP version
         run: php -v
-          
-      - name: Run phpcs    
+
+      - name: Run phpcs
         run: vendor/bin/phpcs
-        
+
       - name: Run tests
         run: vendor/bin/phpunit
   build_7_4:
@@ -67,26 +67,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
+
       - uses: actions/checkout@v2
       - uses: php-actions/composer@v6
         with:
           php_version: 8
           version: 2
-          
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8
-          
+
       - name: Update packages
         run: sudo composer update
-          
+
       - name: PHP version
         run: php -v
-          
-      - name: Run phpcs    
+
+      - name: Run phpcs
         run: vendor/bin/phpcs
-        
+
       - name: Run tests
         uses: php-actions/phpunit@v3

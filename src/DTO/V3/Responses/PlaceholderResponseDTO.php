@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Mindbox\DTO\V2\Responses;
+namespace Mindbox\DTO\V3\Responses;
 
 use Mindbox\DTO\DTO;
 

@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Mindbox\DTO\V2\Responses;
+namespace Mindbox\DTO\V3\Responses;
 
 use Mindbox\DTO\DTO;
 
 /**
  * Class AppliedDiscountResponseDTO
  *
- * @package Mindbox\DTO\V2\Responses
+ * @package Mindbox\DTO\V3\Responses
  * @property string                 $type
  * @property string                 $id
  * @property string                 $amount

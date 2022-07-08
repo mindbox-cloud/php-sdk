@@ -3,7 +3,7 @@
 namespace Mindbox\Responses;
 
 use Mindbox\MindboxResponse;
-use Mindbox\DTO\V2\Responses\OrderResponseDTO;
+use Mindbox\DTO\V3\Responses\OrderResponseDTO;
 
 /**
  * Класс, расширяющий стандартный класс ответа от Mindbox и используемый в стандартных запросах по изменению заказа.

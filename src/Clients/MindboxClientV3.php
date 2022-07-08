@@ -24,6 +24,7 @@ class MindboxClientV3 extends AbstractMindboxClient
      */
     const BASE_V3_URL = 'https://api.mindbox.{{domainZone}}/v3/operations/';
 
+    const TMP_V3_URL = 'https://api-ru.mindbox.cloud/v3/operations/';
     /**
      * Секретный ключ.
      */
@@ -96,7 +97,10 @@ class MindboxClientV3 extends AbstractMindboxClient
      */
     protected function prepareUrl($url, array $queryParams, $isSync = true)
     {
-        $domain = str_replace('{{domainZone}}', $this->domainZone, static::BASE_V3_URL);
+        $domain = $this->getApiUrl();
+
+        $domain = str_replace('{{domainZone}}', $this->domainZone, $domain);
+
         return $domain . ($isSync ? 'sync' : 'async') . '?' . http_build_query($queryParams);
     }
 
@@ -129,11 +133,6 @@ class MindboxClientV3 extends AbstractMindboxClient
      */
     private function getDeviceUUID()
     {
-        if (empty($_COOKIE['mindboxDeviceUUID'])) {
-            $logger = new \Mindbox\Loggers\MindboxFileLogger(__DIR__ . '/getDeviceUUID/');
-            $message = date('d.m.Y H:i:s');
-            $logger->error($message, ['$_COOKIE' => $_COOKIE, '$_REQUEST' => $_REQUEST, '$_SERVER' => $_SERVER]);
-        }
         return isset($_COOKIE['mindboxDeviceUUID']) ? $_COOKIE['mindboxDeviceUUID'] : '';
     }
 
@@ -169,5 +168,22 @@ class MindboxClientV3 extends AbstractMindboxClient
     protected function prepareResponseBody($rawBody)
     {
         return $rawBody ? json_decode($rawBody, true) : [];
+    }
+
+    /**
+     * Временное решение для старых хостингов
+     *
+     * @return string
+     */
+    protected function getApiUrl()
+    {
+        $return = self:: BASE_V3_URL;
+        switch ($this->domainZone) {
+            case 'api-ru':
+                $return = self::TMP_V3_URL;
+                break;
+        }
+
+        return $return;
     }
 }

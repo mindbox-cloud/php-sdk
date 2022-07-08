@@ -39,7 +39,7 @@ class OrderHelperTest extends AbstractMindboxHelperTest
 
     public function testOfflineOrder()
     {
-        $dto           = new \Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\OrderUpdateRequestDTO();
         $operationName = 'Website.OperationName';
 
         $this->mindboxClientStub->expects($this->once())
@@ -78,7 +78,7 @@ class OrderHelperTest extends AbstractMindboxHelperTest
 
     public function testConfirmOrder()
     {
-        $dto           = new \Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\OrderUpdateRequestDTO();
         $operationName = 'Website.OperationName';
 
         $this->mindboxClientStub->expects($this->once())
@@ -90,7 +90,7 @@ class OrderHelperTest extends AbstractMindboxHelperTest
 
     public function testCancelOrder()
     {
-        $dto           = new \Mindbox\DTO\V2\Requests\OrderUpdateRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\OrderUpdateRequestDTO();
         $operationName = 'Website.OperationName';
 
         $this->mindboxClientStub->expects($this->once())
@@ -102,7 +102,7 @@ class OrderHelperTest extends AbstractMindboxHelperTest
 
     public function testCalculateCart()
     {
-        $dto           = new \Mindbox\DTO\V2\Requests\PreorderRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\PreorderRequestDTO();
         $operationName = 'Website.OperationName';
 
         $this->mindboxClientStub->expects($this->once())
@@ -118,7 +118,7 @@ class OrderHelperTest extends AbstractMindboxHelperTest
 
     public function testCreateOrder()
     {
-        $dto           = new \Mindbox\DTO\V2\Requests\OrderCreateRequestDTO();
+        $dto           = new \Mindbox\DTO\V3\Requests\OrderCreateRequestDTO();
         $operationName = 'Website.OperationName';
 
         $this->mindboxClientStub->expects($this->once())

@@ -285,7 +285,7 @@ abstract class AbstractMindboxClient
                 $body = $context['response']['body'];
                 $arBody  = json_decode($body, true);
                 if ($arBody) {
-                    $message = substr($arBody['errorMessage'], strpos($arBody['errorMessage'], ":") + 1);
+                    $message = $arBody['errorMessage'];
                 } else {
                     $message = 'Bad request';
                 }
@@ -363,7 +363,6 @@ abstract class AbstractMindboxClient
             $http_referer = $_SERVER['HTTP_REFERER'];
         }
 
-
         return [
             'request'  => [
                 'url'     => $request->getUrl(),
@@ -378,6 +377,7 @@ abstract class AbstractMindboxClient
             ],
             'request_uri'    =>  $request_uri,
             'http_referer'  =>  $http_referer,
+            'time'          =>  round($response->getEndTime() - $request->getStartTime(), 2) . 's'
         ];
     }
 

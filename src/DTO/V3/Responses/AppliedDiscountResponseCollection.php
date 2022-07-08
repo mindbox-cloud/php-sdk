@@ -1,24 +1,24 @@
 <?php
 
 
-namespace Mindbox\DTO\V2\Requests;
+namespace Mindbox\DTO\V3\Responses;
 
 use Mindbox\DTO\DTOCollection;
 
 /**
- * Class LineRequestCollection
+ * Class AppliedDiscountResponseCollection
  *
- * @package Mindbox\DTO\V2\Requests
+ * @package Mindbox\DTO\V3\Responses
  */
-class LineRequestCollection extends DTOCollection
+class AppliedDiscountResponseCollection extends DTOCollection
 {
     /**
      * @var string Название элементов коллекции для корректной генерации xml.
      */
-    protected static $collectionItemsName = LineRequestDTO::class;
+    protected static $collectionItemsName = AppliedDiscountResponseDTO::class;
 
     /**
      * @var string Название элемента для корректной генерации xml.
      */
-    protected static $xmlName = 'lines';
+    protected static $xmlName = 'appliedDiscounts';
 }

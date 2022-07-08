@@ -18,8 +18,6 @@
 ## Пример отправки произвольного запроса к API v2.1
 
 ``` php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
-
 $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 
 $mindbox = new \Mindbox\Mindbox([

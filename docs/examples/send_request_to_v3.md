@@ -17,14 +17,12 @@
 ## Пример отправки произвольного запроса к API v3
 
 ``` php
-require_once __DIR__ . '{путь/до/автозагрузчика}';
-
 $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 
 $mindbox = new \Mindbox\Mindbox([
-    'endpointId'   => '{endpointId}',
-    'secretKey'    => '{secretKey}',
-    'domain'       => '{domain}',
+    'endpointId' => '{endpointId}',
+    'secretKey' => '{secretKey}',
+    'domainZone' => '{domainZone}',
 ], $logger);
 
 $customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
@@ -42,12 +40,10 @@ try {
     $response = $mindbox->getClientV3()
         ->prepareRequest('POST', 'Website.AuthorizeCustomer', $operation, '', [], false, false)
         ->sendRequest();
+    
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     echo $e->getMessage();
-
-    return;
 }
-
-var_dump($response->getRequest());
-var_dump($response->getBody());
 ```

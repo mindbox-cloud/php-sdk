@@ -139,14 +139,14 @@ class ResultDTOTest extends DTOTest
     {
         $orders = $this->resultDto->getOrders();
 
-        $this->assertInstanceOf(\Mindbox\DTO\V2\Responses\OrderResponseCollection::class, $orders);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\OrderResponseCollection::class, $orders);
     }
 
     public function testGetOrder()
     {
         $orders = $this->resultDto->getOrder();
 
-        $this->assertInstanceOf(\Mindbox\DTO\V2\Responses\OrderResponseDTO::class, $orders);
+        $this->assertInstanceOf(\Mindbox\DTO\V3\Responses\OrderResponseDTO::class, $orders);
     }
 
     public function testGetCustomerActions()

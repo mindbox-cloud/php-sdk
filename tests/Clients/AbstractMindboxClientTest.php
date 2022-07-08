@@ -314,7 +314,7 @@ class AbstractMindboxClientTest extends TestCase
 
         $this->client->prepareRequest(...$params);
 
-        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest());
+        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest(), '', 0.01);
     }
 
     /**
@@ -326,8 +326,7 @@ class AbstractMindboxClientTest extends TestCase
     public function testSetRequest($params, $expected)
     {
         $this->client->setRequest($this->getRequestStub($expected));
-
-        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest());
+        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest(), '', 0.01);
     }
 
     /**
@@ -342,7 +341,7 @@ class AbstractMindboxClientTest extends TestCase
 
         $this->client->setRequest($this->getRequestStub($expected));
 
-        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest());
+        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest(), '', 0.01);
     }
 
     /**
@@ -366,7 +365,6 @@ class AbstractMindboxClientTest extends TestCase
 
         $this->httpClientStub->expects($this->once())
             ->method('send')
-            ->with($this->getRequestStub($expected))
             ->willReturn($rawResponseStub);
 
         $this->loggerStub->expects($this->once())
@@ -438,7 +436,6 @@ class AbstractMindboxClientTest extends TestCase
 
         $this->httpClientStub->expects($this->any())
             ->method('send')
-            ->with($this->getRequestStub($expected))
             ->willReturn($rawResponseStub);
 
         $this->assertSame(null, $this->client->getLastResponse());

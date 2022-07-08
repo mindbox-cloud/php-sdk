@@ -1,24 +1,24 @@
 <?php
 
 
-namespace Mindbox\DTO\V2\Responses;
+namespace Mindbox\DTO\V3\Responses;
 
 use Mindbox\DTO\DTOCollection;
 
 /**
  * Class PlaceholderResponseCollection
  *
- * @package Mindbox\DTO\V2\Responses
+ * @package Mindbox\DTO\V3\Responses
  */
 class PlaceholderResponseCollection extends DTOCollection
 {
     /**
-     * @var string ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² ÐºÐ¾Ð»Ð»ÐµÐºÑ†Ð¸Ð¸ Ð´Ð»Ñ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ð¹ Ð³ÐµÐ½ÐµÑ€Ð°Ñ†Ð¸Ð¸ xml.
+     * @var string Íàçâàíèå ýëåìåíòîâ êîëëåêöèè äëÿ êîððåêòíîé ãåíåðàöèè xml.
      */
     protected static $collectionItemsName = PlaceholderResponseDTO::class;
 
     /**
-     * @var string ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð´Ð»Ñ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ð¹ Ð³ÐµÐ½ÐµÑ€Ð°Ñ†Ð¸Ð¸ xml.
+     * @var string Íàçâàíèå ýëåìåíòà äëÿ êîððåêòíîé ãåíåðàöèè xml.
      */
     protected static $xmlName = 'placeHolders';
 }

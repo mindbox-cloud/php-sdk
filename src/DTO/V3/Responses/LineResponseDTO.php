@@ -16,6 +16,7 @@ use Mindbox\DTO\V3\LineDTO;
  * @property AppliedPromotionResponseCollection $appliedPromotions
  * @property GiftCardResponseDTO                $giftCard
  * @property string                             $lineId
+ * @property string                             $discountedPriceOfLine
  **/
 class LineResponseDTO extends LineDTO
 {
@@ -83,5 +84,13 @@ class LineResponseDTO extends LineDTO
     public function getLineId()
     {
         return $this->getField('lineId');
+    }
+
+    /**
+     * @return string
+     */
+    public function getDiscountedPrice()
+    {
+        return $this->getField('discountedPriceOfLine');
     }
 }
