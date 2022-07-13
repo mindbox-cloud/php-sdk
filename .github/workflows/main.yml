@@ -35,33 +35,6 @@ jobs:
 
       - name: Run tests
         run: vendor/bin/phpunit
-  build_7_4:
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - uses: actions/checkout@v2
-      - uses: php-actions/composer@v6
-        with:
-          php_version: 7.4
-          version: 2
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 7.4
-
-      - name: Update packages
-        run: sudo composer update
-
-      - name: PHP version
-        run: php -v
-
-      - name: Run phpcs
-        run: vendor/bin/phpcs
-
-      - name: Run tests
-        run: vendor/bin/phpunit
 
   build_8_0:
     runs-on: ubuntu-latest
