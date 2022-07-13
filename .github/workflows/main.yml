@@ -8,145 +8,58 @@ name: Check code style and tests
       - master
 jobs:
 
-  build_5_6:
-    runs-on: ubuntu-latest
-
-    steps:
-    
-      - uses: actions/checkout@v2
-      - uses: php-actions/composer@v6
-        with:
-          php_version: "5.6"
-          version: 1
-          
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 5.6
-          
-      - name: Update packages
-        run: sudo composer update
-          
-      - name: PHP version
-        run: php -v
-          
-      - name: Run phpcs    
-        run: vendor/bin/phpcs
-        
-      - name: Run tests
-        run: vendor/bin/phpunit
-        
-  build_7_0:
-    runs-on: ubuntu-latest
-
-    steps:
-    
-      - uses: actions/checkout@v2
-      - uses: php-actions/composer@v6
-        with:
-          php_version: "7.0"
-          version: 1
-          
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 7.0
-          
-      - name: Update packages
-        run: sudo composer update
-          
-      - name: PHP version
-        run: php -v
-          
-      - name: Run phpcs    
-        run: vendor/bin/phpcs
-        
-      - name: Run tests
-        run: vendor/bin/phpunit
-        
-  build_7_1:
-    runs-on: ubuntu-latest
-
-    steps:
-    
-      - uses: actions/checkout@v2
-      - uses: php-actions/composer@v6
-        with:
-          php_version: "7.1"
-          version: 1
-          
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 7.1
-          
-      - name: Update packages
-        run: sudo composer update
-          
-      - name: PHP version
-        run: php -v
-          
-      - name: Run phpcs    
-        run: vendor/bin/phpcs
-        
-      - name: Run tests
-        run: vendor/bin/phpunit
-
-  build_7_2:
-    runs-on: ubuntu-latest
-
-    steps:
-    
-      - uses: actions/checkout@v2
-      - uses: php-actions/composer@v6
-        with:
-          php_version: 7.2
-          version: 2
-          
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 7.2
-          
-      - name: Update packages
-        run: sudo composer update
-          
-      - name: PHP version
-        run: php -v
-          
-      - name: Run phpcs    
-        run: vendor/bin/phpcs
-        
-      - name: Run tests
-        run: vendor/bin/phpunit
-        
   build_7_3:
     runs-on: ubuntu-latest
 
     steps:
-    
+
       - uses: actions/checkout@v2
       - uses: php-actions/composer@v6
         with:
           php_version: 7.3
           version: 2
-          
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 7.3
-          
+
       - name: Update packages
         run: sudo composer update
-          
+
       - name: PHP version
         run: php -v
-          
-      - name: Run phpcs    
+
+      - name: Run phpcs
         run: vendor/bin/phpcs
-        
+
       - name: Run tests
         run: vendor/bin/phpunit
-        
 
+  build_8_0:
+    runs-on: ubuntu-latest
 
+    steps:
+
+      - uses: actions/checkout@v2
+      - uses: php-actions/composer@v6
+        with:
+          php_version: 8
+          version: 2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8
+
+      - name: Update packages
+        run: sudo composer update
+
+      - name: PHP version
+        run: php -v
+
+      - name: Run phpcs
+        run: vendor/bin/phpcs
+
+      - name: Run tests
+        uses: php-actions/phpunit@v3
