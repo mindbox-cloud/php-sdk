@@ -6,7 +6,7 @@
 
 ## Системные зависимости
 
-* PHP версии 5.6 или выше
+* PHP версии 7.3 или выше
 * [psr/log](https://github.com/php-fig/log)
 * [ext-json](http://php.net/manual/ru/json.installation.php)
 * [ext-simplexml](http://php.net/manual/ru/simplexml.installation.php)
@@ -24,6 +24,14 @@ Mindbox PHP SDK можно установить с помощью менедже
 ```sh
 composer require mindbox/sdk
 ```
+
+Для установки Mindbox PHP SDK в проекты, которые работают на PHP версии >=5.6 и < 7.3 необходимо установить версию 1.0.7. Для этого выполнить следующую команду:
+
+```sh
+composer require "mindbox/sdk:^1.0.7"
+
+```
+
 После выполнения данной команды, composer загрузит последнюю версию SDK и поместит её в директорию /vendor/.
 
 Убедитесь, что в начале вашего скрипта подключен автозагрузчик классов Composer:
