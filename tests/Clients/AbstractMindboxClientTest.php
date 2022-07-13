@@ -314,7 +314,7 @@ class AbstractMindboxClientTest extends TestCase
 
         $this->client->prepareRequest(...$params);
 
-        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest(), '', 0.01);
+        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest(), '', 0.1);
     }
 
     /**
@@ -326,7 +326,7 @@ class AbstractMindboxClientTest extends TestCase
     public function testSetRequest($params, $expected)
     {
         $this->client->setRequest($this->getRequestStub($expected));
-        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest(), '', 0.01);
+        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest(), '', 0.1);
     }
 
     /**
@@ -341,7 +341,7 @@ class AbstractMindboxClientTest extends TestCase
 
         $this->client->setRequest($this->getRequestStub($expected));
 
-        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest(), '', 0.01);
+        $this->assertEquals($this->getRequestStub($expected), $this->client->getRequest(), '', 0.1);
     }
 
     /**
