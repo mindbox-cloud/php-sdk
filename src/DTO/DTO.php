@@ -225,7 +225,7 @@ class DTO implements Countable, ArrayAccess, IteratorAggregate
      *
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         $fields = $this->items;
         return count($this->unsetMetaInfo($fields));
@@ -236,7 +236,7 @@ class DTO implements Countable, ArrayAccess, IteratorAggregate
      *
      * @return ArrayIterator
      */
-    public function getIterator()
+    public function getIterator(): ArrayIterator
     {
         return new ArrayIterator($this->items);
     }
@@ -249,6 +249,7 @@ class DTO implements Countable, ArrayAccess, IteratorAggregate
      * @return mixed
      * @throws MindboxException
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($key)
     {
         if (!$this->offsetExists($key)) {
@@ -265,7 +266,7 @@ class DTO implements Countable, ArrayAccess, IteratorAggregate
      *
      * @return bool
      */
-    public function offsetExists($key)
+    public function offsetExists($key): bool
     {
         return array_key_exists($key, $this->items);
     }
@@ -278,7 +279,7 @@ class DTO implements Countable, ArrayAccess, IteratorAggregate
      *
      * @return void
      */
-    public function offsetSet($key, $value)
+    public function offsetSet($key, $value): void
     {
         if (is_null($key)) {
             $this->items[] = $value;
@@ -294,7 +295,7 @@ class DTO implements Countable, ArrayAccess, IteratorAggregate
      *
      * @return void
      */
-    public function offsetUnset($key)
+    public function offsetUnset($key): void
     {
         unset($this->items[$key]);
     }
