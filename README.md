@@ -1,14 +1,12 @@
 # Mindbox PHP SDK
 
-[![Build Status](https://travis-ci.org/mindbox-moscow/php-sdk.svg?branch=master)](https://travis-ci.org/mindbox-moscow/php-sdk)
-
 PHP библиотека для упрощённого взаимодейтсвия вашего PHP приложения с API Mindbox. С полной документацией API Mindbox можно ознакомиться [здесь](https://developers.mindbox.ru/docs/v3).
 
 ## Начало работы
 
 ### Зависимости
 
-* PHP версии 5.6 или выше
+* PHP версии 7.3 или выше
 * [psr/log](https://github.com/php-fig/log)
 * [ext-json](http://php.net/manual/ru/json.installation.php)
 * [ext-simplexml](http://php.net/manual/ru/simplexml.installation.php)
@@ -24,8 +22,16 @@ PHP библиотека для упрощённого взаимодейтсв�
 
 Mindbox PHP SDK можно установить с помощью менеджера зависимостей [Composer](https://getcomposer.org/), используя следующую команду:
 
+
 ```sh
 composer require mindbox/sdk
+```
+
+Для установки Mindbox PHP SDK в проекты, которые работают на PHP версии >=5.6 и < 7.3 необходимо использовать версию 1.0.7. Для этого выполнить следующую команду:
+
+```sh
+composer require "mindbox/sdk:^1.0.7"
+
 ```
 
 #### Установка вручную
@@ -79,7 +85,7 @@ $mindbox = new \Mindbox\Mindbox([
     'domainZone' => '{domainZone}',
 ], $logger);
 
-$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 $customer->setMobilePhone('77777777777');
 $customer->setId('mindboxId', '1028');
@@ -113,9 +119,9 @@ $mindbox = new \Mindbox\Mindbox([
     'domainZone' => '{domainZone}',
 ], $logger);
 
-$operation = new \Mindbox\DTO\V3\OperationDTO();
+$operation = new \Mindbox\DTO\OperationDTO();
 
-$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
+$customer = new \Mindbox\DTO\CustomerRequestDTO();
 $customer->setEmail('test@test.ru');
 $customer->setMobilePhone('77777777777');
 $customer->setId('mindboxId', '1028');

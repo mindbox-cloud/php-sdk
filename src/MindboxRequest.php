@@ -57,7 +57,7 @@ class MindboxRequest
         $this->method     = $method;
         $this->body       = $body;
         $this->headers    = $headers;
-        $this->startTime  = microtime(true);
+        $this->startTime  = round(microtime(true), 3);
     }
 
     /**
