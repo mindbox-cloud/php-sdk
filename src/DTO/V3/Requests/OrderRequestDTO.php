@@ -8,7 +8,7 @@ use Mindbox\DTO\V3\OrderDTO;
 /**
  * Class OrderRequestDTO
  *
- * @package Mindbox\DTO\V2\Requests
+ * @package Mindbox\DTO\V3\Requests
  * @property CustomerRequestDTO        $customer
  * @property DiscountRequestCollection $discounts
  * @property string                    $deliveryCost
