@@ -2,12 +2,14 @@
 
 namespace Mindbox\DTO\V3\Requests;
 
+use Mindbox\DTO\DTOCollection;
+
 /**
  * Class PaymentRequestCollection
  *
  * @package Mindbox\DTO\V3\Requests
  */
-class PaymentRequestCollection
+class PaymentRequestCollection extends DTOCollection
 {
     /**
      * @var string Название элементов коллекции для корректной генерации xml.
