@@ -91,4 +91,4 @@ jobs:
         run: vendor/bin/phpcs
 
       - name: Run tests
-        uses: php-actions/phpunit@v3
+        uses: php-actions/phpunit@v3.0.0
