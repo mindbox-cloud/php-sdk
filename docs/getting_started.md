@@ -42,7 +42,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 ### Установка вручную
 
-1. [Скачайте архив](https://github.com/mindbox-cloud/php-sdk/archive/refs/tags/1.1.3.zip), содержащий исходный код проекта (включая зависимости).
+1. [Скачайте архив](https://github.com/mindbox-cloud/php-sdk/releases/download/1.1.3/php-sdk.zip), содержащий исходный код проекта (включая зависимости).
 2. Распакуйте в директорию вашего проекта.
 3. Подключите автозагрузчик классов в начале вашего скрипта:
 
