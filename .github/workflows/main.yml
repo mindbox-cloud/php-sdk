@@ -33,5 +33,5 @@ jobs:
       - name: Run phpcs
         run: vendor/bin/phpcs
 
-#      - name: Run tests
-#        uses: php-actions/phpunit@v3.0.0
+      - name: Run tests
+        uses: php-actions/phpunit@v3.0.0
