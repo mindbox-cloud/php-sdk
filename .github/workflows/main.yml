@@ -34,4 +34,8 @@ jobs:
         run: vendor/bin/phpcs
 
       - name: Run tests
-        uses: php-actions/phpunit@v3.0.0
+        uses: php-actions/phpunit@v3
+        with:
+          version:  9
+          php_version: 8.0
+
