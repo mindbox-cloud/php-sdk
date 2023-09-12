@@ -180,7 +180,7 @@ class MindboxFileLogger extends AbstractLogger
      * @param string $message Сообщение.
      * @param array  $context Контекст.
      */
-    public function log($level, $message, array $context = [])
+    public function log($level, $message, array $context = []): void
     {
         if ($this->toMindboxLogLevel($level) < $this->logLevel) {
             return;
