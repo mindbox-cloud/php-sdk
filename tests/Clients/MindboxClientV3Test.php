@@ -37,7 +37,7 @@ class MindboxClientV3Test extends AbstractMindboxClientTest
                     'headers' => [
                         'Accept'        => 'application/json',
                         'Content-Type'  => 'application/json',
-                        'Authorization' => 'Mindbox secretKey="' . $this->secret . '"',
+                        'Authorization' => 'SecretKey ' . $this->secret,
                         'X-Customer-IP' => '',
                         'Mindbox-Integration' => 'PhpSDK',
                         'Mindbox-Integration-Version' => '1.0'
@@ -61,7 +61,7 @@ class MindboxClientV3Test extends AbstractMindboxClientTest
                     'headers' => [
                         'Accept'        => 'application/json',
                         'Content-Type'  => 'application/json',
-                        'Authorization' => 'Mindbox secretKey="' . $this->secret . '"',
+                        'Authorization' => 'SecretKey ' . $this->secret,
                         'X-Customer-IP' => '',
                         'Mindbox-Integration' => 'PhpSDK',
                         'Mindbox-Integration-Version' => '1.0'
@@ -86,7 +86,7 @@ class MindboxClientV3Test extends AbstractMindboxClientTest
                     'headers' => [
                         'Accept'        => 'application/json',
                         'Content-Type'  => 'application/json',
-                        'Authorization' => 'Mindbox secretKey="' . $this->secret . '"',
+                        'Authorization' => 'SecretKey ' . $this->secret,
                         'Mindbox-Integration' => 'PhpSDK',
                         'Mindbox-Integration-Version' => '1.0'
                     ],
