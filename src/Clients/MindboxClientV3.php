@@ -26,9 +26,9 @@ class MindboxClientV3 extends AbstractMindboxClient
 
     const TMP_V3_URL = 'https://api-ru.mindbox.cloud/v3/operations/';
     /**
-     * Секретный ключ.
+     * Имя схемы авторизации по секретному ключу.
      */
-    const SECRET_KEY_NAME = 'Mindbox secretKey';
+    const SECRET_KEY_AUTHORIZATION_SCHEME_NAME = 'SecretKey';
 
     /**
      * @var string Доменная зона API.
@@ -143,7 +143,7 @@ class MindboxClientV3 extends AbstractMindboxClient
      */
     protected function prepareAuthorizationHeader()
     {
-        return static::SECRET_KEY_NAME . '="' . $this->secretKey . '"';
+        return static::SECRET_KEY_AUTHORIZATION_SCHEME_NAME . ' ' . $this->secretKey;
     }
 
     /**
