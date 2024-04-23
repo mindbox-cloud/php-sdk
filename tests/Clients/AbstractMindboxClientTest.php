@@ -29,7 +29,12 @@ class AbstractMindboxClientTest extends TestCase
     /**
      * @var string
      */
-    protected $domain = 'ru';
+    protected $domainZone = 'ru';
+
+    /**
+     * @var string
+     */
+    protected $domain = 'api.mindbox';
 
     /**
      * @var string
@@ -59,6 +64,7 @@ class AbstractMindboxClientTest extends TestCase
     public function setUp(): void
     {
         $this->domain         = $this->domain;
+        $this->domainZone     = $this->domainZone;
         $this->httpClientStub = $this->getHttpClientStub();
         $this->loggerStub     = $this->getLoggerStub();
         $this->client         = $this->getClient($this->secret, $this->httpClientStub, $this->loggerStub, $this->domain);
@@ -284,7 +290,7 @@ class AbstractMindboxClientTest extends TestCase
                 'prepareBody',
                 'prepareResponseBody'
             ])
-            ->setConstructorArgs([$secret, $httpClient, $loggerClient, $this->domain])
+            ->setConstructorArgs([$secret, $httpClient, $loggerClient, $this->domainZone, $this->domain])
             ->getMock();
 
         $clientStub->expects($this->any())

@@ -173,7 +173,7 @@ class MindboxClientV3 extends AbstractMindboxClient
      */
     protected function getApiUrl(string $domain, string $domainZone)
     {
-        $domainZone = $domainZone == 'api-ru' ? 'cloud' : $domainZone;
+        $domainZone = $domainZone === 'api-ru' ? 'cloud' : $domainZone;
 
         $url = str_replace('{{url}}', $domain . '.' . $domainZone, self:: BASE_V3_URL);
 
