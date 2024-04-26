@@ -22,18 +22,17 @@ class MindboxClientV3 extends AbstractMindboxClient
     /**
      * Базовый URL на который будут отправляться запросы.
      */
-    const BASE_V3_URL = 'https://api.mindbox.{{domainZone}}/v3/operations/';
+    const BASE_V3_URL = 'https://{{url}}/v3/operations/';
 
-    const TMP_V3_URL = 'https://api-ru.mindbox.cloud/v3/operations/';
     /**
      * Имя схемы авторизации по секретному ключу.
      */
     const SECRET_KEY_AUTHORIZATION_SCHEME_NAME = 'SecretKey';
 
     /**
-     * @var string Доменная зона API.
+     * @var string URL
      */
-    private $domainZone;
+    private $url;
 
     /**
      * @var string Уникальный идентификатор сайта/мобильного приложения/и т.п.
@@ -48,11 +47,12 @@ class MindboxClientV3 extends AbstractMindboxClient
      * @param IHttpClient $httpClient Экземпляр HTTP клиента.
      * @param LoggerInterface $logger Экземпляр логгера.
      * @param string $domainZone
+     * @param string $domain
      */
-    public function __construct($endpointId, $secretKey, IHttpClient $httpClient, LoggerInterface $logger, $domainZone)
+    public function __construct($endpointId, $secretKey, IHttpClient $httpClient, LoggerInterface $logger, $domainZone, $domain = 'api.mindbox')
     {
         parent::__construct($secretKey, $httpClient, $logger);
-        $this->domainZone = $domainZone;
+        $this->url = $this->getApiUrl($domain, $domainZone);
         $this->endpointId = $endpointId;
     }
 
@@ -97,11 +97,7 @@ class MindboxClientV3 extends AbstractMindboxClient
      */
     protected function prepareUrl($url, array $queryParams, $isSync = true)
     {
-        $domain = $this->getApiUrl();
-
-        $domain = str_replace('{{domainZone}}', $this->domainZone, $domain);
-
-        return $domain . ($isSync ? 'sync' : 'async') . '?' . http_build_query($queryParams);
+        return $this->url . ($isSync ? 'sync' : 'async') . '?' . http_build_query($queryParams);
     }
 
     /**
@@ -171,19 +167,16 @@ class MindboxClientV3 extends AbstractMindboxClient
     }
 
     /**
-     * Временное решение для старых хостингов
+     * Преобразование API URL
      *
      * @return string
      */
-    protected function getApiUrl()
+    protected function getApiUrl(string $domain, string $domainZone)
     {
-        $return = self:: BASE_V3_URL;
-        switch ($this->domainZone) {
-            case 'api-ru':
-                $return = self::TMP_V3_URL;
-                break;
-        }
+        $domainZone = $domainZone === 'api-ru' ? 'cloud' : $domainZone;
 
-        return $return;
+        $url = str_replace('{{url}}', $domain . '.' . $domainZone, self:: BASE_V3_URL);
+
+        return $url;
     }
 }
