@@ -5,7 +5,7 @@
     "type": "library",
     "require": {
         "php": ">=8.0",
-        "psr/log": "^3.0.0",
+        "psr/log": "^1.1|^2|^3",
         "ext-json": "*",
         "ext-simplexml": "*",
         "ext-libxml": "*"
