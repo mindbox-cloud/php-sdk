@@ -88,7 +88,7 @@ abstract class AbstractMindboxClient
     public function prepareRequest(
         $method,
         $operationName,
-        \Mindbox\DTO\DTO $body = null,
+        ?\Mindbox\DTO\DTO $body = null,
         $additionalUrl = '',
         $queryParams = [],
         $isSync = true,
@@ -211,7 +211,7 @@ abstract class AbstractMindboxClient
      *
      * @return string
      */
-    abstract protected function prepareBody(\Mindbox\DTO\DTO $body = null);
+    abstract protected function prepareBody(?\Mindbox\DTO\DTO $body = null);
 
     /**
      * Инициализация экземпляра запроса.
