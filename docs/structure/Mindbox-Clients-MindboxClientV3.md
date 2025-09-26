@@ -26,7 +26,7 @@ Constants
 
 ### BASE_V3_URL
 
-    const BASE_V3_URL = 'https://api.mindbox.ru/v3/operations/'
+    const BASE_V3_URL = 'https://{{url}}/v3/operations/'
 
 
 
@@ -42,6 +42,13 @@ Constants
 
 Properties
 ----------
+
+### $url
+
+    private string $url
+
+
+* Visibility: **private**
 
 
 ### $endpointId
@@ -121,13 +128,23 @@ Properties
 * Visibility: **protected**
 
 
+### $headers
+
+    protected array $headers
+
+
+
+
+
+* Visibility: **protected**
+
 Methods
 -------
 
 
 ### __construct
 
-    mixed Mindbox\Clients\AbstractMindboxClient::__construct(string $secretKey, \Mindbox\HttpClients\IHttpClient $httpClient, \Psr\Log\LoggerInterface $logger)
+    mixed Mindbox\Clients\AbstractMindboxClient::__construct(string $secretKey, \Mindbox\HttpClients\IHttpClient $httpClient, \Psr\Log\LoggerInterface $logger, string $domainZone, string $domain)
 
 Конструктор AbstractMindboxClient.
 
@@ -141,6 +158,8 @@ Methods
 * $secretKey **string** - &lt;p&gt;Секретный ключ.&lt;/p&gt;
 * $httpClient **[Mindbox\HttpClients\IHttpClient](Mindbox-HttpClients-IHttpClient.md)** - &lt;p&gt;Экземпляр HTTP клиента.&lt;/p&gt;
 * $logger **Psr\Log\LoggerInterface** - &lt;p&gt;Экземпляр логгера.&lt;/p&gt;
+* $domainZone **string** - &lt;p&gt;Доменная зона URL.&lt;/p&gt;
+* $domain **string** - &lt;p&gt;API url.&lt;/p&gt;
 
 
 
@@ -272,6 +291,21 @@ Methods
 * This method is **abstract**.
 * This method is defined by [Mindbox\Clients\AbstractMindboxClient](Mindbox-Clients-AbstractMindboxClient.md)
 
+
+#### Arguments
+* $rawBody **string** - &lt;p&gt;Сырое тело ответа.&lt;/p&gt;
+
+
+### getApiUrl
+
+    string Mindbox\Clients\AbstractMindboxClient::getApiUrl(string $domain, string $domainZone)
+
+Преобразование API URL.
+
+
+
+* Visibility: **protected**
+* 
 
 #### Arguments
 * $rawBody **string** - &lt;p&gt;Сырое тело ответа.&lt;/p&gt;

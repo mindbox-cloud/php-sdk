@@ -56,6 +56,7 @@ require_once __DIR__ . '/path/to/mindboxSDK/vendor/autoload.php';
 * endpointId - уникальный идентификатор сайта/мобильного приложения/и т.п. Значение нужно уточнить у менеджера Mindbox.
 * secretKey - секретный ключ, соответствующий endpointId. Значение нужно уточнить у менеджера Mindbox.
 * domain - домен, на который будут отправляться запросы к v2.1 API Mindbox: https://{domain}/v2.1/orders/.
+* domainZone - доменная зона, на которую будут отправляться запросы к v3 API Mindbox: https://api.mindbox.{{domainZone}}/v3/operations/.
 
 Опциональные параметры:
 * timeout - таймаут соединения при выполнении HTTP запроса (в секундах). По умолчанию равен 5 секундам.
@@ -71,6 +72,7 @@ $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 $mindbox = new \Mindbox\Mindbox([
     'endpointId' => '{endpointId}',
     'secretKey' => '{secretKey}',
+    'domain' => '{domain}',
     'domainZone' => '{domainZone}',
     //'timeout' => '{timeout}',
     //'httpClient' => '{httpClient}',
@@ -153,6 +155,59 @@ try {
     $response = $mindbox->getClientV3()
             ->prepareRequest('POST', 'Website.AuthorizeCustomer', $operation, '', [], false)
             ->sendRequest();
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
+} catch (\Mindbox\Exceptions\MindboxClientException $e) {
+    echo $e->getMessage();
+}
+```
+
+## Пример отправки запроса на произвольны URL к API v3
+Обязательные параметры конфигурации SDK:
+* endpointId - уникальный идентификатор сайта/мобильного приложения/и т.п. Значение нужно уточнить у менеджера Mindbox.
+* secretKey - секретный ключ, соответствующий endpointId. Значение нужно уточнить у менеджера Mindbox.
+* timeout - таймаут соединения при выполнении HTTP запроса (в секундах). По умолчанию равен 5 секундам.
+* httpClient - назвавние клиента для отправки запроса ("curl", "stream"). По умолчанию curl, если установлено расширение ext-curl, иначе stream.
+* logger - объект логгера, реализующий интерфейс \Psr\Log\LoggerInterface.
+* domainZone - доменная зона ("ru", "api-ru", "cloud", "io")
+
+
+Опциональные параметры:
+* $domain - Домен API URL ("api.mindbox", "api.s.mindbox", "api.maestra")
+
+При передача домена, URL запроса формируется следующим образом:
+
+https://{domain}.{domainZone}/v3/operations/
+
+
+``` php
+$logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
+$httpClient = (new \Mindbox\HttpClients\HttpClientFactory())->createHttpClient('{timeout}', '{handlerName}'); 
+
+$client = new \Mindbox\Clients\MindboxClientV3(
+    '{endpointId}',
+    '{secretKey}',
+    $httpClient,
+    $logger,
+    '{domainZone}'
+    '{domain}'
+);
+
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
+$customer->setEmail('test@test.ru');
+$customer->setMobilePhone('79374134389');
+$customer->setId('bitrixId', '123456');
+$customer->setId('mindboxId', '1028');
+
+$operation = new \Mindbox\DTO\V3\OperationDTO();
+$operation->setCustomer($customer);
+
+/* Формирование состава операции */
+try {
+    $response = $client
+        ->prepareRequest('POST', 'Website.AuthorizeCustomer', $operation, '', [], false, false)
+        ->sendRequest();
+    
     $requestBody = $response->getRequest()->getBody();
     $responseBody = $response->getBody();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
