@@ -67,7 +67,7 @@ class AbstractMindboxClientTest extends TestCase
         $this->domainZone     = $this->domainZone;
         $this->httpClientStub = $this->getHttpClientStub();
         $this->loggerStub     = $this->getLoggerStub();
-        $this->client         = $this->getClient($this->secret, $this->httpClientStub, $this->loggerStub, $this->domain);
+        $this->client         = $this->getClient($this->secret, $this->httpClientStub, $this->loggerStub);
         $this->dtoStub        = $this->getDTOStub();
     }
 
