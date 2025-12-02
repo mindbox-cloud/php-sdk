@@ -126,7 +126,7 @@ class MindboxClientV2 extends AbstractMindboxClient
      *
      * @return string
      */
-    protected function prepareBody(DTO $body = null)
+    protected function prepareBody(?DTO $body = null)
     {
         return $body ? $body->toXML() : '';
     }

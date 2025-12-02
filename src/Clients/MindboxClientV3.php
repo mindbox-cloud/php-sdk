@@ -149,7 +149,7 @@ class MindboxClientV3 extends AbstractMindboxClient
      *
      * @return string
      */
-    protected function prepareBody(\Mindbox\DTO\DTO $body = null)
+    protected function prepareBody(?\Mindbox\DTO\DTO $body = null)
     {
         return $body ? $body->toJson() : '';
     }
