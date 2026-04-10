@@ -8,7 +8,7 @@
 
 [Создание заказа](https://developers.mindbox.ru/docs/xml):
 
-``` php
+```php
 
 /* Инициализация SDK */
 
@@ -34,9 +34,39 @@ try {
 }
 ```
 
+[Создание авторизованного заказа](https://developers.mindbox.ru/docs/xml):
+
+Запрос выполняется **асинхронно** (`isSync = false`), в query-параметры по умолчанию добавляется **deviceUUID** (и заголовок `X-Customer-IP` для v3). Для неавторизованного сценария используйте `createOrder` или `createUnauthorizedOrder`.
+
+```php
+
+/* Инициализация SDK */
+
+$customer = new \Mindbox\DTO\V3\Requests\CustomerRequestDTO();
+$customer->setEmail('test@test.ru');
+
+$order = new \Mindbox\DTO\V3\Requests\OrderCreateRequestDTO();
+$order->setCustomer($customer);
+
+/* Формирование состава заказа */
+
+try {
+    $response = $mindbox->order()
+        ->createAuthorizedOrder(
+            $order, // OrderCreateRequestDTO
+            'Website.CreateAuthorizedOrder' // название операции
+        )->sendRequest();
+
+    $requestBody = $response->getRequest()->getBody();
+    $responseBody = $response->getBody();
+} catch (\Mindbox\Exceptions\MindboxClientException $e) {
+    echo $e->getMessage();
+}
+```
+
 [Предварительный расчет заказа](https://developers.mindbox.ru/docs/preorderxml):
 
-``` php
+```php
 
 /* Инициализация SDK */
 
@@ -64,7 +94,7 @@ try {
 
 [Подтверждение заказа](https://developers.mindbox.ru/docs/изменение-заказа):
 
-``` php
+```php
 
 /* Инициализация SDK */
 
@@ -92,7 +122,7 @@ try {
 
 [Отмена заказа](https://developers.mindbox.ru/docs/изменение-заказа):
 
-``` php
+```php
 
 /* Инициализация SDK */
 
@@ -120,7 +150,7 @@ try {
 
 [Оффлайн заказ](https://developers.mindbox.ru/docs/изменение-заказа):
 
-``` php
+```php
 
 /* Инициализация SDK */
 
@@ -148,7 +178,7 @@ try {
 
 [Получение списка заказов потребителя](https://developers.mindbox.ru/docs/получение-списка-заказов-потребителя):
 
-``` php
+```php
 
 /* Инициализация SDK */
 
@@ -167,3 +197,4 @@ try {
     echo $e->getMessage();
 }
 ```
+
