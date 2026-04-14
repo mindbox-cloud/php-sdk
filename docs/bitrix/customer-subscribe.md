@@ -1,6 +1,6 @@
-# Подписка на рассылки (SubscribeCustomer)
+# Подписка на рассылки (SubscriptionInFooter)
 
-Подписка через форму на сайте (футер, попап и т.д.) вызывает операцию **SubscribeCustomer** в Mindbox (имя операции в проекте — **уточните у менеджера**).
+Подписка через форму на сайте (футер, попап и т.д.) вызывает операцию **SubscriptionInFooter** в Mindbox (имя операции в проекте — **уточните у менеджера**).
 
 **Предусловия:** выполнен [быстрый старт](./README.md) (SDK, конфиг, `getMindboxClient()`).
 
@@ -12,7 +12,7 @@
 
 | Параметр | Значение |
 |----------|----------|
-| Операция Mindbox | `Website.SubscribeCustomer` |
+| Операция Mindbox | `Website.SubscriptionInFooter` |
 | DeviceUUID | Да (`addDeviceUUID: true`) |
 | Синхронность | Синхронно (`isSync: true`) |
 | Точка интеграции Битрикс | Форма подписки (футер, попап, отдельная страница) |
@@ -29,7 +29,7 @@ public function subscribe(
 )
 ```
 
-Для сценария из таблицы вызывайте: **`subscribe($customer, 'Website.SubscribeCustomer', true, true)`**.
+Для сценария из таблицы вызывайте: **`subscribe($customer, 'Website.SubscriptionInFooter', true, true)`**.
 
 ---
 
@@ -69,7 +69,7 @@ $customer->setSubscriptions(new SubscriptionRequestCollection([$subscription]));
 try {
     getMindboxClient()
         ->customer()
-        ->subscribe($customer, 'Website.SubscribeCustomer', true, true)
+        ->subscribe($customer, 'Website.SubscriptionInFooter', true, true)
         ->sendRequest();
 } catch (MindboxClientException $e) {
     // Логирование ошибки
@@ -93,7 +93,7 @@ $customer->setSubscriptions(
 try {
     $response = getMindboxClient()
         ->customer()
-        ->subscribe($customer, 'Website.SubscribeCustomer', true, true)
+        ->subscribe($customer, 'Website.SubscriptionInFooter', true, true)
         ->sendRequest();
 } catch (\Mindbox\Exceptions\MindboxClientException $e) {
     // Логирование ошибки
