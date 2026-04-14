@@ -150,7 +150,7 @@ EventManager::getInstance()->addEventHandler(
 | [Регистрация клиента](./customer-register.md) | Создание нового клиента в Mindbox        |
 | [Редактирование клиента](./customer-edit.md)  | Обновление данных существующего клиента  |
 | [Авторизация клиента](./customer-auth.md)     | Вход и привязка сессии к клиенту Mindbox |
-| [Подписка на рассылки](./customer-subscribe.md) | Подписка через форму (SubscribeCustomer) |
+| [Подписка на рассылки](./customer-subscribe.md) | Подписка через форму (SubscriptionInFooter) |
 
 
 ### Списки продуктов
