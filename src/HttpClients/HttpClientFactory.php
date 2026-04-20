@@ -43,6 +43,12 @@ class HttpClientFactory
             case 'stream':
                 return new StreamHttpClient(new MindboxStream(), $timeout);
             default:
+                if (class_exists($handlerName)
+                    && is_a($handlerName, CurlHttpClient::class, true)
+                ) {
+                    return new $handlerName(new MindboxCurl(), $timeout);
+                }
+
                 throw new MindboxConfigException('The http client handler must be set to "curl", "stream"');
         }
     }
