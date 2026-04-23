@@ -148,9 +148,12 @@ EventManager::getInstance()->addEventHandler(
 | Документ                                      | Описание                                 |
 | --------------------------------------------- | ---------------------------------------- |
 | [Регистрация клиента](./customer-register.md) | Создание нового клиента в Mindbox        |
+| [Проверка клиента](./customer-check.md)       | CheckCustomer / по email / по телефону   |
 | [Редактирование клиента](./customer-edit.md)  | Обновление данных существующего клиента  |
+| [Подтверждение телефона](./customer-mobile-confirm.md) | `ConfirmMobilePhone`, повторная отправка кода |
 | [Авторизация клиента](./customer-auth.md)     | Вход и привязка сессии к клиенту Mindbox |
 | [Подписка на рассылки](./customer-subscribe.md) | Подписка через форму (SubscriptionInFooter) |
+| [История бонусов](./customer-bonus-history.md) | `GetCustomerBonusPointsHistory` |
 
 
 ### Списки продуктов
@@ -159,6 +162,7 @@ EventManager::getInstance()->addEventHandler(
 | Документ                                  | Описание                             |
 | ----------------------------------------- | ------------------------------------ |
 | [Список «Корзина»](./list-cart.md)        | Установка и синхронизация корзины    |
+| [Расчёт корзины](./cart-calculate.md)     | Preorder: CalculateCart / Authorized / Unauthorized |
 | [Список «Избранное»](./list-favorites.md) | Установка и синхронизация избранного |
 
 
@@ -167,7 +171,9 @@ EventManager::getInstance()->addEventHandler(
 
 | Документ                             | Описание                        |
 | ------------------------------------ | ------------------------------- |
-| [Создание заказа](./order-create.md) | Оформление заказа через Mindbox |
+| [Создание заказа](./order-create.md) | CreateAuthorizedOrder / CreateUnauthorizedOrder |
+| [Заказы клиента](./customer-orders.md) | `GetCustomerOrders` |
+| [Офлайн-заказ](./order-offline.md)   | `SaveOfflineOrder`, очередь, агент |
 
 
 Точные имена операций Mindbox и поля запросов — у менеджера и в [документации API](https://developers.mindbox.ru/docs/v3).
