@@ -42,7 +42,7 @@ class MindboxStream
     public function fileGetContents($url)
     {
         $rawBody    = file_get_contents($url, false, $this->stream);
-        $rawHeaders = !empty($http_response_header) ? $http_response_header : [];
+        $rawHeaders = http_get_last_response_headers() ?? [];
         $this->setRawHeaders($rawHeaders);
 
         return trim((string)$rawBody);

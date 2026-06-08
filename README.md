@@ -6,7 +6,7 @@ PHP библиотека для упрощённого взаимодейтсв�
 
 ### Зависимости
 
-* PHP версии 7.3 или выше
+* PHP версии 8.4 или выше
 * [psr/log](https://github.com/php-fig/log)
 * [ext-json](http://php.net/manual/ru/json.installation.php)
 * [ext-simplexml](http://php.net/manual/ru/simplexml.installation.php)

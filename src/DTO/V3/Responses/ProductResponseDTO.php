@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Mindbox\DTO\V3\Responses;
 
 use Mindbox\DTO\V3\CustomFieldDTO;
@@ -14,7 +13,8 @@ use Mindbox\DTO\V3\ProductDTO;
  **/
 class ProductResponseDTO extends ProductIdentityResponseDTO
 {
-    use ProductDTO, CustomFieldDTO;
+    use ProductDTO;
+    use CustomFieldDTO;
 
     /**
      * @var array Мэппинг преобразрования полей в объекты DTO.

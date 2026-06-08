@@ -99,7 +99,7 @@ class ProductListHelper extends AbstractMindboxHelper
     public function setProductList(
         ProductListItemRequestCollection $products,
         $operationName,
-        CustomerIdentityRequestDTO $customerIdentity = null,
+        ?CustomerIdentityRequestDTO $customerIdentity = null,
         $addDeviceUUID = true
     ) {
         $operation = $this->createOperation();
@@ -128,7 +128,7 @@ class ProductListHelper extends AbstractMindboxHelper
     public function setWishList(
         ProductListItemRequestCollection $products,
         $operationName,
-        CustomerIdentityRequestDTO $customerIdentity = null,
+        ?CustomerIdentityRequestDTO $customerIdentity = null,
         $addDeviceUUID = true
     ) {
         $operation = $this->createOperation();
@@ -154,7 +154,7 @@ class ProductListHelper extends AbstractMindboxHelper
      */
     public function clearWishList(
         $operationName,
-        CustomerIdentityRequestDTO $customerIdentity = null,
+        ?CustomerIdentityRequestDTO $customerIdentity = null,
         $addDeviceUUID = true
     ) {
         $operation = $this->createOperation();
@@ -175,7 +175,7 @@ class ProductListHelper extends AbstractMindboxHelper
      */
     public function clearCart(
         $operationName,
-        CustomerIdentityRequestDTO $customerIdentity = null,
+        ?CustomerIdentityRequestDTO $customerIdentity = null,
         $addDeviceUUID = true
     ) {
         $operation = $this->createOperation();

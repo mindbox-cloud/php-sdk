@@ -9,5 +9,4 @@ namespace Mindbox\Exceptions;
  */
 class MindboxUnauthorizedException extends MindboxClientErrorException
 {
-
 }

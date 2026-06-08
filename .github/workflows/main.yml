@@ -8,24 +8,26 @@ name: Check code style and tests
       - master
 jobs:
 
-  build_8_0:
+  build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php_version:
+          - '8.4'
+          - '8.5'
 
     steps:
 
-      - uses: actions/checkout@v2
-      - uses: php-actions/composer@v6
-        with:
-          php_version: 8.0
-          version: 2
+      - uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.0
+          php-version: ${{ matrix.php_version }}
 
       - name: Update packages
-        run: sudo composer update
+        run: composer update --prefer-dist --no-interaction
 
       - name: PHP version
         run: php -v
@@ -34,8 +36,4 @@ jobs:
         run: vendor/bin/phpcs
 
       - name: Run tests
-        uses: php-actions/phpunit@v3
-        with:
-          version:  9
-          php_version: 8.0
-
+        run: vendor/bin/phpunit

@@ -33,7 +33,7 @@ class DTOTest extends TestCase
      */
     protected function getXmlName()
     {
-        return (new $this->dtoClassName)->getXmlName();
+        return (new $this->dtoClassName())->getXmlName();
     }
 
     /**

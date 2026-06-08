@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Mindbox\DTO;
 
 use Mindbox\DTO\V3\Responses\OrderResponseCollection;

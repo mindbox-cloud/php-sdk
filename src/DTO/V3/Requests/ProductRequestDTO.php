@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Mindbox\DTO\V3\Requests;
 
 use Mindbox\DTO\V3\ProductDTO;
@@ -13,7 +12,8 @@ use Mindbox\DTO\V3\ProductDTO;
  **/
 class ProductRequestDTO extends ProductIdentityRequestDTO
 {
-    use ProductDTO, CustomFieldRequestDTO;
+    use ProductDTO;
+    use CustomFieldRequestDTO;
 
     /**
      * @var array Мэппинг преобразрования полей в объекты DTO.

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Mindbox\XMLHelper;
 
 use Mindbox\DTO\DTO;

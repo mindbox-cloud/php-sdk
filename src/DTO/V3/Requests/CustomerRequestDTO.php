@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Mindbox\DTO\V3\Requests;
 
 use Mindbox\DTO\V3\CustomerDTO;
@@ -18,7 +17,8 @@ use Mindbox\DTO\V3\CustomerDTO;
  **/
 class CustomerRequestDTO extends CustomerIdentityRequestDTO
 {
-    use CustomerDTO, CustomFieldRequestDTO;
+    use CustomerDTO;
+    use CustomFieldRequestDTO;
 
     /**
      * @var array Мэппинг преобразрования полей в объекты DTO.

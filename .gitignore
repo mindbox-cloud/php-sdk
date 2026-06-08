@@ -1,4 +1,4 @@
 vendor/
 composer.lock 
 src/Clients/getDeviceUUID
-.idea
+.idea.phpunit.result.cache

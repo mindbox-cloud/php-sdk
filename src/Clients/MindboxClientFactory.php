@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Mindbox\Clients;
 
 use Mindbox\XMLHelper\MindboxXMLSerializer;
