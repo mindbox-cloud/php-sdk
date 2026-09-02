@@ -85,10 +85,10 @@ class Mindbox
             'v3',
             $this->config['endpointId'],
             $this->config['secretKey'],
-            $this->config['domainZone'],
+            $this->getV3Domain(),
             $httpClient,
             $logger,
-            $this->getV3Domain()
+            $this->config['domainZone']
         );
         $this->clientV2 = $this->getMindboxClientFactory()->createMindboxClient(
             'v2.1',

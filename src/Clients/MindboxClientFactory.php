@@ -25,7 +25,7 @@ class MindboxClientFactory
      * @param string          $domain     Домен.
      * @param IHttpClient     $httpClient Экземпляр HTTP клиента.
      * @param LoggerInterface $logger     Экземпляр логгера.
-     * @param string          $apiDomain  Домен API v3.
+     * @param string|null     $domainZone Доменная зона API v3.
      *
      * @return AbstractMindboxClient
      */
@@ -36,7 +36,7 @@ class MindboxClientFactory
         $domain,
         IHttpClient $httpClient,
         LoggerInterface $logger,
-        $apiDomain = 'api.mindbox'
+        $domainZone = null
     ) {
         if (empty($secretKey)) {
             throw new MindboxConfigException('Secret key cant`t be empty');
@@ -47,7 +47,12 @@ class MindboxClientFactory
                     throw new MindboxConfigException('Endpoint id cant`t be empty for v3 API');
                 }
 
-                return new MindboxClientV3($endpointId, $secretKey, $httpClient, $logger, $domain, $apiDomain);
+                if ($domainZone === null) {
+                    $domainZone = $domain;
+                    $domain = 'api.mindbox';
+                }
+
+                return new MindboxClientV3($endpointId, $secretKey, $httpClient, $logger, $domainZone, $domain);
             case 'v2.1':
                 if (empty($domain)) {
                     throw new MindboxConfigException('Domain cant`t be empty for v2.1 API');
