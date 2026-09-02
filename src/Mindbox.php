@@ -4,6 +4,7 @@ namespace Mindbox;
 
 use Mindbox\Clients\AbstractMindboxClient;
 use Mindbox\Clients\MindboxClientFactory;
+use Mindbox\Clients\MindboxClientV3;
 use Mindbox\Exceptions\MindboxConfigException;
 use Mindbox\Exceptions\MindboxException;
 use Mindbox\Helpers\CustomerHelper;
@@ -79,14 +80,17 @@ class Mindbox
             $this->config['httpClient']
         );
 
-        $this->client   = $this->getMindboxClientFactory()->createMindboxClient(
-            'v3',
+        if (empty($this->config['endpointId'])) {
+            throw new MindboxConfigException('Endpoint id cant`t be empty for v3 API');
+        }
+
+        $this->client = new MindboxClientV3(
             $this->config['endpointId'],
             $this->config['secretKey'],
-            $this->config['domainZone'],
             $httpClient,
             $logger,
-            $this->config['domain']
+            $this->config['domainZone'],
+            $this->config['domain'] ?: 'api.mindbox'
         );
         $this->clientV2 = $this->getMindboxClientFactory()->createMindboxClient(
             'v2.1',

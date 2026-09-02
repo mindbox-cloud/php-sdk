@@ -22,10 +22,9 @@ class MindboxClientFactory
      * @param string          $apiVersion Версия Mindbox API.
      * @param string          $endpointId Уникальный идентификатор сайта/мобильного приложения/и т.п.
      * @param string          $secretKey  Секретный ключ.
-     * @param string          $domainOrDomainZone Домен для v2.1 или доменная зона для v3.
-     * @param IHttpClient     $httpClient         Экземпляр HTTP клиента.
-     * @param LoggerInterface $logger             Экземпляр логгера.
-     * @param string|null     $domain             Домен API v3.
+     * @param string          $domain     Домен.
+     * @param IHttpClient     $httpClient Экземпляр HTTP клиента.
+     * @param LoggerInterface $logger     Экземпляр логгера.
      *
      * @return AbstractMindboxClient
      */
@@ -33,10 +32,9 @@ class MindboxClientFactory
         $apiVersion,
         $endpointId,
         $secretKey,
-        $domainOrDomainZone,
+        $domain,
         IHttpClient $httpClient,
-        LoggerInterface $logger,
-        $domain = null
+        LoggerInterface $logger
     ) {
         if (empty($secretKey)) {
             throw new MindboxConfigException('Secret key cant`t be empty');
@@ -47,18 +45,14 @@ class MindboxClientFactory
                     throw new MindboxConfigException('Endpoint id cant`t be empty for v3 API');
                 }
 
-                if (empty($domain)) {
-                    return new MindboxClientV3($endpointId, $secretKey, $httpClient, $logger, $domainOrDomainZone);
-                }
-
-                return new MindboxClientV3($endpointId, $secretKey, $httpClient, $logger, $domainOrDomainZone, $domain);
+                return new MindboxClientV3($endpointId, $secretKey, $httpClient, $logger, $domain);
             case 'v2.1':
-                if (empty($domainOrDomainZone)) {
+                if (empty($domain)) {
                     throw new MindboxConfigException('Domain cant`t be empty for v2.1 API');
                 }
 
                 return new MindboxClientV2(
-                    $domainOrDomainZone,
+                    $domain,
                     $secretKey,
                     $httpClient,
                     $logger,

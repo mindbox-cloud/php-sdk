@@ -112,7 +112,7 @@ class MindboxTest extends TestCase
 
         $clientFactoryStub = $this->createMock(MindboxClientFactory::class);
 
-        $clientFactoryStub->expects($this->atLeast(2))
+        $clientFactoryStub->expects($this->once())
             ->method('createMindboxClient');
 
         $mindboxStub = $this->getMockBuilder(Mindbox::class)
@@ -124,7 +124,7 @@ class MindboxTest extends TestCase
             ->method('getHttpClientsFactory')
             ->willReturn($httpClientFactoryStub);
 
-        $mindboxStub->expects($this->atLeast(2))
+        $mindboxStub->expects($this->once())
             ->method('getMindboxClientFactory')
             ->willReturn($clientFactoryStub);
 
