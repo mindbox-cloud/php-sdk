@@ -21,7 +21,7 @@ Methods
 
 ### createMindboxClient
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Clients\MindboxClientFactory::createMindboxClient(string $apiVersion, string $endpointId, string $secretKey, string $domain, \Mindbox\HttpClients\IHttpClient $httpClient, \Psr\Log\LoggerInterface $logger, string|null $domainZone)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Clients\MindboxClientFactory::createMindboxClient(string $apiVersion, string $endpointId, string $secretKey, string $domainOrDomainZone, \Mindbox\HttpClients\IHttpClient $httpClient, \Psr\Log\LoggerInterface $logger, string|null $domain)
 
 Конструктор MindboxClientFactory.
 
@@ -34,7 +34,7 @@ Methods
 * $apiVersion **string** - &lt;p&gt;Версия Mindbox API.&lt;/p&gt;
 * $endpointId **string** - &lt;p&gt;Уникальный идентификатор сайта/мобильного приложения/и т.п.&lt;/p&gt;
 * $secretKey **string** - &lt;p&gt;Секретный ключ.&lt;/p&gt;
-* $domain **string** - &lt;p&gt;Домен.&lt;/p&gt;
+* $domainOrDomainZone **string** - &lt;p&gt;Домен для v2.1 или доменная зона для v3.&lt;/p&gt;
 * $httpClient **[Mindbox\HttpClients\IHttpClient](Mindbox-HttpClients-IHttpClient.md)** - &lt;p&gt;Экземпляр HTTP клиента.&lt;/p&gt;
 * $logger **Psr\Log\LoggerInterface** - &lt;p&gt;Экземпляр логгера.&lt;/p&gt;
-* $domainZone **string|null** - &lt;p&gt;Доменная зона API v3.&lt;/p&gt;
+* $domain **string|null** - &lt;p&gt;Домен API v3.&lt;/p&gt;
