@@ -95,6 +95,25 @@ class MindboxClientV3Test extends AbstractMindboxClientTest
         ];
     }
 
+    public function testConstructorKeepsDomainSuffixAsPartOfDomain()
+    {
+        $client = new MindboxClientV3(
+            $this->endpointId,
+            $this->secret,
+            $this->httpClientStub,
+            $this->loggerStub,
+            'ru',
+            'api.custom.io'
+        );
+
+        $client->prepareRequest('POST', 'operation', null, '', [], true, false);
+
+        $this->assertSame(
+            'https://api.custom.io.ru/v3/operations/sync?endpointId=' . $this->endpointId . '&operation=operation',
+            $client->getRequest()->getUrl()
+        );
+    }
+
     /**
      * @param mixed $secret
      * @param mixed $httpClient

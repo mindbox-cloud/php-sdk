@@ -2,13 +2,8 @@
 
 namespace Mindbox\Tests;
 
-use Mindbox\Clients\MindboxClientFactory;
-use Mindbox\HttpClients\HttpClientFactory;
 use Mindbox\Mindbox;
 use PHPUnit\Framework\TestCase;
-use ReflectionClass;
-use ReflectionException;
-use Mindbox\Options;
 
 /**
  * Class MindboxTest
@@ -99,40 +94,6 @@ class MindboxTest extends TestCase
         $this->assertInstanceOf(Mindbox::class, $mindbox);
     }
 
-    /**
-     * @throws ReflectionException
-     */
-    public function testConstructWithCorrectConfig()
-    {
-        $httpClientFactoryStub = $this->createMock(HttpClientFactory::class);
-
-        $httpClientFactoryStub->expects($this->once())
-            ->method('createHttpClient')
-            ->willReturn($this->createMock(\Mindbox\HttpClients\IHttpClient::class));
-
-        $clientFactoryStub = $this->createMock(MindboxClientFactory::class);
-
-        $clientFactoryStub->expects($this->atLeast(2))
-            ->method('createMindboxClient');
-
-        $mindboxStub = $this->getMockBuilder(Mindbox::class)
-            ->disableOriginalConstructor()
-            ->setMethods(['getHttpClientsFactory', 'getMindboxClientFactory', 'setConfig'])
-            ->getMock();
-
-        $mindboxStub->expects($this->once())
-            ->method('getHttpClientsFactory')
-            ->willReturn($httpClientFactoryStub);
-
-        $mindboxStub->expects($this->atLeast(2))
-            ->method('getMindboxClientFactory')
-            ->willReturn($clientFactoryStub);
-
-        $reflectedClass = new ReflectionClass(Mindbox::class);
-        $constructor    = $reflectedClass->getConstructor();
-        $constructor->invoke($mindboxStub, $this->correctConfig, $this->logHandler);
-    }
-
     public function testCustomer()
     {
         $mindbox = new Mindbox($this->correctConfig, $this->logHandler);
@@ -159,6 +120,65 @@ class MindboxTest extends TestCase
         $mindbox = new Mindbox($this->correctConfig, $this->logHandler);
 
         $this->assertInstanceOf(\Mindbox\Clients\MindboxClientV3::class, $mindbox->getClientV3());
+    }
+
+    public function testGetClientV3UsesConfiguredDomain()
+    {
+        $mindbox = new Mindbox([
+            'endpointId' => 'test',
+            'secretKey' => 'test',
+            'domain' => 'api.s.mindbox',
+            'domainZone' => 'ru',
+        ], $this->logHandler);
+
+        $client = $mindbox->getClientV3()
+            ->prepareRequest('POST', 'Operation', null, '', [], true, false);
+
+        $this->assertSame(
+            'https://api.s.mindbox.ru/v3/operations/sync?endpointId=test&operation=Operation',
+            $client->getRequest()->getUrl()
+        );
+    }
+
+    public function testGetClientV3UsesDefaultDomainWhenDomainIsEmpty()
+    {
+        try {
+            $mindbox = new Mindbox([
+                'endpointId' => 'test',
+                'secretKey' => 'test',
+                'domain' => '',
+                'domainZone' => 'ru',
+            ], $this->logHandler);
+        } catch (\Mindbox\Exceptions\MindboxConfigException $exception) {
+            $this->fail('Empty domain must not prevent using the v3 client');
+        }
+
+        $client = $mindbox->getClientV3()
+            ->prepareRequest('POST', 'Operation', null, '', [], true, false);
+
+        $this->assertSame(
+            'https://api.mindbox.ru/v3/operations/sync?endpointId=test&operation=Operation',
+            $client->getRequest()->getUrl()
+        );
+    }
+
+    public function testGetClientV2ThrowsConfigExceptionWhenDomainIsEmpty()
+    {
+        try {
+            $mindbox = new Mindbox([
+                'endpointId' => 'test',
+                'secretKey' => 'test',
+                'domain' => '',
+                'domainZone' => 'ru',
+            ], $this->logHandler);
+        } catch (\Mindbox\Exceptions\MindboxConfigException $exception) {
+            $this->fail('Empty domain must be rejected only when the v2.1 client is requested');
+        }
+
+        $this->expectException(\Mindbox\Exceptions\MindboxConfigException::class);
+        $this->expectExceptionMessage('Domain cant`t be empty for v2.1 API');
+
+        $mindbox->getClientV2();
     }
 
     public function testGetClientV2()

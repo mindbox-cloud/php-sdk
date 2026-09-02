@@ -49,9 +49,10 @@ require_once __DIR__ . '/path/to/mindboxSDK/vendor/autoload.php';
 - `{logsDir}` - директория для логов
 - `{endpointId}` - уникальный идентификатор сайта/мобильного приложения/и т.п. Значение нужно уточнить у менеджера Mindbox.
 - `{secretKey}` - секретный ключ, соответствующий endpointId. Значение нужно уточнить у менеджера Mindbox.
-- `{domainZone}` домен API Mindbox, на который будут отправляться запросы
+- `{domainZone}` - доменная зона API Mindbox
 
 Опциональные параметры:
+- `{domain}` - домен API Mindbox. Для v3 по умолчанию используется `api.mindbox`; для v2.1 параметр обязателен.
 - `{timeout}` таймаут соединения http запроса (в секундах), опционально. По умолчанию 5 секунд.
 - `{httpClient}` способ отправки запроса ("curl", "stream"), опционально. По умолчанию curl, если установлено расширение ext-curl, иначе stream.
 
@@ -63,6 +64,7 @@ $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 $mindbox = new \Mindbox\Mindbox([
     'endpointId' => '{endpointId}',
     'secretKey' => '{secretKey}',
+    'domain' => '{domain}',
     'domainZone' => '{domainZone}',
     //'timeout' => '{timeout}',
     //'httpClient' => '{httpClient}',
@@ -82,6 +84,7 @@ $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 $mindbox = new \Mindbox\Mindbox([
     'endpointId' => '{endpointId}',
     'secretKey' => '{secretKey}',
+    'domain' => '{domain}',
     'domainZone' => '{domainZone}',
 ], $logger);
 
@@ -116,6 +119,7 @@ $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 $mindbox = new \Mindbox\Mindbox([
     'endpointId' => '{endpointId}',
     'secretKey' => '{secretKey}',
+    'domain' => '{domain}',
     'domainZone' => '{domainZone}',
 ], $logger);
 

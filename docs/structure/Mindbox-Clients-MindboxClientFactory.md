@@ -38,4 +38,3 @@ Methods
 * $httpClient **[Mindbox\HttpClients\IHttpClient](Mindbox-HttpClients-IHttpClient.md)** - &lt;p&gt;Экземпляр HTTP клиента.&lt;/p&gt;
 * $logger **Psr\Log\LoggerInterface** - &lt;p&gt;Экземпляр логгера.&lt;/p&gt;
 
-
