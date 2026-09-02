@@ -161,6 +161,42 @@ class MindboxTest extends TestCase
         $this->assertInstanceOf(\Mindbox\Clients\MindboxClientV3::class, $mindbox->getClientV3());
     }
 
+    public function testGetClientV3UsesConfiguredDomain()
+    {
+        $mindbox = new Mindbox([
+            'endpointId' => 'test',
+            'secretKey' => 'test',
+            'domain' => 'api.s.mindbox',
+            'domainZone' => 'ru',
+        ], $this->logHandler);
+
+        $client = $mindbox->getClientV3()
+            ->prepareRequest('POST', 'Operation', null, '', [], true, false);
+
+        $this->assertSame(
+            'https://api.s.mindbox.ru/v3/operations/sync?endpointId=test&operation=Operation',
+            $client->getRequest()->getUrl()
+        );
+    }
+
+    public function testGetClientV3AcceptsFullyQualifiedDomainForBackwardCompatibility()
+    {
+        $mindbox = new Mindbox([
+            'endpointId' => 'test',
+            'secretKey' => 'test',
+            'domain' => 'api.mindbox.ru',
+            'domainZone' => 'ru',
+        ], $this->logHandler);
+
+        $client = $mindbox->getClientV3()
+            ->prepareRequest('POST', 'Operation', null, '', [], true, false);
+
+        $this->assertSame(
+            'https://api.mindbox.ru/v3/operations/sync?endpointId=test&operation=Operation',
+            $client->getRequest()->getUrl()
+        );
+    }
+
     public function testGetClientV2()
     {
         $mindbox = new Mindbox($this->correctConfig, $this->logHandler);
