@@ -85,7 +85,8 @@ class Mindbox
             $this->config['secretKey'],
             $this->config['domainZone'],
             $httpClient,
-            $logger
+            $logger,
+            $this->config['domain'] ?: 'api.mindbox'
         );
         $this->clientV2 = $this->getMindboxClientFactory()->createMindboxClient(
             'v2.1',

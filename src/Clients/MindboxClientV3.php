@@ -15,6 +15,11 @@ use Psr\Log\LoggerInterface;
 class MindboxClientV3 extends AbstractMindboxClient
 {
     /**
+     * Доменные зоны, которые могут быть частью переданного полного домена.
+     */
+    const DOMAIN_ZONES = ['ru', 'io', 'cloud'];
+
+    /**
      * Версия API Mindbox с которой работает клиент.
      */
     const API_VERSION = 'v3';
@@ -174,6 +179,12 @@ class MindboxClientV3 extends AbstractMindboxClient
     protected function getApiUrl(string $domain, string $domainZone)
     {
         $domainZone = $domainZone === 'api-ru' ? 'cloud' : $domainZone;
+
+        $domainParts = explode('.', $domain);
+        if (in_array(end($domainParts), self::DOMAIN_ZONES, true)) {
+            array_pop($domainParts);
+            $domain = implode('.', $domainParts);
+        }
 
         $url = str_replace('{{url}}', $domain . '.' . $domainZone, self:: BASE_V3_URL);
 
