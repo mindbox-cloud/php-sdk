@@ -80,8 +80,16 @@ class Mindbox
             $this->config['httpClient']
         );
 
+        if (empty($this->config['secretKey'])) {
+            throw new MindboxConfigException('Secret key cant`t be empty');
+        }
+
         if (empty($this->config['endpointId'])) {
             throw new MindboxConfigException('Endpoint id cant`t be empty for v3 API');
+        }
+
+        if (empty($this->config['domainZone'])) {
+            throw new MindboxConfigException('Domain zone cant`t be empty for v3 API');
         }
 
         $this->client = new MindboxClientV3(
@@ -92,14 +100,16 @@ class Mindbox
             $this->config['domainZone'],
             $this->config['domain'] ?: 'api.mindbox'
         );
-        $this->clientV2 = $this->getMindboxClientFactory()->createMindboxClient(
-            'v2.1',
-            $this->config['endpointId'],
-            $this->config['secretKey'],
-            $this->config['domain'],
-            $httpClient,
-            $logger
-        );
+        if (!empty($this->config['domain'])) {
+            $this->clientV2 = $this->getMindboxClientFactory()->createMindboxClient(
+                'v2.1',
+                $this->config['endpointId'],
+                $this->config['secretKey'],
+                $this->config['domain'],
+                $httpClient,
+                $logger
+            );
+        }
     }
 
     /**
@@ -157,9 +167,14 @@ class Mindbox
      * Геттер для $clientV2.
      *
      * @return AbstractMindboxClient
+     * @throws MindboxConfigException
      */
     public function getClientV2()
     {
+        if (empty($this->clientV2)) {
+            throw new MindboxConfigException('Domain cant`t be empty for v2.1 API');
+        }
+
         $this->clientV2->setResponseType(MindboxResponse::class);
         return $this->clientV2;
     }

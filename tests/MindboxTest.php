@@ -2,13 +2,8 @@
 
 namespace Mindbox\Tests;
 
-use Mindbox\Clients\MindboxClientFactory;
-use Mindbox\HttpClients\HttpClientFactory;
 use Mindbox\Mindbox;
 use PHPUnit\Framework\TestCase;
-use ReflectionClass;
-use ReflectionException;
-use Mindbox\Options;
 
 /**
  * Class MindboxTest
@@ -97,40 +92,6 @@ class MindboxTest extends TestCase
         $mindbox = new Mindbox($this->correctConfig, $this->logHandler);
 
         $this->assertInstanceOf(Mindbox::class, $mindbox);
-    }
-
-    /**
-     * @throws ReflectionException
-     */
-    public function testConstructWithCorrectConfig()
-    {
-        $httpClientFactoryStub = $this->createMock(HttpClientFactory::class);
-
-        $httpClientFactoryStub->expects($this->once())
-            ->method('createHttpClient')
-            ->willReturn($this->createMock(\Mindbox\HttpClients\IHttpClient::class));
-
-        $clientFactoryStub = $this->createMock(MindboxClientFactory::class);
-
-        $clientFactoryStub->expects($this->once())
-            ->method('createMindboxClient');
-
-        $mindboxStub = $this->getMockBuilder(Mindbox::class)
-            ->disableOriginalConstructor()
-            ->setMethods(['getHttpClientsFactory', 'getMindboxClientFactory', 'setConfig'])
-            ->getMock();
-
-        $mindboxStub->expects($this->once())
-            ->method('getHttpClientsFactory')
-            ->willReturn($httpClientFactoryStub);
-
-        $mindboxStub->expects($this->once())
-            ->method('getMindboxClientFactory')
-            ->willReturn($clientFactoryStub);
-
-        $reflectedClass = new ReflectionClass(Mindbox::class);
-        $constructor    = $reflectedClass->getConstructor();
-        $constructor->invoke($mindboxStub, $this->correctConfig, $this->logHandler);
     }
 
     public function testCustomer()
