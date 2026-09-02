@@ -21,6 +21,8 @@ use Psr\Log\LoggerInterface;
  */
 class Mindbox
 {
+    private const DOMAIN_ZONES = ['ru', 'io', 'cloud'];
+
     /**
      * @var array Массив значений конфигурации SDK по умолчанию.
      */
@@ -86,7 +88,7 @@ class Mindbox
             $this->config['domainZone'],
             $httpClient,
             $logger,
-            $this->config['domain'] ?: 'api.mindbox'
+            $this->getV3Domain()
         );
         $this->clientV2 = $this->getMindboxClientFactory()->createMindboxClient(
             'v2.1',
@@ -116,6 +118,21 @@ class Mindbox
     private function getDefaultConfig()
     {
         return $this->defaultConfig;
+    }
+
+    /**
+     * Возвращает домен без зоны в формате, ожидаемом клиентом v3.
+     *
+     * @return string
+     */
+    private function getV3Domain()
+    {
+        $domainParts = explode('.', $this->config['domain'] ?: 'api.mindbox');
+        if (in_array(end($domainParts), self::DOMAIN_ZONES, true)) {
+            array_pop($domainParts);
+        }
+
+        return implode('.', $domainParts);
     }
 
     /**
