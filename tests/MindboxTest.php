@@ -179,6 +179,47 @@ class MindboxTest extends TestCase
         );
     }
 
+    public function testGetClientV3UsesDefaultDomainWhenDomainIsEmpty()
+    {
+        try {
+            $mindbox = new Mindbox([
+                'endpointId' => 'test',
+                'secretKey' => 'test',
+                'domain' => '',
+                'domainZone' => 'ru',
+            ], $this->logHandler);
+        } catch (\Mindbox\Exceptions\MindboxConfigException $exception) {
+            $this->fail('Empty domain must not prevent using the v3 client');
+        }
+
+        $client = $mindbox->getClientV3()
+            ->prepareRequest('POST', 'Operation', null, '', [], true, false);
+
+        $this->assertSame(
+            'https://api.mindbox.ru/v3/operations/sync?endpointId=test&operation=Operation',
+            $client->getRequest()->getUrl()
+        );
+    }
+
+    public function testGetClientV2ThrowsConfigExceptionWhenDomainIsEmpty()
+    {
+        try {
+            $mindbox = new Mindbox([
+                'endpointId' => 'test',
+                'secretKey' => 'test',
+                'domain' => '',
+                'domainZone' => 'ru',
+            ], $this->logHandler);
+        } catch (\Mindbox\Exceptions\MindboxConfigException $exception) {
+            $this->fail('Empty domain must be rejected only when the v2.1 client is requested');
+        }
+
+        $this->expectException(\Mindbox\Exceptions\MindboxConfigException::class);
+        $this->expectExceptionMessage('Domain cant`t be empty for v2.1 API');
+
+        $mindbox->getClientV2();
+    }
+
     public function testGetClientV2()
     {
         $mindbox = new Mindbox($this->correctConfig, $this->logHandler);
