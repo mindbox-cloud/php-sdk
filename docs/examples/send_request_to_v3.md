@@ -22,6 +22,7 @@ $logger = new \Mindbox\Loggers\MindboxFileLogger('{logsDir}');
 $mindbox = new \Mindbox\Mindbox([
     'endpointId' => '{endpointId}',
     'secretKey' => '{secretKey}',
+    'domain' => '{domain}',
     'domainZone' => '{domainZone}',
 ], $logger);
 
@@ -47,7 +48,7 @@ try {
     echo $e->getMessage();
 }
 ```
-Для указания запроса на произвольный url mindbox следует следует использовать \Mindbox\Clients\MindboxClientV3 вместо фабрики
+Начиная с версии 1.1.8 параметр `domain` из конфигурации `Mindbox` передаётся в клиент v3. Прямое создание `MindboxClientV3` оставлено для случаев, когда фасад `Mindbox` не нужен.
 
 ## Пример отправки запроса на произвольны URL к API v3
 ``` php
@@ -59,7 +60,7 @@ $client = new \Mindbox\Clients\MindboxClientV3(
     '{secretKey}',
     $httpClient,
     $logger,
-    '{domainZone}'
+    '{domainZone}',
     '{domain}'
 );
 

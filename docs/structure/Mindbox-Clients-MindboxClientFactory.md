@@ -21,7 +21,7 @@ Methods
 
 ### createMindboxClient
 
-    \Mindbox\Clients\AbstractMindboxClient Mindbox\Clients\MindboxClientFactory::createMindboxClient(string $apiVersion, string $endpointId, string $secretKey, string $domain, \Mindbox\HttpClients\IHttpClient $httpClient, \Psr\Log\LoggerInterface $logger)
+    \Mindbox\Clients\AbstractMindboxClient Mindbox\Clients\MindboxClientFactory::createMindboxClient(string $apiVersion, string $endpointId, string $secretKey, string $domain, \Mindbox\HttpClients\IHttpClient $httpClient, \Psr\Log\LoggerInterface $logger, string $apiDomain)
 
 Конструктор MindboxClientFactory.
 
@@ -37,5 +37,5 @@ Methods
 * $domain **string** - &lt;p&gt;Домен.&lt;/p&gt;
 * $httpClient **[Mindbox\HttpClients\IHttpClient](Mindbox-HttpClients-IHttpClient.md)** - &lt;p&gt;Экземпляр HTTP клиента.&lt;/p&gt;
 * $logger **Psr\Log\LoggerInterface** - &lt;p&gt;Экземпляр логгера.&lt;/p&gt;
-
+* $apiDomain **string** - &lt;p&gt;Домен API v3.&lt;/p&gt;
 

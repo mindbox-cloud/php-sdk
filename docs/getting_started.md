@@ -55,8 +55,8 @@ require_once __DIR__ . '/path/to/mindboxSDK/vendor/autoload.php';
 Обязательные параметры конфигурации SDK:
 * endpointId - уникальный идентификатор сайта/мобильного приложения/и т.п. Значение нужно уточнить у менеджера Mindbox.
 * secretKey - секретный ключ, соответствующий endpointId. Значение нужно уточнить у менеджера Mindbox.
-* domain - домен, на который будут отправляться запросы к v2.1 API Mindbox: https://{domain}/v2.1/orders/.
-* domainZone - доменная зона, на которую будут отправляться запросы к v3 API Mindbox: https://api.mindbox.{{domainZone}}/v3/operations/.
+* domain - домен API Mindbox, который передаётся клиентам v2.1 и v3. Значение нужно уточнить у менеджера Mindbox. Клиент v3 принимает как полный домен (`api.s.mindbox.ru`), так и домен без зоны (`api.s.mindbox`).
+* domainZone - доменная зона, на которую будут отправляться запросы к v3 API Mindbox (`ru`, `api-ru`, `cloud`, `io`).
 
 Опциональные параметры:
 * timeout - таймаут соединения при выполнении HTTP запроса (в секундах). По умолчанию равен 5 секундам.
@@ -163,6 +163,9 @@ try {
 ```
 
 ## Пример отправки запроса на произвольны URL к API v3
+
+Начиная с версии 1.1.8 параметр `domain` из конфигурации `Mindbox` передаётся в клиент v3. Создавать `MindboxClientV3` напрямую для выбора домена больше не требуется.
+
 Обязательные параметры конфигурации SDK:
 * endpointId - уникальный идентификатор сайта/мобильного приложения/и т.п. Значение нужно уточнить у менеджера Mindbox.
 * secretKey - секретный ключ, соответствующий endpointId. Значение нужно уточнить у менеджера Mindbox.
@@ -189,7 +192,7 @@ $client = new \Mindbox\Clients\MindboxClientV3(
     '{secretKey}',
     $httpClient,
     $logger,
-    '{domainZone}'
+    '{domainZone}',
     '{domain}'
 );
 
