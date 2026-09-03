@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Mindbox\DTO\V3\Requests;
 
 use Mindbox\DTO\V3\LineDTO;
@@ -15,6 +14,7 @@ use Mindbox\DTO\V3\LineDTO;
 class LineRequestDTO extends LineDTO
 {
     use CustomFieldRequestDTO;
+
     /**
      * @var array Мэппинг преобразрования полей в объекты DTO.
      */

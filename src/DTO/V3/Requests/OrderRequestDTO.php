@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Mindbox\DTO\V3\Requests;
 
 use Mindbox\DTO\V3\OrderDTO;
@@ -18,7 +17,9 @@ use Mindbox\DTO\V3\OrderDTO;
  **/
 class OrderRequestDTO extends OrderDTO
 {
-    use IdentityRequestDTO, CustomFieldRequestDTO;
+    use IdentityRequestDTO;
+    use CustomFieldRequestDTO;
+
     /**
      * @var array Мэппинг преобразрования полей в объекты DTO.
      */

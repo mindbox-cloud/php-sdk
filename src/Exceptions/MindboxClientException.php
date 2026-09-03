@@ -9,5 +9,4 @@ namespace Mindbox\Exceptions;
  */
 class MindboxClientException extends \Exception implements IMindboxException
 {
-
 }

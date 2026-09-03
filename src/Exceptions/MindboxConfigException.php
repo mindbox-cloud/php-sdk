@@ -9,5 +9,4 @@ namespace Mindbox\Exceptions;
  */
 class MindboxConfigException extends \InvalidArgumentException implements IMindboxException
 {
-
 }

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Mindbox\DTO\V3;
 
 /**
